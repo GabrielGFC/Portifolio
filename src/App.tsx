@@ -112,10 +112,10 @@ function App() {
       <header className="bg-gradient-to-r from-custom-dark to-custom-darkest py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center">
-            <div className="w-32 h-32 mb-6 rounded-full overflow-hidden border-4 border-custom-light">
+            <div className="w-36 h-36 mb-6 rounded-full overflow-hidden border-4 border-custom-light">
               <img 
-                src="https://media.licdn.com/dms/image/D4D03AQGxGPBxZxEbQw/profile-displayphoto-shrink_800_800/0/1696947592797?e=1715212800&v=beta&t=Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs_Hs" 
-                alt="Gabriel Cardoso"
+                src="https://avatars.githubusercontent.com/u/143818850?s=400&u=5ad052ecf4c1371445716efeac69bcefb6bab997&v=4" 
+                alt="Gabriel F. Carvalho"
                 className="w-full h-full object-cover"
               />
             </div>
