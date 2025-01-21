@@ -4,22 +4,28 @@ import { Github, Linkedin, Mail, Database, Server, Code2, Terminal, Cpu, BookOpe
 function App() {
   const projects = [
     {
-      title: 'API-SOLID',
-      description: 'API RESTful com princípios SOLID, autenticação JWT e testes automatizados',
-      tech: ['Node.js', 'Fastify', 'Prisma', 'JWT'],
-      github: 'https://github.com/GabrielGFC/API-SOLID'
+      title: 'Disponibilidade-BAAN-backend',
+      description: 'API RESTful  sistema de disponibilidade',
+      tech: ['Node.js', 'MYSQL','JWT','Postman'],
+      github: 'https://github.com/GabrielGFC/Disponibilidade-BAAN-backend'
     },
     {
-      title: 'Habits',
-      description: 'Aplicação full-stack para rastreamento de hábitos diários',
-      tech: ['React', 'Node.js', 'SQLite', 'Prisma'],
-      github: 'https://github.com/GabrielGFC/Habits'
+      title: 'Pasteur-BACKEND ',
+      description: 'Backend do Sistema de Controle de Estoque para uma aplicação de gerenciamento de inventário.',
+      tech: ['Node.js', 'MYSQL','JWT','Postman','SWEGGER'],
+      github: 'https://github.com/GabrielGFC/pasteur-backend'
     },
     {
-      title: 'Ignite Feed',
-      description: 'Plataforma de feed social com React e TypeScript',
-      tech: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
-      github: 'https://github.com/GabrielGFC/Ignite-Feed'
+      title: 'teste-php-laravel',
+      description: 'Projeto PHP usando Laravel e Docker! Este projeto foi configurado para rodar em containers Docker, facilitando o desenvolvimento e a implantação.',
+      tech: ['PHP', 'Laravel', 'Docker', 'MYSQL'],
+      github: 'https://github.com/GabrielGFC/teste-php-laravel'
+    },
+    {
+      title: 'Tarefas de programação em C',
+      description: 'Este repositório contém tarefas de programação em C realizadas durante o segundo semestre do terceiro período do curso de Engenharia de Software',
+      tech: ['C'],
+      github: 'https://github.com/GabrielGFC/Tarefa-Willan'
     }
   ];
 
@@ -27,12 +33,12 @@ function App() {
     {
       title: 'Backend',
       icon: Server,
-      techs: 'PHP, Laravel, Node.js, Python'
+      techs: 'PHP, Laravel, Node.js, Python, TypeScript, C#'
     },
     {
       title: 'Banco de Dados',
       icon: Database,
-      techs: 'MySQL, PostgreSQL, SQLite'
+      techs: 'MySQL, PostgreSQL, SQLite, MongoDB'
     },
     {
       title: 'APIs',
@@ -43,7 +49,12 @@ function App() {
       title: 'DevOps',
       icon: Cpu,
       techs: 'Git, Docker, Remote Work'
-    }
+    },
+    {
+      title: 'Frontend',
+      icon: Terminal,
+      techs: 'React, Angular, Tailwind CSS, HTML, CSS'
+    },
   ];
 
   const experiences = [
@@ -64,6 +75,18 @@ function App() {
       role: 'Software Developer',
       period: 'janeiro de 2024 - dezembro de 2024',
       description: 'Desenvolvimento e aprimoramento de soluções tecnológicas para a instituição.'
+    },
+    {
+      company: 'Tecpress tecnologia',
+      role: 'Suporte técnico',
+      period: 'janeiro de 2019 - dezembro de 2022',
+      description: 'Atendimento e resolução de problemas técnicos, mantendo a infraestrutura de TI em pleno funcionamento'
+    },
+    {
+      company: 'Leomed Drogarias',
+      role: 'Analista e Assistente de compras',
+      period: 'aneiro de 2023 - agosto de 2023',
+      description: 'Análise de dados, controle de estoque e compras de medicamentos.'
     }
   ];
 
@@ -103,7 +126,7 @@ function App() {
       title: 'Curso de Laravel 11 - Completo e Gratuito',
       issuer: 'EspecializaTi',
       credential: 'iuUL0yI4s5'
-    }
+    },
   ];
 
   return (
