@@ -1,10 +1,9 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type UserConfigExport } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  base: '/', // use o nome correto do repositório
+// https://vitejs.dev/config/
+// @ts-ignore
+export default defineConfig((_ctx): UserConfigExport => ({
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
-});
+  base: '/Portifolio',
+}));

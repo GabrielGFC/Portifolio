@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Início",
+    "capabilities": "Competências",
+    "experience": "Experiência",
+    "projects": "Projetos"
+  },
+
+  "section1": {
+    "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
+    "subtitle": "Desenvolvedor&nbsp;back-end há <span>5&nbsp;anos</span>",
+    "intro": "Role para conhecer <span>minhas habilidades e projetos</span>",
+    "contacts": {
+      "resumeButton": "Currículo | PDF",
+      "socialMedia": {
+        "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
+        "github": "https://github.com/gabrielgfc",
+        "email": "mailto:bibigfc@gmail.com"
+      }
+    }
+  },
+
+  "section2": {
+    "skillsBox": {
+      "title": "Habilidades",
+      "skills": [
+        ".NET Core | C#",
+        "Node.js | Express | NestJS",
+        "Python (automação e APIs)",
+        "Laravel | PHP 8",
+        "SQL Server • PostgreSQL",
+        "Scrum (PSM-I) • Git • Docker"
+      ]
+    },
+    "toolsBox": {
+      "title": "Ferramentas",
+      "interface": "Frameworks & Ferramentas",
+      "tools": {
+        "frontEnd": "React, Vite, TypeScript, SCSS, MUI",
+        "backEnd": ".NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
+        "design": "Figma, Draw.io, PlantUML"
+      }
+    }
+  },
+
+  "section3": {
+    "title": "Experiência",
+    "subtitle": "Histórico Profissional",
+    "categories": ["cargo", "início", "término", "empresa"],
+    "jobData": [
+      {
+        "job": "job_1",
+        "title": "Estagiário AVA / Back-end PHP",
+        "startDate": "Outubro 2024",
+        "endDate": "Atualmente",
+        "company": "UniEVANGÉLICA"
+      },
+      {
+        "job": "job_2",
+        "title": "Desenvolvedor Back-end • Pleno",
+        "startDate": "Setembro 2023",
+        "endDate": "Atualmente",
+        "company": "Fábrica de Tecnologias Turing"
+      },
+      {
+        "job": "job_3",
+        "title": "Software Developer (.NET Core)",
+        "startDate": "Janeiro 2024",
+        "endDate": "Dezembro 2024",
+        "company": "Força Aérea Brasileira – BAAN"
+      },
+      {
+        "job": "job_4",
+        "title": "Assistente de Compras",
+        "startDate": "Janeiro 2023",
+        "endDate": "Agosto 2023",
+        "company": "Leomed Drogarias"
+      },
+      {
+        "job": "job_5",
+        "title": "Suporte Técnico Sênior",
+        "startDate": "Janeiro 2019",
+        "endDate": "Dezembro 2022",
+        "company": "Tecpress Tecnologia"
+      }
+    ]
+  },
+
+  "section4": {
+    "title": "Projetos",
+    "subtitle": "Alguns dos trabalhos recentes",
+    "projects": [
+      {
+        "title": "Cannasys – Plataforma de Cannabis Medicinal",
+        "tags": [
+          "Node.js",
+          "NestJS",
+          "TypeScript",
+          "Microserviços",
+          "MySQL",
+          "Docker"
+        ],
+        "description": "Sistema modular que gerencia prontuário eletrônico, produção e dispensação de óleo, finanças e RH.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/cannasys-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/cannasys-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Sistema de Controle de Acesso",
+        "tags": [
+          "Node.js",
+          "Express",
+          "MySQL",
+          "Docker",
+          "Swagger"
+        ],
+        "description": "Autenticação, gestão de crachás e monitoramento em tempo real de acessos, com API RESTful documentada.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/sca-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/sca-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Monte Seu Computador",
+        "tags": [
+          "React",
+          "TypeScript",
+          "SQLite",
+          "Railway Deploy"
+        ],
+        "description": "Aplicação que monta PCs verificando compatibilidade de componentes e calcula preço total.",
+        "button": {
+          "link": "https://tarefa-carlos-cond-production.up.railway.app/",
+          "text": "Demo Online"
+        }
+      },
+
+      {
+        "title": "EcoAlertas – Monitoramento Ambiental",
+        "tags": [
+          "NestJS",
+          "Node.js",
+          "PostgreSQL",
+          "Docker",
+          "IoT"
+        ],
+        "description": "Ingestão de dados em tempo real, geração automática de alertas e dashboards interativos para riscos ambientais.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/ecoalertas-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/ecoalertas-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Pasteur – Sistema de Gestão de Inventário (Back-end)",
+        "tags": [
+          "NestJS",
+          "TypeScript",
+          "PostgreSQL",
+          "Docker",
+          "Swagger"
+        ],
+        "description": "API back-end que otimiza processos de estoque, pedidos e relatórios para o laboratório Pasteur.",
+        "button": {
+          "link": "https://github.com/gabrielgfc/pasteur-backend",
+          "text": "Repositório"
+        }
+      }
+    ]
+  },
+
+  "footer": {
+    "resume": "Currículo | PDF",
+    "based": "Desenvolvido por",
+    "present": "presente"
+  }
+}

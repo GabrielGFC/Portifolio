@@ -1,0 +1,199 @@
+{
+  "header": {
+    "home": "Home",
+    "capabilities": "Skills",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+
+  "section1": {
+    "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
+    "subtitle": "Back-end developer for <span>5&nbsp;years</span>",
+    "intro": "Scroll to discover <span>my skills and projects</span>",
+    "contacts": {
+      "resumeButton": "Resume | PDF",
+      "socialMedia": {
+        "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
+        "github":   "https://github.com/gabrielgfc",
+        "email":    "mailto:bibigfc@gmail.com"
+      }
+    }
+  },
+
+  "section2": {
+    "skillsBox": {
+      "title": "Core Skills",
+      "skills": [
+        ".NET Core • C#",
+        "Node.js • Express / NestJS",
+        "Python (automation & APIs)",
+        "Laravel • PHP 8",
+        "SQL Server / PostgreSQL",
+        "Scrum (PSM-I) • Git • Docker"
+      ]
+    },
+    "toolsBox": {
+      "title": "Tech Stack",
+      "interface": "Frameworks & Tools",
+      "tools": {
+        "frontEnd": "React, Vite, TypeScript, SCSS, MUI",
+        "backEnd":  ".NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
+        "design":   "Figma, Draw.io, PlantUML"
+      }
+    }
+  },
+
+  "section3": {
+    "title": "Experience",
+    "subtitle": "Professional Timeline",
+    "categories": ["role", "from", "to", "company"],
+    "jobData": [
+      {
+        "job": "job_1",
+        "title": "AVA Intern / PHP Back-end",
+        "startDate": "October 2024",
+        "endDate": "Present",
+        "company": "UniEVANGÉLICA"
+      },
+      {
+        "job": "job_2",
+        "title": "Back-end Developer • Mid-Level",
+        "startDate": "September 2023",
+        "endDate": "Present",
+        "company": "Turing Technology Factory"
+      },
+      {
+        "job": "job_3",
+        "title": "Software Developer (.NET Core)",
+        "startDate": "January 2024",
+        "endDate": "December 2024",
+        "company": "Brazilian Air Force – BAAN"
+      },
+      {
+        "job": "job_4",
+        "title": "Purchasing Assistant",
+        "startDate": "January 2023",
+        "endDate": "August 2023",
+        "company": "Leomed Drugstores"
+      },
+      {
+        "job": "job_5",
+        "title": "Senior Technical Support",
+        "startDate": "January 2019",
+        "endDate": "December 2022",
+        "company": "Tecpress Tecnologia"
+      }
+    ]
+  },
+
+  "section4": {
+    "title": "Projects",
+    "subtitle": "Selected Highlights",
+    "projects": [
+      {
+        "title": "Cannasys – Medical Cannabis Platform",
+        "tags": [
+          "Node.js",
+          "NestJS",
+          "TypeScript",
+          "Microservices",
+          "MySQL",
+          "Docker"
+        ],
+        "description": "Modular system handling EMR, production & dispensing of oil, finance and HR for a cannabis association.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/cannasys-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/cannasys-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Access Control System",
+        "tags": [
+          "Node.js",
+          "Express",
+          "MySQL",
+          "Docker",
+          "Swagger"
+        ],
+        "description": "Real-time authentication and badge management with RESTful API and detailed reporting.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/sca-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/sca-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Build-Your-PC",
+        "tags": [
+          "React",
+          "TypeScript",
+          "SQLite",
+          "Railway Deploy"
+        ],
+        "description": "Web app that assembles PCs, validates component compatibility and shows total cost.",
+        "button": {
+          "link": "https://tarefa-carlos-cond-production.up.railway.app/",
+          "text": "Live Demo"
+        }
+      },
+
+      {
+        "title": "EcoAlertas – Environmental Monitoring",
+        "tags": [
+          "NestJS",
+          "Node.js",
+          "PostgreSQL",
+          "Docker",
+          "IoT"
+        ],
+        "description": "Real-time data ingestion, automatic alerts and interactive dashboards for environmental risks.",
+        "buttons": [
+          {
+            "link": "https://github.com/gabrielgfc/ecoalertas-backend",
+            "text": "Back-end"
+          },
+          {
+            "link": "https://github.com/gabrielgfc/ecoalertas-frontend",
+            "text": "Front-end"
+          }
+        ]
+      },
+
+      {
+        "title": "Pasteur – Inventory Management API",
+        "tags": [
+          "Node.js",
+          "Express",
+          "TypeScript",
+          "PostgreSQL",
+          "Docker",
+          "Swagger"
+        ],
+        "description": "Back-end API that streamlines inventory, orders and reports for the Pasteur laboratory.",
+        "button": {
+          "link": "https://github.com/gabrielgfc/pasteur-backend",
+          "text": "Repository"
+        }
+      }
+    ]
+  },
+
+  "footer": {
+    "resume": "Resume | PDF",
+    "based": "Built by",
+    "present": "present"
+  }
+}
