@@ -133,7 +133,7 @@ const MainPage: React.FC = () => {
                         <img src={CodeIcon} alt="Code" />
                         <h3>{data.section2.skillsBox.title}</h3>
                     </div>
-                    {data.section2.skillsBox.skills.map((skill, i) => (
+                    {data.section2.skillsBox.skills.map((skill:string, i) => (
                         <p key={i}>{skill}</p>
                     ))}
                 </div>
