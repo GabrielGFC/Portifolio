@@ -23,6 +23,7 @@ type Lang = typeof English;
 type Job     = Lang['section3']['jobData'][number];
 type Project = Lang['section4']['projects'][number];
 
+// eslint-disable-next-line no-undef
 const MainPage: React.FC = () => {
     /* idioma */
     const [data, setData] = useState<Lang>(English);
@@ -90,7 +91,7 @@ const MainPage: React.FC = () => {
         };
     }, []);
 
-    /* ─────────── JSX ─────────── */
+    /* ─────────── TSX ─────────── */
     return (
         <div className="body-container">
             <Header />
@@ -158,9 +159,10 @@ const MainPage: React.FC = () => {
                         <span>{data.section2.toolsBox.tools.design}</span>
                     </p>
                 </div>
+
             </div>
 
-            {/* SECTION 3 – Experience */}
+
             <div id="section3" className="experience-container">
                 <h2>{data.section3.title}</h2>
 
@@ -185,48 +187,48 @@ const MainPage: React.FC = () => {
             </div>
 
             {/* SECTION 4 – Projects */}
-            <div id="section4" className="project-container">
-                <h2>{data.section4.title}</h2>
+                <div id="section4" className="project-container">
+                    <h2>{data.section4.title}</h2>
 
-                <div className="line-projects">
-                    {data.section4.projects.map((project: Project, i) => (
-                        <div
-                            key={i}
-                            className="project-box"
-                            ref={el => (projectBoxesRef.current[i] = el)}
-                        >
-                            <p>{project.title}</p>
+                    <div className="line-projects">
+                        {data.section4.projects.map((project: Project, i) => (
+                            <div
+                                key={i}
+                                className="project-box"
+                                ref={el => (projectBoxesRef.current[i] = el)}
+                            >
+                                <p>{project.title}</p>
 
-                            <div className="project-tags">
-                                {project.tags.map((tag, idx) => (
-                                    <p key={idx}>{tag}</p>
-                                ))}
-                            </div>
+                                <div className="project-tags">
+                                    {project.tags.map((tag, idx) => (
+                                        <p key={idx}>{tag}</p>
+                                    ))}
+                                </div>
 
-                            <p>{project.description}</p>
+                                <p>{project.description}</p>
 
-                            <div className={project.button ? 'project-button-arrow' : 'project-buttons'}>
-                                {project.button ? (
-                                    <button>
-                                        <a href={project.button.link} target="_blank" rel="noopener noreferrer">
-                                            <img src={Arrow} alt="Go" />
-                                        </a>
-                                    </button>
-                                ) : (
-                                    project.buttons?.map((btn, idx) => (
-                                        <button key={idx}>
-                                            <a href={btn.link} target="_blank" rel="noopener noreferrer">
-                                                {btn.text}
+                                <div className={project.button ? 'project-button-arrow' : 'project-buttons'}>
+                                    {project.button ? (
+                                        <button>
+                                            <a href={project.button.link} target="_blank" rel="noopener noreferrer">
                                                 <img src={Arrow} alt="Go" />
                                             </a>
                                         </button>
-                                    ))
-                                )}
+                                    ) : (
+                                        project.buttons?.map((btn, idx) => (
+                                            <button key={idx}>
+                                                <a href={btn.link} target="_blank" rel="noopener noreferrer">
+                                                    {btn.text}
+                                                    <img src={Arrow} alt="Go" />
+                                                </a>
+                                            </button>
+                                        ))
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
 
             <Footer />
         </div>

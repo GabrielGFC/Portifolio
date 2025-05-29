@@ -5,8 +5,22 @@
     font-style: normal;
 }
 
+/* Correção global para evitar scroll horizontal */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 100vw;
+}
+
 .body-container {
-    width: 100vw;
+    width: 100%;
+    max-width: 100vw;
     background-color: #000;
     display: flex;
     flex-direction: column;
@@ -19,11 +33,13 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+        max-width: 100%;
 
         >h1 {
             cursor: default;
             text-align: center;
-            font-size: 7vw;
+            font-size: min(7vw, 5rem); /* Limita o tamanho máximo */
             font-weight: 800;
             font-family: "Space Grotesk", serif;
             animation: moveText 3s infinite ease-in-out;
@@ -35,7 +51,7 @@
             }
 
             >span {
-                font-size: 7vw;
+                font-size: min(7vw, 5rem);
                 background: linear-gradient(0.45turn, #5DAFF6, #00338C);
                 animation: moveGradient 5s infinite ease-in-out;
                 -webkit-background-clip: text;
@@ -60,7 +76,6 @@
             >span {
                 color: #5DAFF6;
             }
-
         }
 
         >p:nth-of-type(1) {
@@ -79,13 +94,14 @@
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            width: 30vw;
+            width: min(30vw, 400px); /* Limita a largura máxima */
+            max-width: 90%; /* Garante que não estoure em telas pequenas */
             height: 40px;
 
             button {
                 background-color: transparent;
                 border: 0.1vh solid #5DAFF6;
-                width: 10vw;
+                width: min(10vw, 120px);
                 height: 4vh;
                 cursor: pointer;
                 font-size: 1.7vh;
@@ -133,11 +149,13 @@
     }
 
     .capabilities-container {
-        padding: 30vh 10vw 0 10vw;
+        padding: 30vh 5vw 0 5vw; /* Reduzido de 10vw para 5vw */
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
         opacity: 0;
         transform: translateY(50px);
         transition: all 0.6s ease-out;
@@ -148,7 +166,7 @@
         }
 
         .skills-box {
-            margin: 0 100px 0 0;
+            margin: 0 50px 0 0; /* Reduzido de 100px para 50px */
         }
 
         .skills-box,
@@ -156,7 +174,8 @@
             border-radius: 1vh;
             border: 0.15vh solid #3D3D3D;
             height: fit-content;
-            width: 30vw;
+            width: min(30vw, 450px); /* Limita largura máxima */
+            max-width: calc(50% - 25px); /* Garante que cabem lado a lado */
             padding: 50px;
             background-color: #0F0F0F;
             transition: box-shadow 0.6s ease-out;
@@ -193,6 +212,7 @@
                 font-family: "Space Grotesk", serif;
                 color: white;
                 margin: 0 0 25px 0;
+                word-wrap: break-word; /* Quebra palavras longas */
 
                 >span {
                     font-size: 2vh;
@@ -205,13 +225,14 @@
     }
 
     .experience-container {
-        padding: 20vh 10vw 0 10vw;
+        padding: 20vh 5vw 0 5vw; /* Reduzido de 10vw para 5vw */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         position: relative;
         width: 100%;
+        max-width: 100%;
 
         >h2 {
             cursor: default;
@@ -229,7 +250,6 @@
             color: #9DA3AF;
         }
 
-
         >.divisor {
             position: absolute;
             top: 45vh;
@@ -245,8 +265,10 @@
             border: 0.15vh solid #3D3D3D;
             min-height: fit-content;
             width: fit-content;
+            max-width: 90%; /* Limita largura máxima */
             padding: 30px 50px 30px 40px;
             background-color: #0F0F0F;
+            word-wrap: break-word;
 
             opacity: 0;
             transform: translateY(50px);
@@ -279,49 +301,49 @@
             &:nth-of-type(2) {
                 position: absolute;
                 top: 45vh;
-                left: max(calc(50% - 25%), 25%);
+                left: clamp(10%, calc(50% - 25%), 40%);
                 transform: translateX(-50%) translateY(50px);
             }
 
             &:nth-of-type(3) {
                 position: absolute;
                 top: 90vh;
-                right: max(calc(50% - 25%), 25%);
+                right: clamp(10%, calc(50% - 25%), 40%);
                 transform: translateX(50%);
                 transition-delay: 0.4s;
             }
-
 
             &:nth-of-type(4) {
                 transition-delay: 0.6s;
                 position: absolute;
                 top: 95vh;
-                left: max(calc(50% - 25%), 25%);
+                left: clamp(10%, calc(50% - 25%), 40%);
                 transform: translateX(-50%);
             }
+
             &:nth-of-type(5) {
                 transition-delay: 0.6s;
                 position: absolute;
                 top: 130vh;
-                left: max(calc(20% - 25%), 52%);
+                left: clamp(55%, calc(10% - 25%), 52%);
                 transform: translateX(-60%);
             }
+
             &:nth-of-type(6) {
                 position: absolute;
                 top: 49vh;
-                right: max(calc(50% - 25%), 25%);
-                transform: translateX(50%);
+                right: 5vw;
+                transform: translateX(0);
                 transition-delay: 0.4s;
+                max-width: calc(45vw - 5vw);
             }
-
-
-
         }
     }
 
     .project-container {
         width: 100%;
-        padding: 100vh 8vw 20vh 8vw;
+        max-width: 100%;
+        padding: 140vh 4vw 20vh 4vw; /* Reduzido de 8vw para 4vw */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -329,7 +351,7 @@
 
         >h2 {
             cursor: default;
-            font-size: 5vh;
+            font-size: 4vh;
             font-weight: 800;
             font-family: "Space Grotesk", serif;
             color: white;
@@ -350,13 +372,16 @@
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
+            max-width: 100%;
             margin: 0 0 7vh 0;
+            gap: 2vw; /* Espaçamento entre os projetos */
 
             >.project-box {
                 border-radius: 1vh;
                 border: 0.15vh solid #3D3D3D;
                 height: fit-content;
-                width: 26.7vw;
+                width: calc(33.333% - 1.5vw); /* Largura flexível com gap */
+                max-width: calc(33.333% - 1.5vw);
                 padding: 50px 40px 20px 40px;
                 background-color: #0F0F0F;
                 position: relative;
@@ -389,13 +414,13 @@
                 transform 0.5s ease,
                 box-shadow 0.3s ease-out !important;
 
-
                 >p:nth-of-type(1) {
                     cursor: default;
                     font-size: 3vh;
                     font-weight: 800;
                     font-family: "Space Grotesk", serif;
                     color: white;
+                    word-wrap: break-word;
                 }
 
                 >.project-tags {
@@ -430,6 +455,7 @@
                     font-weight: 300;
                     font-family: "Space Grotesk", serif;
                     color: #9DA3AF;
+                    word-wrap: break-word;
                 }
 
                 >.project-button-arrow {
@@ -470,10 +496,8 @@
                             background-color: #333333;
                             border: 0.15vh solid #7D7D7D;
                         }
-
                     }
                 }
-
 
                 >.project-buttons {
                     display: flex;
@@ -482,11 +506,12 @@
                     align-items: center;
                     width: 100%;
                     margin: 50px 0 0 0;
+                    gap: 2%;
 
                     >button {
                         border: 0.15vh solid #3D3D3D;
                         border-radius: 1.4vh;
-                        width: 30vw;
+                        width: calc(49% - 1%); /* Largura flexível */
                         height: 5vh;
                         background-color: transparent;
                         display: flex;
@@ -494,10 +519,6 @@
                         align-items: center;
                         cursor: pointer;
                         transition: all 0.5s ease-in-out;
-
-                        &:nth-of-type(2) {
-                            margin: 0 0 0 5%;
-                        }
 
                         >a {
                             display: flex;
@@ -527,7 +548,6 @@
                             background-color: #333333;
                             border: 0.15vh solid #7D7D7D;
                         }
-
                     }
                 }
             }
@@ -540,10 +560,10 @@
         padding: 15vh 2vw 0vh 2vw !important;
 
         >h1 {
-            font-size: 20vw !important;
+            font-size: min(20vw, 4rem) !important;
 
             >span {
-                font-size: 20vw !important;
+                font-size: min(20vw, 4rem) !important;
             }
         }
 
@@ -566,7 +586,8 @@
         .contacts-row {
             flex-direction: column !important;
             width: 100% !important;
-            height: 40px;
+            max-width: 100% !important;
+            height: auto !important;
 
             >a {
                 width: 100% !important;
@@ -574,7 +595,6 @@
                 align-items: center;
                 justify-content: center;
                 text-decoration: none;
-
             }
 
             button {
@@ -602,7 +622,6 @@
                         height: 2.6vh;
                         cursor: pointer;
                         transition: all 0.5s ease-in-out;
-                        // margin: 0 20px 0 0;
 
                         &:hover {
                             height: 2.9vh;
@@ -635,6 +654,7 @@
         .skills-box,
         .tools-box {
             width: 100% !important;
+            max-width: 100% !important;
             border-radius: 1vh;
             border: 0.15vh solid #3D3D3D;
             height: fit-content;
@@ -687,7 +707,7 @@
     }
 
     .experience-container {
-        padding: 10vh 10vw 0 10vw !important;
+        padding: 10vh 5vw 0 5vw !important;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -709,6 +729,7 @@
 
         >.job-box {
             width: 100% !important;
+            max-width: 100% !important;
             position: relative !important;
             top: 0 !important;
             left: 0% !important;
@@ -726,7 +747,7 @@
     }
 
     .project-container {
-        padding: 10vh 8vw 0vh 8vw !important;
+        padding: 10vh 4vw 0vh 4vw !important;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -745,13 +766,16 @@
             flex-direction: column !important;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            width: 100% !important;
+            max-width: 100% !important;
             margin: 0 0 7vh 0;
+            gap: 0;
 
             >.project-box {
                 min-height: fit-content !important;
                 margin: 0 0 100px 0;
                 width: 100% !important;
+                max-width: 100% !important;
                 box-shadow: 0 0px 40px rgba(93, 175, 246, 0.25) !important;
 
                 >.project-buttons {
@@ -761,14 +785,11 @@
                     align-items: center;
                     width: 100%;
                     margin: 50px 0 0 0;
+                    gap: 5%;
 
                     >button {
-                        width: 30vw !important;
+                        width: calc(47.5% - 2.5%) !important;
                         animation: buttonArrowPulse 3s infinite ease-in-out !important;
-
-                        &:nth-of-type(2) {
-                            margin: 0 0 0 5%;
-                        }
 
                         >a {
                             display: flex;
@@ -815,7 +836,6 @@
 }
 
 @keyframes moveArrow {
-
     0% {
         transform: translateX(0);
     }
