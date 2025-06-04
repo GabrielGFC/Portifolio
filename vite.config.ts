@@ -7,6 +7,11 @@ export default defineConfig((_ctx): UserConfigExport => ({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
   }
 }));
