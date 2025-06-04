@@ -1,14 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainPage from '../pages';
 
-const Router = () => {
-  return (
-    <BrowserRouter basename="/Portifolio">
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
+import { HashRouter, Routes, Route } from 'react-router-dom';
+
+import Main from '../pages';          // Main.tsx ou index.tsx dentro de /pages
+import React from 'react';
+
+const Router: React.FC = () => (
+    <HashRouter>
+        <Routes>
+            <Route path="/" element={<Main />} />
+        </Routes>
+    </HashRouter>
+);
 
 export default Router;

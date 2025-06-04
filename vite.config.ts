@@ -12,16 +12,16 @@ export default defineConfig({
     rollupOptions: {
       input: resolve(__dirname, 'index.html'),
       output: {
-        entryFileNames: 'assets/[name].[hash].js',
+        manualChunks: undefined,
+        assetFileNames: 'assets/[name].[hash].[ext]',
         chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]'
+        entryFileNames: 'assets/[name].[hash].js'
       }
     }
   },
   resolve: {
-    alias: [
-      { find: '@', replacement: resolve(__dirname, 'src') },
-      { find: /^~/, replacement: '' }
-    ]
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
   }
 });
