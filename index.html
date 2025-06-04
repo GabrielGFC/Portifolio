@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <!-- Corrija o caminho do favicon para funcionar no GitHub Pages em subdiretório -->
   <link rel="icon" type="image/svg+xml" href="/Portifolio/gabrielgfc.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gabriel Fernandes De Carvalho</title>
@@ -17,8 +16,9 @@
 
 <body>
   <div id="root"></div>
-  <!-- Corrija o caminho do script principal para funcionar no subdiretório -->
-  <script type="module" src="/Portifolio/src/main.tsx"></script>
+  <!-- Remova qualquer referência direta a src/main.tsx.
+       O Vite irá injetar automaticamente o script correto na build.
+       Não adicione manualmente nenhum <script> aqui para produção! -->
 </body>
 
 </html>
