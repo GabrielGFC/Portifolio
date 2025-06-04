@@ -8,14 +8,14 @@
 
   "section1": {
     "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
-    "subtitle": "Desenvolvedor&nbsp;back-end há <span>5&nbsp;anos</span>",
+    "subtitle": "Desenvolvedor&nbsp;back-end há <span>2&nbsp;anos</span>",
     "intro": "Role para conhecer <span>minhas habilidades e projetos</span>",
     "contacts": {
       "resumeButton": "Currículo | PDF",
       "socialMedia": {
         "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
         "github": "https://github.com/gabrielgfc",
-        "email": "mailto:bibigfc@gmail.com"
+        "email": "mailto:carvalhogabrielgfc1@gmail.com"
       }
     }
   },
@@ -64,7 +64,7 @@
       },
       {
         "job": "job_3",
-        "title": "Software Developer (.NET Core)",
+        "title": "Software Developer ",
         "startDate": "Janeiro 2024",
         "endDate": "Dezembro 2024",
         "company": "Força Aérea Brasileira – BAAN"
@@ -78,7 +78,7 @@
       },
       {
         "job": "job_5",
-        "title": "Suporte Técnico Sênior",
+        "title": "Gerente de Suporte Técnico",
         "startDate": "Janeiro 2019",
         "endDate": "Dezembro 2022",
         "company": "Tecpress Tecnologia"
@@ -94,25 +94,18 @@
         "title": "Cannasys – Plataforma de Cannabis Medicinal",
         "tags": [
           "Node.js",
-          "NestJS",
           "TypeScript",
-          "Microserviços",
-          "MySQL",
+          "PostgreSQL",
           "Docker"
         ],
         "description": "Sistema modular que gerencia prontuário eletrônico, produção e dispensação de óleo, finanças e RH.",
         "buttons": [
           {
-            "link": "https://github.com/gabrielgfc/cannasys-backend",
+            "link": "https://github.com/GabrielGFC/restapi-cannays",
             "text": "Back-end"
-          },
-          {
-            "link": "https://github.com/gabrielgfc/cannasys-frontend",
-            "text": "Front-end"
           }
         ]
       },
-
       {
         "title": "Sistema de Controle de Acesso",
         "tags": [
@@ -125,11 +118,11 @@
         "description": "Autenticação, gestão de crachás e monitoramento em tempo real de acessos, com API RESTful documentada.",
         "buttons": [
           {
-            "link": "https://github.com/gabrielgfc/sca-backend",
+            "link": "https://github.com/GabrielGFC/Disponibilidade-BAAN-backend",
             "text": "Back-end"
           },
           {
-            "link": "https://github.com/gabrielgfc/sca-frontend",
+            "link": "https://github.com/GabrielGFC/Disponibilidade-BAAN-backend",
             "text": "Front-end"
           }
         ]
@@ -151,26 +144,32 @@
       },
 
       {
-        "title": "EcoAlertas – Monitoramento Ambiental",
+        "title": "UNIRASTREIO",
         "tags": [
-          "NestJS",
-          "Node.js",
+          "FastAPI",
+          "Python",
+          "SQLAlchemy",
           "PostgreSQL",
+          "Alembic",
+          "Pydantic",
           "Docker",
-          "IoT"
+          "TensorFlow",
+          "OpenCV",
+          "JWT"
         ],
         "description": "Ingestão de dados em tempo real, geração automática de alertas e dashboards interativos para riscos ambientais.",
         "buttons": [
           {
-            "link": "https://github.com/gabrielgfc/ecoalertas-backend",
+            "link": "https://github.com/GBertonsin/Unirastreio",
             "text": "Back-end"
           },
           {
-            "link": "https://github.com/gabrielgfc/ecoalertas-frontend",
+            "link": "https://github.com/GBertonsin/Unirastreio",
             "text": "Front-end"
           }
         ]
       },
+
 
       {
         "title": "Pasteur – Sistema de Gestão de Inventário (Back-end)",
@@ -181,7 +180,7 @@
           "Docker",
           "Swagger"
         ],
-        "description": "API back-end que otimiza processos de estoque, pedidos e relatórios para o laboratório Pasteur.",
+        "description": "API back-end que otimiza processos de estoque, pedidos e relatórios para o laboratório.",
         "button": {
           "link": "https://github.com/gabrielgfc/pasteur-backend",
           "text": "Repositório"

@@ -75,6 +75,60 @@
                     color: #fff;
                 }
 
+                .footer-flags-copyright {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: 10px;
+
+                    .flags-language {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 4px;
+
+                        .flag-btn {
+                            background: transparent;
+                            border: 1.5px solid #5caef4;
+                            border-radius: 8px;
+                            padding: 2px 6px;
+                            height: 26px;
+                            min-width: 26px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            transition: border 0.2s, background 0.2s, box-shadow 0.2s;
+                            box-shadow: 0 2px 8px 0 rgba(92, 174, 244, 0.10);
+
+                            img {
+                                width: 16px;
+                                height: 16px;
+                                display: block;
+                            }
+
+                            &:hover {
+                                background: #222;
+                                border-color: #5DAFF6;
+                            }
+
+                            &.selected {
+                                background: #5DAFF6;
+                                border-color: #5DAFF6;
+                                box-shadow: 0 0 10px 0 #5DAFF6;
+                            }
+                        }
+                    }
+
+                    p {
+                        margin: 0 0 0 8px;
+                        font-size: 1.5vh;
+                        font-weight: 400;
+                        font-family: "Inter", serif;
+                        color: #9DA3AF;
+                    }
+                }
             }
 
 
@@ -122,6 +176,46 @@
 
                 &:hover {
                     background-color: #5DAFF6FF;
+                }
+            }
+
+            .flags-language {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 4px;
+                margin-top: 10px;
+
+                .flag-btn {
+                    background: transparent;
+                    border: 1.5px solid #5caef4;
+                    border-radius: 8px;
+                    padding: 2px 6px;
+                    height: 31px;
+                    min-width: 38px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: border 0.2s, background 0.2s, box-shadow 0.2s;
+                    box-shadow: 0 2px 8px 0 rgba(92, 174, 244, 0.10);
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        display: block;
+                    }
+
+                    &:hover {
+                        background: #222;
+                        border-color: #5DAFF6;
+                    }
+
+                    &.selected {
+                        background: #5DAFF6;
+                        border-color: #5DAFF6;
+                        box-shadow: 0 0 10px 0 #5DAFF6;
+                    }
                 }
             }
         }
@@ -200,6 +294,61 @@
                         font-weight: 400;
                         font-family: "Inter", serif;
                         color: #fff;
+                    }
+
+                    .footer-flags-copyright {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 10px;
+                        margin-top: 10px;
+
+                        .flags-language {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            gap: 4px;
+
+                            .flag-btn {
+                                background: transparent;
+                                border: 1.5px solid #5caef4;
+                                border-radius: 8px;
+                                padding: 2px 6px;
+                                height: 26px;
+                                min-width: 26px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                cursor: pointer;
+                                transition: border 0.2s, background 0.2s, box-shadow 0.2s;
+                                box-shadow: 0 2px 8px 0 rgba(92, 174, 244, 0.10);
+
+                                img {
+                                    width: 16px;
+                                    height: 16px;
+                                    display: block;
+                                }
+
+                                &:hover {
+                                    background: #222;
+                                    border-color: #5DAFF6;
+                                }
+
+                                &.selected {
+                                    background: #5DAFF6;
+                                    border-color: #5DAFF6;
+                                    box-shadow: 0 0 10px 0 #5DAFF6;
+                                }
+                            }
+                        }
+
+                        p {
+                            margin: 0 0 0 8px;
+                            font-size: 1.5vh;
+                            font-weight: 400;
+                            font-family: "Inter", serif;
+                            color: #9DA3AF;
+                        }
                     }
                 }
 
@@ -319,6 +468,91 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: auto !important;
+        padding: 2vh 2vw !important;
+        gap: 0 !important;
+
+        >.footer-column {
+            width: 100% !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+
+            &:nth-of-type(1) {
+                >p:nth-of-type(1) {
+                    font-size: 1.1rem !important;
+                    text-align: center;
+                }
+                >.inside-line {
+                    width: 100% !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+
+                    .footer-flags-copyright {
+                        flex-direction: row !important;
+                        justify-content: center !important;
+                        align-items: center !important;
+                        gap: 6px !important;
+                        margin-top: 8px !important;
+
+                        .flags-language {
+                            gap: 2px !important;
+                            .flag-btn {
+                                height: 18px !important;
+                                min-width: 18px !important;
+                                padding: 1px 2px !important;
+                                img {
+                                    width: 11px !important;
+                                    height: 11px !important;
+                                }
+                            }
+                        }
+                        p {
+                            font-size: 0.9rem !important;
+                            margin: 0 0 0 4px !important;
+                        }
+                    }
+                }
+            }
+
+            &:nth-of-type(2), &:nth-of-type(3) {
+                display: none !important;
+            }
+        }
+    }
+
+    .footer-column {
+        margin: 0 0 24px 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        >a {
+            width: 95% !important;
+            >button {
+                font-size: 0.95rem !important;
+                height: 2.5rem !important;
+                width: 100% !important;
+            }
+        }
+        .social-media {
+            width: 100% !important;
+            margin: 16px 0 0 0 !important;
+            justify-content: center !important;
+            gap: 8px !important;
+            >a>img {
+                height: 1.7rem !important;
             }
         }
     }

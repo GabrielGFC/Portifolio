@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import './style.scss';
 
 // ──────────────────────────── Assets
@@ -8,24 +8,17 @@ import GithubLogo     from '../../assets/images/github.svg';
 import MailLogo       from '../../assets/images/mail.svg';
 import AmericanFlag from  '../../assets/images/american_flag.svg';
 
-
-
-// ──────────────────────────── Conteúdo
-import Portuguese from '../../mocks/portuguese.json';
-import English    from '../../mocks/english.json';
-
-// Deriva o tipo a partir do arquivo JSON (ambos têm a mesma forma)
-type LangData = typeof English;
+// ──────────────────────────── Contexto de idioma
+import { LanguageContext } from '../../contexts/LanguageContext';
 
 // eslint-disable-next-line no-undef
 const Footer: React.FC = () => {
-  const [data, setData] = useState<LangData>(English);
+  const { langKey, data, toggleLanguage } = useContext(LanguageContext);
 
-  /* escolhe idioma do navegador */
-  useEffect(() => {
-    const userLang = navigator.language || navigator.languages[0];
-    setData(userLang.startsWith('pt') ? Portuguese : English);
-  }, []);
+  // Função para selecionar idioma explicitamente
+  const setLanguage = (lang: 'pt' | 'en') => {
+    if (lang !== langKey) toggleLanguage();
+  };
 
   return (
       <>
@@ -67,13 +60,25 @@ const Footer: React.FC = () => {
               {data.footer.based} Gabriel <span>F.Carvalho</span>
             </p>
             <div className="inside-line">
-              <div>
-                <img src={BrazilianFlag} alt="Brazilian Flag" />
+              <div className="footer-flags-copyright">
+                <div className="flags-language">
+                  <button
+                    className={`flag-btn${langKey === 'pt' ? ' selected' : ''}`}
+                    onClick={() => setLanguage('pt')}
+                    aria-label="Português"
+                  >
+                    <img src={BrazilianFlag} alt="Brazilian Flag" />
+                  </button>
+                  <button
+                    className={`flag-btn${langKey === 'en' ? ' selected' : ''}`}
+                    onClick={() => setLanguage('en')}
+                    aria-label="English"
+                  >
+                    <img src={AmericanFlag} alt="American Flag" />
+                  </button>
+                </div>
+                <p>© 2025</p>
               </div>
-              <div>
-                <img src={AmericanFlag} alt="American Flag" />
-              </div>
-              <p>© 2025</p>
             </div>
           </div>
 
