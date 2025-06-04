@@ -52,7 +52,7 @@ html, body {
 
             >span {
                 font-size: min(7vw, 5rem);
-                background: linear-gradient(0.45turn, #5DAFF6, #00338C);
+                background: linear-gradient(0.45turn, #7e5df6, #4d008c);
                 animation: moveGradient 5s infinite ease-in-out;
                 -webkit-background-clip: text;
                 color: transparent;
@@ -74,7 +74,7 @@ html, body {
             margin: 30px 0 0 0;
 
             >span {
-                color: #5DAFF6;
+                color: #795df6;
             }
         }
 
@@ -100,7 +100,7 @@ html, body {
 
             button {
                 background-color: transparent;
-                border: 0.1vh solid #5DAFF6;
+                border: 0.1vh solid #905df6;
                 width: min(10vw, 120px);
                 height: 4vh;
                 cursor: pointer;
@@ -110,12 +110,12 @@ html, body {
                 color: white;
                 border-radius: 10px;
                 animation: buttonPulse 3s infinite ease-in-out;
-                box-shadow: 0 0 5px 0 rgba(93, 175, 246, 0.05) inset, 0 0 20px 2px rgb(93, 175, 246, 0.5);
+                box-shadow: 0 0 5px 0 rgba(144, 93, 246, 0.05) inset, 0 0 20px 2px rgba(149, 93, 246, 0.5);
                 transition: all 0.5s ease-in-out;
 
                 &:hover {
-                    background-color: #5DAFF6;
-                    box-shadow: 0 0 40px 40px rgb(93, 175, 246) inset, 0 0 0 0 rgb(93, 175, 246);
+                    background-color: #715df6;
+                    box-shadow: 0 0 40px 40px rgb(121, 93, 246) inset, 0 0 0 0 rgb(126, 93, 246);
                 }
             }
 
@@ -181,7 +181,7 @@ html, body {
             transition: box-shadow 0.6s ease-out;
 
             &:hover {
-                box-shadow: 0 0px 40px rgba(93, 175, 246, 0.4);
+                box-shadow: 0 0px 40px rgba(136, 93, 246, 0.4);
             }
 
             >.title {
@@ -279,7 +279,7 @@ html, body {
             }
 
             &:hover {
-                box-shadow: 0 0px 40px rgba(93, 175, 246, 0.4);
+                box-shadow: 0 0px 40px rgba(144, 93, 246, 0.4);
             }
 
             transition: opacity 0.6s ease-in-out,
@@ -294,7 +294,7 @@ html, body {
                 color: #fff;
 
                 >span {
-                    color: #5DAFF6;
+                    color: #715df6;
                 }
             }
 
@@ -395,7 +395,7 @@ html, body {
                 }
 
                 &:hover {
-                    box-shadow: 0 0px 40px rgba(93, 175, 246, 0.4);
+                    box-shadow: 0 0px 40px rgba(136, 93, 246, 0.4);
                 }
 
                 &:nth-child(1) {
@@ -440,7 +440,7 @@ html, body {
                         text-align: center;
                         padding: 1px 10px;
                         border-radius: 10px;
-                        background-color: #5DAFF6;
+                        background-color: #835df6;
                         margin: 0 15px 0 0;
 
                         &:nth-child(n+4) {
@@ -661,10 +661,10 @@ html, body {
             padding: 50px;
             background-color: #0F0F0F;
             transition: box-shadow 0.6s ease-out;
-            box-shadow: 0 0px 40px rgba(93, 175, 246, 0.25) !important;
+            box-shadow: 0 0px 40px rgba(121, 93, 246, 0.25) !important;
 
             &:hover {
-                box-shadow: 0 0px 40px rgba(93, 175, 246, 0.4);
+                box-shadow: 0 0px 40px rgba(149, 93, 246, 0.4);
             }
 
             >.title {
@@ -736,7 +736,7 @@ html, body {
             margin: 0 0 5vh 0;
             transform: translateX(0%) translateY(0px) !important;
             padding: 0.5vh 3vw 0.5vh 3vw !important;
-            box-shadow: 0 0px 40px rgba(93, 175, 246, 0.25) !important;
+            box-shadow: 0 0px 40px rgba(136, 93, 246, 0.25) !important;
 
             >p {
                 color: #D7D7D7 !important;
@@ -776,7 +776,7 @@ html, body {
                 margin: 0 0 100px 0;
                 width: 100% !important;
                 max-width: 100% !important;
-                box-shadow: 0 0px 40px rgba(93, 175, 246, 0.25) !important;
+                box-shadow: 0 0px 40px rgba(126, 93, 246, 0.25) !important;
 
                 >.project-buttons {
                     display: flex;
@@ -881,7 +881,7 @@ html, body {
     }
 
     50% {
-        box-shadow: 0 0 5px 0 rgba(93, 175, 246, 0.05) inset, 0 0 20px 2px rgb(93, 175, 246, 0.5);
+        box-shadow: 0 0 5px 0 rgba(172, 93, 246, 0.05) inset, 0 0 20px 2px rgba(126, 93, 246, 0.5);
     }
 
     100% {
