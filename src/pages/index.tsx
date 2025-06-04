@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import './style.scss';
 
 /* ─────────── Components ─────────── */
@@ -15,7 +15,7 @@ import Divisor      from '../assets/images/experience-divisor.svg';
 import Arrow        from '../assets/images/arrow.svg';
 
 /* ─────────── Content (JSON) ─────────── */
-import Portuguese from '../mocks/portuguese.json';
+import { LanguageContext } from '../contexts/LanguageContext';
 import English    from '../mocks/english.json';
 
 /* inferências de tipo a partir do JSON */
@@ -25,13 +25,8 @@ type Project = Lang['section4']['projects'][number];
 
 // eslint-disable-next-line no-undef
 const MainPage: React.FC = () => {
-    /* idioma */
-    const [data, setData] = useState<Lang>(English);
-
-    useEffect(() => {
-        const lang = navigator.language || navigator.languages[0];
-        setData(lang.startsWith('pt') ? Portuguese : English);
-    }, []);
+    // Consome o contexto de idioma global
+    const { data } = useContext(LanguageContext);
 
     /* refs para animações */
     const sectionRef      = useRef<HTMLDivElement>(null);
