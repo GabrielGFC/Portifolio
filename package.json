@@ -7,11 +7,11 @@
   "homepage": "https://gabrielgfc.github.io/Portifolio/",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "yarn build && yarn type-check",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d dist",
     "pack": "yarn pack -o dist/web-portfolio.tgz"
   },
