@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
         {/* coluna mobile / primeira seção */}
         <div className="footer-column">
           <a
-              href="https://gabrielgfc.github.io/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
+              href="/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="download-button"

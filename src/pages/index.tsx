@@ -98,7 +98,7 @@ const MainPage: React.FC = () => {
 
                 <div className="contacts-row">
                     <a
-                        href="/gabriel_fernandes_resume.pdf"
+                        href="/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="download-button"
