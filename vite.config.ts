@@ -1,7 +1,7 @@
-import { defineConfig, type UserConfigExport } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig((_ctx): UserConfigExport => ({
+export default defineConfig({
   plugins: [react()],
   base: '/Portifolio/',
   build: {
@@ -9,9 +9,15 @@ export default defineConfig((_ctx): UserConfigExport => ({
     assetsDir: 'assets',
     sourcemap: true,
     rollupOptions: {
-      input: {
-        main: './index.html'
+      input: 'index.html',
+      output: {
+        manualChunks: undefined
       }
     }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
   }
-}));
+});
