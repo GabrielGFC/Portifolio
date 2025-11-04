@@ -1,0 +1,17 @@
+@import './tokens.scss';
+
+.section-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.stacked-spacing {
+  display: grid;
+  gap: $spacing-lg;
+}
+

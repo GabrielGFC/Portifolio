@@ -1,0 +1,106 @@
+@import '../styles/tokens.scss';
+
+.section {
+  background: $color-bg-section;
+  padding: $spacing-3xl 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.title {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: $spacing-lg;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 560px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: #ffffff;
+  color: #0b1220;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  height: 100%;
+
+  @media (hover: hover) and (pointer: fine) {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+    }
+  }
+}
+
+.header {
+  display: grid;
+  gap: 6px;
+}
+
+.header h3 {
+  color: #0b1220;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack span {
+  font-size: 11px;
+  background: #f3f4f6;
+  color: #374151;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.description {
+  color: #374151;
+  font-size: 13px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.link {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #1f6feb;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}

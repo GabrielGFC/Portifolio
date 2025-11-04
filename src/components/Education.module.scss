@@ -1,0 +1,70 @@
+@import '../styles/tokens.scss';
+
+.section {
+  background: $color-bg-section;
+  padding: $spacing-3xl 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.title {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: $spacing-lg;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item,
+.cert {
+  background: #ffffff;
+  color: #0b1220;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #1f6feb;
+}
+
+.itemTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.itemDesc {
+  color: #374151;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.certList {
+  display: grid;
+  gap: 12px;
+}
+

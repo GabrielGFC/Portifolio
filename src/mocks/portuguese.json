@@ -8,14 +8,18 @@
 
   "section1": {
     "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
-    "subtitle": "Desenvolvedor&nbsp;back-end há <span>2&nbsp;anos</span>",
+    "subtitle": "Desenvolvedor&nbsp;Backend com experiência em <span>Laravel, NodeJS, Python, .NET, PHP e Java</span>",
     "intro": "Role para conhecer <span>minhas habilidades e projetos</span>",
+    "bio": "Desenvolvedor Back-end com experiência sólida em Laravel, NodeJS, .NET, Python, PHP e Java. Atua na Fábrica de Tecnologias Turing (FTT) da UniEVANGÉLICA, contribuindo em sistemas robustos para instituições educacionais e de pesquisa. Também participou de soluções para a Força Aérea Brasileira e mantém projetos acadêmicos ativos.",
+    "location": "Anápolis-GO, Brasil",
     "contacts": {
       "resumeButton": "Currículo | PDF",
       "socialMedia": {
         "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
-        "github": "https://github.com/gabrielgfc",
-        "email": "mailto:carvalhogabrielgfc1@gmail.com"
+        "github": "https://github.com/GabrielGFC",
+        "email": "mailto:bibigfc@gmail.com",
+        "site": "https://gabrielgfc.github.io/Portifolio/",
+        "orcid": "https://orcid.org/0009-0001-0493-6602"
       }
     }
   },
@@ -50,24 +54,24 @@
     "jobData": [
       {
         "job": "job_1",
-        "title": "Estagiário AVA / Back-end PHP",
-        "startDate": "Outubro 2024",
-        "endDate": "Atualmente",
-        "company": "UniEVANGÉLICA"
-      },
-      {
-        "job": "job_2",
-        "title": "Desenvolvedor Back-end • Pleno",
+        "title": "Desenvolvedor Sênior",
         "startDate": "Setembro 2023",
         "endDate": "Atualmente",
         "company": "Fábrica de Tecnologias Turing"
       },
       {
+        "job": "job_2",
+        "title": "Estagiário Backend",
+        "startDate": "Outubro 2024",
+        "endDate": "Atualmente",
+        "company": "UniEVANGÉLICA"
+      },
+      {
         "job": "job_3",
-        "title": "Software Developer ",
+        "title": "Dev Backend",
         "startDate": "Janeiro 2024",
         "endDate": "Dezembro 2024",
-        "company": "Força Aérea Brasileira – BAAN"
+        "company": "Força Aérea Brasileira"
       },
       {
         "job": "job_4",
@@ -78,7 +82,7 @@
       },
       {
         "job": "job_5",
-        "title": "Gerente de Suporte Técnico",
+        "title": "Suporte Técnico Sênior",
         "startDate": "Janeiro 2019",
         "endDate": "Dezembro 2022",
         "company": "Tecpress Tecnologia"
@@ -87,104 +91,201 @@
   },
 
   "section4": {
-    "title": "Projetos",
-    "subtitle": "Alguns dos trabalhos recentes",
+    "title": "Projetos Públicos",
+    "subtitle": "Repositórios open source e projetos acadêmicos",
     "projects": [
       {
-        "title": "Cannasys – Plataforma de Cannabis Medicinal",
-        "tags": [
-          "Node.js",
-          "TypeScript",
-          "PostgreSQL",
-          "Docker"
-        ],
-        "description": "Sistema modular que gerencia prontuário eletrônico, produção e dispensação de óleo, finanças e RH.",
-        "buttons": [
-          {
-            "link": "https://github.com/GabrielGFC/restapi-cannays",
-            "text": "Back-end"
-          }
-        ]
-      },
-      {
-        "title": "Sistema de Controle de Acesso",
-        "tags": [
-          "Node.js",
-          "Express",
-          "MySQL",
-          "Docker",
-          "Swagger"
-        ],
-        "description": "Autenticação, gestão de crachás e monitoramento em tempo real de acessos, com API RESTful documentada.",
-        "buttons": [
-          {
-            "link": "https://github.com/GabrielGFC/Disponibilidade-BAAN-backend",
-            "text": "Back-end"
-          },
-          {
-            "link": "https://github.com/GabrielGFC/Disponibilidade-BAAN-backend",
-            "text": "Front-end"
-          }
-        ]
-      },
-
-      {
-        "title": "Monte Seu Computador",
-        "tags": [
-          "React",
-          "TypeScript",
-          "SQLite",
-          "Railway Deploy"
-        ],
-        "description": "Aplicação que monta PCs verificando compatibilidade de componentes e calcula preço total.",
+        "title": "robocode",
+        "tags": ["Java"],
+        "description": "Robô de batalha campeão do torneio acadêmico 2024. Sistema de competição de robôs programados em Java para batalhas estratégicas.",
         "button": {
-          "link": "https://tarefa-carlos-cond-production.up.railway.app/",
-          "text": "Demo Online"
+          "link": "https://github.com/GabrielGFC/robocode",
+          "text": "Ver Repositório"
         }
       },
-
       {
-        "title": "UNIRASTREIO",
-        "tags": [
-          "FastAPI",
-          "Python",
-          "SQLAlchemy",
-          "PostgreSQL",
-          "Alembic",
-          "Pydantic",
-          "Docker",
-          "TensorFlow",
-          "OpenCV",
-          "JWT"
-        ],
-        "description": "Ingestão de dados em tempo real, geração automática de alertas e dashboards interativos para riscos ambientais.",
-        "buttons": [
-          {
-            "link": "https://github.com/GBertonsin/Unirastreio",
-            "text": "Back-end"
-          },
-          {
-            "link": "https://github.com/GBertonsin/Unirastreio",
-            "text": "Front-end"
-          }
-        ]
-      },
-
-
-      {
-        "title": "Pasteur – Sistema de Gestão de Inventário (Back-end)",
-        "tags": [
-          "NestJS",
-          "TypeScript",
-          "PostgreSQL",
-          "Docker",
-          "Swagger"
-        ],
-        "description": "API back-end que otimiza processos de estoque, pedidos e relatórios para o laboratório.",
+        "title": "projetoestoque",
+        "tags": ["JavaScript"],
+        "description": "Sistema de controle de estoque desenvolvido em JavaScript para gerenciamento de produtos e inventário.",
         "button": {
-          "link": "https://github.com/gabrielgfc/pasteur-backend",
-          "text": "Repositório"
+          "link": "https://github.com/GabrielGFC/projetoestoque",
+          "text": "Ver Repositório"
         }
+      },
+      {
+        "title": "padrao-de-commit-git",
+        "tags": ["Documentação", "Git"],
+        "description": "Guia de padronização de commits. Documentação sobre convenções de mensagens de commit e padronização para equipes de desenvolvimento.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/padrao-de-commit-git",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "TIRADENTES-gfc",
+        "tags": ["JavaScript", "Frontend"],
+        "description": "Projeto educacional com foco em UI desenvolvido em JavaScript para prática de desenvolvimento web e design de interfaces.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/TIRADENTES-gfc",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "desafios-back-unievangelica",
+        "tags": ["Python"],
+        "description": "Desafios de backend com Python desenvolvidos durante atividades acadêmicas na UniEVANGÉLICA.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/desafios-back-unievangelica",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "ProductAPI",
+        "tags": ["Node.js", "TypeScript", "PostgreSQL"],
+        "description": "API REST com Node.js, TypeScript e PostgreSQL para gerenciamento de produtos e operações CRUD completas.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/ProductAPI",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "Desafio-PicPay",
+        "tags": ["TypeScript", "Node.js", "WebSockets"],
+        "description": "Clone funcional do PicPay com autenticação e WebSockets para comunicação em tempo real entre usuários.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/Desafio-PicPay",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "EcoAlertas-Back",
+        "tags": ["Express.js", "MongoDB", "Node.js"],
+        "description": "Backend com Express e MongoDB para sistema de alertas ambientais e monitoramento em tempo real.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/EcoAlertas-Back",
+          "text": "Ver Repositório"
+        }
+      },
+      {
+        "title": "teste-php-laravel",
+        "tags": ["PHP", "Laravel"],
+        "description": "Prototipagem e testes com Laravel para backend. Projeto de aprendizado e prática com framework PHP Laravel.",
+        "button": {
+          "link": "https://github.com/GabrielGFC/teste-php-laravel",
+          "text": "Ver Repositório"
+        }
+      }
+    ]
+  },
+  "section5": {
+    "title": "Projetos Institucionais e Privados",
+    "subtitle": "Sistemas desenvolvidos para instituições educacionais e de pesquisa",
+    "projects": [
+      {
+        "title": "JAC – Jornada Acadêmica e Comunitária",
+        "tags": ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "Kubernetes"],
+        "description": "Plataforma web institucional para gerenciamento de eventos acadêmicos e comunitários, com check-in via geofencing e QR Code, sistema de gamificação, dashboards gerenciais e SSO integrado.",
+        "role": "Coautor da arquitetura, backend principal, apoio na prototipação (Figma)",
+        "isPrivate": true
+      },
+      {
+        "title": "Sistema James Fanstone",
+        "tags": ["Laravel", "Vue.js", "PostgreSQL"],
+        "description": "Plataforma institucional para gerenciamento completo da pesquisa científica e inovação no Centro Universitário de Anápolis (UniEVANGÉLICA), incluindo projetos, grupos, editais, relatórios, formulários de ética e integração com o sistema Lyceum. Desenvolvido pela Fábrica de Tecnologias Turing, em colaboração com a Coordenação de Pesquisa e Inovação da PROPPE.",
+        "role": "Desenvolvimento backend e suporte à modelagem do fluxo institucional",
+        "isPrivate": true
+      },
+      {
+        "title": "Portal 3rd E-Sports UniEVANGÉLICA",
+        "tags": ["HTML", "SCSS", "JavaScript"],
+        "description": "Website institucional para evento competitivo com integração entre design (Figma) e desenvolvimento front-end, cronograma responsivo, formulário de inscrição e modal de regras.",
+        "role": "Desenvolvimento da versão final e adaptação mobile",
+        "link": "https://3rd-e-sports-da-unievangelica.figma.site/",
+        "isPrivate": false
+      },
+      {
+        "title": "Controle de Disponibilidade de Recursos",
+        "tags": ["Node.js", "Express", "MongoDB"],
+        "description": "API backend para agendamento e controle de disponibilidade de recursos institucionais, com controle de permissões e autenticação JWT.",
+        "role": "Desenvolvimento backend completo",
+        "isPrivate": true
+      },
+      {
+        "title": "Sistema de Relatórios Automatizados",
+        "tags": ["Python", "Selenium"],
+        "description": "Geração automatizada de relatórios gerenciais com Python + Selenium, templates PDF e envio automático por email.",
+        "role": "Desenvolvimento da automação e templates",
+        "isPrivate": true
+      }
+    ]
+  },
+  "section6": {
+    "title": "Certificações",
+    "subtitle": "Qualificações e cursos concluídos",
+    "certifications": [
+      {
+        "title": "Curso Laravel 11 - Completo e Gratuito",
+        "description": "Curso completo sobre Laravel 11, framework PHP moderno e robusto para desenvolvimento web."
+      },
+      {
+        "title": "Fundamentos do C#",
+        "description": "Certificação em fundamentos de programação com C#, linguagem de programação orientada a objetos."
+      },
+      {
+        "title": "Certificação Scrum",
+        "description": "Certificação em metodologias ágeis, especificamente em Scrum para gestão de projetos."
+      }
+    ]
+  },
+  "section7": {
+    "title": "Conquistas GitHub",
+    "subtitle": "Achievements e highlights do perfil GitHub",
+    "achievements": [
+      {
+        "title": "YOLO",
+        "description": "Achievement GitHub por fazer commit sem revisão de código."
+      },
+      {
+        "title": "Pull Shark x2",
+        "description": "Achievement GitHub por fazer pull requests valiosos e aceitos pela comunidade."
+      },
+      {
+        "title": "Quickdraw",
+        "description": "Achievement GitHub por responder rapidamente a issues e pull requests."
+      },
+      {
+        "title": "GitHub Highlights: Pro",
+        "description": "Destaque profissional no perfil GitHub por contribuições significativas."
+      }
+    ]
+  },
+  "section8": {
+    "title": "Formação",
+    "subtitle": "Formação acadêmica",
+    "education": [
+      {
+        "title": "Bacharelado em Engenharia de Software",
+        "institution": "UniEVANGÉLICA",
+        "period": "2023 - 2027",
+        "description": "Formação em Engenharia de Software com foco em desenvolvimento de sistemas, arquitetura de software e metodologias ágeis."
+      }
+    ]
+  },
+  "organizations": {
+    "title": "Organizações",
+    "subtitle": "Organizações e empresas onde atuo ou contribuo",
+    "list": [
+      {
+        "name": "Tecnologia Educacional UniEVANGELICA",
+        "description": "Projetos acadêmicos e desenvolvimento de soluções educacionais."
+      },
+      {
+        "name": "Fábrica de Tecnologias Turing",
+        "description": "Desenvolvimento de soluções robustas com .NET Core e Microsoft SQL Server."
+      },
+      {
+        "name": "Editora AEE Desenvolvimento",
+        "description": "Contribuições para projetos de desenvolvimento e editoração."
       }
     ]
   },

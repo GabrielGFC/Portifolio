@@ -1,0 +1,165 @@
+@import '../styles/tokens.scss';
+
+.hero {
+  position: relative;
+  background: var(--g-hero);
+  color: var(--c-text);
+  padding: 72px 0 80px;
+
+  @media (min-width: 768px) {
+    padding: 96px 0 112px;
+  }
+}
+
+.heroWrap {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.heroInner {
+  display: grid;
+  gap: 28px;
+  max-width: 720px;
+
+  @media (min-width: 1024px) {
+    max-width: 780px;
+  }
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.heroTitle {
+  font-family: var(--ff);
+  font-weight: 800;
+  font-size: var(--fs-hero-m);
+  line-height: 1.08;
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs-hero-d);
+  }
+}
+
+.brandFirst {
+  color: var(--c-white);
+}
+
+.brandLast {
+  background: var(--g-purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 16px;
+  color: var(--c-muted);
+  max-width: 640px;
+}
+
+.heroBullets {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.heroBullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+  color: rgba(229, 231, 235, 0.9);
+  line-height: 1.55;
+}
+
+.heroBullets li span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  flex-shrink: 0;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform var(--tr-1), box-shadow var(--tr-1), background var(--tr-1), border-color var(--tr-1);
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+  }
+}
+
+.btnPrimary {
+  background: var(--c-primary);
+  color: var(--c-white);
+  box-shadow: var(--shadow-2);
+
+  &:hover {
+    box-shadow: var(--shadow-1);
+  }
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--c-white);
+  border-color: rgba(255, 255, 255, 0.24);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroInner {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .heroSubtitle {
+    text-align: center;
+  }
+
+  .heroBullets li {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .btn {
+    flex: 1 1 100%;
+  }
+}
+

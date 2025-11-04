@@ -1,0 +1,67 @@
+@import '../styles/tokens.scss';
+
+.footer {
+  background: #0e1629;
+  color: #e5e7eb;
+  padding: 32px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+
+h4 {
+  margin: 0 0 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+
+a {
+  color: #e5e7eb;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+.legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 8px;
+  padding-top: 16px;
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+}
+

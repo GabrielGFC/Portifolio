@@ -1,0 +1,63 @@
+:root {
+  --c-bg-1: #0B0F1A;
+  --c-bg-2: #0E1629;
+  --c-bg-3: #0A1E3F;
+  --c-primary: #1F6FEB;
+  --c-white: #FFFFFF;
+  --c-text: #E5E7EB;
+  --c-muted: #94A3B8;
+
+  --g-purple: linear-gradient(90deg, #6D28D9 0%, #7C3AED 45%, #9333EA 100%);
+  --g-hero: radial-gradient(1200px 600px at 20% 0%, rgba(31, 111, 235, 0.18) 0%, transparent 55%),
+            linear-gradient(135deg, var(--c-bg-1) 0%, var(--c-bg-2) 45%, var(--c-bg-3) 100%);
+  --g-header: linear-gradient(180deg, rgba(11, 15, 26, 0.92) 0%, rgba(11, 15, 26, 0.80) 100%);
+
+  --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --fs-hero-m: 32px;
+  --fs-hero-d: 48px;
+  --fs-nav: 14px;
+
+  --radius: 12px;
+  --shadow-1: 0 8px 28px rgba(0, 0, 0, 0.22);
+  --shadow-2: 0 4px 16px rgba(0, 0, 0, 0.14);
+  --tr-1: 240ms cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+$color-primary: var(--c-primary);
+$color-text-primary: #0B1220;
+$color-text-secondary: #6B7280;
+$color-bg-hero: var(--c-bg-2);
+$color-bg-section: var(--c-bg-1);
+$color-bg-card: #FFFFFF;
+$color-border: rgba(255, 255, 255, 0.1);
+$font-family: var(--ff);
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-size-h1-mobile: var(--fs-hero-m);
+$font-size-h1-desktop: var(--fs-hero-d);
+$font-size-h2-mobile: 24px;
+$font-size-h2-desktop: 32px;
+$font-size-h3-mobile: 18px;
+$font-size-h3-desktop: 20px;
+$font-size-body-mobile: 15px;
+$font-size-body-desktop: 16px;
+$breakpoint-tablet: 768px;
+$color-primary-rgb: 31, 111, 235;
+$radius-full: 9999px;
+$spacing-base: 8px;
+$spacing-xs: $spacing-base;
+$spacing-sm: $spacing-base * 2;
+$spacing-md: $spacing-base * 3;
+$spacing-lg: $spacing-base * 4;
+$spacing-xl: $spacing-base * 6;
+$spacing-2xl: $spacing-base * 8;
+$spacing-3xl: $spacing-base * 12;
+$breakpoint-desktop: 1024px;
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$transition-fast: var(--tr-1);
+$transition-base: var(--tr-1);
