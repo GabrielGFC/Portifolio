@@ -18,17 +18,20 @@ export const LanguageContext = createContext<LanguageContextType>({
 });
 
 export const LanguageProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
-    const [langKey, setLangKey] = useState<LangKey>('en');
-    const [data, setData]     = useState<LangData>(English);
-
-    useEffect(() => {
-        const userLang = navigator.language || navigator.languages[0];
-        if (userLang.toLowerCase().startsWith('pt')) {
-            setLangKey('pt');
-        } else {
-            setLangKey('en');
+    const getUserInitialLang = (): LangKey => {
+        if (typeof window !== 'undefined') {
+            const userLang = navigator.language || navigator.languages[0];
+            if (userLang.toLowerCase().startsWith('pt')) {
+                return 'pt';
+            }
         }
-    }, []);
+        return 'pt'; // padrão português
+    };
+
+    const [langKey, setLangKey] = useState<LangKey>(getUserInitialLang());
+    const [data, setData] = useState<LangData>(() => {
+        return getUserInitialLang() === 'pt' ? Portuguese : English;
+    });
 
     useEffect(() => {
         if (langKey === 'pt') {
@@ -39,7 +42,10 @@ export const LanguageProvider: React.FC<React.PropsWithChildren<{}>> = ({ childr
     }, [langKey]);
 
     const toggleLanguage = () => {
-        setLangKey(prev => (prev === 'pt' ? 'en' : 'pt'));
+        setLangKey((prev) => {
+            const newLang = prev === 'pt' ? 'en' : 'pt';
+            return newLang;
+        });
     };
 
     return (

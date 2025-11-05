@@ -1,8 +1,10 @@
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import styles from "./Summary.module.scss";
 
 const Summary: React.FC = () => {
+  const { data } = useContext(LanguageContext);
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -15,7 +17,7 @@ const Summary: React.FC = () => {
           transition={prefersReducedMotion ? undefined : { duration: 0.4 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Resumo profissional
+          {data.summary.title}
         </motion.h2>
 
         <motion.div
@@ -27,18 +29,9 @@ const Summary: React.FC = () => {
           }
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p>
-            Projeto APIs institucionais em Node.js e Laravel, documentadas em
-            OpenAPI e validadas com testes automatizados.
-          </p>
-          <p>
-            Conduzo integrações com SSO interno, mensageria e PostgreSQL
-            aplicando LGPD, criptografia e controles auditáveis.
-          </p>
-          <p>
-            Alinho designers, produto e jurídico para homologar releases com
-            métricas de observabilidade e SLAs definidos.
-          </p>
+          <p>{data.summary.paragraph1}</p>
+          <p>{data.summary.paragraph2}</p>
+          <p>{data.summary.paragraph3}</p>
         </motion.div>
       </div>
     </section>

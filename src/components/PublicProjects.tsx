@@ -1,9 +1,11 @@
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import { publicProjects } from "../data/publicProjects";
 import styles from "./PublicProjects.module.scss";
 
 const PublicProjects: React.FC = () => {
+  const { data } = useContext(LanguageContext);
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -16,7 +18,7 @@ const PublicProjects: React.FC = () => {
           transition={prefersReducedMotion ? undefined : { duration: 0.45 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Projetos públicos selecionados
+          {data.publicProjects?.title || "Projetos públicos selecionados"}
         </motion.h2>
 
         <div className={styles.grid}>
@@ -34,13 +36,16 @@ const PublicProjects: React.FC = () => {
               <div className={styles.header}>
                 <h3>{project.title}</h3>
                 <div className={styles.stack}>
-                  {project.stack.map((tech) => (
+                  {project.stack.slice(0, 3).map((tech) => (
                     <span key={tech}>{tech}</span>
                   ))}
+                  {project.stack.length > 3 && (
+                    <span className={styles.stackMore}>+{project.stack.length - 3}</span>
+                  )}
                 </div>
               </div>
               <p className={styles.description}>{project.description}</p>
-              {project.url ? (
+              {project.url && (
                 <a
                   className={styles.link}
                   href={project.url}
@@ -50,7 +55,7 @@ const PublicProjects: React.FC = () => {
                 >
                   {project.linkLabel ?? "Ver no GitHub"}
                 </a>
-              ) : null}
+              )}
             </motion.article>
           ))}
         </div>

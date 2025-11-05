@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { LanguageContext } from '../contexts/LanguageContext';
 import type { FeaturedProject } from '../data/featuredProjects';
 import styles from './CaseStudyModal.module.scss';
 
@@ -11,6 +12,7 @@ interface CaseStudyModalProps {
 }
 
 const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClose }) => {
+  const { data } = useContext(LanguageContext);
   const [activeTab, setActiveTab] = useState<string>('');
 
   useEffect(() => {
@@ -74,7 +76,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
               </div>
               <button type="button" className={styles.close} onClick={onClose}>
                 <span aria-hidden="true">&times;</span>
-                <span className="sr-only">Fechar</span>
+                <span className="sr-only">{data.common.close}</span>
               </button>
             </header>
 

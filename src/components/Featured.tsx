@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import React, { Suspense, lazy, useMemo, useState } from "react";
+import React, { Suspense, lazy, useContext, useMemo, useState } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import { FeaturedProject, featuredProjects } from "../data/featuredProjects";
 import styles from "./Featured.module.scss";
 
@@ -17,6 +18,7 @@ const badgeTheme: Record<FeaturedProject["badgeType"], string> = {
 };
 
 const Featured: React.FC = () => {
+  const { data } = useContext(LanguageContext);
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
@@ -46,7 +48,7 @@ const Featured: React.FC = () => {
             transition={prefersReducedMotion ? undefined : { duration: 0.35 }}
             viewport={{ once: true, amount: 0.4 }}
           >
-            Projetos institucionais em primeira mão
+            {data.featured.eyebrow}
           </motion.p>
           <motion.h2
             className={styles.title}
@@ -59,7 +61,7 @@ const Featured: React.FC = () => {
             }
             viewport={{ once: true, amount: 0.4 }}
           >
-            Destaques que comprovam resultados
+            {data.featured.title}
           </motion.h2>
         </header>
 
@@ -94,19 +96,8 @@ const Featured: React.FC = () => {
 
               <div className={styles.story}>
                 <p className={styles.impact}>
-                  <span className={styles.label}>Impacto</span>
                   {project.impact}
                 </p>
-                <p className={styles.roleLine}>
-                  <span className={styles.label}>Papel</span>
-                  {project.roleShort}
-                </p>
-                {project.resultsPreview[0] ? (
-                  <p className={styles.resultLine}>
-                    <span className={styles.label}>Resultado</span>
-                    <strong>{project.resultsPreview[0]}</strong>
-                  </p>
-                ) : null}
               </div>
 
               <div className={styles.stack}>
@@ -127,7 +118,7 @@ const Featured: React.FC = () => {
                 className={styles.cta}
                 onClick={() => handleOpen(project.id)}
               >
-                Estudo de caso
+                {data.common.viewDetails}
               </button>
             </motion.article>
           ))}

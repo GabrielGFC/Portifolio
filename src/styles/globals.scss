@@ -19,9 +19,9 @@ body {
   font-family: var(--ff);
   font-size: 15px;
   font-weight: 400;
-  color: var(--on-dark);
+  color: var(--color-text-main);
   line-height: 1.6;
-  background: var(--g-page);
+  background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -57,7 +57,7 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--color-text-main);
 }
 
 h1 {
@@ -93,8 +93,9 @@ button {
 }
 
 *:focus-visible {
-  outline: 2px solid rgba(129, 140, 248, 0.65);
+  outline: 2px solid var(--color-primary-soft);
   outline-offset: 3px;
+  outline-opacity: 0.65;
 }
 
 .sr-only {
@@ -114,16 +115,16 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ink-900);
+  background: var(--color-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: var(--color-primary);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4c51d9;
+  background: var(--color-primary-soft);
 }
 
 .pageSection {
@@ -139,7 +140,7 @@ button {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.06),
+    var(--color-border-subtle),
     transparent
   );
 }
@@ -154,3 +155,4 @@ button {
     scroll-behavior: auto !important;
   }
 }
+

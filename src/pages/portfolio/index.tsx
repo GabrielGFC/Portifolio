@@ -1,4 +1,5 @@
 import React from 'react';
+import { LanguageProvider } from '../../contexts/LanguageContext';
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
 import Featured from '../../components/Featured';
@@ -12,7 +13,7 @@ import '../../styles/globals.scss';
 
 const Portfolio: React.FC = () => {
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main>
         <Hero />
@@ -24,7 +25,7 @@ const Portfolio: React.FC = () => {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 };
 

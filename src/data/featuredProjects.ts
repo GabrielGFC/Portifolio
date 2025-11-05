@@ -35,13 +35,12 @@ export const featuredProjects: FeaturedProject[] = [
     badge: "Institucional / Privado — Owner",
     badgeType: "Institucional/Privado",
     impact:
-      "Centraliza eventos e presença com check-in inteligente e dashboards estratégicos.",
+      "Centraliza eventos e presença estudantil com check-in inteligente, eliminando processos manuais de registro e fornecendo visibilidade executiva sobre participação em eventos acadêmicos. Os dashboards estratégicos ajudam gestores a tomarem decisões baseadas em dados reais.",
     stack: ["React", "Node.js", "TypeScript", "PostgreSQL"],
     roleShort:
-      "Owner: arquitetura, domínios de eventos/presença e proteções LGPD com handoff contínuo.",
+      "Desenvolvi a arquitetura completa do sistema, modelando domínios de eventos e presença. Implementei proteções LGPD e fiz o handoff contínuo para a equipe de manutenção.",
     resultsPreview: [
-      "Resultados monitorados no dashboard executivo.",
-      "Dashboards em tempo real para direção e coordenações.",
+      "Resultados acompanhados por meio de dashboards executivos e feedback da equipe de gestão.",
     ],
     owner: true,
     thumbnailKey: "jac",
@@ -49,35 +48,33 @@ export const featuredProjects: FeaturedProject[] = [
       tabs: [
         {
           key: "problema",
-          title: "Problema",
+          title: "Contexto",
           content:
-            "Fragmentação de informações, controle de presença manual e pouco confiável, baixa visibilidade gerencial e dificuldade de comprovação de horas.",
+            "Sistema de gestão de eventos acadêmicos com check-in validado e dashboards estratégicos para acompanhamento de participação estudantil.",
         },
         {
           key: "solucao",
-          title: "Solucao",
+          title: "Impacto",
           content:
-            "Plataforma unificada com autenticação institucional, cadastro de eventos, check-in por geofencing e QR Code dinâmico, gamificação e relatórios.",
+            "Centraliza eventos e presença estudantil com check-in inteligente, eliminando processos manuais de registro e fornecendo visibilidade executiva sobre participação em eventos acadêmicos. Os dashboards estratégicos ajudam gestores a tomarem decisões baseadas em dados reais.",
         },
         {
           key: "arquitetura",
-          title: "Arquitetura e Seguranca (LGPD)",
+          title: "Stack",
           content:
-            "Arquitetura service-oriented com React no front e Node.js/TypeScript no back, PostgreSQL, logs e auditoria; dados pessoais minimizados, consentimento explícito, criptografia em trânsito, políticas de retenção e controles de acesso por perfil (LGPD).",
+            "Arquitetura service-oriented com React no front-end e Node.js/TypeScript no back-end, PostgreSQL como banco de dados, logs estruturados e auditoria. Implementação de LGPD com dados pessoais minimizados, consentimento explícito, criptografia em trânsito, políticas de retenção e controles de acesso por perfil.",
         },
         {
           key: "papel",
           title: "Papel do Gabriel",
           content:
-            "Desenho de arquitetura, implementação dos domínios de eventos e presença, definição de contratos de API, integrações e handoff do Figma para desenvolvimento.",
+            "Desenvolvi a arquitetura completa do sistema, modelando domínios de eventos e presença. Implementei proteções LGPD, desenvolvi APIs REST com Node.js e TypeScript, e fiz o handoff contínuo para a equipe de manutenção.",
         },
         {
           key: "resultados",
           title: "Resultados",
           content: [
-            "{{JAC_METRICA_1}}",
-            "{{JAC_METRICA_2}}",
-            "Dashboards em tempo real para manter direção e coordenadores alinhados.",
+            "Resultados acompanhados por meio de dashboards executivos e feedback da equipe de gestão.",
           ],
         },
       ],
@@ -89,46 +86,46 @@ export const featuredProjects: FeaturedProject[] = [
     badge: "Institucional / Privado",
     badgeType: "Institucional/Privado",
     impact:
-      "Organiza a pesquisa institucional com fluxos auditaveis e integracao ao Lyceum.",
+      "Organiza processos de pesquisa institucional com fluxos auditáveis, garantindo rastreabilidade completa de aprovações e relatórios. A integração com o Lyceum elimina duplicação de dados e reduz erros manuais.",
     stack: ["Laravel", "Vue.js", "PostgreSQL", "Integrações internas"],
     roleShort:
-      "Modelagem de domínio, APIs em Laravel e integrações acadêmicas auditáveis.",
-    resultsPreview: ["{{FANSTONE_METRICA_1}}"],
+      "Modelei o domínio do sistema, desenvolvi APIs REST em Laravel e implementei integrações acadêmicas auditáveis. Trabalhei com a equipe de pesquisa para validar requisitos e garantir que os fluxos atendessem às necessidades institucionais.",
+    resultsPreview: [
+      "Resultados acompanhados por meio de dashboards e feedback da equipe de pesquisa.",
+    ],
     owner: false,
     thumbnailKey: "fanstone",
     caseStudy: {
       tabs: [
         {
           key: "problema",
-          title: "Problema",
+          title: "Contexto",
           content:
-            "PROPPE dependia de planilhas espalhadas e aprovava projetos sem rastreabilidade única nem trilhas auditáveis.",
+            "Sistema de gestão de pesquisa institucional com fluxos auditáveis e integração ao sistema acadêmico Lyceum.",
         },
         {
           key: "solucao",
-          title: "Solucao",
+          title: "Impacto",
           content:
-            "Desenhei o Sistema James Fanstone com fluxo completo de cadastro, aprovação e relatórios com SLA monitorado.",
+            "Organiza processos de pesquisa institucional com fluxos auditáveis, garantindo rastreabilidade completa de aprovações e relatórios. A integração com o Lyceum elimina duplicação de dados e reduz erros manuais.",
         },
         {
           key: "arquitetura",
-          title: "Arquitetura e Seguranca (LGPD)",
+          title: "Stack",
           content:
-            "Laravel + PostgreSQL, filas e sincronismo seguro com Lyceum; controle granular de perfis, logs auditáveis e atendimento LGPD.",
+            "Laravel + PostgreSQL, filas de processamento e sincronismo seguro com Lyceum. Controle granular de perfis, logs auditáveis e atendimento completo à LGPD.",
         },
         {
           key: "papel",
           title: "Papel do Gabriel",
           content:
-            "Modelei domínios, construí APIs REST, configurei filas de processamento e alinhei handoff com pesquisadores PROPPE.",
+            "Modelei o domínio do sistema, desenvolvi APIs REST em Laravel e implementei integrações acadêmicas auditáveis. Trabalhei com a equipe de pesquisa para validar requisitos e garantir que os fluxos atendessem às necessidades institucionais.",
         },
         {
           key: "resultados",
           title: "Resultados",
           content: [
-            "{{FANSTONE_METRICA_1}}",
-            "{{FANSTONE_METRICA_2}}",
-            "Fases auditáveis e histórico centralizado.",
+            "Resultados acompanhados por meio de dashboards e feedback da equipe de pesquisa.",
           ],
         },
       ],
@@ -140,10 +137,13 @@ export const featuredProjects: FeaturedProject[] = [
     badge: "Institucional / Publico",
     badgeType: "Institucional/Publico",
     impact:
-      "Publica cronograma e inscrições do torneio com acesso claro em dispositivos móveis.",
+      "Publica cronograma e inscrições do torneio com acesso claro em dispositivos móveis, facilitando a participação de estudantes e comunidade externa. O portal substituiu processos manuais de inscrição e comunicação.",
     stack: ["HTML", "SCSS", "JavaScript"],
-    roleShort: "Front-end responsivo com SCSS modular e validação client-side.",
-    resultsPreview: ["{{RESULTADO_ESPORTS_1}}"],
+    roleShort:
+      "Desenvolvi o front-end responsivo com SCSS modular, implementei validação client-side e estruturei o código para acessibilidade. Trabalhei com designers para garantir uma experiência visual consistente.",
+    resultsPreview: [
+      "Portal publicado e utilizado durante eventos do torneio, com feedback positivo sobre acessibilidade mobile e facilidade de uso.",
+    ],
     owner: false,
     thumbnailKey: "esports",
     caseStudy: {
@@ -151,38 +151,37 @@ export const featuredProjects: FeaturedProject[] = [
       tabs: [
         {
           key: "problema",
-          title: "Problema",
+          title: "Contexto",
           content:
-            "A liga dependia de PDFs e mensagens dispersas, dificultando acompanhar prazos e regras do torneio.",
+            "Portal público para divulgação de cronograma e inscrições do torneio de e-sports da universidade, acessível a estudantes e comunidade externa.",
         },
         {
           key: "solucao",
-          title: "Solucao",
+          title: "Impacto",
           content:
-            "Implementei portal responsivo com inscrições, cronograma e regulamento acessível com atualização rápida.",
+            "Publica cronograma e inscrições do torneio com acesso claro em dispositivos móveis, facilitando a participação de estudantes e comunidade externa. O portal substituiu processos manuais de inscrição e comunicação.",
         },
         {
           key: "arquitetura",
-          title: "Arquitetura e Seguranca (LGPD)",
+          title: "Stack",
           content:
-            "HTML semântico, SCSS modular e deploy estático com cuidado a dados de inscrição e políticas de consentimento.",
+            "HTML semântico, SCSS modular e deploy estático. Cuidado com dados de inscrição e políticas de consentimento para LGPD.",
         },
         {
           key: "papel",
           title: "Papel do Gabriel",
           content:
-            "Desenvolvi componentes, tratei responsividade real e deixei SEO e assets configurados.",
+            "Desenvolvi o front-end responsivo com SCSS modular, implementei validação client-side e estruturei o código para acessibilidade. Trabalhei com designers para garantir uma experiência visual consistente.",
         },
         {
           key: "resultados",
           title: "Resultados",
           content: [
-            "{{RESULTADO_ESPORTS_1}}",
-            "Equipe de comunicação atualiza conteúdo sem apoio contínuo de desenvolvimento.",
-            "Base para próximas edições da liga E-Sports.",
+            "Portal publicado e utilizado durante eventos do torneio, com feedback positivo sobre acessibilidade mobile e facilidade de uso.",
           ],
         },
       ],
     },
   },
 ];
+

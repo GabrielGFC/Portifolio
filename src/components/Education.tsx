@@ -18,11 +18,11 @@ type Certification = {
 
 const degree: Degree = {
   course: "Bacharelado em Engenharia de Software",
-  institution: "Universidade EvangÃ©lica de GoiÃ¡s (UniEVANGÃ‰LICA)",
+  institution: "Universidade Evangélica de Goiás (UniEVANGÉLICA)",
   period: "2023-2027",
   summaries: [
-    "Grade com engenharia de requisitos, arquitetura orientada a serviÃ§os e governanÃ§a de TI aplicada a projetos institucionais.",
-    "Pesquisa na FÃ¡brica de Tecnologias Turing, com APIs escalÃ¡veis e observabilidade para educaÃ§Ã£o e governo digital.",
+    "Grade curricular com engenharia de requisitos, arquitetura orientada a serviços e governança de TI aplicada a projetos institucionais.",
+    "Atuo na Fábrica de Tecnologias Turing, desenvolvendo APIs escaláveis e sistemas com observabilidade para educação e governo digital.",
   ],
 };
 
@@ -32,21 +32,21 @@ const certifications: Certification[] = [
     issuer: "EspecializaTi",
     year: "2024",
     detail:
-      "ConstruÃ§Ã£o de APIs REST, filas, autenticaÃ§Ã£o e testes automatizados alinhados ao ambiente corporativo.",
+      "Construção de APIs REST, filas, autenticação e testes automatizados alinhados ao ambiente corporativo.",
   },
   {
     title: "Fundamentos do C#",
     issuer: "Digital Innovation One",
     year: "2024",
     detail:
-      "ProgramaÃ§Ã£o orientada a objetos, coleÃ§Ãµes genÃ©ricas e boas prÃ¡ticas para serviÃ§os .NET.",
+      "Programação orientada a objetos, coleções genéricas e boas práticas para serviços .NET.",
   },
   {
     title: "Remote Work Professional",
     issuer: "Remote Skills Academy",
     year: "2023",
     detail:
-      "ComunicaÃ§Ã£o assÃ­ncrona, governanÃ§a de rituais distribuÃ­dos e documentaÃ§Ã£o operacional.",
+      "Comunicação assíncrona, governança de rituais distribuídos e documentação operacional para trabalho remoto.",
   },
 ];
 
@@ -119,7 +119,7 @@ const Education: React.FC = () => {
           transition={prefersReducedMotion ? undefined : { duration: 0.45 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          FormaÃ§Ã£o e certificaÃ§Ãµes
+          Formação e certificações
         </motion.h2>
 
         <div className={styles.grid}>

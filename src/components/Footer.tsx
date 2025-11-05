@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../contexts/LanguageContext';
 import styles from './Footer.module.scss';
 
 const Footer: React.FC = () => {
+  const { data } = useContext(LanguageContext);
   const year = new Date().getFullYear();
 
   return (
@@ -9,42 +11,38 @@ const Footer: React.FC = () => {
       <div className={styles.wrap}>
         <div className={styles.grid}>
           <div>
-            <h4>Sobre</h4>
-            <p>Desenvolvedor back-end focado em sistemas institucionais, APIs seguras e integracoes internas.</p>
-            <p>Atuo na Fabrica de Tecnologias Turing da UniEVANGELICA entregando plataformas auditaveis.</p>
+            <h4>{data.footer.about.title}</h4>
+            <p>{data.footer.about.description}</p>
           </div>
           <nav>
-            <h4>Navegacao</h4>
+            <h4>{data.footer.navigation.title}</h4>
             <ul>
-              <li><a href="#hero">Inicio</a></li>
-              <li><a href="#featured">Destaques</a></li>
-              <li><a href="#experience">Experiencia</a></li>
-              <li><a href="#public-projects">Projetos</a></li>
-              <li><a href="#education">Formacao</a></li>
-              <li><a href="#contact">Contato</a></li>
+              {data.footer.navigation.items.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
             </ul>
           </nav>
           <div>
-            <h4>Contato</h4>
+            <h4>{data.footer.contact.title}</h4>
             <ul>
-              <li>
-                <a href="https://www.linkedin.com/in/gabrielgfc1" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="mailto:bibigfc@gmail.com">E-mail</a>
-              </li>
-              <li>
-                <a href="/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf" target="_blank" rel="noopener noreferrer">
-                  Curriculo em PDF
-                </a>
-              </li>
+              {data.footer.contact.items.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
         <div className={styles.legal}>
-          <span>{`© ${year} Gabriel Fernandes de Carvalho. Todos os direitos reservados.`}</span>
+          <span>{`© ${year} ${data.footer.copyright}`}</span>
         </div>
       </div>
     </footer>

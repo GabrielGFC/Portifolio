@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import styles from "./Hero.module.scss";
 
 const Hero: React.FC = () => {
-  const bulletPoints = [
-    "Projeto plataformas acadêmicas com check-in validado, dashboards executivos e integrações que eliminam planilhas.",
-    "Entrego APIs seguras em Node.js ou Laravel, testes automatizados e contratos OpenAPI homologados com a equipe jurídica.",
-    "Monitoro releases com logs estruturados, métricas SLO e alertas que reduzem tempo de resposta operacional.",
-  ];
+  const { data } = useContext(LanguageContext);
 
   return (
     <section id="inicio" className={`${styles.hero} pageSection`}>
@@ -18,25 +15,13 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className={styles.heroBadge}>
-            Disponível para escalar produto institucional
-          </span>
+          <span className={styles.heroBadge}>{data.hero.badge}</span>
           <h1 className={styles.heroTitle}>
             <span className={styles["brand__first"]}>Gabriel</span>
-            <span className={styles["brand__last"]}> F.Carvalho</span>
+            <span className={styles["brand__middle"]}> F.</span>
+            <span className={styles["brand__last"]}> de Carvalho</span>
           </h1>
-          <p className={styles.heroSubtitle}>
-            Engenheiro back-end para educação e governo. Libero releases
-            auditáveis com performance estável.
-          </p>
-          <ul className={styles.heroBullets}>
-            {bulletPoints.map((point) => (
-              <li key={point}>
-                <span />
-                {point}
-              </li>
-            ))}
-          </ul>
+          <p className={styles.heroSubtitle}>{data.hero.subtitle}</p>
           <div className={styles.heroActions}>
             <motion.a
               href="/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
@@ -46,7 +31,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
             >
-              Baixar currículo
+              {data.hero.ctaDownload}
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/gabrielgfc1"
@@ -56,7 +41,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
             >
-              Conversar no LinkedIn
+              {data.hero.ctaLinkedIn}
             </motion.a>
           </div>
         </motion.div>

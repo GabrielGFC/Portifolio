@@ -1,91 +1,214 @@
+/* ============================================
+   DESIGN TOKENS - PALETA OFICIAL
+   ============================================
+   
+   Paleta Base:
+   - Azul escuro: #213555 / rgb(33, 53, 85)
+   - Azul médio: #3E5879 / rgb(62, 88, 121)
+   - Bege/areia: #D8C4B6 / rgb(216, 196, 182)
+   - Off-white/fundo claro: #F5EFE7 / rgb(245, 239, 231)
+   
+   Single Source of Truth para cores do sistema.
+   Para mudar o tema, altere apenas este arquivo.
+   ============================================ */
+
 :root {
-  /* Neutros */
-  --ink-900: #0b1220;
-  --ink-800: #0e1629;
-  --ink-700: #101826;
-  --ink-600: #1b2537;
-  --ink-200: #d7deeb;
-  --ink-100: #e6eaf3;
+  /* ============================================
+     CORES BASE DA PALETA
+     ============================================ */
+  --color-blue-dark: #213555;
+  --color-blue-dark-rgb: 33, 53, 85;
 
-  /* Violetas e índigos */
-  --violet-500: #7c3aed;
-  --violet-400: #8b5cf6;
-  --violet-300: #a78bfa;
-  --indigo-400: #6366f1;
-  --indigo-300: #818cf8;
+  --color-blue-medium: #3e5879;
+  --color-blue-medium-rgb: 62, 88, 121;
 
-  /* Derivados */
-  --primary: var(--indigo-400);
-  --accent: var(--violet-400);
-  --on-dark: #e5e7eb;
-  --muted: #94a3b8;
-  --on-card: var(--ink-900);
-  --card: #ffffff;
-  --card-border: rgba(11, 18, 32, 0.08);
+  --color-beige: #d8c4b6;
+  --color-beige-rgb: 216, 196, 182;
 
-  /* Gradientes */
+  --color-beige-dark: rgba(216, 196, 182, 0.85);
+  --color-beige-dark-solid: #c4b0a0;
+
+  --color-beige-light: #e8d8cc;
+
+  --color-off-white: #f5efe7;
+  --color-off-white-rgb: 245, 239, 231;
+
+  /* ============================================
+     TOKENS SEMÂNTICOS - FUNDOS
+     ============================================ */
+  /* Fundo principal da página */
+  --color-bg: var(--color-off-white);
+
+  /* Fundo de cards, seções e blocos (bege claro) */
+  --color-surface: var(--color-beige-light);
+
+  /* Fundo de cards com leve transparência */
+  --color-surface-light: rgba(var(--color-off-white-rgb), 0.95);
+
+  /* Fundo de overlay/modal */
+  --color-overlay: rgba(var(--color-blue-dark-rgb), 0.85);
+
+  /* ============================================
+     TOKENS SEMÂNTICOS - CORES PRINCIPAIS
+     ============================================ */
+  /* Cor de destaque principal (botões, links, elementos importantes) */
+  --color-primary: var(--color-blue-dark);
+  --color-primary-rgb: var(--color-blue-dark-rgb);
+
+  /* Variação mais suave da principal (hover, estados ativos) */
+  --color-primary-soft: var(--color-blue-medium);
+  --color-primary-soft-rgb: var(--color-blue-medium-rgb);
+
+  /* Cor de destaque secundária (accent, detalhes) */
+  --color-accent: var(--color-beige);
+  --color-accent-rgb: var(--color-beige-rgb);
+
+  /* ============================================
+     TOKENS SEMÂNTICOS - TEXTOS
+     ============================================ */
+  /* Texto principal sobre fundo claro */
+  --color-text-main: var(--color-blue-dark);
+  --color-text-main-rgb: var(--color-blue-dark-rgb);
+
+  /* Texto secundário com opacidade reduzida */
+  --color-text-muted: rgba(var(--color-blue-dark-rgb), 0.75);
+
+  /* Texto sobre fundo escuro (bege/azul) */
+  --color-text-on-dark: var(--color-off-white);
+
+  /* Texto sobre superfície bege */
+  --color-text-on-surface: var(--color-blue-dark);
+
+  /* Texto sobre primary (ex: botão) */
+  --color-text-on-primary: var(--color-off-white);
+
+  /* ============================================
+     TOKENS SEMÂNTICOS - BORDAS
+     ============================================ */
+  /* Bordas suaves derivadas da paleta */
+  --color-border-subtle: rgba(var(--color-blue-dark-rgb), 0.15);
+  --color-border-medium: rgba(var(--color-blue-dark-rgb), 0.24);
+  --color-border-strong: rgba(var(--color-blue-dark-rgb), 0.4);
+
+  /* Borda de cards */
+  --color-border-card: rgba(var(--color-blue-dark-rgb), 0.08);
+
+  /* Borda de elementos interativos (hover) */
+  --color-border-hover: rgba(var(--color-blue-medium-rgb), 0.32);
+
+  /* ============================================
+     GRADIENTES
+     ============================================ */
+  /* Gradiente de fundo da página (sutil) */
   --g-page: linear-gradient(
     180deg,
-    #0b1220 0%,
-    #0e1629 25%,
-    #101826 55%,
-    #1b2537 100%
+    var(--color-off-white) 0%,
+    var(--color-beige) 100%
   );
+
+  /* Gradiente de header */
   --g-header: linear-gradient(
     180deg,
-    rgba(11, 18, 32, 0.92) 0%,
-    rgba(11, 18, 32, 0.8) 100%
+    rgba(var(--color-blue-dark-rgb), 0.95) 0%,
+    rgba(var(--color-blue-dark-rgb), 0.88) 100%
   );
+
+  /* Gradiente de nome/título */
   --g-name: linear-gradient(
     90deg,
-    var(--violet-400) 0%,
-    var(--indigo-400) 100%
+    var(--color-blue-dark) 0%,
+    var(--color-blue-medium) 100%
   );
-  --g-overlay: radial-gradient(
-      940px 520px at 18% 6%,
-      rgba(129, 140, 248, 0.18) 0%,
-      transparent 62%
-    ),
-    radial-gradient(
-      680px 420px at 82% 12%,
-      rgba(124, 58, 237, 0.14) 0%,
-      transparent 60%
-    );
 
-  /* Tipografia e motion */
+  /* Gradiente de overlay sutil */
+  --g-overlay: radial-gradient(
+    circle at top,
+    rgba(var(--color-blue-medium-rgb), 0.08) 0%,
+    transparent 60%
+  );
+
+  /* ============================================
+     TIPOGRAFIA
+     ============================================ */
   --ff: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --fs-hero-m: 32px;
   --fs-hero-d: 48px;
   --fs-nav: 14px;
 
-  --radius: 12px;
-  --shadow-1: 0 18px 44px rgba(8, 16, 30, 0.25);
-  --shadow-2: 0 8px 22px rgba(8, 16, 30, 0.16);
-  --tr-1: 220ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  /* ============================================
+     ESPAÇAMENTOS
+     ============================================ */
+  --spacing-base: 8px;
+  --spacing-xs: var(--spacing-base);
+  --spacing-sm: calc(var(--spacing-base) * 2);
+  --spacing-md: calc(var(--spacing-base) * 3);
+  --spacing-lg: calc(var(--spacing-base) * 4);
+  --spacing-xl: calc(var(--spacing-base) * 6);
+  --spacing-2xl: calc(var(--spacing-base) * 8);
+  --spacing-3xl: calc(var(--spacing-base) * 12);
 
-  /* Tokens legados para compatibilidade */
-  --c-bg-1: var(--ink-900);
-  --c-bg-2: var(--ink-800);
-  --c-bg-3: var(--ink-700);
-  --c-primary: var(--primary);
-  --c-white: #ffffff;
-  --c-text: var(--on-dark);
-  --c-muted: var(--muted);
-  --g-purple: var(--g-name);
-  --g-hero: var(--g-page);
+  /* ============================================
+     BORDAS E RAIO
+     ============================================ */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ============================================
+     SOMBRAS
+     ============================================ */
+  --shadow-1: 0 18px 44px rgba(var(--color-blue-dark-rgb), 0.12);
+  --shadow-2: 0 8px 22px rgba(var(--color-blue-dark-rgb), 0.08);
+  --shadow-3: 0 4px 12px rgba(var(--color-blue-dark-rgb), 0.06);
+  --shadow-card: 0 16px 34px rgba(var(--color-blue-dark-rgb), 0.08);
+  --shadow-card-hover: 0 24px 46px rgba(var(--color-blue-dark-rgb), 0.14);
+
+  /* ============================================
+     TRANSIÇÕES
+     ============================================ */
+  --tr-1: 220ms cubic-bezier(0.2, 0.6, 0.2, 1);
+  --tr-fast: 150ms ease-out;
+  --tr-base: 220ms ease-out;
+
+  /* ============================================
+     BREAKPOINTS
+     ============================================ */
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
 }
 
-$color-primary: var(--primary);
-$color-text-primary: var(--on-card);
-$color-text-secondary: var(--muted);
-$color-bg-hero: var(--ink-800);
-$color-bg-section: transparent;
-$color-bg-card: var(--card);
-$color-border: var(--card-border);
+/* ============================================
+   VARIÁVEIS SCSS (para compatibilidade)
+   ============================================ */
+$color-primary: var(--color-primary);
+$color-primary-soft: var(--color-primary-soft);
+$color-primary-rgb: var(--color-primary-rgb);
+$color-primary-soft-rgb: var(--color-primary-soft-rgb);
+
+$color-text-main: var(--color-text-main);
+$color-text-muted: var(--color-text-muted);
+$color-text-on-dark: var(--color-text-on-dark);
+$color-text-on-surface: var(--color-text-on-surface);
+$color-text-on-primary: var(--color-text-on-primary);
+
+$color-bg: var(--color-bg);
+$color-bg-section: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-surface-light: var(--color-surface-light);
+
+$color-border-subtle: var(--color-border-subtle);
+$color-border-medium: var(--color-border-medium);
+$color-border-strong: var(--color-border-strong);
+$color-border-card: var(--color-border-card);
+$color-border-hover: var(--color-border-hover);
+
 $font-family: var(--ff);
 $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
+
 $font-size-h1-mobile: var(--fs-hero-m);
 $font-size-h1-desktop: var(--fs-hero-d);
 $font-size-h2-mobile: 24px;
@@ -94,22 +217,54 @@ $font-size-h3-mobile: 18px;
 $font-size-h3-desktop: 20px;
 $font-size-body-mobile: 15px;
 $font-size-body-desktop: 16px;
-$breakpoint-tablet: 768px;
-$color-primary-rgb: 99, 102, 241;
-$radius-full: 9999px;
-$spacing-base: 8px;
-$spacing-xs: $spacing-base;
-$spacing-sm: $spacing-base * 2;
-$spacing-md: $spacing-base * 3;
-$spacing-lg: $spacing-base * 4;
-$spacing-xl: $spacing-base * 6;
-$spacing-2xl: $spacing-base * 8;
-$spacing-3xl: $spacing-base * 12;
-$breakpoint-desktop: 1024px;
-$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-$shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-$radius-sm: 8px;
-$radius-md: 12px;
-$radius-lg: 16px;
-$transition-fast: var(--tr-1);
-$transition-base: var(--tr-1);
+
+$breakpoint-tablet: var(--breakpoint-tablet);
+$breakpoint-desktop: var(--breakpoint-desktop);
+
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$radius-full: var(--radius-full);
+
+$spacing-base: var(--spacing-base);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-2xl: var(--spacing-2xl);
+$spacing-3xl: var(--spacing-3xl);
+
+$shadow-md: var(--shadow-3);
+$shadow-lg: var(--shadow-2);
+
+$transition-fast: var(--tr-fast);
+$transition-base: var(--tr-base);
+
+/* ============================================
+   TOKENS LEGADOS (para compatibilidade)
+   ============================================ */
+:root {
+  /* Compatibilidade com código existente */
+  --c-bg-1: var(--color-bg);
+  --c-bg-2: var(--color-surface);
+  --c-primary: var(--color-primary);
+  --c-text: var(--color-text-main);
+  --c-muted: var(--color-text-muted);
+  --c-white: var(--color-off-white);
+  --card: var(--color-surface-light);
+  --card-border: var(--color-border-card);
+  --on-dark: var(--color-text-on-dark);
+  --on-card: var(--color-text-on-surface);
+  --muted: var(--color-text-muted);
+  --primary: var(--color-primary);
+  --accent: var(--color-accent);
+
+  /* Gradientes legados */
+  --g-page: var(--g-page);
+  --g-header: var(--g-header);
+  --g-name: var(--g-name);
+  --g-overlay: var(--g-overlay);
+  --g-purple: var(--g-name);
+  --g-hero: var(--g-page);
+}

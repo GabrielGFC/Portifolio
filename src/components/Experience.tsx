@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import React, { useContext, useState } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import styles from "./Experience.module.scss";
 
 type TimelineItem = {
@@ -9,41 +10,55 @@ type TimelineItem = {
   achievements: string[];
 };
 
-const timeline: TimelineItem[] = [
-  {
-    company: "Fábrica de Tecnologias Turing (FTT) – UniEVANGÉLICA",
-    role: "Desenvolvedor Back-end",
-    period: "set/2023–atual",
-    achievements: [
-      "Projetei APIs REST com Node.js e TypeScript, versionando contratos OpenAPI e cortando retrabalho da squad.",
-      "Orquestrei integrações via mensageria e SSO interno, otimizando consultas PostgreSQL e mantendo latência baixa.",
-      "Liderei revisões técnicas e observabilidade com logs estruturados, antecipando incidentes em releases institucionais.",
-    ],
-  },
-  {
-    company: "PROPPE – UniEVANGÉLICA",
-    role: "Analista/Dev de Pesquisa",
-    period: "mar/2024–atual",
-    achievements: [
-      "Modelei fluxos de pesquisa com Laravel e PostgreSQL, automatizando aprovações multi etapa e trilhas auditáveis.",
-      "Integrei Lyceum e ERPs com APIs seguras e filas, eliminando cadastros manuais recorrentes.",
-      "Construí dashboards em Vue.js para diretorias e pesquisadores, reduzindo atrasos de relatórios.",
-    ],
-  },
-  {
-    company: "Força Aérea Brasileira",
-    role: "Colaborador Back-end",
-    period: "2024",
-    achievements: [
-      "Implementei API de disponibilidade em .NET e JWT, controlando perfis e garantindo rastreabilidade operacional.",
-      "Defini pipelines de testes e cobertura automática, documentando rotas com Swagger para auditorias internas.",
-      "Instrumentei logs no Elastic e alertas objetivos, reduzindo tempo de resposta a incidentes de disponibilidade.",
-    ],
-  },
-];
-
 const Experience: React.FC = () => {
+  const { data } = useContext(LanguageContext);
   const prefersReducedMotion = useReducedMotion();
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
+
+  const timeline: TimelineItem[] = [
+    {
+      company: data.experience.ftt.company,
+      role: data.experience.ftt.role,
+      period: data.experience.ftt.period,
+      achievements: [
+        data.experience.ftt.bullet1,
+        data.experience.ftt.bullet2,
+        data.experience.ftt.bullet3,
+      ],
+    },
+    {
+      company: data.experience.proppe.company,
+      role: data.experience.proppe.role,
+      period: data.experience.proppe.period,
+      achievements: [
+        data.experience.proppe.bullet1,
+        data.experience.proppe.bullet2,
+        data.experience.proppe.bullet3,
+      ],
+    },
+    {
+      company: data.experience.fab.company,
+      role: data.experience.fab.role,
+      period: data.experience.fab.period,
+      achievements: [
+        data.experience.fab.bullet1,
+        data.experience.fab.bullet2,
+        data.experience.fab.bullet3,
+      ],
+    },
+  ];
+
+  const toggleExpanded = (company: string) => {
+    setExpandedItems((prev) => {
+      const next = new Set(prev);
+      if (next.has(company)) {
+        next.delete(company);
+      } else {
+        next.add(company);
+      }
+      return next;
+    });
+  };
 
   return (
     <section id="experience" className={`${styles.section} pageSection`}>
@@ -55,42 +70,55 @@ const Experience: React.FC = () => {
           transition={prefersReducedMotion ? undefined : { duration: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Experiência
+          {data.experience.title}
         </motion.h2>
 
         <div className={styles.timeline}>
-          {timeline.map((item, index) => (
-            <motion.article
-              key={item.company}
-              className={styles.item}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
-              whileInView={
-                prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
-              }
-              transition={
-                prefersReducedMotion
-                  ? undefined
-                  : {
-                      duration: 0.45,
-                      delay: prefersReducedMotion ? 0 : index * 0.08,
-                    }
-              }
-              viewport={{ once: true, amount: 0.2 }}
-            >
-              <div className={styles.header}>
-                <div>
-                  <p className={styles.role}>{item.role}</p>
-                  <h3 className={styles.company}>{item.company}</h3>
+          {timeline.map((item, index) => {
+            const isExpanded = expandedItems.has(item.company);
+            return (
+              <motion.article
+                key={item.company}
+                className={styles.item}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 32 }}
+                whileInView={
+                  prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+                }
+                transition={
+                  prefersReducedMotion
+                    ? undefined
+                    : {
+                        duration: 0.45,
+                        delay: prefersReducedMotion ? 0 : index * 0.08,
+                      }
+                }
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <div className={styles.header}>
+                  <div>
+                    <p className={styles.role}>{item.role}</p>
+                    <h3 className={styles.company}>{item.company}</h3>
+                  </div>
+                  <span className={styles.period}>{item.period}</span>
                 </div>
-                <span className={styles.period}>{item.period}</span>
-              </div>
-              <ul className={styles.list}>
-                {item.achievements.map((achievement) => (
-                  <li key={achievement}>{achievement}</li>
-                ))}
-              </ul>
-            </motion.article>
-          ))}
+                <p className={styles.summary}>{item.achievements[0]}</p>
+                {isExpanded && (
+                  <ul className={styles.list}>
+                    {item.achievements.map((achievement, idx) => (
+                      <li key={idx}>{achievement}</li>
+                    ))}
+                  </ul>
+                )}
+                <button
+                  type="button"
+                  className={styles.expandButton}
+                  onClick={() => toggleExpanded(item.company)}
+                >
+                  {isExpanded ? data.common.close : data.common.viewDetails}
+                </button>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

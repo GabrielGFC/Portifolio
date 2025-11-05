@@ -1,7 +1,7 @@
 @use "../styles/tokens" as *;
 
 .section {
-  background: $color-bg-section;
+  background: var(--color-bg);
   padding: $spacing-3xl 0;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .title {
-  color: #ffffff;
+  color: var(--color-text-main);
   font-size: clamp(1.6rem, 4vw, 2.2rem);
   margin-bottom: $spacing-lg;
 }
@@ -33,10 +33,10 @@
 
 .item,
 .cert {
-  background: #ffffff;
-  color: #0b1220;
+  background: var(--color-surface-light);
+  color: var(--color-text-on-surface);
   border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-3);
   padding: 14px 16px;
   display: flex;
   gap: 12px;
@@ -47,17 +47,18 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 .itemTitle {
   font-weight: 600;
   font-size: 14px;
   margin: 0 0 4px;
+  color: var(--color-text-main);
 }
 
 .itemDesc {
-  color: #374151;
+  color: var(--color-text-muted);
   font-size: 13px;
   margin: 0;
   line-height: 1.5;
