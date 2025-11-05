@@ -1,4 +1,4 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
   background: $color-bg-section;
@@ -16,7 +16,11 @@
 }
 
 .card {
-  background: linear-gradient(135deg, rgba(31, 111, 235, 0.25) 0%, rgba(11, 15, 26, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba($color-primary-rgb..., 0.16) 0%,
+    rgba(12, 18, 34, 0.92) 100%
+  );
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: $radius-lg;
   padding: $spacing-2xl $spacing-lg;
@@ -80,7 +84,8 @@
   gap: $spacing-xs;
   color: #ffffff;
   text-decoration: none;
-  transition: transform $transition-fast, border-color $transition-fast, background-color $transition-fast;
+  transition: transform $transition-fast, border-color $transition-fast,
+    background-color $transition-fast;
 
   &:hover,
   &:focus-visible {

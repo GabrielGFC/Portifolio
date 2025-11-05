@@ -1,18 +1,18 @@
-import React, { MouseEvent, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import styles from './Header.module.scss';
+import { motion } from "framer-motion";
+import React, { MouseEvent, useEffect, useState } from "react";
+import styles from "./Header.module.scss";
 
 const navItems = [
-  { id: 'hero', label: 'Inicio' },
-  { id: 'featured', label: 'Destaques' },
-  { id: 'summary', label: 'Resumo' },
-  { id: 'experience', label: 'Experiencia' },
-  { id: 'public-projects', label: 'Publicos' },
-  { id: 'contact', label: 'Contato' },
+  { id: "inicio", label: "Início" },
+  { id: "featured", label: "Destaques" },
+  { id: "summary", label: "Resumo" },
+  { id: "experience", label: "Experiência" },
+  { id: "public-projects", label: "Públicos" },
+  { id: "contact", label: "Contato" },
 ];
 
 const Header: React.FC = () => {
-  const [activeSection, setActiveSection] = useState<string>('hero');
+  const [activeSection, setActiveSection] = useState<string>("inicio");
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
             return false;
           }
           const rect = node.getBoundingClientRect();
-          const offset = sectionId === 'hero' ? 180 : 120;
+          const offset = sectionId === "inicio" ? 180 : 120;
           return rect.top <= offset && rect.bottom >= offset;
         });
 
@@ -37,37 +37,49 @@ const Header: React.FC = () => {
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+  const scrollToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
     event.preventDefault();
     const target = document.getElementById(sectionId);
     if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
     <motion.header
-      className={`${styles.header} ${isScrolled ? styles['header--scrolled'] : ''}`}
+      className={`${styles.header} ${
+        isScrolled ? styles["header--scrolled"] : ""
+      }`}
       initial={{ y: -64, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
       <div className={styles.headerWrap}>
-        <a className={styles.brand} href="#hero" aria-label="Pagina inicial" onClick={(event) => scrollToSection(event, 'hero')}>
-          <span className={styles.brandFirst}>Gabriel</span>
-          <span className={styles.brandLast}> F.Carvalho</span>
+        <a
+          className={styles.brand}
+          href="#inicio"
+          aria-label="Página inicial"
+          onClick={(event) => scrollToSection(event, "inicio")}
+        >
+          <span className={styles["brand__first"]}>Gabriel</span>
+          <span className={styles["brand__last"]}> F.Carvalho</span>
         </a>
 
-        <nav className={styles.nav} aria-label="Navegacao principal">
+        <nav className={styles.nav} aria-label="Navegação principal">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
-              className={`${styles.navLink} ${activeSection === item.id ? styles.navLinkActive : ''}`}
+              className={`${styles.navLink} ${
+                activeSection === item.id ? styles.navLinkActive : ""
+              }`}
               onClick={(event) => scrollToSection(event, item.id)}
             >
               {item.label}
@@ -80,4 +92,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-

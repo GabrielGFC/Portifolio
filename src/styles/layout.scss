@@ -1,4 +1,4 @@
-@import './tokens.scss';
+@use "./tokens" as *;
 
 .section-shell {
   max-width: 1200px;
@@ -14,4 +14,3 @@
   display: grid;
   gap: $spacing-lg;
 }
-

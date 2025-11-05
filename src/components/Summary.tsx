@@ -1,16 +1,18 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './Summary.module.scss';
+import { motion, useReducedMotion } from "framer-motion";
+import React from "react";
+import styles from "./Summary.module.scss";
 
 const Summary: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="summary" className={styles.section}>
+    <section id="summary" className={`${styles.section} pageSection`}>
       <div className={styles.container}>
         <motion.h2
           className={styles.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={prefersReducedMotion ? undefined : { duration: 0.4 }}
           viewport={{ once: true, amount: 0.3 }}
         >
           Resumo profissional
@@ -18,25 +20,24 @@ const Summary: React.FC = () => {
 
         <motion.div
           className={styles.content}
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.05 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={
+            prefersReducedMotion ? undefined : { duration: 0.45, delay: 0.05 }
+          }
           viewport={{ once: true, amount: 0.3 }}
         >
           <p>
-            Desenvolvo plataformas institucionais com APIs REST, integracoes internas e automacoes seguras. Escolho
-            Node.js, TypeScript, Laravel e PostgreSQL para entregar servicos consistentes. Uso OpenAPI e testes
-            automatizados para manter previsibilidade.
+            Projeto APIs institucionais em Node.js e Laravel, documentadas em
+            OpenAPI e validadas com testes automatizados.
           </p>
           <p>
-            Na Fabrica de Tecnologias Turing da UniEVANGELICA coordeno dominios de pesquisa, eventos e autenticacao.
-            Estruturo arquitetura limpa, LGPD aplicada e pipelines leves. Trabalho proximo a design, produto e equipes
-            operacionais para ajustar fluxos rapidamente.
+            Conduzo integrações com SSO interno, mensageria e PostgreSQL
+            aplicando LGPD, criptografia e controles auditáveis.
           </p>
           <p>
-            Entreguei integracoes auditaveis para o Sistema James Fanstone e apoio a Forca Aerea Brasileira em APIs
-            sensiveis. Melhorei monitoramento com logs estruturados e alertas simples, reduzindo tempo de resposta do
-            time tecnico em entregas criticas.
+            Alinho designers, produto e jurídico para homologar releases com
+            métricas de observabilidade e SLAs definidos.
           </p>
         </motion.div>
       </div>

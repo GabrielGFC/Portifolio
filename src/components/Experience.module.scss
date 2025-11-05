@@ -1,8 +1,7 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
-  background: $color-bg-section;
-  padding: $spacing-3xl 0;
+  padding: clamp(60px, 9vw, 82px) 0;
 }
 
 .container {
@@ -28,13 +27,13 @@
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 12px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(129, 140, 248, 0.18);
 
   @media (min-width: $breakpoint-tablet) {
     left: 18px;
@@ -48,9 +47,9 @@
 .item {
   position: relative;
   padding-left: $spacing-xl;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: $radius-md;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--card);
+  border-radius: $radius-lg;
+  border: 1px solid var(--card-border);
   padding-top: $spacing-md;
   padding-bottom: $spacing-md;
   padding-right: $spacing-md;
@@ -67,15 +66,15 @@
 }
 
 .item::before {
-  content: '';
+  content: "";
   position: absolute;
   top: $spacing-lg;
   left: 6px;
   width: 12px;
   height: 12px;
   border-radius: $radius-full;
-  background: #1f6feb;
-  box-shadow: 0 0 0 4px rgba(31, 111, 235, 0.25);
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgba($color-primary-rgb..., 0.22);
 
   @media (max-width: 640px) {
     left: 0;
@@ -99,18 +98,18 @@
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
   margin-bottom: $spacing-xs;
 }
 
 .company {
-  color: #ffffff;
+  color: var(--on-card);
   font-size: 1.1rem;
   line-height: 1.4;
 }
 
 .period {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(44, 52, 71, 0.7);
   font-size: 0.85rem;
   white-space: nowrap;
 }
@@ -119,7 +118,7 @@
   list-style: none;
   display: grid;
   gap: $spacing-xs;
-  color: rgba(255, 255, 255, 0.78);
+  color: #2c3447;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -130,13 +129,13 @@
 }
 
 .list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.6em;
   width: 8px;
   height: 8px;
   border-radius: $radius-full;
-  background: rgba(31, 111, 235, 0.65);
+  background: rgba($color-primary-rgb..., 0.42);
   transform: translateY(-50%);
 }

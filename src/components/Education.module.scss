@@ -1,4 +1,4 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
   background: $color-bg-section;
@@ -47,7 +47,7 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  color: #1f6feb;
+  color: $color-primary;
 }
 
 .itemTitle {
@@ -67,4 +67,3 @@
   display: grid;
   gap: 12px;
 }
-

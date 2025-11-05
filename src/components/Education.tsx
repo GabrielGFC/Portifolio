@@ -1,13 +1,75 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './Education.module.scss';
+﻿import { motion, useReducedMotion } from "framer-motion";
+import React from "react";
+import styles from "./Education.module.scss";
+
+type Degree = {
+  course: string;
+  institution: string;
+  period: string;
+  summaries: string[];
+};
+
+type Certification = {
+  title: string;
+  issuer: string;
+  year?: string;
+  detail?: string;
+};
+
+const degree: Degree = {
+  course: "Bacharelado em Engenharia de Software",
+  institution: "Universidade EvangÃ©lica de GoiÃ¡s (UniEVANGÃ‰LICA)",
+  period: "2023-2027",
+  summaries: [
+    "Grade com engenharia de requisitos, arquitetura orientada a serviÃ§os e governanÃ§a de TI aplicada a projetos institucionais.",
+    "Pesquisa na FÃ¡brica de Tecnologias Turing, com APIs escalÃ¡veis e observabilidade para educaÃ§Ã£o e governo digital.",
+  ],
+};
+
+const certifications: Certification[] = [
+  {
+    title: "Laravel 11 - Framework Full Stack",
+    issuer: "EspecializaTi",
+    year: "2024",
+    detail:
+      "ConstruÃ§Ã£o de APIs REST, filas, autenticaÃ§Ã£o e testes automatizados alinhados ao ambiente corporativo.",
+  },
+  {
+    title: "Fundamentos do C#",
+    issuer: "Digital Innovation One",
+    year: "2024",
+    detail:
+      "ProgramaÃ§Ã£o orientada a objetos, coleÃ§Ãµes genÃ©ricas e boas prÃ¡ticas para serviÃ§os .NET.",
+  },
+  {
+    title: "Remote Work Professional",
+    issuer: "Remote Skills Academy",
+    year: "2023",
+    detail:
+      "ComunicaÃ§Ã£o assÃ­ncrona, governanÃ§a de rituais distribuÃ­dos e documentaÃ§Ã£o operacional.",
+  },
+];
 
 const MortarboardIcon: React.FC = () => (
-  <svg className={styles.icon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+  <svg
+    className={styles.icon}
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path
-      d="M2 8.5L12 4l10 4.5-10 4.5-7-3.15V14c0 1.66 3.13 3 7 3s7-1.34 7-3v-2.65"
+      d="M12 4L3 8.5 12 13l9-4.5L12 4z"
+      fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5 10v4.5C5 16.985 8.134 19 12 19s7-2.015 7-4.5V10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
@@ -15,85 +77,105 @@ const MortarboardIcon: React.FC = () => (
 );
 
 const CertificateIcon: React.FC = () => (
-  <svg className={styles.icon} width="20" height="20" viewBox="0 0 24 24" fill="none">
+  <svg
+    className={styles.icon}
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
     <path
-      d="M8 3h8l3 4v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7l3-4z"
+      d="M7 3h10a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2.5L12 21l-2.5-4H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+      fill="none"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
-      d="M12 9v6"
+      d="M9 7h6"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.5"
       strokeLinecap="round"
     />
     <path
-      d="M9 12h6"
+      d="M9 11h6"
       stroke="currentColor"
-      strokeWidth="1.6"
+      strokeWidth="1.5"
       strokeLinecap="round"
     />
   </svg>
 );
 
-const degree = {
-  title: 'Engenharia de Software — UniEVANGELICA (2023-2027)',
-  description:
-    'Grade com engenharia de software, arquitetura, qualidade e projetos aplicados na Fabrica de Tecnologias Turing.',
-};
-
-const certifications = [
-  {
-    title: 'Laravel 11 — Curso Online (2024) | APIs e boas praticas',
-  },
-  {
-    title: 'Fundamentos de C# — Plataforma Educacional (2023)',
-  },
-  {
-    title: 'Scrum — Certificacao Profissional (2023) | fundamentos de agilidade',
-  },
-];
-
 const Education: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="education" className={styles.section}>
+    <section id="education" className={`${styles.section} pageSection`}>
       <div className={styles.container}>
         <motion.h2
           className={styles.title}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={prefersReducedMotion ? undefined : { duration: 0.45 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Formacao e certificacoes
+          FormaÃ§Ã£o e certificaÃ§Ãµes
         </motion.h2>
 
-        <motion.div
-          className={styles.grid}
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.05 }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <div className={styles.item}>
+        <div className={styles.grid}>
+          <motion.article
+            className={styles.item}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+            whileInView={
+              prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+            }
+            transition={
+              prefersReducedMotion ? undefined : { duration: 0.45, delay: 0.05 }
+            }
+            viewport={{ once: true, amount: 0.3 }}
+          >
             <MortarboardIcon />
             <div>
-              <p className={styles.itemTitle}>{degree.title}</p>
-              <p className={styles.itemDesc}>{degree.description}</p>
+              <h3 className={styles.itemTitle}>{degree.course}</h3>
+              <p className={styles.itemDesc}>
+                {degree.institution} - {degree.period}
+              </p>
+              {degree.summaries.map((summary) => (
+                <p key={summary} className={styles.itemDesc}>
+                  {summary}
+                </p>
+              ))}
             </div>
-          </div>
+          </motion.article>
 
-          <div className={styles.certList}>
+          <motion.div
+            className={styles.certList}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+            whileInView={
+              prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+            }
+            transition={
+              prefersReducedMotion ? undefined : { duration: 0.45, delay: 0.1 }
+            }
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {certifications.map((cert) => (
-              <div key={cert.title} className={styles.cert}>
+              <article key={cert.title} className={styles.cert}>
                 <CertificateIcon />
-                <p className={styles.itemTitle}>{cert.title}</p>
-              </div>
+                <div>
+                  <h3 className={styles.itemTitle}>{cert.title}</h3>
+                  <p className={styles.itemDesc}>
+                    {cert.issuer}
+                    {cert.year ? ` - ${cert.year}` : ""}
+                  </p>
+                  {cert.detail ? (
+                    <p className={styles.itemDesc}>{cert.detail}</p>
+                  ) : null}
+                </div>
+              </article>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

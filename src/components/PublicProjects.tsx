@@ -1,20 +1,22 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { publicProjects } from '../data/publicProjects';
-import styles from './PublicProjects.module.scss';
+import { motion, useReducedMotion } from "framer-motion";
+import React from "react";
+import { publicProjects } from "../data/publicProjects";
+import styles from "./PublicProjects.module.scss";
 
 const PublicProjects: React.FC = () => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="public-projects" className={styles.section}>
+    <section id="public-projects" className={`${styles.section} pageSection`}>
       <div className={styles.container}>
         <motion.h2
           className={styles.title}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 24 }}
+          whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={prefersReducedMotion ? undefined : { duration: 0.45 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Projetos publicos selecionados
+          Projetos públicos selecionados
         </motion.h2>
 
         <div className={styles.grid}>
@@ -22,9 +24,11 @@ const PublicProjects: React.FC = () => {
             <motion.article
               key={project.id}
               className={styles.card}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={
+                prefersReducedMotion ? undefined : { opacity: 1, y: 0 }
+              }
+              transition={prefersReducedMotion ? undefined : { duration: 0.35 }}
               viewport={{ once: true, amount: 0.2 }}
             >
               <div className={styles.header}>
@@ -36,16 +40,17 @@ const PublicProjects: React.FC = () => {
                 </div>
               </div>
               <p className={styles.description}>{project.description}</p>
-              {project.url && (
+              {project.url ? (
                 <a
                   className={styles.link}
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-fallback={project.isFallback ? "true" : undefined}
                 >
-                  {project.linkLabel ?? 'Ver no GitHub'}
+                  {project.linkLabel ?? "Ver no GitHub"}
                 </a>
-              )}
+              ) : null}
             </motion.article>
           ))}
         </div>

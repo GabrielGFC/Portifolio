@@ -1,12 +1,7 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
-  background: $color-bg-section;
-  padding: $spacing-3xl 0 $spacing-2xl;
-
-  @media (min-width: $breakpoint-desktop) {
-    padding: $spacing-3xl 0;
-  }
+  padding: clamp(60px, 9vw, 84px) 0;
 }
 
 .container {
@@ -29,49 +24,51 @@
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  color: rgba(226, 230, 241, 0.58);
 }
 
 .title {
   color: #ffffff;
-  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-size: clamp(1.9rem, 4.4vw, 2.6rem);
   font-weight: $font-weight-bold;
 }
 
 .grid {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   grid-template-columns: 1fr;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 18px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1100px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 }
 
 .card {
-  background: #ffffff;
-  color: #0b1220;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-height: auto;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 14px;
+  background: var(--card);
+  color: var(--on-card);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 16px 34px rgba(9, 16, 30, 0.16);
+  padding: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      transform: translateY(-2px) scale(1.005);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+      transform: translateY(-3px);
+      box-shadow: 0 24px 46px rgba(9, 16, 30, 0.22);
+      border-color: rgba($color-primary-rgb..., 0.22);
     }
   }
 }
@@ -79,14 +76,15 @@
 .thumbnail {
   position: relative;
   height: 140px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
 
   span {
     position: absolute;
-    inset: auto 8px 8px 8px;
+    inset: auto 12px 12px 12px;
     font-size: 12px;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
   }
 }
 
@@ -97,129 +95,143 @@
 }
 
 .thumbnailJac {
-  background: linear-gradient(135deg, #1f6feb 0%, #4ea1ff 45%, #0b1220 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.92) 0%,
+    rgba(79, 70, 229, 0.86) 48%,
+    rgba(30, 41, 85, 0.9) 100%
+  );
 }
 
 .thumbnailFanstone {
-  background: linear-gradient(135deg, #0b1220 0%, #3e4c68 40%, #1f6feb 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 85, 0.92) 0%,
+    rgba(79, 70, 229, 0.82) 46%,
+    rgba(15, 23, 42, 0.94) 100%
+  );
 }
 
 .thumbnailEsports {
-  background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(92, 51, 186, 0.9) 0%,
+    rgba(124, 58, 237, 0.82) 45%,
+    rgba(56, 19, 109, 0.88) 100%
+  );
 }
 
 .meta {
   display: grid;
   gap: 6px;
 
-  .badge {
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: #f3f4f6;
-    color: #374151;
-    width: max-content;
-  }
-
   h3 {
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.28;
     margin: 0;
-  }
-
-  .badge {
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: #f3f4f6;
-    color: #374151;
-    width: max-content;
-    font-weight: 600;
+    color: var(--on-card);
   }
 }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font: 600 12px/1.1 var(--ff);
+  color: var(--on-card);
+  background: #f6f7fb;
+  border: 1px solid var(--card-border);
+}
+
+.badgePrivado {
+  background: rgba(129, 140, 248, 0.18);
+  border-color: rgba(129, 140, 248, 0.28);
+}
+
+.badgePublico {
+  background: rgba(139, 92, 246, 0.16);
+  border-color: rgba(139, 92, 246, 0.26);
+}
+
+.badgeDark {
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.18);
+  border: 1px solid rgba(99, 102, 241, 0.32);
+}
+
+.story {
   display: grid;
   gap: 8px;
 }
 
-.storyBlock {
-  display: grid;
-  gap: 4px;
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
 
-  span {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #6b7280;
-    text-transform: uppercase;
-  }
+.impact,
+.roleLine,
+.resultLine {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #2c3447;
+}
 
-  p {
-    font-size: 13px;
-    color: #374151;
-    margin: 0;
-    line-height: 1.4;
-  }
+.resultLine strong {
+  color: var(--indigo-400);
+  font-weight: 600;
 }
 
 .stack {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-
-  .chip,
-  .chipMuted {
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: #f3f4f6;
-    color: #374151;
-  }
 }
 
-.role,
-.metrics {
-  display: none;
+.chip,
+.chipMuted {
+  font-size: 10.5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.06);
+  color: #1f2b3f;
 }
 
-@media (min-width: 1024px) {
-  .role,
-  .metrics {
-    display: block;
-  }
-
-  .role p,
-  .metrics p {
-    font-size: 12px;
-    color: #6b7280;
-    margin: 0 0 4px;
-  }
-
-  .role span {
-    font-size: 13px;
-    color: #374151;
-  }
-
-  .metrics li {
-    font-size: 13px;
-    color: #374151;
-  }
+.chipMuted {
+  background: rgba(17, 24, 39, 0.04);
+  color: rgba(17, 24, 39, 0.6);
 }
 
 .cta {
   align-self: flex-end;
-  height: 34px;
+  height: 36px;
   padding: 0 12px;
   font-size: 13px;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  border: 1px solid var(--card-border);
   background: #ffffff;
-  color: #0b1220;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  color: var(--indigo-400);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      background: #f8f9fd;
+      border-color: rgba(129, 140, 248, 0.32);
+      box-shadow: 0 6px 18px rgba(10, 15, 31, 0.12);
     }
   }
 }

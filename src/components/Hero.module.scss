@@ -1,13 +1,12 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .hero {
   position: relative;
-  background: var(--g-hero);
-  color: var(--c-text);
-  padding: 72px 0 80px;
+  padding: 72px 0 88px;
+  color: var(--on-dark);
 
   @media (min-width: 768px) {
-    padding: 96px 0 112px;
+    padding: 104px 0 128px;
   }
 }
 
@@ -34,12 +33,12 @@
   gap: 6px;
   padding: 6px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(230, 234, 243, 0.24);
+  background: rgba(230, 234, 243, 0.08);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--on-dark);
 }
 
 .heroTitle {
@@ -53,12 +52,12 @@
   }
 }
 
-.brandFirst {
-  color: var(--c-white);
+.brand__first {
+  color: #ffffff;
 }
 
-.brandLast {
-  background: var(--g-purple);
+.brand__last {
+  background: var(--g-name);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,7 +66,7 @@
 
 .heroSubtitle {
   font-size: 16px;
-  color: var(--c-muted);
+  color: var(--muted);
   max-width: 640px;
 }
 
@@ -84,7 +83,7 @@
   align-items: flex-start;
   gap: 10px;
   font-weight: 500;
-  color: rgba(229, 231, 235, 0.9);
+  color: rgba(229, 233, 244, 0.9);
   line-height: 1.55;
 }
 
@@ -94,7 +93,7 @@
   height: 8px;
   margin-top: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(129, 140, 248, 0.8);
   flex-shrink: 0;
 }
 
@@ -115,17 +114,18 @@
   font-size: 14px;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: transform var(--tr-1), box-shadow var(--tr-1), background var(--tr-1), border-color var(--tr-1);
+  transition: transform var(--tr-1), box-shadow var(--tr-1),
+    background var(--tr-1), border-color var(--tr-1);
 
   &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.7);
+    outline: 2px solid rgba(129, 140, 248, 0.76);
     outline-offset: 3px;
   }
 }
 
 .btnPrimary {
-  background: var(--c-primary);
-  color: var(--c-white);
+  background: var(--primary);
+  color: #ffffff;
   box-shadow: var(--shadow-2);
 
   &:hover {
@@ -135,11 +135,11 @@
 
 .btnGhost {
   background: transparent;
-  color: var(--c-white);
-  border-color: rgba(255, 255, 255, 0.24);
+  color: #ffffff;
+  border-color: rgba(230, 234, 243, 0.32);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(230, 234, 243, 0.12);
   }
 }
 
@@ -162,4 +162,3 @@
     flex: 1 1 100%;
   }
 }
-

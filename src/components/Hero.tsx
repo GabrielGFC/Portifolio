@@ -1,30 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './Hero.module.scss';
-
-const bulletPoints = [
-  'Software institucional real para educacao, pesquisa e eventos.',
-  'Back-end escalavel com integracoes internas e camadas de seguranca.',
-  'Boas praticas fortes: arquitetura, documentacao e monitoramento.',
-];
+import { motion } from "framer-motion";
+import React from "react";
+import styles from "./Hero.module.scss";
 
 const Hero: React.FC = () => {
+  const bulletPoints = [
+    "Projeto plataformas acadêmicas com check-in validado, dashboards executivos e integrações que eliminam planilhas.",
+    "Entrego APIs seguras em Node.js ou Laravel, testes automatizados e contratos OpenAPI homologados com a equipe jurídica.",
+    "Monitoro releases com logs estruturados, métricas SLO e alertas que reduzem tempo de resposta operacional.",
+  ];
+
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="inicio" className={`${styles.hero} pageSection`}>
       <div className={styles.heroWrap}>
         <motion.div
           className={styles.heroInner}
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className={styles.heroBadge}>Disponivel para projetos institucionais parrudos</span>
+          <span className={styles.heroBadge}>
+            Disponível para escalar produto institucional
+          </span>
           <h1 className={styles.heroTitle}>
-            <span className={styles.brandFirst}>Gabriel</span>
-            <span className={styles.brandLast}> F.Carvalho</span>
+            <span className={styles["brand__first"]}>Gabriel</span>
+            <span className={styles["brand__last"]}> F.Carvalho</span>
           </h1>
           <p className={styles.heroSubtitle}>
-            Desenvolvedor Back-end | Laravel | NodeJS | Python | .NET | PHP | Java
+            Engenheiro back-end para educação e governo. Libero releases
+            auditáveis com performance estável.
           </p>
           <ul className={styles.heroBullets}>
             {bulletPoints.map((point) => (
@@ -43,7 +46,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
             >
-              Ver Curriculo (PDF)
+              Baixar currículo
             </motion.a>
             <motion.a
               href="https://www.linkedin.com/in/gabrielgfc1"
@@ -53,7 +56,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.98 }}
             >
-              Falar no LinkedIn
+              Conversar no LinkedIn
             </motion.a>
           </div>
         </motion.div>

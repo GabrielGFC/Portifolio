@@ -1,5 +1,12 @@
+export type CaseStudyTabKey =
+  | "problema"
+  | "solucao"
+  | "arquitetura"
+  | "papel"
+  | "resultados";
+
 export type CaseStudyTab = {
-  key: string;
+  key: CaseStudyTabKey;
   title: string;
   content: string | string[];
 };
@@ -8,12 +15,13 @@ export type FeaturedProject = {
   id: string;
   title: string;
   badge: string;
+  badgeType: "Institucional/Privado" | "Institucional/Publico";
   impact: string;
   stack: string[];
   roleShort: string;
   resultsPreview: string[];
   owner: boolean;
-  thumbnailKey: 'jac' | 'fanstone' | 'esports';
+  thumbnailKey: "jac" | "fanstone" | "esports";
   caseStudy: {
     tabs: CaseStudyTab[];
     referenceLink?: string;
@@ -22,142 +30,159 @@ export type FeaturedProject = {
 
 export const featuredProjects: FeaturedProject[] = [
   {
-    id: 'jac',
-    title: 'JAC - Jornada Academica e Comunitaria',
-    badge: 'Institucional / Privado • Owner',
-    impact: 'Centraliza eventos e presenca com geofencing, QR Code, gamificacao e dashboards em tempo real.',
-    stack: ['React', 'Node.js', 'TypeScript', 'PostgreSQL'],
+    id: "jac",
+    title: "JAC – Jornada Acadêmica e Comunitária",
+    badge: "Institucional / Privado — Owner",
+    badgeType: "Institucional/Privado",
+    impact:
+      "Centraliza eventos e presença com check-in inteligente e dashboards estratégicos.",
+    stack: ["React", "Node.js", "TypeScript", "PostgreSQL"],
     roleShort:
-      'Owner; desenho de arquitetura, implementacao dos dominios de eventos/presenca, protecoes LGPD e handoff com design (Figma -> dev).',
+      "Owner: arquitetura, domínios de eventos/presença e proteções LGPD com handoff contínuo.",
     resultsPreview: [
-      'Resultados monitorados no dashboard executivo.',
-      'Dashboards em tempo real para direcao e coordenacoes.',
+      "Resultados monitorados no dashboard executivo.",
+      "Dashboards em tempo real para direção e coordenações.",
     ],
     owner: true,
-    thumbnailKey: 'jac',
+    thumbnailKey: "jac",
     caseStudy: {
       tabs: [
         {
-          key: 'problema',
-          title: 'Problema',
+          key: "problema",
+          title: "Problema",
           content:
-            'Fragmentacao de informacoes, controle de presenca manual e pouco confiavel, baixa visibilidade gerencial e dificuldade de comprovacao de horas.',
+            "Fragmentação de informações, controle de presença manual e pouco confiável, baixa visibilidade gerencial e dificuldade de comprovação de horas.",
         },
         {
-          key: 'solucao',
-          title: 'Solucao',
+          key: "solucao",
+          title: "Solucao",
           content:
-            'Plataforma unificada com autenticacao institucional, cadastro de eventos, check-in por geofencing e QR Code dinamico, gamificacao e relatorios.',
+            "Plataforma unificada com autenticação institucional, cadastro de eventos, check-in por geofencing e QR Code dinâmico, gamificação e relatórios.",
         },
         {
-          key: 'arquitetura',
-          title: 'Arquitetura e Seguranca (LGPD)',
+          key: "arquitetura",
+          title: "Arquitetura e Seguranca (LGPD)",
           content:
-            'Arquitetura service-oriented com React no front e Node.js/TypeScript no back, PostgreSQL, logs e auditoria; dados pessoais minimizados, consentimento explicito, criptografia em transito, politicas de retencao e controles de acesso por perfil (LGPD).',
+            "Arquitetura service-oriented com React no front e Node.js/TypeScript no back, PostgreSQL, logs e auditoria; dados pessoais minimizados, consentimento explícito, criptografia em trânsito, políticas de retenção e controles de acesso por perfil (LGPD).",
         },
         {
-          key: 'papel',
-          title: 'Papel do Gabriel',
+          key: "papel",
+          title: "Papel do Gabriel",
           content:
-            'Desenho de arquitetura, implementacao dos dominios de eventos e presenca, definicao de contratos de API, integracoes e handoff do Figma para desenvolvimento.',
+            "Desenho de arquitetura, implementação dos domínios de eventos e presença, definição de contratos de API, integrações e handoff do Figma para desenvolvimento.",
         },
         {
-          key: 'resultados',
-          title: 'Resultados',
+          key: "resultados",
+          title: "Resultados",
           content: [
-            'Resultados monitorados no dashboard executivo.',
-            '{{JAC_METRICA_1}}',
-            '{{JAC_METRICA_2}}',
-            'Dashboards em tempo real para manter direcao e coordenadores alinhados.',
+            "{{JAC_METRICA_1}}",
+            "{{JAC_METRICA_2}}",
+            "Dashboards em tempo real para manter direção e coordenadores alinhados.",
           ],
         },
       ],
     },
   },
   {
-    id: 'fanstone',
-    title: 'Sistema James Fanstone',
-    badge: 'Institucional / Privado',
-    impact: 'Gestao integral de pesquisa com fluxos auditaveis integrados ao Lyceum.',
-    stack: ['Laravel', 'Vue.js', 'PostgreSQL', 'Integracoes internas'],
-    roleShort: 'Back-end e modelagem de fluxos institucionais.',
-    resultsPreview: ['{{FANSTONE_METRICA_1}}', '{{FANSTONE_METRICA_2}}'],
+    id: "fanstone",
+    title: "Sistema James Fanstone",
+    badge: "Institucional / Privado",
+    badgeType: "Institucional/Privado",
+    impact:
+      "Organiza a pesquisa institucional com fluxos auditaveis e integracao ao Lyceum.",
+    stack: ["Laravel", "Vue.js", "PostgreSQL", "Integrações internas"],
+    roleShort:
+      "Modelagem de domínio, APIs em Laravel e integrações acadêmicas auditáveis.",
+    resultsPreview: ["{{FANSTONE_METRICA_1}}"],
     owner: false,
-    thumbnailKey: 'fanstone',
+    thumbnailKey: "fanstone",
     caseStudy: {
       tabs: [
         {
-          key: 'contexto',
-          title: 'Contexto PROPPE/UniEVANGELICA',
+          key: "problema",
+          title: "Problema",
           content:
-            'Modernizacao da gestao de pesquisa para suportar PROPPE, grupos e comites de etica com rastreabilidade institucional.',
+            "PROPPE dependia de planilhas espalhadas e aprovava projetos sem rastreabilidade única nem trilhas auditáveis.",
         },
         {
-          key: 'fluxos',
-          title: 'Fluxos Modelados',
+          key: "solucao",
+          title: "Solucao",
           content:
-            'Modelagem de dominio completa: cadastro de projetos, gestao de recursos, etapas de relatorios e aprovacao com SLA visivel.',
+            "Desenhei o Sistema James Fanstone com fluxo completo de cadastro, aprovação e relatórios com SLA monitorado.",
         },
         {
-          key: 'integracoes',
-          title: 'Integracoes',
+          key: "arquitetura",
+          title: "Arquitetura e Seguranca (LGPD)",
           content:
-            'APIs REST internas para sincronizar dados academicos e financeiros; integracao com Lyceum, provisionamento de permissoes em lote.',
+            "Laravel + PostgreSQL, filas e sincronismo seguro com Lyceum; controle granular de perfis, logs auditáveis e atendimento LGPD.",
         },
         {
-          key: 'beneficios',
-          title: 'Beneficios',
+          key: "papel",
+          title: "Papel do Gabriel",
+          content:
+            "Modelei domínios, construí APIs REST, configurei filas de processamento e alinhei handoff com pesquisadores PROPPE.",
+        },
+        {
+          key: "resultados",
+          title: "Resultados",
           content: [
-            '{{FANSTONE_METRICA_1}}',
-            '{{FANSTONE_METRICA_2}}',
-            'Fases auditaveis e historico centralizado.',
+            "{{FANSTONE_METRICA_1}}",
+            "{{FANSTONE_METRICA_2}}",
+            "Fases auditáveis e histórico centralizado.",
           ],
         },
       ],
     },
   },
   {
-    id: 'esports',
-    title: 'Portal 3rd E-Sports UniEVANGELICA',
-    badge: 'Institucional / Publico',
-    impact: 'Site oficial do torneio com cronograma, inscricoes e regulamento atualizados.',
-    stack: ['HTML', 'SCSS', 'JavaScript'],
-    roleShort: 'Front-end e responsividade real.',
-    resultsPreview: ['{{RESULTADO_ESPORTS_1}}'],
+    id: "esports",
+    title: "Portal 3rd E-Sports UniEVANGÉLICA",
+    badge: "Institucional / Publico",
+    badgeType: "Institucional/Publico",
+    impact:
+      "Publica cronograma e inscrições do torneio com acesso claro em dispositivos móveis.",
+    stack: ["HTML", "SCSS", "JavaScript"],
+    roleShort: "Front-end responsivo com SCSS modular e validação client-side.",
+    resultsPreview: ["{{RESULTADO_ESPORTS_1}}"],
     owner: false,
-    thumbnailKey: 'esports',
+    thumbnailKey: "esports",
     caseStudy: {
-      referenceLink: 'https://3rd-e-sports-da-unievangelica.figma.site/',
+      referenceLink: "https://3rd-e-sports-da-unievangelica.figma.site/",
       tabs: [
         {
-          key: 'objetivo',
-          title: 'Objetivo',
+          key: "problema",
+          title: "Problema",
           content:
-            'Construir landing institucional para o torneio E-Sports com atualizacoes rapidas e comunicacao clara para equipes inscritas.',
+            "A liga dependia de PDFs e mensagens dispersas, dificultando acompanhar prazos e regras do torneio.",
         },
         {
-          key: 'componentes',
-          title: 'Componentes',
+          key: "solucao",
+          title: "Solucao",
           content:
-            'Cronograma interativo, cards de modalidades, formulario validado e modal de regras acessivel.',
+            "Implementei portal responsivo com inscrições, cronograma e regulamento acessível com atualização rápida.",
         },
         {
-          key: 'acessibilidade',
-          title: 'Acessibilidade e Responsividade',
+          key: "arquitetura",
+          title: "Arquitetura e Seguranca (LGPD)",
           content:
-            'Layout mobile-first com testes em dispositivos, contraste AA, navegacao por teclado e leitura clara em modo de alto contraste.',
+            "HTML semântico, SCSS modular e deploy estático com cuidado a dados de inscrição e políticas de consentimento.",
         },
         {
-          key: 'resultado',
-          title: 'Resultado',
+          key: "papel",
+          title: "Papel do Gabriel",
+          content:
+            "Desenvolvi componentes, tratei responsividade real e deixei SEO e assets configurados.",
+        },
+        {
+          key: "resultados",
+          title: "Resultados",
           content: [
-            'Tempo de publicacao alinhado ao kick-off do torneio.',
-            'Equipe de comunicacao atualiza conteudo sem apoio dev.',
-            'Base para proximas edicoes da liga E-Sports.',
+            "{{RESULTADO_ESPORTS_1}}",
+            "Equipe de comunicação atualiza conteúdo sem apoio contínuo de desenvolvimento.",
+            "Base para próximas edições da liga E-Sports.",
           ],
         },
       ],
     },
   },
 ];
-

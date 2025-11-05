@@ -35,7 +35,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    setActiveTab(project?.modal.sections[0]?.id ?? '');
+    setActiveTab(project?.caseStudy.tabs[0]?.key ?? '');
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -87,45 +87,45 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
             </div>
 
             <div className={styles.tabs} role="tablist" aria-label="Sessoes do estudo de caso">
-              {project.modal.sections.map((section) => (
+              {project.caseStudy.tabs.map((tab) => (
                 <button
                   type="button"
-                  key={section.id}
+                  key={tab.key}
                   role="tab"
-                  aria-selected={activeTab === section.id}
-                  className={`${styles.tab} ${activeTab === section.id ? styles.tabActive : ''}`}
-                  onClick={() => setActiveTab(section.id)}
+                  aria-selected={activeTab === tab.key}
+                  className={`${styles.tab} ${activeTab === tab.key ? styles.tabActive : ''}`}
+                  onClick={() => setActiveTab(tab.key)}
                 >
-                  {section.title}
+                  {tab.title}
                 </button>
               ))}
             </div>
 
             <div className={styles.content}>
-              {project.modal.sections.map((section) => {
-                const isActive = section.id === activeTab;
+              {project.caseStudy.tabs.map((tab) => {
+                const isActive = tab.key === activeTab;
                 return (
-                  <AnimatePresence key={section.id} mode="wait">
+                  <AnimatePresence key={tab.key} mode="wait">
                     {isActive && (
                       <motion.div
                         className={styles.section}
                         role="tabpanel"
-                        id={`panel-${section.id}`}
-                        aria-labelledby={`tab-${section.id}`}
+                        id={`panel-${tab.key}`}
+                        aria-labelledby={`tab-${tab.key}`}
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <p className={styles.description}>{section.description}</p>
-                        {section.bullets && (
+                        {Array.isArray(tab.content) ? (
                           <ul className={styles.list}>
-                            {section.bullets.map((item) => (
+                            {tab.content.map((item) => (
                               <li key={item}>{item}</li>
                             ))}
                           </ul>
+                        ) : (
+                          <p className={styles.description}>{tab.content}</p>
                         )}
-                        {section.highlight && <p className={styles.highlight}>{section.highlight}</p>}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -133,9 +133,9 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
               })}
             </div>
 
-            {project.modal.referenceLink && (
+            {project.caseStudy.referenceLink && (
               <footer className={styles.footer}>
-                <a href={project.modal.referenceLink} target="_blank" rel="noopener noreferrer">
+                <a href={project.caseStudy.referenceLink} target="_blank" rel="noopener noreferrer">
                   Ver referencia visual
                 </a>
               </footer>
@@ -149,4 +149,3 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
 };
 
 export default CaseStudyModal;
-

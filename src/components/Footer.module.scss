@@ -1,7 +1,7 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .footer {
-  background: #0e1629;
+  background: var(--c-bg-2);
   color: #e5e7eb;
   padding: 32px 0;
   font-size: 14px;
@@ -64,4 +64,3 @@ a {
   color: #94a3b8;
   text-align: center;
 }
-

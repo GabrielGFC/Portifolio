@@ -1,8 +1,7 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
-  background: $color-bg-section;
-  padding: $spacing-3xl 0;
+  padding: clamp(60px, 9vw, 78px) 0;
 }
 
 .container {
@@ -25,8 +24,8 @@
   display: grid;
   gap: $spacing-md;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.7;
+  color: rgba(226, 230, 241, 0.84);
+  line-height: 1.6;
 
   @media (max-width: 640px) {
     font-size: 0.95rem;

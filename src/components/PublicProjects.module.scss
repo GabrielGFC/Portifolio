@@ -1,8 +1,7 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .section {
-  background: $color-bg-section;
-  padding: $spacing-3xl 0;
+  padding: clamp(56px, 8vw, 72px) 0;
 }
 
 .container {
@@ -40,21 +39,22 @@
 }
 
 .card {
-  background: #ffffff;
-  color: #0b1220;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  padding: 12px;
+  background: var(--card);
+  color: var(--on-card);
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 14px 34px rgba(9, 16, 30, 0.14);
+  padding: 14px;
   display: grid;
   gap: 8px;
   height: 100%;
 
   @media (hover: hover) and (pointer: fine) {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+      box-shadow: 0 20px 42px rgba(9, 16, 30, 0.2);
     }
   }
 }
@@ -65,7 +65,7 @@
 }
 
 .header h3 {
-  color: #0b1220;
+  color: var(--on-card);
   font-size: 0.95rem;
   margin: 0;
 }
@@ -78,29 +78,34 @@
 
 .stack span {
   font-size: 11px;
-  background: #f3f4f6;
-  color: #374151;
+  background: rgba(17, 24, 39, 0.06);
+  color: #1f2b3f;
   padding: 3px 8px;
   border-radius: 999px;
 }
 
 .description {
-  color: #374151;
+  color: #323b52;
   font-size: 13px;
   margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.45;
 }
 
 .link {
   margin-top: 4px;
   font-size: 13px;
-  color: #1f6feb;
+  color: var(--indigo-400);
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
   &:hover,
   &:focus-visible {
     text-decoration: underline;
   }
+}
+
+.link[data-fallback="true"] {
+  color: var(--violet-400);
 }

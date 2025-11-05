@@ -1,4 +1,4 @@
-@import '../styles/tokens.scss';
+@use "../styles/tokens" as *;
 
 .overlay {
   position: fixed;
@@ -91,8 +91,8 @@
 .tag {
   padding: $spacing-xs $spacing-sm;
   border-radius: $radius-full;
-  background: rgba(31, 111, 235, 0.2);
-  color: rgba(255, 255, 255, 0.92);
+  background: rgba($color-primary-rgb..., 0.14);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.78rem;
 }
 
@@ -104,14 +104,15 @@
 }
 
 .tab {
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba($color-primary-rgb..., 0.1);
+  background: rgba($color-primary-rgb..., 0.06);
+  color: rgba(255, 255, 255, 0.78);
   border-radius: $radius-full;
   padding: $spacing-xs $spacing-sm;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: background-color $transition-fast, color $transition-fast, transform $transition-fast;
+  transition: background-color $transition-fast, color $transition-fast,
+    transform $transition-fast;
 
   &:hover,
   &:focus-visible {
@@ -121,9 +122,9 @@
 }
 
 .tabActive {
-  background: rgba(31, 111, 235, 0.18);
+  background: rgba($color-primary-rgb..., 0.18);
   color: #ffffff;
-  border-color: rgba(31, 111, 235, 0.35);
+  border-color: rgba($color-primary-rgb..., 0.32);
 }
 
 .content {
@@ -160,21 +161,21 @@
 }
 
 .list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.6em;
   width: 8px;
   height: 8px;
   border-radius: $radius-full;
-  background: #1f6feb;
+  background: $color-primary;
   transform: translateY(-50%);
 }
 
 .highlight {
   padding: $spacing-sm;
-  border-left: 3px solid #1f6feb;
-  background: rgba(31, 111, 235, 0.12);
+  border-left: 3px solid $color-primary;
+  background: rgba($color-primary-rgb..., 0.1);
   color: rgba(255, 255, 255, 0.9);
   border-radius: $radius-sm;
 
@@ -190,7 +191,7 @@
 }
 
 .footer a {
-  color: #1f92ff;
+  color: $color-primary;
   font-weight: $font-weight-medium;
   text-decoration: none;
   display: inline-flex;
