@@ -18,10 +18,10 @@
     "badge": "Back-end Developer for institutional systems",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
-    "subtitle": "I develop APIs and internal integrations for education, government, and university systems. I work with relational databases, secure authentication, and technical documentation to ensure institutional systems are stable, auditable, and easy to maintain.",
-    "bullet1": "I develop APIs and internal integrations for education, government, and university systems.",
-    "bullet2": "I deliver APIs documented in OpenAPI, automated tests, and integrations that eliminate manual processes and spreadsheets.",
-    "bullet3": "I guarantee systems with complete traceability for institutional compliance and long-term maintenance.",
+    "subtitle": "I don't pick projects by stack — I pick them by impact. I've built everything from critical APIs for the Brazilian Air Force to complete platforms that power entire universities. If it's complex, scalable, and needs to work under pressure, that's the kind of challenge I'm after.",
+    "bullet1": "I've built systems from scratch for education, government, and research institutions.",
+    "bullet2": "I deliver documented, tested code ready to scale — no spreadsheets, no workarounds.",
+    "bullet3": "My work comes with native observability, structured logs, and architecture built to last.",
     "ctaDownload": "Download resume",
     "ctaLinkedIn": "Connect on LinkedIn"
   },
@@ -30,14 +30,14 @@
     "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
     "subtitle": "Backend&nbsp;Developer with experience in <span>Laravel, NodeJS, Python, .NET, PHP and Java</span>",
     "intro": "Scroll to discover <span>my skills and projects</span>",
-    "bio": "Back-end Developer with solid experience in Laravel, NodeJS, .NET, Python, PHP and Java. Works at Fábrica de Tecnologias Turing (FTT) of UniEVANGÉLICA, contributing to robust systems for educational and research institutions. Also participated in solutions for the Brazilian Air Force and maintains active academic projects.",
+    "bio": "I've been coding back-end for years using Laravel, Node.js, Python, .NET, and Java — but the stack is just a tool. What matters is solving real problems. At Fábrica de Tecnologias Turing (UniEVANGÉLICA), I coordinate systems serving thousands of users daily. I've collaborated with the Brazilian Air Force on critical projects and maintain academic repositories that became references.",
     "location": "Anápolis-GO, Brazil",
     "contacts": {
       "resumeButton": "Resume | PDF",
       "socialMedia": {
         "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
         "github": "https://github.com/GabrielGFC",
-        "email": "mailto:bibigfc@gmail.com",
+        "email": "mailto:carvalhogabrielgfc1@gmail.com",
         "site": "https://gabrielgfc.github.io/Portifolio/",
         "orcid": "https://orcid.org/0009-0001-0493-6602"
       }
@@ -69,9 +69,9 @@
 
   "summary": {
     "title": "Professional summary",
-    "paragraph1": "I'm a back-end developer focused on institutional systems. I work mainly with Laravel (PHP), Node.js/TypeScript, Python, .NET/C#, and Java, using relational databases like MySQL, PostgreSQL, SQL Server, and SQLite.",
-    "paragraph2": "I develop REST APIs documented in OpenAPI and validated with automated tests. I work with internal integrations like SSO, messaging, and academic systems, applying LGPD, encryption, and auditable controls. I work at Fábrica de Tecnologias Turing at UniEVANGÉLICA and on projects for the Brazilian Air Force, always prioritizing stability, traceability, and long-term maintenance.",
-    "paragraph3": "I collaborate with designers, product team, and legal to approve releases with observability metrics and defined SLAs, ensuring institutional systems meet compliance and audit requirements."
+    "paragraph1": "My territory is back-end for systems that can't fail. Laravel, Node.js, Python, .NET, Java — I use whatever makes sense for each scenario. Relational databases are my foundation: MySQL, PostgreSQL, SQL Server, SQLite. But I'm not limited to that. If the project demands NoSQL, message brokers, or distributed architecture, I'm in.",
+    "paragraph2": "I build REST APIs that come with versioned OpenAPI contracts, automated test suites, and documentation any dev can understand. I work with enterprise SSO, message queues, webhooks, and integrations between legacy and modern systems. Security is a baseline requirement: I implement LGPD compliance by default, layered encryption, and auditable logs that survive any external audit. At Fábrica de Tecnologias Turing and FAB projects, I learned that good code is code another dev can maintain three years later without calling me at 2 AM.",
+    "paragraph3": "I collaborate directly with designers, product owners, and even legal when projects require it. I like releases that ship with clear metrics, documented SLAs, and observability from the first commit. My goal isn't just to deliver — it's to deliver something that scales, handles real traffic, and passes compliance without surprises."
   },
 
   "featured": {
@@ -80,25 +80,25 @@
     "jac": {
       "title": "JAC – Academic and Community Journey",
       "badge": "Institutional / Private — Owner",
-      "impact": "Centralizes events and student presence with intelligent check-in, eliminating manual registration processes and providing executive visibility on participation in academic events. Strategic dashboards help managers make data-driven decisions.",
-      "roleShort": "I developed the complete system architecture, modeling event and presence domains. I implemented LGPD protections and made continuous handoff to the maintenance team.",
-      "result": "Results tracked through executive dashboards and feedback from the management team.",
+      "impact": "I centralized the university's entire event operation into a single platform. Automatic check-in via geolocation and QR Code, gamification to engage students, and executive dashboards showing real-time participation. Managers now make decisions looking at concrete numbers, not guessing how many people showed up to the event.",
+      "roleShort": "I architected from scratch, modeled event and attendance domains thinking about scalability, implemented the entire data protection layer according to LGPD, and delivered with complete documentation for the maintenance team to take over without depending on me.",
+      "result": "System in production with dashboards used weekly by senior management.",
       "cta": "Case study"
     },
     "fanstone": {
       "title": "James Fanstone System",
       "badge": "Institutional / Private",
-      "impact": "Organizes institutional research processes with auditable flows, ensuring complete traceability of approvals and reports. Integration with Lyceum eliminates data duplication and reduces manual errors.",
-      "roleShort": "I modeled the system domain, developed REST APIs in Laravel, and implemented auditable academic integrations. I worked with the research team to validate requirements and ensure flows met institutional needs.",
-      "result": "Results tracked through dashboards and feedback from the research team.",
+      "impact": "I organized the entire institutional research workflow with end-to-end auditable approvals. Integration with Lyceum cut out that absurd data duplication and manual registration errors that delayed processes for weeks. Now everything is traceable, from initial protocol to final report.",
+      "roleShort": "I modeled the system domain from stakeholder meetings, created robust REST APIs in Laravel with multi-level authentication, and implemented integrations that talk to 15-year-old systems. I validated each workflow with research staff in practical testing sessions.",
+      "result": "System running in production with unanimous approval from the research team.",
       "cta": "Case study"
     },
     "esports": {
       "title": "Portal 3rd E-Sports UniEVANGÉLICA",
       "badge": "Institutional / Public",
-      "impact": "Publishes tournament schedule and registrations with clear access on mobile devices, facilitating participation by students and external community. The portal replaced manual registration and communication processes.",
-      "roleShort": "I developed the responsive front-end with modular SCSS, implemented client-side validation, and structured the code for accessibility. I worked with designers to ensure a consistent visual experience.",
-      "result": "Portal published and used during tournament events, with positive feedback on mobile accessibility and ease of use.",
+      "impact": "I created a portal where any student can see the complete tournament schedule and register directly from their phone, without printing anything or sending emails to confirm. That whole bureaucracy that made organizers waste days just managing registrations is gone.",
+      "roleShort": "I developed the entire responsive front-end using modular SCSS, implemented client-side validations that prevent input errors, and structured the code with accessibility in mind from the start. I worked side by side with designers to ensure the visual experience was flawless on any device.",
+      "result": "Portal ran throughout the tournament without a single support ticket.",
       "cta": "Case study"
     }
   },
@@ -109,25 +109,25 @@
       "role": "Back-end Developer",
       "company": "Fábrica de Tecnologias Turing (FTT) – UniEVANGÉLICA",
       "period": "Sep 2023–present",
-      "bullet1": "I developed REST APIs with Node.js and TypeScript, versioning OpenAPI contracts and reducing rework for the development team.",
-      "bullet2": "I implemented integrations via messaging and internal SSO, optimizing PostgreSQL queries and maintaining low latency in critical systems.",
-      "bullet3": "I participated in technical reviews and implemented observability with structured logs, helping anticipate incidents in institutional releases."
+      "bullet1": "I built complete REST APIs with Node.js and TypeScript, versioned contracts in OpenAPI 3.0, and documented everything so other devs could integrate without calling me on Slack for every question.",
+      "bullet2": "I implemented integrations using RabbitMQ and internal SSO with OAuth2, optimized PostgreSQL queries that were killing the database, and kept latency below 200ms even under heavy load.",
+      "bullet3": "I review team code weekly and structured logs with correlationID to track requests from start to finish — essential when something breaks in production at 3 PM."
     },
     "proppe": {
       "role": "Research Analyst/Dev",
       "company": "PROPPE – UniEVANGÉLICA",
       "period": "Mar 2024–present",
-      "bullet1": "I modeled research flows with Laravel and PostgreSQL, automating multi-step approvals and auditable trails.",
-      "bullet2": "I integrated Lyceum and ERPs with secure APIs and queues, eliminating recurring manual registrations and reducing operational errors.",
-      "bullet3": "I built Vue.js dashboards for directors and researchers, reducing report delays and improving process visibility."
+      "bullet1": "I modeled complex research approval workflows using Laravel with PostgreSQL, automated stages that used to take weeks, and created auditable trails that actually work in external audits.",
+      "bullet2": "I integrated Lyceum and legacy ERPs through secure REST APIs with retry logic and dead letter queues — zero data loss, fewer human errors, processes that run themselves.",
+      "bullet3": "I built interactive dashboards with Vue.js for managers and researchers to see the status of everything in real-time. Nobody needs to send emails asking 'where's my process?' anymore."
     },
     "fab": {
       "role": "Back-end Collaborator",
       "company": "Brazilian Air Force",
       "period": "2024",
-      "bullet1": "I implemented an availability API in .NET with JWT authentication, controlling profiles and ensuring operational traceability.",
-      "bullet2": "I defined test pipelines and automatic coverage, documenting routes with Swagger for internal audits.",
-      "bullet3": "I instrumented logs in Elasticsearch and configured objective alerts, reducing response time to availability incidents."
+      "bullet1": "I developed a complete availability control API in .NET 6 with JWT authentication, granular profile control, and traceability in every operation — baseline requirement in a military environment.",
+      "bullet2": "I configured CI/CD pipelines with automated tests, coverage above 80%, and Swagger documentation that passed all internal audits without revision.",
+      "bullet3": "I implemented structured logs in Elasticsearch with alerts configured in Kibana. When something goes off track, the team gets alerts before end users complain."
     }
   },
 
@@ -261,6 +261,7 @@
       }
     ]
   },
+
   "section5": {
     "title": "Institutional and Private Projects",
     "subtitle": "Systems developed for educational and research institutions",
@@ -310,6 +311,7 @@
       }
     ]
   },
+
   "section6": {
     "title": "Certifications",
     "subtitle": "Qualifications and completed courses",
@@ -328,6 +330,7 @@
       }
     ]
   },
+
   "section7": {
     "title": "GitHub Achievements",
     "subtitle": "Achievements and highlights from GitHub profile",
@@ -350,33 +353,34 @@
       }
     ]
   },
+
   "education": {
     "title": "Education and certifications",
     "degree": {
       "title": "Bachelor's in Software Engineering",
       "institution": "Universidade Evangélica de Goiás (UniEVANGÉLICA)",
       "period": "2023-2027",
-      "description1": "Curriculum with requirements engineering, service-oriented architecture, and IT governance applied to institutional projects.",
-      "description2": "I work at Fábrica de Tecnologias Turing, developing scalable APIs and systems with observability for education and digital government."
+      "description1": "Degree with heavy curriculum in requirements engineering, service-oriented software architecture, and agile methodologies applied in real projects with real stakeholders.",
+      "description2": "I've been working at Fábrica de Tecnologias Turing since the beginning, where I coordinate scalable APIs and systems with complete observability for universities and government agencies."
     },
     "certifications": [
       {
         "title": "Laravel 11 - Full Stack Framework",
         "issuer": "EspecializaTi",
         "year": "2024",
-        "detail": "REST API construction, queues, authentication, and automated tests aligned with corporate environments."
+        "detail": "REST APIs, asynchronous queues, multi-factor authentication, and automated tests geared toward high-availability corporate environments."
       },
       {
         "title": "C# Fundamentals",
         "issuer": "Digital Innovation One",
         "year": "2024",
-        "detail": "Object-oriented programming, generic collections, and best practices for .NET services."
+        "detail": "Object-oriented programming, generic collections, LINQ, and consolidated best practices in the .NET ecosystem."
       },
       {
         "title": "Remote Work Professional",
         "issuer": "Remote Skills Academy",
         "year": "2023",
-        "detail": "Asynchronous communication, governance of distributed rituals, and operational documentation for remote work."
+        "detail": "Asynchronous communication, managing globally distributed teams, and operational documentation that actually works for real remote teams."
       }
     ]
   },
@@ -393,6 +397,7 @@
       }
     ]
   },
+
   "organizations": {
     "title": "Organizations",
     "subtitle": "Organizations and companies where I work or contribute",
@@ -424,12 +429,12 @@
 
   "contact": {
     "title": "Get in touch",
-    "subtitle": "Choose your preferred channel to reach me.",
+    "subtitle": "For professional proposals, use exclusively the email below. It's the only channel I monitor for opportunities.",
     "items": {
       "email": {
         "label": "E-mail",
-        "value": "bibigfc@gmail.com",
-        "href": "mailto:bibigfc@gmail.com"
+        "value": "carvalhogabrielgfc1@gmail.com",
+        "href": "mailto:carvalhogabrielgfc1@gmail.com"
       },
       "linkedin": {
         "label": "LinkedIn",
@@ -455,7 +460,7 @@
     "present": "present",
     "about": {
       "title": "About",
-      "description": "Back-end developer focused on institutional systems, secure APIs, and internal integrations. I work at Fábrica de Tecnologias Turing at UniEVANGÉLICA delivering auditable platforms."
+      "description": "I build back-end for systems that can't fail. Secure APIs, complex integrations, code that scales. At Fábrica de Tecnologias Turing (UniEVANGÉLICA), I deliver auditable systems that have been running for years without critical tickets. For professional proposals: carvalhogabrielgfc1@gmail.com"
     },
     "navigation": {
       "title": "Navigation",
@@ -475,7 +480,7 @@
           "label": "LinkedIn",
           "href": "https://www.linkedin.com/in/gabrielgfc1"
         },
-        { "label": "E-mail", "href": "mailto:bibigfc@gmail.com" },
+        { "label": "Professional E-mail", "href": "mailto:carvalhogabrielgfc1@gmail.com" },
         {
           "label": "Resume PDF",
           "href": "/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
