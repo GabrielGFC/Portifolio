@@ -31,8 +31,9 @@ const Footer: React.FC = () => {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    download={item.href.includes('.pdf') ? 'Gabriel_Fernandes_de_Carvalho.pdf' : undefined}
+                    target={item.href.startsWith('http') || item.href.includes('.pdf') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') || item.href.includes('.pdf') ? 'noopener noreferrer' : undefined}
                   >
                     {item.label}
                   </a>

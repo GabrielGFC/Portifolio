@@ -25,6 +25,7 @@ const Hero: React.FC = () => {
           <div className={styles.heroActions}>
             <motion.a
               href="/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
+              download="Gabriel_Fernandes_de_Carvalho.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className={`${styles.btn} ${styles.btnPrimary}`}
