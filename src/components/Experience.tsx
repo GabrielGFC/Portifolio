@@ -17,16 +17,6 @@ const Experience: React.FC = () => {
 
   const timeline: TimelineItem[] = [
     {
-      company: data.experience.ftt.company,
-      role: data.experience.ftt.role,
-      period: data.experience.ftt.period,
-      achievements: [
-        data.experience.ftt.bullet1,
-        data.experience.ftt.bullet2,
-        data.experience.ftt.bullet3,
-      ],
-    },
-    {
       company: data.experience.proppe.company,
       role: data.experience.proppe.role,
       period: data.experience.proppe.period,
@@ -37,6 +27,26 @@ const Experience: React.FC = () => {
       ],
     },
     {
+      company: `${data.experience.estagio.company} · Estágio`,
+      role: data.experience.estagio.role,
+      period: data.experience.estagio.period,
+      achievements: [
+        data.experience.estagio.bullet1,
+        data.experience.estagio.bullet2,
+        data.experience.estagio.bullet3,
+      ],
+    },
+    {
+      company: data.experience.ftt.company,
+      role: data.experience.ftt.role,
+      period: data.experience.ftt.period,
+      achievements: [
+        data.experience.ftt.bullet1,
+        data.experience.ftt.bullet2,
+        data.experience.ftt.bullet3,
+      ],
+    },
+    {
       company: data.experience.fab.company,
       role: data.experience.fab.role,
       period: data.experience.fab.period,
@@ -44,6 +54,26 @@ const Experience: React.FC = () => {
         data.experience.fab.bullet1,
         data.experience.fab.bullet2,
         data.experience.fab.bullet3,
+      ],
+    },
+    {
+      company: data.experience.leomed.company,
+      role: data.experience.leomed.role,
+      period: data.experience.leomed.period,
+      achievements: [
+        data.experience.leomed.bullet1,
+        data.experience.leomed.bullet2,
+        data.experience.leomed.bullet3,
+      ],
+    },
+    {
+      company: data.experience.tecpress.company,
+      role: data.experience.tecpress.role,
+      period: data.experience.tecpress.period,
+      achievements: [
+        data.experience.tecpress.bullet1,
+        data.experience.tecpress.bullet2,
+        data.experience.tecpress.bullet3,
       ],
     },
   ];

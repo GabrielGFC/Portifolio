@@ -2,7 +2,31 @@ import { motion, useReducedMotion } from "framer-motion";
 import React, { Suspense, lazy, useContext, useMemo, useState } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { FeaturedProject, featuredProjects } from "../data/featuredProjects";
+import jacShot from "../assets/projects/jac.png";
+import fanstoneShot from "../assets/projects/fanstone.png";
+import esportsShot from "../assets/projects/esports.png";
+import maximizaShot from "../assets/projects/maximiza.png";
+import farmaShot from "../assets/projects/farma.png";
+import cannasysShot from "../assets/projects/cannasys.png";
 import styles from "./Featured.module.scss";
+
+const thumbnailImageMap: Record<FeaturedProject["thumbnailKey"], string> = {
+  jac: jacShot,
+  fanstone: fanstoneShot,
+  esports: esportsShot,
+  maximiza: maximizaShot,
+  farma: farmaShot,
+  cannasys: cannasysShot,
+};
+
+const thumbnailUrlMap: Record<FeaturedProject["thumbnailKey"], string> = {
+  jac: "jac-front-end.vercel.app",
+  fanstone: "plataformajf.unievangelica.edu.br",
+  esports: "esports.unievangelica.edu.br",
+  maximiza: "maximiza-seguros.workers.dev",
+  farma: "farma.workers.dev",
+  cannasys: "github.com/GabrielGFC/restapi-cannays",
+};
 
 const CaseStudyModal = lazy(() => import("./CaseStudyModal"));
 
@@ -10,6 +34,9 @@ const thumbnailClassMap: Record<FeaturedProject["thumbnailKey"], string> = {
   jac: styles.thumbnailJac,
   fanstone: styles.thumbnailFanstone,
   esports: styles.thumbnailEsports,
+  maximiza: styles.thumbnailMaximiza,
+  farma: styles.thumbnailFarma,
+  cannasys: styles.thumbnailCannasys,
 };
 
 const badgeTheme: Record<FeaturedProject["badgeType"], string> = {
@@ -82,7 +109,30 @@ const Featured: React.FC = () => {
                   thumbnailClassMap[project.thumbnailKey]
                 }`}
               >
-                <span>{project.title}</span>
+                <div className={styles.browserFrame}>
+                  <div className={styles.browserBar}>
+                    <span className={styles.browserDot} data-color="red" />
+                    <span className={styles.browserDot} data-color="yellow" />
+                    <span className={styles.browserDot} data-color="green" />
+                    <span className={styles.browserUrl}>
+                      {thumbnailUrlMap[project.thumbnailKey]}
+                    </span>
+                  </div>
+                  <div className={styles.browserContent}>
+                    <img
+                      src={thumbnailImageMap[project.thumbnailKey]}
+                      alt=""
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).style.display =
+                          "none";
+                      }}
+                    />
+                    <span className={styles.placeholderLabel}>
+                      {thumbnailUrlMap[project.thumbnailKey]}
+                    </span>
+                  </div>
+                </div>
               </div>
 
               <div className={styles.meta}>
@@ -113,13 +163,25 @@ const Featured: React.FC = () => {
                 ) : null}
               </div>
 
-              <button
-                type="button"
-                className={styles.cta}
-                onClick={() => handleOpen(project.id)}
-              >
-                {data.common.viewDetails}
-              </button>
+              <div className={styles.actions}>
+                <button
+                  type="button"
+                  className={styles.cta}
+                  onClick={() => handleOpen(project.id)}
+                >
+                  {data.common.viewDetails}
+                </button>
+                {project.caseStudy.referenceLink ? (
+                  <a
+                    className={styles.ctaPrimary}
+                    href={project.caseStudy.referenceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Acessar Sistema ↗
+                  </a>
+                ) : null}
+              </div>
             </motion.article>
           ))}
         </div>

@@ -78,16 +78,10 @@ const Contact: React.FC = () => {
               }
               viewport={{ once: true, amount: 0.2 }}
             >
-              <div className={styles.icon}>
-                {channel.icon ? (
-                  <img src={channel.icon} alt={channel.label} />
-                ) : (
-                  <span className={styles.iconPlaceholder}>📷</span>
-                )}
-              </div>
               <div className={styles.content}>
                 <span className={styles.label}>{channel.label}</span>
                 <span className={styles.value}>{channel.value}</span>
+                <span className={styles.action}>Abrir →</span>
               </div>
             </motion.a>
           ))}

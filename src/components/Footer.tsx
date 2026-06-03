@@ -44,6 +44,28 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.legal}>
           <span>{`© ${year} ${data.footer.copyright}`}</span>
+          {Array.isArray(data.footer.legal) ? (
+            <div className={styles.legalLinks}>
+              {data.footer.legal.map((item: { label: string; href: string }) => (
+                <a
+                  key={item.href}
+                  className={styles.legalLink}
+                  href={item.href}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <button
+                type="button"
+                className={styles.legalLink}
+                onClick={() =>
+                  window.dispatchEvent(new CustomEvent("gfc:open-privacy"))
+                }
+              >
+                Gerenciar consentimento
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </footer>

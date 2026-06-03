@@ -1,0 +1,225 @@
+@use "../styles/tokens" as *;
+
+.banner {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-card);
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18),
+    0 4px 14px rgba(0, 0, 0, 0.08);
+
+  @media (min-width: 640px) {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+}
+
+.content {
+  display: grid;
+  gap: 16px;
+  padding: 20px 22px;
+  align-items: start;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 22px 26px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.heading {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+  margin: 0 0 4px;
+}
+
+.message {
+  font-family: var(--ff);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+
+  strong {
+    color: var(--color-text-main);
+    font-weight: 600;
+  }
+}
+
+.inlineLink {
+  display: inline;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: var(--color-text-main);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  transition: color var(--tr-base);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+  }
+}
+
+.mailLink {
+  color: var(--color-text-main);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--ff);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-subtle);
+
+  p {
+    margin: 0;
+  }
+
+  strong {
+    color: var(--color-text-main);
+    font-weight: 600;
+  }
+
+  em {
+    color: var(--color-text-main);
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
+.controller {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--color-border-subtle);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+  opacity: 0.85;
+}
+
+.reopener {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 14px;
+  font-family: var(--ff);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-card);
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: color var(--tr-base), border-color var(--tr-base),
+    transform var(--tr-base);
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-accent);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-text-main);
+    border-color: var(--color-text-main);
+    transform: translateY(-1px);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+
+  @media (max-width: 639px) {
+    justify-content: flex-end;
+  }
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 22px;
+  font-family: var(--ff);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color var(--tr-base), color var(--tr-base),
+    border-color var(--tr-base);
+}
+
+.primary {
+  background: var(--color-text-main);
+  color: var(--color-bg);
+  border: 1px solid var(--color-text-main);
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-bg);
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border-medium);
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--color-text-main);
+  }
+}

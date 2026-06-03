@@ -15,13 +15,13 @@
   },
 
   "hero": {
-    "badge": "Desenvolvedor Back-end para sistemas institucionais",
+    "badge": "Backend Developer Jr · Laravel · Node.js · TypeScript · PostgreSQL",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
-    "subtitle": "Construo soluções back-end para organizações educacionais e governamentais. Minha especialidade? Transformar processos complicados em APIs simples, seguras e que realmente funcionam no dia a dia.",
-    "bullet1": "Crio APIs e conexões entre sistemas para universidades e órgãos públicos.",
-    "bullet2": "Meu código vem com documentação clara, testes completos e bye-bye planilhas manuais.",
-    "bullet3": "Priorizo código que qualquer dev consegue entender seis meses depois.",
+    "subtitle": "Desenvolvedor backend e estudante de Engenharia de Software com experiência prática em APIs REST, integração de sistemas acadêmicos e corporativos e soluções institucionais para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira.",
+    "bullet1": "APIs REST documentadas em Laravel, Node.js/TypeScript, .NET (C#) e Java sobre PostgreSQL, MySQL e SQL Server.",
+    "bullet2": "Autenticação, filas de processamento, integrações com sistemas acadêmicos e controles de acesso auditáveis (LGPD).",
+    "bullet3": "Foco em código limpo, arquitetura consistente e evolução técnica do time.",
     "ctaDownload": "Baixar currículo",
     "ctaLinkedIn": "Conversar no LinkedIn"
   },
@@ -48,12 +48,12 @@
     "skillsBox": {
       "title": "Habilidades",
       "skills": [
-        ".NET Core | C#",
-        "Node.js | Express | NestJS",
-        "Python (automação e APIs)",
         "Laravel | PHP 8",
-        "SQL Server • PostgreSQL",
-        "Scrum (PSM-I) • Git • Docker"
+        "Node.js | TypeScript | NestJS",
+        "Next.js | React | TypeScript",
+        ".NET Core | C# | Java",
+        "PostgreSQL | MySQL | SQL Server",
+        "Testes de integração | Git | Docker"
       ]
     },
     "toolsBox": {
@@ -69,9 +69,9 @@
 
   "summary": {
     "title": "Resumo profissional",
-    "paragraph1": "Meu foco é back-end para instituições. No toolkit: Laravel com PHP, Node.js com TypeScript, Python, .NET com C#, e Java quando precisa. Banco de dados? MySQL, PostgreSQL, SQL Server ou SQLite — depende do projeto.",
-    "paragraph2": "Construo APIs REST que vêm com documentação OpenAPI e bateria de testes. Trabalho bastante com SSO, filas de mensagens e integrações com sistemas acadêmicos. Segurança não é opcional: LGPD, criptografia e logs auditáveis são padrão. Na Fábrica de Tecnologias Turing e nos projetos da FAB, a regra é: tem que ser estável e fácil de dar manutenção.",
-    "paragraph3": "Trabalho junto com designers, pessoal de produto e até o jurídico pra garantir que cada release saia redondo. Gosto de métricas claras, SLAs definidos e sistemas que atendem os requisitos sem criar dor de cabeça."
+    "paragraph1": "Meu foco é back-end para instituições. Trabalho com Laravel em PHP, Node.js com TypeScript, Python, .NET com C# e Java quando o projeto pede. Banco de dados varia: PostgreSQL, MySQL, SQL Server ou SQLite — escolho pelo encaixe.",
+    "paragraph2": "Construo APIs REST com OpenAPI, testes, autenticação, filas de processamento e integrações com sistemas acadêmicos. Segurança é requisito: controle de acesso, criptografia e logging auditável alinhado à LGPD são padrão nas entregas.",
+    "paragraph3": "Já contribuí para projetos na UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira, participando da construção de sistemas estáveis, escaláveis e de fácil manutenção. Busco oportunidades como Desenvolvedor Backend Jr / Software Engineer Jr onde possa contribuir com código limpo, arquitetura consistente e evolução técnica do time."
   },
 
   "featured": {
@@ -106,28 +106,52 @@
   "experience": {
     "title": "Experiência",
     "ftt": {
-      "role": "Desenvolvedor Back-end",
+      "role": "Desenvolvedor de Software",
       "company": "Fábrica de Tecnologias Turing (FTT) – UniEVANGÉLICA",
       "period": "set/2023–atual",
-      "bullet1": "Criei APIs REST com Node.js e TypeScript. Documentei tudo no padrão OpenAPI pra facilitar a vida de quem precisa integrar.",
-      "bullet2": "Montei integrações usando filas de mensagens e SSO interno. Otimizei queries no PostgreSQL pra manter tudo rápido nos sistemas mais críticos.",
-      "bullet3": "Participo das revisões de código e estruturei logs pra gente identificar problemas antes de virar incêndio."
+      "bullet1": "Soluções backend para projetos institucionais com Node.js, TypeScript e PHP.",
+      "bullet2": "Estruturação de APIs REST e modelagem de banco de dados para sistemas internos.",
+      "bullet3": "Atuação em times multidisciplinares, suporte técnico e manutenção evolutiva."
     },
     "proppe": {
-      "role": "Analista/Dev de Pesquisa",
-      "company": "PROPPE – UniEVANGÉLICA",
-      "period": "mar/2024–atual",
-      "bullet1": "Modelei fluxos de aprovação de pesquisa usando Laravel e PostgreSQL. Automatizei as etapas e deixei tudo rastreável.",
-      "bullet2": "Conectei o Lyceum e os ERPs através de APIs seguras. Resultado: menos cadastro manual, menos erro humano.",
-      "bullet3": "Montei dashboards com Vue.js pros gestores e pesquisadores. Agora eles veem os processos em tempo real."
+      "role": "Assistente de Tecnologia Nível I",
+      "company": "UniEVANGÉLICA – Universidade Evangélica de Goiás",
+      "period": "abr/2026–atual",
+      "bullet1": "Desenvolvimento e manutenção de sistemas acadêmicos com PHP (Laravel) e bancos relacionais.",
+      "bullet2": "Implementação de APIs REST para integração entre plataformas educacionais e serviços internos.",
+      "bullet3": "Boas práticas de segurança, logging e controle de acesso alinhados à LGPD."
+    },
+    "estagio": {
+      "role": "Estagiário",
+      "company": "UniEVANGÉLICA – Universidade Evangélica de Goiás",
+      "period": "out/2024–abr/2026",
+      "bullet1": "Desenvolvimento e manutenção de sistemas acadêmicos com PHP (Laravel) e bancos relacionais.",
+      "bullet2": "APIs REST para integração entre plataformas educacionais e serviços internos.",
+      "bullet3": "Evolução de funcionalidades, correções e melhoria da estabilidade das aplicações."
     },
     "fab": {
-      "role": "Colaborador Back-end",
-      "company": "Força Aérea Brasileira",
-      "period": "2024",
-      "bullet1": "Desenvolvi uma API de controle de disponibilidade em .NET. Autenticação JWT, controle de perfis, tudo rastreável.",
-      "bullet2": "Configurei pipelines de teste e cobertura automática. Documentei as rotas com Swagger pensando nas auditorias internas.",
-      "bullet3": "Coloquei logs estruturados no Elasticsearch e criei alertas objetivos. Diminuiu bastante o tempo de resposta quando algo sai do ar."
+      "role": "Software Developer",
+      "company": "Força Aérea Brasileira – FAB",
+      "period": "jan/2024–dez/2024",
+      "bullet1": "Soluções internas para gestão e automação de processos.",
+      "bullet2": "Criação de funcionalidades backend e suporte à integração entre sistemas.",
+      "bullet3": "Melhoria de confiabilidade e manutenção das aplicações institucionais."
+    },
+    "leomed": {
+      "role": "Assistente de Compras",
+      "company": "Leomed Drogarias",
+      "period": "jan/2023–ago/2023",
+      "bullet1": "Apoio no controle de pedidos, fornecedores e processos internos de aquisição.",
+      "bullet2": "Organização de dados e registros operacionais, garantindo rastreabilidade.",
+      "bullet3": "Interação com setores diversos, desenvolvendo visão de processos e fluxos corporativos."
+    },
+    "tecpress": {
+      "role": "Suporte Técnico",
+      "company": "Tecpress Tecnologia",
+      "period": "jan/2019–dez/2022",
+      "bullet1": "Atendimento técnico e diagnóstico de problemas em infraestrutura, redes e sistemas.",
+      "bullet2": "Manutenção preventiva e corretiva de equipamentos e softwares corporativos.",
+      "bullet3": "Troubleshooting, análise de logs e resolução de incidentes em ambientes de TI."
     }
   },
 
@@ -487,6 +511,11 @@
         }
       ]
     },
-    "copyright": "Gabriel Fernandes de Carvalho. Todos os direitos reservados."
+    "copyright": "Gabriel Fernandes de Carvalho. Todos os direitos reservados.",
+    "legal": [
+      { "label": "Política de Privacidade", "href": "#/privacidade" },
+      { "label": "Termos de Uso", "href": "#/termos" },
+      { "label": "Cookies", "href": "#/cookies" }
+    ]
   }
 }

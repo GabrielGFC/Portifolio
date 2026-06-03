@@ -65,5 +65,40 @@ a {
   padding-top: 16px;
   font-size: 13px;
   color: var(--color-text-muted);
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  @media (min-width: 640px) {
+    justify-content: space-between;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.legalLink {
+  background: transparent;
+  border: none;
+  padding: 2px 0;
+  font: inherit;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  transition: color var(--tr-base), border-color var(--tr-base);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-text-main);
+    border-bottom-color: var(--color-accent);
+  }
 }

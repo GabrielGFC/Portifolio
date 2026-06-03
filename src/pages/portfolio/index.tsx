@@ -9,6 +9,7 @@ import PublicProjects from '../../components/PublicProjects';
 import Education from '../../components/Education';
 import Contact from '../../components/Contact';
 import Footer from '../../components/Footer';
+import PrivacyConsent from '../../components/PrivacyConsent';
 import '../../styles/globals.scss';
 
 const Portfolio: React.FC = () => {
@@ -25,6 +26,7 @@ const Portfolio: React.FC = () => {
         <Contact />
       </main>
       <Footer />
+      <PrivacyConsent />
     </LanguageProvider>
   );
 };

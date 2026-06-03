@@ -24,19 +24,56 @@ body {
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  &::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background: var(--g-overlay);
-    opacity: 1;
-    z-index: -1;
-  }
+  overflow-x: hidden;
 
   @media (min-width: 768px) {
     font-size: 16px;
+  }
+}
+
+/* Marquee — usado em divisores editoriais */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Text reveal — entrada de títulos */
+@keyframes textReveal {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Reveal genérico (scroll) */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes emberFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate(-60px, 80px) scale(1.15);
+    opacity: 1;
   }
 }
 
@@ -55,8 +92,10 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--ff-display);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--color-text-main);
 }
 

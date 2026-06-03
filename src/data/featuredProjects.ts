@@ -21,7 +21,13 @@ export type FeaturedProject = {
   roleShort: string;
   resultsPreview: string[];
   owner: boolean;
-  thumbnailKey: "jac" | "fanstone" | "esports";
+  thumbnailKey:
+    | "jac"
+    | "fanstone"
+    | "esports"
+    | "maximiza"
+    | "farma"
+    | "cannasys";
   caseStudy: {
     tabs: CaseStudyTab[];
     referenceLink?: string;
@@ -45,6 +51,7 @@ export const featuredProjects: FeaturedProject[] = [
     owner: true,
     thumbnailKey: "jac",
     caseStudy: {
+      referenceLink: "https://jac-front-end.vercel.app/",
       tabs: [
         {
           key: "problema",
@@ -81,6 +88,60 @@ export const featuredProjects: FeaturedProject[] = [
     },
   },
   {
+    id: "cannasys",
+    title: "CannaSYS — Gestão para Terapia com Cannabis",
+    badge: "Pesquisa / Privado — Backend Owner",
+    badgeType: "Institucional/Privado",
+    impact:
+      "ERP modular para associações que ofertam terapia com cannabis medicinal, integrando prontuário, prescrição, produção de óleo, dispensação, financeiro e RH. Centraliza fluxos que antes viviam em planilhas e atende um nicho com forte exigência regulatória.",
+    stack: ["Laravel", "Node.js", "PostgreSQL", "APIs REST", "Microserviços"],
+    roleShort:
+      "Desenvolvedor backend responsável pelo modelo de domínio, APIs REST e arquitetura modular do sistema, com foco em segurança de dados sensíveis de saúde.",
+    resultsPreview: [
+      "Sistema modular dividido em fases (prontuário/prescrição, produção/dispensação, financeiro/RH) com cronograma de 12 meses.",
+    ],
+    owner: true,
+    thumbnailKey: "cannasys",
+    caseStudy: {
+      referenceLink: "https://github.com/GabrielGFC/restapi-cannays",
+      tabs: [
+        {
+          key: "problema",
+          title: "Contexto",
+          content:
+            "Associações sem fins lucrativos que fornecem cannabis medicinal enfrentam desafios significativos na automação e integração dos processos — paciente, médico, farmacêutico, produção de óleo, dispensação, financeiro e RH ainda vivem em planilhas desconectadas.",
+        },
+        {
+          key: "solucao",
+          title: "Impacto",
+          content:
+            "ERP modular que automatiza e integra as atividades dos diferentes setores, oferecendo controle abrangente da interação paciente-médico-farmacêutico, da produção e dispensação de medicamentos e da gestão financeira e de RH em um único fluxo.",
+        },
+        {
+          key: "arquitetura",
+          title: "Stack",
+          content:
+            "Arquitetura modular com microserviços, back-end em Laravel/Node.js sobre PostgreSQL, APIs REST documentadas, controle de acesso por permissões, criptografia de dados sensíveis e hospedagem em nuvem com backups regulares. Metodologia Scrum apoiada por Lean Inception, desenvolvimento incremental por módulo.",
+        },
+        {
+          key: "papel",
+          title: "Papel do Gabriel",
+          content:
+            "Backend developer: modelagem de domínio, construção das APIs REST de prontuário e receituário, integração entre módulos, controle de acesso, logging auditável e suporte à evolução incremental do sistema.",
+        },
+        {
+          key: "resultados",
+          title: "Resultados",
+          content: [
+            "Plano de trabalho aprovado dentro da iniciativa de pesquisa institucional.",
+            "Arquitetura modular pronta pra escalar conforme novos módulos são incorporados.",
+            "Repositório aberto do back-end: github.com/GabrielGFC/restapi-cannays.",
+          ],
+        },
+      ],
+    },
+  },
+  {
     id: "fanstone",
     title: "Sistema James Fanstone",
     badge: "Institucional / Privado",
@@ -96,6 +157,7 @@ export const featuredProjects: FeaturedProject[] = [
     owner: false,
     thumbnailKey: "fanstone",
     caseStudy: {
+      referenceLink: "https://plataformajf.unievangelica.edu.br/",
       tabs: [
         {
           key: "problema",
@@ -132,8 +194,112 @@ export const featuredProjects: FeaturedProject[] = [
     },
   },
   {
+    id: "maximiza",
+    title: "Maximiza Seguros",
+    badge: "Cliente / Produção — Owner",
+    badgeType: "Institucional/Publico",
+    impact:
+      "Landing institucional publicada em Cloudflare Workers com foco em performance, SEO técnico e conversão. Entrega edge-first com TTFB baixo e build automatizado.",
+    stack: ["Cloudflare Workers", "TypeScript", "Edge", "SEO"],
+    roleShort:
+      "Concebi a arquitetura serverless/edge, modelei o conteúdo e implementei a landing com pipeline de deploy automatizado.",
+    resultsPreview: [
+      "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
+    ],
+    owner: true,
+    thumbnailKey: "maximiza",
+    caseStudy: {
+      referenceLink: "https://maximiza-seguros.gabriel-fernandes-f48.workers.dev/",
+      tabs: [
+        {
+          key: "problema",
+          title: "Contexto",
+          content:
+            "Landing institucional para corretora de seguros com requisitos de performance, SEO técnico e conversão de leads.",
+        },
+        {
+          key: "solucao",
+          title: "Impacto",
+          content:
+            "Entrega edge-first com TTFB baixo, SEO técnico bem estruturado e pipeline de deploy automatizado em Cloudflare Workers.",
+        },
+        {
+          key: "arquitetura",
+          title: "Stack",
+          content:
+            "Cloudflare Workers + TypeScript com renderização edge, build automatizado via Wrangler e otimizações de Core Web Vitals.",
+        },
+        {
+          key: "papel",
+          title: "Papel do Gabriel",
+          content:
+            "Concebi a arquitetura edge, implementei o front-end, configurei o pipeline de deploy e otimizei performance/SEO.",
+        },
+        {
+          key: "resultados",
+          title: "Resultados",
+          content: [
+            "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
+          ],
+        },
+      ],
+    },
+  },
+  {
+    id: "farma",
+    title: "Farm Automático de XP Dev",
+    badge: "Produto Pessoal / Produção — Owner",
+    badgeType: "Institucional/Publico",
+    impact:
+      "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão. Mostra capacidade de criar produtos com identidade forte e narrativa.",
+    stack: ["Cloudflare Workers", "TypeScript", "Edge", "UI/UX"],
+    roleShort:
+      "Concebi, desenhei e publiquei sozinho o produto — da identidade visual pixel-art à infraestrutura edge.",
+    resultsPreview: [
+      "Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico.",
+    ],
+    owner: true,
+    thumbnailKey: "farma",
+    caseStudy: {
+      referenceLink: "https://farma.gabriel-fernandes-f48.workers.dev/",
+      tabs: [
+        {
+          key: "problema",
+          title: "Contexto",
+          content:
+            "Vitrine pessoal com identidade gamer/pixel que apresenta meu perfil dev em formato de quests e progressão, fugindo do currículo tradicional.",
+        },
+        {
+          key: "solucao",
+          title: "Impacto",
+          content:
+            "Narrativa diferenciada que comunica habilidades e personalidade em paralelo, com performance edge-first e zero servidor dedicado.",
+        },
+        {
+          key: "arquitetura",
+          title: "Stack",
+          content:
+            "Cloudflare Workers + TypeScript com renderização edge, identidade visual customizada e estado leve no navegador.",
+        },
+        {
+          key: "papel",
+          title: "Papel do Gabriel",
+          content:
+            "Concebi a identidade visual, modelei o conteúdo, implementei o front-end e publiquei o produto sozinho.",
+        },
+        {
+          key: "resultados",
+          title: "Resultados",
+          content: [
+            "Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico.",
+          ],
+        },
+      ],
+    },
+  },
+  {
     id: "esports",
-    title: "Portal 3rd E-Sports UniEVANGÉLICA",
+    title: "Portal 4ª E-Sports UniEVANGÉLICA",
     badge: "Institucional / Publico",
     badgeType: "Institucional/Publico",
     impact:
@@ -147,7 +313,7 @@ export const featuredProjects: FeaturedProject[] = [
     owner: false,
     thumbnailKey: "esports",
     caseStudy: {
-      referenceLink: "https://3rd-e-sports-da-unievangelica.figma.site/",
+      referenceLink: "https://esports.unievangelica.edu.br/",
       tabs: [
         {
           key: "problema",

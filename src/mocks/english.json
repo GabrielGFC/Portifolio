@@ -106,28 +106,52 @@
   "experience": {
     "title": "Experience",
     "ftt": {
-      "role": "Back-end Developer",
+      "role": "Software Developer",
       "company": "Fábrica de Tecnologias Turing (FTT) – UniEVANGÉLICA",
       "period": "Sep 2023–present",
-      "bullet1": "I built complete REST APIs with Node.js and TypeScript, versioned contracts in OpenAPI 3.0, and documented everything so other devs could integrate without calling me on Slack for every question.",
-      "bullet2": "I implemented integrations using RabbitMQ and internal SSO with OAuth2, optimized PostgreSQL queries that were killing the database, and kept latency below 200ms even under heavy load.",
-      "bullet3": "I review team code weekly and structured logs with correlationID to track requests from start to finish — essential when something breaks in production at 3 PM."
+      "bullet1": "Backend solutions for institutional projects with Node.js, TypeScript and PHP.",
+      "bullet2": "REST API structuring and database modeling for internal systems.",
+      "bullet3": "Cross-functional teamwork, technical support and evolutionary maintenance."
     },
     "proppe": {
-      "role": "Research Analyst/Dev",
-      "company": "PROPPE – UniEVANGÉLICA",
-      "period": "Mar 2024–present",
-      "bullet1": "I modeled complex research approval workflows using Laravel with PostgreSQL, automated stages that used to take weeks, and created auditable trails that actually work in external audits.",
-      "bullet2": "I integrated Lyceum and legacy ERPs through secure REST APIs with retry logic and dead letter queues — zero data loss, fewer human errors, processes that run themselves.",
-      "bullet3": "I built interactive dashboards with Vue.js for managers and researchers to see the status of everything in real-time. Nobody needs to send emails asking 'where's my process?' anymore."
+      "role": "Technology Assistant Level I",
+      "company": "UniEVANGÉLICA – Evangelical University of Goiás",
+      "period": "Apr 2026–present",
+      "bullet1": "Development and maintenance of academic systems using PHP (Laravel) and relational databases.",
+      "bullet2": "REST API implementation to integrate educational platforms and internal services.",
+      "bullet3": "Security best practices, logging and access control aligned with LGPD."
+    },
+    "estagio": {
+      "role": "Intern",
+      "company": "UniEVANGÉLICA – Evangelical University of Goiás",
+      "period": "Oct 2024–Apr 2026",
+      "bullet1": "Development and maintenance of academic systems using PHP (Laravel) and relational databases.",
+      "bullet2": "REST APIs to integrate educational platforms and internal services.",
+      "bullet3": "Feature evolution, bug fixes and application stability improvements."
     },
     "fab": {
-      "role": "Back-end Collaborator",
-      "company": "Brazilian Air Force",
-      "period": "2024",
-      "bullet1": "I developed a complete availability control API in .NET 6 with JWT authentication, granular profile control, and traceability in every operation — baseline requirement in a military environment.",
-      "bullet2": "I configured CI/CD pipelines with automated tests, coverage above 80%, and Swagger documentation that passed all internal audits without revision.",
-      "bullet3": "I implemented structured logs in Elasticsearch with alerts configured in Kibana. When something goes off track, the team gets alerts before end users complain."
+      "role": "Software Developer",
+      "company": "Brazilian Air Force – FAB",
+      "period": "Jan 2024–Dec 2024",
+      "bullet1": "Internal solutions for process management and automation.",
+      "bullet2": "Backend feature creation and support to system integrations.",
+      "bullet3": "Reliability improvements and maintenance of institutional applications."
+    },
+    "leomed": {
+      "role": "Purchasing Assistant",
+      "company": "Leomed Drogarias",
+      "period": "Jan 2023–Aug 2023",
+      "bullet1": "Support in order control, suppliers and internal procurement processes.",
+      "bullet2": "Operational data organization, ensuring traceability and reliability.",
+      "bullet3": "Cross-team interaction, developing process and workflow understanding."
+    },
+    "tecpress": {
+      "role": "Technical Support",
+      "company": "Tecpress Tecnologia",
+      "period": "Jan 2019–Dec 2022",
+      "bullet1": "Technical support and troubleshooting in infrastructure, networks and systems.",
+      "bullet2": "Preventive and corrective maintenance of corporate equipment and software.",
+      "bullet3": "Log analysis, incident resolution and operational continuity in IT environments."
     }
   },
 
@@ -487,6 +511,11 @@
         }
       ]
     },
-    "copyright": "Gabriel Fernandes de Carvalho. All rights reserved."
+    "copyright": "Gabriel Fernandes de Carvalho. All rights reserved.",
+    "legal": [
+      { "label": "Privacy Policy", "href": "#/privacidade" },
+      { "label": "Terms of Use", "href": "#/termos" },
+      { "label": "Cookies", "href": "#/cookies" }
+    ]
   }
 }

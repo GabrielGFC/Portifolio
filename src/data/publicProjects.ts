@@ -10,6 +10,33 @@ export interface PublicProject {
 
 export const publicProjects: PublicProject[] = [
   {
+    id: "pasteur-backend",
+    title: "Pasteur Backend",
+    stack: ["Node.js", "JavaScript"],
+    description:
+      "Backend de aplicação clínica com rotinas de prescrição e fluxos de atendimento. Demonstra modelagem de domínio e organização de APIs para sistemas de saúde.",
+    linkLabel: "Ver repositório",
+    url: "https://github.com/GabrielGFC/pasteur-backend",
+  },
+  {
+    id: "todo-angular",
+    title: "To-do List Angular",
+    stack: ["Angular", "TypeScript"],
+    description:
+      "Primeiro projeto em Angular: aplicação de tarefas com componentização, formulários reativos e gerenciamento de estado. Demonstra adoção de novas stacks e boas práticas do framework.",
+    linkLabel: "Abrir no GitHub",
+    url: "https://github.com/GabrielGFC/To-do-List-Agular",
+  },
+  {
+    id: "disponibilidade-baan",
+    title: "Disponibilidade BAAN — Backend",
+    stack: ["Node.js", "JavaScript"],
+    description:
+      "CRUD do sistema de disponibilidade utilizado na BAAN, com gestão de horários e regras de negócio. Demonstra capacidade de entregar soluções backend aplicadas ao contexto corporativo.",
+    linkLabel: "Ver repositório",
+    url: "https://github.com/GabrielGFC/Disponibilidade-BAAN-backend",
+  },
+  {
     id: "product-api",
     title: "ProductAPI",
     stack: ["Node.js", "TypeScript", "PostgreSQL"],
@@ -28,15 +55,6 @@ export const publicProjects: PublicProject[] = [
     url: "https://github.com/GabrielGFC/Desafio-PicPay",
   },
   {
-    id: "ecoalertas",
-    title: "EcoAlertas Back",
-    stack: ["Node.js", "Express", "TypeScript", "MySQL"],
-    description:
-      "Backend para sistema de alertas ambientais com filas de processamento e persistência em banco relacional. Demonstra capacidade de trabalhar com processamento assíncrono e integrações.",
-    linkLabel: "Abrir no GitHub",
-    url: "https://github.com/GabrielGFC/EcoAlertas-Back",
-  },
-  {
     id: "teste-php-laravel",
     title: "Teste PHP Laravel",
     stack: ["PHP", "Laravel", "MySQL"],
@@ -45,14 +63,4 @@ export const publicProjects: PublicProject[] = [
     linkLabel: "Ver repositório",
     url: "https://github.com/GabrielGFC/teste-php-laravel",
   },
-  {
-    id: "padrao-commit",
-    title: "Padrão de Commit Git",
-    stack: ["Guia", "Git"],
-    description:
-      "Guia prático de mensagens de commit e convenções de versionamento para times de desenvolvimento. Demonstra preocupação com qualidade de código e padronização em equipes.",
-    linkLabel: "Abrir no GitHub",
-    url: "https://github.com/GabrielGFC/padrao-de-commit-git",
-  },
 ];
-
