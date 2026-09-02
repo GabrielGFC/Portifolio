@@ -11,19 +11,56 @@ export type CaseStudyTab = {
   content: string | string[];
 };
 
+/** Shape of src/mocks/{portuguese,english}.json → featured.<i18nKey> — the localized text for one Featured project, including its case-study tabs. */
+export type FeaturedText = {
+  title: string;
+  badge: string;
+  problem: string;
+  impact: string;
+  roleShort: string;
+  result: string;
+  cta: string;
+  caseStudy: {
+    tabs: CaseStudyTab[];
+  };
+};
+
 export type FeaturedProject = {
   id: string;
+  /** Key matching src/mocks/{portuguese,english}.json → featured.<i18nKey>, used to render localized text. */
+  i18nKey:
+    | "aila"
+    | "maximiza"
+    | "pasteur"
+    | "esports"
+    | "jac"
+    | "lionFanstone"
+    | "coneleste"
+    | "farmxp"
+    | "fanstoneLegacy";
   title: string;
   badge: string;
   badgeType: "Institucional/Privado" | "Institucional/Publico";
+  problem: string;
   impact: string;
   stack: string[];
   roleShort: string;
   resultsPreview: string[];
   owner: boolean;
-  thumbnailKey: "jac" | "esports" | "maximiza" | "aila" | "fronteiras" | "lion";
+  /** Whether a real product screenshot exists in src/assets/projects — false renders an honest placeholder instead of a fake preview. */
+  hasRealMedia: boolean;
+  thumbnailKey:
+    | "jac"
+    | "esports"
+    | "maximiza"
+    | "aila"
+    | "pasteur"
+    | "lion"
+    | "coneleste"
+    | "farmxp"
+    | "fanstoneLegacy";
+  /** Case-study tab content lives in the i18n JSON (featured.<i18nKey>.caseStudy.tabs) so the modal is bilingual too — only the structural link stays here. */
   caseStudy: {
-    tabs: CaseStudyTab[];
     referenceLink?: string;
   };
 };
@@ -31,9 +68,12 @@ export type FeaturedProject = {
 export const featuredProjects: FeaturedProject[] = [
   {
     id: "aila",
+    i18nKey: "aila",
     title: "Aila — Recomendação Inteligente de Pareceristas",
     badge: "Institucional / Plataforma Editorial",
     badgeType: "Institucional/Privado",
+    problem:
+      "Encontrar pareceristas qualificados e compatíveis com cada manuscrito é um trabalho manual e lento para a equipe editorial de uma revista científica.",
     impact:
       "Apoia a seleção de pareceristas científicos por meio de ranking, histórico editorial e análise de recorrência, permitindo decisões mais estruturadas durante o processo de revisão. Reduz a dependência de buscas manuais e melhora a rastreabilidade do processo de seleção.",
     stack: ["Python", "FastAPI", "Vue.js", "PostgreSQL", "Ollama/IA local"],
@@ -43,48 +83,18 @@ export const featuredProjects: FeaturedProject[] = [
       "Ranking de pareceristas compatível com manuscritos, com histórico de recorrência e convites, em uso por uma editora científica.",
     ],
     owner: true,
+    hasRealMedia: true,
     thumbnailKey: "aila",
-    caseStudy: {
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "Plataforma voltada ao apoio do processo editorial científico, utilizando dados acadêmicos e histórico de avaliações para auxiliar na identificação de pareceristas compatíveis com manuscritos.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "O sistema trabalha com classificação temática de manuscritos via IA local, ranking de especialistas, histórico de convites, recorrência de avaliadores e regras editoriais, reduzindo dependência de buscas manuais e melhorando a rastreabilidade do processo de seleção.",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Backend em Python/FastAPI sobre PostgreSQL, com IA local via Ollama (e fallback em nuvem) para classificação temática, embeddings semânticos para ranking de avaliadores, e frontend em Nuxt/Vue. Autenticação com Argon2, RBAC e auditoria próprios.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Autoria integral do sistema (backend, frontend e testes): modelagem do domínio de pareceristas, ranking, histórico de convites, integração com IA local e regras editoriais.",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "Ranking estruturado de pareceristas compatíveis com manuscritos, reduzindo buscas manuais no processo editorial de uma editora científica.",
-          ],
-        },
-      ],
-    },
+    caseStudy: {},
   },
   {
     id: "maximiza",
+    i18nKey: "maximiza",
     title: "Maximiza Seguros",
     badge: "Cliente / Produção — Owner",
     badgeType: "Institucional/Publico",
+    problem:
+      "Uma corretora de seguros precisava de um site institucional capaz de apresentar seu catálogo de produtos e captar leads sem depender de atendimento manual para cada primeiro contato.",
     impact:
       "Plataforma institucional para uma empresa do setor de seguros, com catálogo de soluções, integrações comerciais, captação de leads e conteúdo corporativo. Evolução de interface, integração de formulários, páginas institucionais e integrações de parceiros, publicada em produção.",
     stack: ["Vue.js", "TypeScript", "Cloudflare", "SEO"],
@@ -94,100 +104,43 @@ export const featuredProjects: FeaturedProject[] = [
       "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
     ],
     owner: true,
+    hasRealMedia: true,
     thumbnailKey: "maximiza",
     caseStudy: {
       referenceLink: "https://maximiza-seguros.gabriel-fernandes-f48.workers.dev/",
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "Plataforma institucional para uma corretora de seguros, com catálogo de soluções, captação de leads e conteúdo corporativo.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "Evolução de interface, integração de formulários, páginas institucionais e integrações de parceiros, com foco em performance, SEO técnico e conversão de leads.",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Vue.js e TypeScript publicados em Cloudflare Workers/edge, build automatizado via Wrangler e otimizações de Core Web Vitals.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Evoluí a interface, integrei formulários e páginas institucionais, configurei o pipeline de deploy e otimizei performance/SEO.",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
-          ],
-        },
-      ],
     },
   },
   {
-    id: "fronteiras",
-    title: "Automação Editorial — Revista Fronteiras",
-    badge: "Cliente / Automação",
-    badgeType: "Institucional/Privado",
+    id: "pasteur",
+    i18nKey: "pasteur",
+    title: "Pasteur",
+    badge: "Projeto Público / Demonstração",
+    badgeType: "Institucional/Publico",
+    problem:
+      "Sistemas de saúde frequentemente carecem de backends bem modelados para organizar prescrições e fluxos de atendimento clínico.",
     impact:
-      "Automação que desbloqueou um backlog real de submissões científicas paradas há mais de um ano em um sistema editorial OJS, eliminando trabalho manual repetitivo de designação de participantes e cobrança de retorno.",
-    stack: ["Python", "Selenium", "Pandas", "OpenPyXL"],
+      "Backend de aplicação clínica com rotinas de prescrição e fluxos de atendimento, demonstrando modelagem de domínio e organização de APIs para sistemas de saúde.",
+    stack: ["Node.js", "JavaScript"],
     roleShort:
-      "Desenvolvi sozinho a automação completa: busca de submissões via API REST do OJS, criação de contas e designação de participantes via Selenium, e geração de relatórios executivos em Excel, com tolerância a falhas e execução resumível.",
+      "Modelei o domínio e organizei as APIs REST do backend, cobrindo rotinas de prescrição e fluxos de atendimento.",
     resultsPreview: [
-      "Dezenas de submissões reais desbloqueadas, com relatórios e logs de execução comprovando o uso em produção.",
+      "Backend funcional demonstrando modelagem de domínio aplicada a sistemas de saúde.",
     ],
     owner: true,
-    thumbnailKey: "fronteiras",
+    hasRealMedia: true,
+    thumbnailKey: "pasteur",
     caseStudy: {
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "Revista científica com submissões paradas há mais de um ano no sistema OJS por falta de designação de coautores como participantes do fluxo de avaliação.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "Script que localiza submissões atrasadas via API REST do OJS, cria contas para coautores sem acesso, designa participantes e envia mensagem de discussão automática, gerando relatório executivo em Excel ao final.",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Python com Selenium (interação com a interface web do OJS) e Requests/BeautifulSoup (API REST), Pandas/OpenPyXL para relatórios, execução resumível com controle de estado em arquivo e retry automático em falhas.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Autoria integral do script: lógica de busca em cascata de autores, criação de contas, designação de participantes, geração de relatórios e mecanismos de tolerância a falhas.",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "Dezenas de submissões reais desbloqueadas em execuções comprovadas por relatórios e logs de status.",
-          ],
-        },
-      ],
+      referenceLink: "https://github.com/GabrielGFC/pasteur-backend",
     },
   },
   {
     id: "esports",
+    i18nKey: "esports",
     title: "Portal E-Sports UniEVANGÉLICA — 5ª edição",
     badge: "Institucional / Público",
     badgeType: "Institucional/Publico",
+    problem:
+      "Um torneio institucional de e-sports com múltiplas edições ao longo do tempo precisava de inscrição por modalidade, regulamentos próprios por edição e um histórico público das edições anteriores.",
     impact:
       "Sistema institucional de inscrição e gestão de torneio de e-sports, com um modelo de edições versionadas (tema, cronograma e regulamento isolados por edição) que permitiu arquivar a 4ª edição e lançar a 5ª sem perda de histórico público.",
     stack: ["NestJS", "Nuxt.js", "TypeScript", "PostgreSQL"],
@@ -197,49 +150,20 @@ export const featuredProjects: FeaturedProject[] = [
       "Sistema de edições versionadas em uso, com a 5ª edição publicada e a 4ª preservada como histórico.",
     ],
     owner: true,
+    hasRealMedia: true,
     thumbnailKey: "esports",
     caseStudy: {
       referenceLink: "https://esports.unievangelica.edu.br/",
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "Torneio institucional de e-sports com múltiplas edições ao longo do tempo, exigindo inscrição por modalidade, regulamentos próprios e um histórico público das edições anteriores.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "Modelo de edições versionadas (tema, cronograma e regulamento isolados por edição) que permitiu lançar a 5ª edição na home mantendo a 4ª acessível como histórico, com inscrição por modalidade e área administrativa.",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Backend em NestJS com Sequelize/PostgreSQL, autenticação por sessão em cookie httpOnly, honeypot e rate limiting por rota. Frontend em Nuxt com Tailwind CSS.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Autor principal em backend e frontend: modelagem do sistema de edições, inscrição por modalidade, regulamentos versionados e camada de segurança (sessão, honeypot, rate limiting, auditoria).",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "5ª edição publicada com sistema de edições versionadas, preservando o histórico da 4ª edição.",
-          ],
-        },
-      ],
     },
   },
   {
     id: "jac",
+    i18nKey: "jac",
     title: "JAC – Jornada Acadêmica e Comunitária",
     badge: "Projeto Pessoal / Avançado — Owner",
     badgeType: "Institucional/Privado",
+    problem:
+      "Controlar presença em eventos acadêmicos manualmente é lento e fácil de fraudar, sem visibilidade real de quem participou.",
     impact:
       "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização (geofencing), e recompensas gamificadas por pontos. Projeto pessoal avançado, com arquitetura em camadas, TypeScript estrito em múltiplos alvos de build e mais de 100 testes automatizados.",
     stack: ["React", "Node.js", "TypeScript", "PostgreSQL"],
@@ -249,48 +173,20 @@ export const featuredProjects: FeaturedProject[] = [
       "Backend e frontend com testes automatizados (Jest, Vitest, Playwright) e pipelines de deploy configurados (Fly.io, Cloudflare Workers, Vercel).",
     ],
     owner: true,
+    hasRealMedia: true,
     thumbnailKey: "jac",
     caseStudy: {
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "Projeto pessoal para gestão de eventos acadêmicos, explorando check-in verificável e engajamento de participantes por meio de gamificação.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "Check-in por QR code e geolocalização (geofencing), sistema de pontos e recompensas, e painel administrativo com dashboards, construído com disciplina de engenharia (testes, remediação de vulnerabilidades documentada).",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Backend em Node.js/Express com Prisma e PostgreSQL, TypeScript estrito validado em três alvos de build distintos (Node, Cloudflare Workers, produção). Frontend em React/Vite/Tailwind com Vitest e Playwright.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Autoria integral da arquitetura, do backend e do frontend, incluindo o check-in geoespacial, o sistema de pontos e a correção de vulnerabilidades de segurança identificadas e documentadas ao longo do desenvolvimento.",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "Mais de 100 testes automatizados entre backend e frontend, com pipelines de deploy configurados em múltiplas plataformas.",
-          ],
-        },
-      ],
+      referenceLink: "https://jac-front-end.vercel.app/",
     },
   },
   {
     id: "lion-fanstone",
+    i18nKey: "lionFanstone",
     title: "Lion — Reescrita do Sistema James Fanstone",
     badge: "Institucional / Em Desenvolvimento",
     badgeType: "Institucional/Privado",
+    problem:
+      "Um sistema institucional de pesquisa acadêmica em Laravel precisava evoluir para uma base mais sustentável, migrando o domínio de pesquisa para uma nova arquitetura sem interromper o sistema em produção.",
     impact:
       "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica (projetos, grupos, editais, planos de trabalho, avaliação por pareceristas), migrando de um sistema legado em produção para uma nova arquitetura em Java/Spring Boot, com integração real ao CNPq/Lattes via SOAP.",
     stack: ["Java", "Spring Boot", "PostgreSQL", "Flyway"],
@@ -300,41 +196,77 @@ export const featuredProjects: FeaturedProject[] = [
       "Reescrita em andamento com autoria integral, CI configurado e testes automatizados (JUnit, Mockito, ArchUnit).",
     ],
     owner: true,
+    hasRealMedia: true,
     thumbnailKey: "lion",
+    caseStudy: {},
+  },
+  {
+    id: "coneleste",
+    i18nKey: "coneleste",
+    title: "Landing Coneleste + Maximiza",
+    badge: "Cliente / Colaboração",
+    badgeType: "Institucional/Publico",
+    problem:
+      "Duas corretoras de seguros que se uniram precisavam comunicar a parceria rapidamente com uma landing page e direcionar o tráfego para o site principal.",
+    impact:
+      "Landing de campanha anunciando a parceria entre Coneleste e Maximiza Seguros, com pipeline de deploy automatizado via GitHub Actions para AWS S3/CloudFront.",
+    stack: ["Vue.js", "TypeScript", "AWS S3", "CloudFront", "GitHub Actions"],
+    roleShort:
+      "Colaborei na finalização da landing (favicon, descrição e link externo) desenvolvida majoritariamente por outro desenvolvedor, dentro de um repositório compartilhado.",
+    resultsPreview: [
+      "Landing publicada em produção com pipeline de deploy automatizado.",
+    ],
+    owner: false,
+    hasRealMedia: true,
+    thumbnailKey: "coneleste",
     caseStudy: {
-      tabs: [
-        {
-          key: "problema",
-          title: "Contexto",
-          content:
-            "O sistema institucional de pesquisa acadêmica da UniEVANGÉLICA (onde contribuí com features específicas, como relatórios de matrícula e edital, no sistema legado em Laravel) precisava evoluir para uma base mais sustentável, migrando o domínio de pesquisa para uma nova arquitetura.",
-        },
-        {
-          key: "solucao",
-          title: "Impacto",
-          content:
-            "Reescrita incremental do backend em Java/Spring Boot cobrindo pesquisadores, produção acadêmica, classificação Qualis/CAPES, projetos, grupos, editais, planos de trabalho e avaliação por pareceristas externos via token seguro, com importação de currículo via integração real com CNPq/Lattes (SOAP).",
-        },
-        {
-          key: "arquitetura",
-          title: "Stack",
-          content:
-            "Java 21, Spring Boot 4, PostgreSQL com Flyway (migrations versionadas, sem alteração automática de schema), Spring Security por sessão/cookie, ArchUnit para regras de arquitetura, CI via GitHub Actions.",
-        },
-        {
-          key: "papel",
-          title: "Papel do Gabriel",
-          content:
-            "Autoria integral da reescrita: arquitetura, modelagem de domínio, migrations, integração SOAP com CNPq/Lattes e decisões documentadas via ADRs. Trabalho ainda em desenvolvimento (fase intermediária de uma migração planejada em módulos), sem publicação em produção até o momento.",
-        },
-        {
-          key: "resultados",
-          title: "Resultados",
-          content: [
-            "Reescrita em andamento, com CI configurado e testes automatizados (JUnit, Mockito, ArchUnit) cobrindo o domínio já migrado.",
-          ],
-        },
-      ],
+      referenceLink: "https://www.conelesteseguros.com.br/",
+    },
+  },
+  {
+    id: "farm-xp",
+    i18nKey: "farmxp",
+    title: "Farm Automático de XP Dev",
+    badge: "Produto Pessoal / Produção — Owner",
+    badgeType: "Institucional/Publico",
+    problem:
+      "Um currículo tradicional em PDF não comunica bem a trajetória e a personalidade de um desenvolvedor.",
+    impact:
+      "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão.",
+    stack: ["Cloudflare Workers", "TypeScript"],
+    roleShort:
+      "Concebi, desenhei e publiquei sozinho o produto — da identidade visual pixel-art à infraestrutura edge.",
+    resultsPreview: [
+      "Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico.",
+    ],
+    owner: true,
+    hasRealMedia: true,
+    thumbnailKey: "farmxp",
+    caseStudy: {
+      referenceLink: "https://farma.gabriel-fernandes-f48.workers.dev/",
+    },
+  },
+  {
+    id: "fanstone-legacy",
+    i18nKey: "fanstoneLegacy",
+    title: "Sistema James Fanstone (legado, em produção)",
+    badge: "Institucional / Colaboração — Em Produção",
+    badgeType: "Institucional/Privado",
+    problem:
+      "Uma plataforma institucional de pesquisa acadêmica já em produção precisava evoluir com novos relatórios sem interromper o uso diário da equipe.",
+    impact:
+      "Contribuí com features reais (relatórios de matrícula e edital) em uma plataforma institucional de pesquisa acadêmica da UniEVANGÉLICA já em produção, mantida por uma equipe.",
+    stack: ["Laravel", "React", "MySQL"],
+    roleShort:
+      "Contribuí com funcionalidades específicas de relatórios em um sistema legado mantido por uma equipe maior — não sou autor principal deste sistema.",
+    resultsPreview: [
+      "Sistema em produção real na UniEVANGÉLICA, com minhas contribuições de relatórios em uso pela equipe de pesquisa.",
+    ],
+    owner: false,
+    hasRealMedia: true,
+    thumbnailKey: "fanstoneLegacy",
+    caseStudy: {
+      referenceLink: "https://plataformajf.unievangelica.edu.br/",
     },
   },
 ];

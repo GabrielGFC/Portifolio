@@ -31,6 +31,7 @@ const Summary: React.FC = () => {
         >
           <p>{data.summary.paragraph1}</p>
           <p>{data.summary.paragraph2}</p>
+          <p>{data.summary.paragraph2b}</p>
           <p>{data.summary.paragraph3}</p>
         </motion.div>
       </div>

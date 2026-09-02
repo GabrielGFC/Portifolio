@@ -15,7 +15,7 @@
   },
 
   "hero": {
-    "badge": "Backend & Software Developer · APIs · Integrações · Sistemas Institucionais",
+    "badge": "Software Developer · Backend & Full Stack · APIs · Integrações",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
     "subtitle": "Desenvolvedor de software e estudante de Engenharia de Software com foco em backend, APIs REST, integrações e sistemas institucionais. Atuo com Laravel, Node.js, TypeScript, Java/Spring Boot e PostgreSQL, além de experiência com Python, C#/.NET, Vue.js e React, em projetos para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira.",
@@ -71,6 +71,7 @@
     "title": "Resumo profissional",
     "paragraph1": "Meu foco principal é Engenharia de Backend e desenvolvimento de sistemas institucionais. Trabalho com Laravel/PHP, Node.js/TypeScript e Java/Spring Boot, utilizando PostgreSQL, MySQL, SQL Server e outras tecnologias conforme os requisitos de cada solução.",
     "paragraph2": "Desenvolvo APIs REST, integrações entre sistemas, autenticação, controle de acesso, auditoria, filas e processamento assíncrono. Também participo da evolução de aplicações frontend com Vue.js e React quando o projeto exige atuação full stack.",
+    "paragraph2b": "Também possuo experiência prática com hospedagem e publicação de sites em ambientes AWS (incluindo deploy automatizado com GitHub Actions para Amazon S3 e CloudFront), Docker, acesso e gerenciamento remoto de servidores via SSH, transferência de arquivos via FTP/SFTP e WordPress.",
     "paragraph3": "Minha experiência inclui sistemas acadêmicos, plataformas de pesquisa, soluções editoriais, automações e aplicações institucionais desenvolvidas para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira. Tenho interesse crescente em arquitetura de software, cloud, observabilidade, segurança e Inteligência Artificial aplicada a sistemas de negócio."
   },
 
@@ -80,50 +81,164 @@
     "aila": {
       "title": "Aila — Recomendação Inteligente de Pareceristas",
       "badge": "Institucional / Plataforma Editorial",
+      "problem": "Encontrar pareceristas qualificados e compatíveis com cada manuscrito é um trabalho manual e lento para a equipe editorial.",
       "impact": "Apoia a seleção de pareceristas científicos por meio de ranking, histórico editorial e análise de recorrência, reduzindo a dependência de buscas manuais no processo de revisão.",
       "roleShort": "Desenvolvi sozinho o sistema completo: backend em Python/FastAPI com classificação por IA local, ranking de especialistas e histórico de convites, além do frontend em Nuxt/Vue.",
       "result": "Ranking estruturado de pareceristas compatíveis com manuscritos, com histórico de recorrência e convites.",
-      "cta": "Estudo de caso"
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Plataforma voltada ao apoio do processo editorial científico, utilizando dados acadêmicos e histórico de avaliações para auxiliar na identificação de pareceristas compatíveis com manuscritos." },
+          { "key": "solucao", "title": "Impacto", "content": "O sistema trabalha com classificação temática de manuscritos via IA local, ranking de especialistas, histórico de convites, recorrência de avaliadores e regras editoriais, reduzindo dependência de buscas manuais e melhorando a rastreabilidade do processo de seleção." },
+          { "key": "arquitetura", "title": "Stack", "content": "Backend em Python/FastAPI sobre PostgreSQL, com IA local via Ollama (e fallback em nuvem) para classificação temática, embeddings semânticos para ranking de avaliadores, e frontend em Nuxt/Vue. Autenticação com Argon2, RBAC e auditoria próprios." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Autoria integral do sistema (backend, frontend e testes): modelagem do domínio de pareceristas, ranking, histórico de convites, integração com IA local e regras editoriais." },
+          { "key": "resultados", "title": "Resultados", "content": ["Ranking estruturado de pareceristas compatíveis com manuscritos, reduzindo buscas manuais no processo editorial de uma editora científica."] }
+        ]
+      }
     },
     "maximiza": {
       "title": "Maximiza Seguros",
       "badge": "Cliente / Produção — Owner",
+      "problem": "Uma corretora de seguros precisava de um site institucional para apresentar seu catálogo e captar leads sem depender de atendimento manual.",
       "impact": "Plataforma institucional para uma corretora de seguros, com catálogo de soluções, formulários integrados e conteúdo corporativo publicado em produção.",
       "roleShort": "Evoluí a interface, integrei formulários e páginas institucionais, cuidando de performance e SEO técnico até a publicação em produção.",
       "result": "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
-      "cta": "Estudo de caso"
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Plataforma institucional para uma corretora de seguros, com catálogo de soluções, captação de leads e conteúdo corporativo." },
+          { "key": "solucao", "title": "Impacto", "content": "Evolução de interface, integração de formulários, páginas institucionais e integrações de parceiros, com foco em performance, SEO técnico e conversão de leads." },
+          { "key": "arquitetura", "title": "Stack", "content": "Vue.js e TypeScript publicados em Cloudflare Workers/edge, build automatizado via Wrangler e otimizações de Core Web Vitals." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Evoluí a interface, integrei formulários e páginas institucionais, configurei o pipeline de deploy e otimizei performance/SEO." },
+          { "key": "resultados", "title": "Resultados", "content": ["Site em produção atendendo a estratégia comercial da Maximiza Seguros."] }
+        ]
+      }
     },
-    "fronteiras": {
-      "title": "Automação Editorial — Revista Fronteiras",
-      "badge": "Cliente / Automação",
-      "impact": "Automação que desbloqueou um backlog real de submissões científicas paradas há mais de um ano em um sistema editorial OJS.",
-      "roleShort": "Desenvolvi sozinho a automação completa, com busca de submissões, designação de participantes e geração de relatórios executivos.",
-      "result": "Dezenas de submissões reais desbloqueadas, comprovadas por relatórios e logs de execução.",
-      "cta": "Estudo de caso"
+    "pasteur": {
+      "title": "Pasteur",
+      "badge": "Projeto Público / Demonstração",
+      "problem": "Sistemas de saúde frequentemente carecem de backends bem modelados para organizar prescrições e fluxos de atendimento clínico.",
+      "impact": "Backend de aplicação clínica com rotinas de prescrição e fluxos de atendimento, demonstrando modelagem de domínio e organização de APIs para sistemas de saúde.",
+      "roleShort": "Modelei o domínio e organizei as APIs REST do backend, cobrindo rotinas de prescrição e fluxos de atendimento.",
+      "result": "Backend funcional demonstrando modelagem de domínio aplicada a sistemas de saúde.",
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Aplicação clínica que precisa de rotinas de prescrição e fluxos de atendimento organizados em um backend estruturado." },
+          { "key": "solucao", "title": "Impacto", "content": "Backend com modelagem de domínio para prescrição e atendimento, com organização de APIs REST para sistemas de saúde." },
+          { "key": "arquitetura", "title": "Stack", "content": "Node.js e JavaScript." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Modelagem de domínio e organização das APIs REST do backend." },
+          { "key": "resultados", "title": "Resultados", "content": ["Backend funcional publicado como repositório público de demonstração."] }
+        ]
+      }
     },
     "esports": {
       "title": "Portal E-Sports UniEVANGÉLICA — 5ª edição",
       "badge": "Institucional / Público",
+      "problem": "Um torneio institucional com múltiplas edições precisava de inscrição por modalidade e um histórico público das edições anteriores.",
       "impact": "Sistema de inscrição e gestão de torneio com edições versionadas, permitindo arquivar a 4ª edição e lançar a 5ª sem perder o histórico público.",
       "roleShort": "Autor principal do backend e do frontend, incluindo o sistema de edições versionadas e a camada de segurança do backend.",
       "result": "5ª edição publicada com sistema de edições versionadas, preservando o histórico da 4ª edição.",
-      "cta": "Estudo de caso"
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Torneio institucional de e-sports com múltiplas edições ao longo do tempo, exigindo inscrição por modalidade, regulamentos próprios e um histórico público das edições anteriores." },
+          { "key": "solucao", "title": "Impacto", "content": "Modelo de edições versionadas (tema, cronograma e regulamento isolados por edição) que permitiu lançar a 5ª edição na home mantendo a 4ª acessível como histórico, com inscrição por modalidade e área administrativa." },
+          { "key": "arquitetura", "title": "Stack", "content": "Backend em NestJS com Sequelize/PostgreSQL, autenticação por sessão em cookie httpOnly, honeypot e rate limiting por rota. Frontend em Nuxt com Tailwind CSS." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Autor principal em backend e frontend: modelagem do sistema de edições, inscrição por modalidade, regulamentos versionados e camada de segurança (sessão, honeypot, rate limiting, auditoria)." },
+          { "key": "resultados", "title": "Resultados", "content": ["5ª edição publicada com sistema de edições versionadas, preservando o histórico da 4ª edição."] }
+        ]
+      }
     },
     "jac": {
       "title": "JAC – Jornada Acadêmica e Comunitária",
       "badge": "Projeto Pessoal / Avançado — Owner",
+      "problem": "Controlar presença em eventos acadêmicos manualmente é lento e fácil de fraudar, sem visibilidade real de quem participou.",
       "impact": "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização, e recompensas gamificadas por pontos. Projeto pessoal avançado, com mais de 100 testes automatizados.",
       "roleShort": "Desenvolvi a arquitetura completa (backend e frontend), o check-in geoespacial e por QR code, e conduzi remediação documentada de vulnerabilidades de segurança.",
       "result": "Backend e frontend com testes automatizados e pipelines de deploy configurados em múltiplas plataformas.",
-      "cta": "Estudo de caso"
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Projeto pessoal para gestão de eventos acadêmicos, explorando check-in verificável e engajamento de participantes por meio de gamificação." },
+          { "key": "solucao", "title": "Impacto", "content": "Check-in por QR code e geolocalização (geofencing), sistema de pontos e recompensas, e painel administrativo com dashboards, construído com disciplina de engenharia (testes, remediação de vulnerabilidades documentada)." },
+          { "key": "arquitetura", "title": "Stack", "content": "Backend em Node.js/Express com Prisma e PostgreSQL, TypeScript estrito validado em três alvos de build distintos (Node, Cloudflare Workers, produção). Frontend em React/Vite/Tailwind com Vitest e Playwright." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Autoria integral da arquitetura, do backend e do frontend, incluindo o check-in geoespacial, o sistema de pontos e a correção de vulnerabilidades de segurança identificadas e documentadas ao longo do desenvolvimento." },
+          { "key": "resultados", "title": "Resultados", "content": ["Mais de 100 testes automatizados entre backend e frontend, com pipelines de deploy configurados em múltiplas plataformas."] }
+        ]
+      }
     },
     "lionFanstone": {
       "title": "Lion — Reescrita do Sistema James Fanstone",
       "badge": "Institucional / Em Desenvolvimento",
+      "problem": "Um sistema institucional de pesquisa acadêmica em Laravel precisava evoluir para uma base mais sustentável, sem interromper o sistema em produção.",
       "impact": "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica, migrando de um sistema legado em produção para uma nova arquitetura em Java/Spring Boot.",
       "roleShort": "Lidero sozinho a reescrita arquitetural do backend, com integração real ao CNPq/Lattes. Projeto ainda em desenvolvimento, não publicado em produção.",
       "result": "Reescrita em andamento com autoria integral, CI configurado e testes automatizados.",
-      "cta": "Estudo de caso"
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "O sistema institucional de pesquisa acadêmica da UniEVANGÉLICA (onde contribuí com features específicas, como relatórios de matrícula e edital, no sistema legado em Laravel) precisava evoluir para uma base mais sustentável, migrando o domínio de pesquisa para uma nova arquitetura." },
+          { "key": "solucao", "title": "Impacto", "content": "Reescrita incremental do backend em Java/Spring Boot cobrindo pesquisadores, produção acadêmica, classificação Qualis/CAPES, projetos, grupos, editais, planos de trabalho e avaliação por pareceristas externos via token seguro, com importação de currículo via integração real com CNPq/Lattes (SOAP)." },
+          { "key": "arquitetura", "title": "Stack", "content": "Java 21, Spring Boot 4, PostgreSQL com Flyway (migrations versionadas, sem alteração automática de schema), Spring Security por sessão/cookie, ArchUnit para regras de arquitetura, CI via GitHub Actions." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Autoria integral da reescrita: arquitetura, modelagem de domínio, migrations, integração SOAP com CNPq/Lattes e decisões documentadas via ADRs. Trabalho ainda em desenvolvimento (fase intermediária de uma migração planejada em módulos), sem publicação em produção até o momento." },
+          { "key": "resultados", "title": "Resultados", "content": ["Reescrita em andamento, com CI configurado e testes automatizados (JUnit, Mockito, ArchUnit) cobrindo o domínio já migrado."] }
+        ]
+      }
+    },
+    "coneleste": {
+      "title": "Landing Coneleste + Maximiza",
+      "badge": "Cliente / Colaboração",
+      "problem": "Duas corretoras de seguros que se uniram precisavam comunicar a parceria rapidamente com uma landing page e direcionar o tráfego para o site principal.",
+      "impact": "Landing de campanha anunciando a parceria entre Coneleste e Maximiza Seguros, com pipeline de deploy automatizado via GitHub Actions para AWS S3/CloudFront.",
+      "roleShort": "Colaborei na finalização da landing (favicon, descrição e link externo) desenvolvida majoritariamente por outro desenvolvedor, dentro de um repositório compartilhado.",
+      "result": "Landing publicada em produção com pipeline de deploy automatizado.",
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Duas corretoras de seguros (Coneleste e Maximiza) se uniram e precisavam de uma landing page comunicando a parceria ao mercado." },
+          { "key": "solucao", "title": "Impacto", "content": "Landing de tela única com imagens aprovadas por breakpoint, direcionando o visitante para o site da Maximiza com um clique." },
+          { "key": "arquitetura", "title": "Stack", "content": "Vue.js e TypeScript, com deploy automatizado via GitHub Actions para Amazon S3 e CloudFront." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Colaborei na finalização do projeto (favicon, descrição do site e link externo) em um repositório compartilhado, cuja maior parte do desenvolvimento foi de outro desenvolvedor." },
+          { "key": "resultados", "title": "Resultados", "content": ["Landing publicada em produção com pipeline de deploy automatizado (GitHub Actions → S3 → CloudFront)."] }
+        ]
+      }
+    },
+    "farmxp": {
+      "title": "Farm Automático de XP Dev",
+      "badge": "Produto Pessoal / Produção — Owner",
+      "problem": "Um currículo tradicional em PDF não comunica bem a trajetória e a personalidade de um desenvolvedor.",
+      "impact": "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão.",
+      "roleShort": "Concebi, desenhei e publiquei sozinho o produto — da identidade visual pixel-art à infraestrutura edge.",
+      "result": "Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico.",
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Vitrine pessoal com identidade gamer/pixel que apresenta meu perfil dev em formato de quests e progressão, fugindo do currículo tradicional." },
+          { "key": "solucao", "title": "Impacto", "content": "Narrativa diferenciada que comunica habilidades e personalidade em paralelo, com performance edge-first e zero servidor dedicado." },
+          { "key": "arquitetura", "title": "Stack", "content": "Cloudflare Workers + TypeScript com renderização edge, identidade visual customizada e estado leve no navegador." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Concebi a identidade visual, modelei o conteúdo, implementei o front-end e publiquei o produto sozinho." },
+          { "key": "resultados", "title": "Resultados", "content": ["Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico."] }
+        ]
+      }
+    },
+    "fanstoneLegacy": {
+      "title": "Sistema James Fanstone (legado, em produção)",
+      "badge": "Institucional / Colaboração — Em Produção",
+      "problem": "Uma plataforma institucional de pesquisa acadêmica já em produção precisava evoluir com novos relatórios sem interromper o uso diário da equipe.",
+      "impact": "Contribuí com features reais (relatórios de matrícula e edital) em uma plataforma institucional de pesquisa acadêmica da UniEVANGÉLICA já em produção, mantida por uma equipe.",
+      "roleShort": "Contribuí com funcionalidades específicas de relatórios em um sistema legado mantido por uma equipe maior — não sou autor principal deste sistema.",
+      "result": "Sistema em produção real na UniEVANGÉLICA, com minhas contribuições de relatórios em uso pela equipe de pesquisa.",
+      "cta": "Estudo de caso",
+      "caseStudy": {
+        "tabs": [
+          { "key": "problema", "title": "Contexto", "content": "Plataforma institucional de pesquisa acadêmica em produção na UniEVANGÉLICA, mantida por uma equipe, precisando evoluir com novos relatórios." },
+          { "key": "solucao", "title": "Impacto", "content": "Relatórios de matrícula e edital adicionados ao sistema em produção, usados pela equipe de pesquisa no dia a dia." },
+          { "key": "arquitetura", "title": "Stack", "content": "Laravel e React sobre MySQL, integração com o sistema acadêmico Lyceum." },
+          { "key": "papel", "title": "Papel do Gabriel", "content": "Contribuí com funcionalidades específicas de relatórios (matrícula e edital) em um sistema mantido por uma equipe maior — não sou autor principal do sistema como um todo." },
+          { "key": "resultados", "title": "Resultados", "content": ["Sistema em produção real, com as funcionalidades de relatório em uso pela equipe de pesquisa."] }
+        ]
+      }
     }
   },
 
@@ -472,7 +587,25 @@
 
   "common": {
     "viewDetails": "Ver detalhes",
-    "close": "Fechar"
+    "close": "Fechar",
+    "problemLabel": "Problema",
+    "solutionLabel": "Solução",
+    "contributionLabel": "Minha contribuição",
+    "openSystem": "Acessar sistema ↗",
+    "previewSoon": "Prévia em breve",
+    "caseStudyTabsLabel": "Seções do estudo de caso",
+    "viewReference": "Ver referência visual",
+    "mediaLabels": {
+      "jac": "jac-front-end.vercel.app",
+      "esports": "esports.unievangelica.edu.br",
+      "maximiza": "maximiza-seguros.workers.dev",
+      "aila": "projeto privado",
+      "pasteur": "projeto público",
+      "lion": "em desenvolvimento",
+      "coneleste": "conelesteseguros.com.br",
+      "farmxp": "farma.gabriel-fernandes-f48.workers.dev",
+      "fanstoneLegacy": "plataformajf.unievangelica.edu.br"
+    }
   },
 
   "contact": {

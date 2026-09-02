@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LanguageContext } from '../contexts/LanguageContext';
-import type { FeaturedProject } from '../data/featuredProjects';
+import type { FeaturedProject, FeaturedText } from '../data/featuredProjects';
 import styles from './CaseStudyModal.module.scss';
 
 interface CaseStudyModalProps {
@@ -14,6 +14,13 @@ interface CaseStudyModalProps {
 const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClose }) => {
   const { data } = useContext(LanguageContext);
   const [activeTab, setActiveTab] = useState<string>('');
+
+  const text = useMemo(() => {
+    if (!project) return null;
+    return (data.featured as unknown as Record<string, FeaturedText>)[
+      project.i18nKey
+    ];
+  }, [data, project]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -37,12 +44,12 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    setActiveTab(project?.caseStudy.tabs[0]?.key ?? '');
+    setActiveTab(text?.caseStudy.tabs[0]?.key ?? '');
 
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [isOpen, project]);
+  }, [isOpen, text]);
 
   if (typeof document === 'undefined') {
     return null;
@@ -50,7 +57,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
 
   return createPortal(
     <AnimatePresence>
-      {isOpen && project ? (
+      {isOpen && project && text ? (
         <motion.div
           className={styles.overlay}
           initial={{ opacity: 0 }}
@@ -71,8 +78,8 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
           >
             <header className={styles.header}>
               <div>
-                <p className={styles.type}>{project.badge}</p>
-                <h2 id={`case-study-${project.id}`}>{project.title}</h2>
+                <p className={styles.type}>{text.badge}</p>
+                <h2 id={`case-study-${project.id}`}>{text.title}</h2>
               </div>
               <button type="button" className={styles.close} onClick={onClose}>
                 <span aria-hidden="true">&times;</span>
@@ -88,8 +95,8 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
               ))}
             </div>
 
-            <div className={styles.tabs} role="tablist" aria-label="Sessoes do estudo de caso">
-              {project.caseStudy.tabs.map((tab) => (
+            <div className={styles.tabs} role="tablist" aria-label={data.common.caseStudyTabsLabel}>
+              {text.caseStudy.tabs.map((tab) => (
                 <button
                   type="button"
                   key={tab.key}
@@ -104,7 +111,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
             </div>
 
             <div className={styles.content}>
-              {project.caseStudy.tabs.map((tab) => {
+              {text.caseStudy.tabs.map((tab) => {
                 const isActive = tab.key === activeTab;
                 return (
                   <AnimatePresence key={tab.key} mode="wait">
@@ -138,7 +145,7 @@ const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, isOpen, onClos
             {project.caseStudy.referenceLink && (
               <footer className={styles.footer}>
                 <a href={project.caseStudy.referenceLink} target="_blank" rel="noopener noreferrer">
-                  Ver referencia visual
+                  {data.common.viewReference}
                 </a>
               </footer>
             )}

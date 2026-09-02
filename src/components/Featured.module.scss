@@ -11,7 +11,7 @@
   gap: $spacing-xl;
   padding: 0 $spacing-lg;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: 768px) {
     padding: 0 $spacing-2xl;
   }
 }
@@ -35,71 +35,94 @@
   font-weight: $font-weight-bold;
 }
 
-.grid {
+// ---------------------------------------------------------------------------
+// Rows — one project per row, media and content alternate sides on desktop
+// so consecutive Featured Projects don't read as a repetitive grid of
+// identical cards. Content stays first in DOM (reading/SEO order); only the
+// visual position flips via `order`, so screen readers get a consistent
+// problem → solution → contribution → tech → result sequence regardless of
+// which side the media renders on.
+// ---------------------------------------------------------------------------
+
+.rows {
   display: grid;
-  gap: 14px;
-  grid-template-columns: 1fr;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-  }
-
-  @media (min-width: 1100px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+  gap: 28px;
 }
 
-.card {
+.row {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  gap: 24px;
+  padding: 28px;
   background: var(--color-surface);
   color: var(--color-text-on-surface);
   border: 1px solid var(--color-border-subtle);
   border-radius: 2px;
-  padding: 32px;
   transition: background-color var(--tr-base), border-color var(--tr-base),
     box-shadow var(--tr-base);
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent);
-    transition: width var(--tr-base);
+  @media (min-width: 1024px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    padding: 40px;
+    gap: 48px;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background: var(--color-surface-light);
       border-color: var(--color-text-main);
       box-shadow: var(--shadow-card-hover);
-
-      &::before {
-        width: 100%;
-      }
     }
   }
 }
 
-.thumbnail {
+.rowContent {
+  display: grid;
+  gap: 18px;
+  order: 2;
+
+  @media (min-width: 1024px) {
+    order: 1;
+  }
+}
+
+.rowMedia {
+  order: 1;
+
+  @media (min-width: 1024px) {
+    order: 2;
+  }
+}
+
+// On desktop, odd rows keep media→content reading order visually reversed
+// (media renders on the right instead of the left) by swapping `order` back.
+.rowReverse {
+  @media (min-width: 1024px) {
+    .rowContent {
+      order: 2;
+    }
+
+    .rowMedia {
+      order: 1;
+    }
+  }
+}
+
+.thumbnail,
+.placeholder {
   position: relative;
   aspect-ratio: 16 / 10;
   border-radius: 6px;
   overflow: hidden;
+}
+
+.thumbnail {
   padding: 16px 16px 0;
   background: linear-gradient(
     135deg,
     var(--color-primary) 0%,
     var(--color-accent) 100%
   );
-  transition: transform var(--tr-base);
 }
 
 .thumbnailJac {
@@ -118,12 +141,24 @@
   background: linear-gradient(135deg, #1f3a8a 0%, #4dd0a8 100%);
 }
 
-.thumbnailFronteiras {
+.thumbnailPasteur {
   background: linear-gradient(135deg, #3d1a30 0%, #b86a8a 100%);
 }
 
 .thumbnailLion {
   background: linear-gradient(135deg, #1a1a1a 0%, #3a5f3a 100%);
+}
+
+.thumbnailConeleste {
+  background: linear-gradient(135deg, #7a1f2b 0%, #1f4fa0 100%);
+}
+
+.thumbnailFarmxp {
+  background: linear-gradient(135deg, #2a0a3d 0%, #7b2fd4 100%);
+}
+
+.thumbnailFanstoneLegacy {
+  background: linear-gradient(135deg, #4a1f2e 0%, #d99a8a 100%);
 }
 
 .browserFrame {
@@ -136,12 +171,14 @@
     0 8px 18px -8px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  transform: translateY(0);
-  transition: transform var(--tr-base);
-}
 
-.card:hover .browserFrame {
-  transform: translateY(-4px);
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform var(--tr-base);
+
+    .row:hover & {
+      transform: translateY(-4px);
+    }
+  }
 }
 
 .browserBar {
@@ -195,32 +232,63 @@
   height: calc(100% - 33px);
   overflow: hidden;
   background: var(--color-surface);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   img {
-    position: absolute;
-    inset: 0;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    display: block;
-    z-index: 1;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.5s ease;
+
+      .row:hover & {
+        transform: scale(1.03);
+      }
+    }
   }
 }
 
-.placeholderLabel {
-  position: relative;
-  z-index: 0;
+// Honest placeholder for any Featured project without a real screenshot —
+// never shows a fake or borrowed image. Adding one later only requires an
+// asset in src/assets/projects and flipping `hasRealMedia` in
+// featuredProjects.ts.
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  padding: 24px;
+  border: 1px dashed rgba(var(--color-text-main-rgb), 0.25);
+}
+
+.placeholderInitials {
+  font-family: var(--ff-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.02em;
+}
+
+.placeholderCaption {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 11px;
   letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-  opacity: 0.5;
-  padding: 0 16px;
-  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.placeholderTag {
+  margin-top: 4px;
+  font: 600 10px/1.1 var(--ff);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 4px 10px;
 }
 
 .meta {
@@ -229,7 +297,7 @@
 
   h3 {
     font-family: var(--ff-display);
-    font-size: 1.75rem;
+    font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: -0.01em;
@@ -242,6 +310,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: fit-content;
   padding: 4px 10px;
   border-radius: 999px;
   font: 600 12px/1.1 var(--ff);
@@ -260,66 +329,79 @@
   border-color: rgba(var(--color-accent-rgb), 0.26);
 }
 
-.badgeDark {
-  color: var(--color-text-on-primary);
-  background: rgba(var(--color-primary-rgb), 0.18);
-  border: 1px solid var(--color-border-hover);
-}
-
-.story {
+// Problem → Solution → Contribution: the flow that replaces a flat
+// description, so each project reads as a short story instead of a spec
+// sheet.
+.narrative {
   display: grid;
-  gap: 8px;
-}
-
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-right: 8px;
-  font-family: var(--ff);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-}
-
-.impact {
+  gap: 12px;
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-clamp: 3;
+}
+
+.narrativeStep {
+  display: grid;
+  gap: 3px;
+
+  dt {
+    font-family: var(--ff);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
 }
 
 .stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 6px 14px;
 }
 
-.chip,
-.chipMuted {
+.chip {
   font-family: var(--ff);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 3px 0;
-  border-radius: 0;
   background: transparent;
   color: var(--color-text-muted);
   border: none;
   border-bottom: 1px solid var(--color-border-medium);
+
+  @media (hover: hover) and (pointer: fine) {
+    .row:hover & {
+      color: var(--color-text-on-surface);
+      border-bottom-color: var(--color-accent);
+    }
+  }
 }
 
-.chipMuted {
-  color: var(--color-text-muted);
-  border-bottom-color: var(--color-border-subtle);
+.result {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-on-surface);
+}
+
+.resultDot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 .actions {
@@ -347,9 +429,9 @@
   border-radius: 2px;
   text-decoration: none;
   transition: background-color var(--tr-base), color var(--tr-base),
-    border-color var(--tr-base), transform var(--tr-base);
+    border-color var(--tr-base);
 
-  @media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     &:hover,
     &:focus-visible {
       background: var(--color-accent);
@@ -374,8 +456,7 @@
   border-bottom: 1px solid var(--color-text-main);
   background: transparent;
   color: var(--color-text-main);
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {

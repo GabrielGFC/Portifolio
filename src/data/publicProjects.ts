@@ -10,15 +10,6 @@ export interface PublicProject {
 
 export const publicProjects: PublicProject[] = [
   {
-    id: "pasteur-backend",
-    title: "Pasteur Backend",
-    stack: ["Node.js", "JavaScript"],
-    description:
-      "Backend de aplicação clínica com rotinas de prescrição e fluxos de atendimento. Demonstra modelagem de domínio e organização de APIs para sistemas de saúde.",
-    linkLabel: "Ver repositório",
-    url: "https://github.com/GabrielGFC/pasteur-backend",
-  },
-  {
     id: "todo-angular",
     title: "To-do List Angular",
     stack: ["Angular", "TypeScript"],
@@ -55,15 +46,6 @@ export const publicProjects: PublicProject[] = [
     url: "https://github.com/GabrielGFC/Desafio-PicPay",
   },
   {
-    id: "farm-xp-dev",
-    title: "Farm Automático de XP Dev",
-    stack: ["Cloudflare Workers", "TypeScript"],
-    description:
-      "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão.",
-    linkLabel: "Abrir portal",
-    url: "https://farma.gabriel-fernandes-f48.workers.dev/",
-  },
-  {
     id: "teste-php-laravel",
     title: "Teste PHP Laravel",
     stack: ["PHP", "Laravel", "MySQL"],
@@ -91,17 +73,10 @@ export const publicProjects: PublicProject[] = [
     url: "https://github.com/GabrielGFC/nuclei",
   },
   {
-    id: "coneleste-maximiza",
-    title: "Landing Coneleste + Maximiza",
-    stack: ["Vue.js", "TypeScript", "AWS"],
+    id: "fronteiras-script-automacao",
+    title: "Automação Editorial — Revista Fronteiras",
+    stack: ["Python", "Selenium", "Pandas", "OpenPyXL"],
     description:
-      "Colaborei na finalização de uma landing de campanha (Vue.js) anunciando a parceria entre Coneleste e Maximiza Seguros, com pipeline de deploy automatizado via GitHub Actions para AWS S3/CloudFront.",
-  },
-  {
-    id: "james-fanstone-legado",
-    title: "Sistema James Fanstone (legado, em produção)",
-    stack: ["Laravel", "React", "MySQL"],
-    description:
-      "Contribuí com features reais (relatórios de matrícula e edital) em uma plataforma institucional de pesquisa acadêmica da UniEVANGÉLICA já em produção, mantida por uma equipe.",
+      "Automação que desbloqueou um backlog real de submissões científicas paradas há mais de um ano em um sistema editorial OJS, com busca de submissões, designação de participantes e geração de relatórios executivos.",
   },
 ];
