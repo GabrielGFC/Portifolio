@@ -182,7 +182,7 @@ export const featuredProjects: FeaturedProject[] = [
   {
     id: "lion-fanstone",
     i18nKey: "lionFanstone",
-    title: "Lion — Reescrita do Sistema James Fanstone",
+    title: "Reescrita do Sistema James Fanstone",
     badge: "Institucional / Em Desenvolvimento",
     badgeType: "Institucional/Privado",
     problem:

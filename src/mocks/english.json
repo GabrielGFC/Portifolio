@@ -169,7 +169,7 @@
       }
     },
     "lionFanstone": {
-      "title": "Lion — James Fanstone System Rewrite",
+      "title": "James Fanstone System Rewrite",
       "badge": "Institutional / In Development",
       "problem": "An institutional academic-research system built in Laravel needed to move to a more sustainable foundation without interrupting the system already in production.",
       "impact": "Backend rewrite of an institutional academic-research platform, migrating from a legacy production system to a new Java/Spring Boot architecture.",

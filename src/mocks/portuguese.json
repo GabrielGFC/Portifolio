@@ -169,7 +169,7 @@
       }
     },
     "lionFanstone": {
-      "title": "Lion — Reescrita do Sistema James Fanstone",
+      "title": "Reescrita do Sistema James Fanstone",
       "badge": "Institucional / Em Desenvolvimento",
       "problem": "Um sistema institucional de pesquisa acadêmica em Laravel precisava evoluir para uma base mais sustentável, sem interromper o sistema em produção.",
       "impact": "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica, migrando de um sistema legado em produção para uma nova arquitetura em Java/Spring Boot.",
