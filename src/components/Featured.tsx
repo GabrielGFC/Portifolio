@@ -3,40 +3,38 @@ import React, { Suspense, lazy, useContext, useMemo, useState } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { FeaturedProject, featuredProjects } from "../data/featuredProjects";
 import jacShot from "../assets/projects/jac.png";
-import fanstoneShot from "../assets/projects/fanstone.png";
 import esportsShot from "../assets/projects/esports.png";
 import maximizaShot from "../assets/projects/maximiza.png";
-import farmaShot from "../assets/projects/farma.png";
-import cannasysShot from "../assets/projects/cannasys.png";
+import placeholderShot from "../assets/projects/placeholder.png";
 import styles from "./Featured.module.scss";
 
 const thumbnailImageMap: Record<FeaturedProject["thumbnailKey"], string> = {
   jac: jacShot,
-  fanstone: fanstoneShot,
   esports: esportsShot,
   maximiza: maximizaShot,
-  farma: farmaShot,
-  cannasys: cannasysShot,
+  aila: placeholderShot,
+  fronteiras: placeholderShot,
+  lion: placeholderShot,
 };
 
 const thumbnailUrlMap: Record<FeaturedProject["thumbnailKey"], string> = {
-  jac: "jac-front-end.vercel.app",
-  fanstone: "plataformajf.unievangelica.edu.br",
+  jac: "projeto pessoal",
   esports: "esports.unievangelica.edu.br",
   maximiza: "maximiza-seguros.workers.dev",
-  farma: "farma.workers.dev",
-  cannasys: "github.com/GabrielGFC/restapi-cannays",
+  aila: "projeto privado",
+  fronteiras: "automação privada",
+  lion: "em desenvolvimento",
 };
 
 const CaseStudyModal = lazy(() => import("./CaseStudyModal"));
 
 const thumbnailClassMap: Record<FeaturedProject["thumbnailKey"], string> = {
   jac: styles.thumbnailJac,
-  fanstone: styles.thumbnailFanstone,
   esports: styles.thumbnailEsports,
   maximiza: styles.thumbnailMaximiza,
-  farma: styles.thumbnailFarma,
-  cannasys: styles.thumbnailCannasys,
+  aila: styles.thumbnailAila,
+  fronteiras: styles.thumbnailFronteiras,
+  lion: styles.thumbnailLion,
 };
 
 const badgeTheme: Record<FeaturedProject["badgeType"], string> = {

@@ -15,10 +15,10 @@
   },
 
   "hero": {
-    "badge": "Backend Developer Jr · Laravel · Node.js · TypeScript · PostgreSQL",
+    "badge": "Backend & Software Developer · APIs · Integrações · Sistemas Institucionais",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
-    "subtitle": "Desenvolvedor backend e estudante de Engenharia de Software com experiência prática em APIs REST, integração de sistemas acadêmicos e corporativos e soluções institucionais para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira.",
+    "subtitle": "Desenvolvedor de software e estudante de Engenharia de Software com foco em backend, APIs REST, integrações e sistemas institucionais. Atuo com Laravel, Node.js, TypeScript, Java/Spring Boot e PostgreSQL, além de experiência com Python, C#/.NET, Vue.js e React, em projetos para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira.",
     "bullet1": "APIs REST documentadas em Laravel, Node.js/TypeScript, .NET (C#) e Java sobre PostgreSQL, MySQL e SQL Server.",
     "bullet2": "Autenticação, filas de processamento, integrações com sistemas acadêmicos e controles de acesso auditáveis (LGPD).",
     "bullet3": "Foco em código limpo, arquitetura consistente e evolução técnica do time.",
@@ -50,18 +50,18 @@
       "skills": [
         "Laravel | PHP 8",
         "Node.js | TypeScript | NestJS",
-        "Next.js | React | TypeScript",
-        ".NET Core | C# | Java",
-        "PostgreSQL | MySQL | SQL Server",
-        "Testes de integração | Git | Docker"
+        "Java | Spring Boot",
+        "Next.js | React | Vue.js",
+        ".NET Core | C#",
+        "PostgreSQL | MySQL | SQL Server"
       ]
     },
     "toolsBox": {
       "title": "Ferramentas",
       "interface": "Frameworks & Ferramentas",
       "tools": {
-        "frontEnd": "React, Vite, TypeScript, SCSS, MUI",
-        "backEnd": ".NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
+        "frontEnd": "React, Vue.js, Vite, TypeScript, SCSS, MUI",
+        "backEnd": "Spring Boot, .NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
         "design": "Figma, Draw.io, PlantUML"
       }
     }
@@ -69,36 +69,60 @@
 
   "summary": {
     "title": "Resumo profissional",
-    "paragraph1": "Meu foco é back-end para instituições. Trabalho com Laravel em PHP, Node.js com TypeScript, Python, .NET com C# e Java quando o projeto pede. Banco de dados varia: PostgreSQL, MySQL, SQL Server ou SQLite — escolho pelo encaixe.",
-    "paragraph2": "Construo APIs REST com OpenAPI, testes, autenticação, filas de processamento e integrações com sistemas acadêmicos. Segurança é requisito: controle de acesso, criptografia e logging auditável alinhado à LGPD são padrão nas entregas.",
-    "paragraph3": "Já contribuí para projetos na UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira, participando da construção de sistemas estáveis, escaláveis e de fácil manutenção. Busco oportunidades como Desenvolvedor Backend Jr / Software Engineer Jr onde possa contribuir com código limpo, arquitetura consistente e evolução técnica do time."
+    "paragraph1": "Meu foco principal é Engenharia de Backend e desenvolvimento de sistemas institucionais. Trabalho com Laravel/PHP, Node.js/TypeScript e Java/Spring Boot, utilizando PostgreSQL, MySQL, SQL Server e outras tecnologias conforme os requisitos de cada solução.",
+    "paragraph2": "Desenvolvo APIs REST, integrações entre sistemas, autenticação, controle de acesso, auditoria, filas e processamento assíncrono. Também participo da evolução de aplicações frontend com Vue.js e React quando o projeto exige atuação full stack.",
+    "paragraph3": "Minha experiência inclui sistemas acadêmicos, plataformas de pesquisa, soluções editoriais, automações e aplicações institucionais desenvolvidas para a UniEVANGÉLICA, Fábrica de Tecnologias Turing e Força Aérea Brasileira. Tenho interesse crescente em arquitetura de software, cloud, observabilidade, segurança e Inteligência Artificial aplicada a sistemas de negócio."
   },
 
   "featured": {
     "eyebrow": "Projetos institucionais em primeira mão",
     "title": "Destaques que comprovam resultados",
-    "jac": {
-      "title": "JAC – Jornada Acadêmica e Comunitária",
-      "badge": "Institucional / Privado — Owner",
-      "impact": "Centralizei todos os eventos da universidade num sistema só. Check-in automático, zero papelada. Os gestores conseguem ver dashboards com dados reais de participação e tomar decisões baseadas em números, não achismos.",
-      "roleShort": "Montei a arquitetura do zero, modelei como eventos e presenças funcionam no sistema, apliquei LGPD direitinho e passei o bastão pro time de manutenção.",
-      "result": "Acompanhamento via dashboards executivos e conversas diretas com a gestão.",
+    "aila": {
+      "title": "Aila — Recomendação Inteligente de Pareceristas",
+      "badge": "Institucional / Plataforma Editorial",
+      "impact": "Apoia a seleção de pareceristas científicos por meio de ranking, histórico editorial e análise de recorrência, reduzindo a dependência de buscas manuais no processo de revisão.",
+      "roleShort": "Desenvolvi sozinho o sistema completo: backend em Python/FastAPI com classificação por IA local, ranking de especialistas e histórico de convites, além do frontend em Nuxt/Vue.",
+      "result": "Ranking estruturado de pareceristas compatíveis com manuscritos, com histórico de recorrência e convites.",
       "cta": "Estudo de caso"
     },
-    "fanstone": {
-      "title": "Sistema James Fanstone",
-      "badge": "Institucional / Privado",
-      "impact": "Organizei os processos de pesquisa da instituição com fluxos que podem ser auditados do começo ao fim. A integração com o Lyceum cortou aquela duplicação chata de dados e diminuiu os erros de digitação.",
-      "roleShort": "Modelei como o sistema funciona, criei as APIs REST no Laravel e conectei tudo de forma auditável. Sentei com o pessoal da pesquisa pra validar se estava fazendo sentido na prática deles.",
-      "result": "Métricas nos dashboards e feedback direto do time de pesquisa.",
+    "maximiza": {
+      "title": "Maximiza Seguros",
+      "badge": "Cliente / Produção — Owner",
+      "impact": "Plataforma institucional para uma corretora de seguros, com catálogo de soluções, formulários integrados e conteúdo corporativo publicado em produção.",
+      "roleShort": "Evoluí a interface, integrei formulários e páginas institucionais, cuidando de performance e SEO técnico até a publicação em produção.",
+      "result": "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
+      "cta": "Estudo de caso"
+    },
+    "fronteiras": {
+      "title": "Automação Editorial — Revista Fronteiras",
+      "badge": "Cliente / Automação",
+      "impact": "Automação que desbloqueou um backlog real de submissões científicas paradas há mais de um ano em um sistema editorial OJS.",
+      "roleShort": "Desenvolvi sozinho a automação completa, com busca de submissões, designação de participantes e geração de relatórios executivos.",
+      "result": "Dezenas de submissões reais desbloqueadas, comprovadas por relatórios e logs de execução.",
       "cta": "Estudo de caso"
     },
     "esports": {
-      "title": "Portal 3rd E-Sports UniEVANGÉLICA",
+      "title": "Portal E-Sports UniEVANGÉLICA — 5ª edição",
       "badge": "Institucional / Público",
-      "impact": "Criei um portal onde os alunos veem o cronograma do torneio e se inscrevem direto pelo celular. Acabou aquela história de formulário impresso e telefonema pra confirmar inscrição.",
-      "roleShort": "Desenvolvi o front responsivo usando SCSS modular, coloquei validações no lado do cliente e estruturei pensando em acessibilidade. Trabalhei colado com os designers pra manter tudo visualmente coerente.",
-      "result": "Portal no ar durante o torneio, com feedback positivo sobre a navegação mobile.",
+      "impact": "Sistema de inscrição e gestão de torneio com edições versionadas, permitindo arquivar a 4ª edição e lançar a 5ª sem perder o histórico público.",
+      "roleShort": "Autor principal do backend e do frontend, incluindo o sistema de edições versionadas e a camada de segurança do backend.",
+      "result": "5ª edição publicada com sistema de edições versionadas, preservando o histórico da 4ª edição.",
+      "cta": "Estudo de caso"
+    },
+    "jac": {
+      "title": "JAC – Jornada Acadêmica e Comunitária",
+      "badge": "Projeto Pessoal / Avançado — Owner",
+      "impact": "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização, e recompensas gamificadas por pontos. Projeto pessoal avançado, com mais de 100 testes automatizados.",
+      "roleShort": "Desenvolvi a arquitetura completa (backend e frontend), o check-in geoespacial e por QR code, e conduzi remediação documentada de vulnerabilidades de segurança.",
+      "result": "Backend e frontend com testes automatizados e pipelines de deploy configurados em múltiplas plataformas.",
+      "cta": "Estudo de caso"
+    },
+    "lionFanstone": {
+      "title": "Lion — Reescrita do Sistema James Fanstone",
+      "badge": "Institucional / Em Desenvolvimento",
+      "impact": "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica, migrando de um sistema legado em produção para uma nova arquitetura em Java/Spring Boot.",
+      "roleShort": "Lidero sozinho a reescrita arquitetural do backend, com integração real ao CNPq/Lattes. Projeto ainda em desenvolvimento, não publicado em produção.",
+      "result": "Reescrita em andamento com autoria integral, CI configurado e testes automatizados.",
       "cta": "Estudo de caso"
     }
   },
@@ -484,7 +508,7 @@
     "present": "presente",
     "about": {
       "title": "Sobre",
-      "description": "Programo back-end pra instituições. APIs seguras, integrações internas, código que não vira pepino. Na Fábrica de Tecnologias Turing da UniEVANGÉLICA entrego sistemas confiáveis e auditáveis."
+      "description": "Backend para problemas reais. APIs, integrações e sistemas que precisam funcionar fora do ambiente de desenvolvimento."
     },
     "navigation": {
       "title": "Navegação",

@@ -15,10 +15,10 @@
   },
 
   "hero": {
-    "badge": "Back-end Developer for institutional systems",
+    "badge": "Backend & Software Developer · APIs · Integrations · Institutional Systems",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
-    "subtitle": "I don't pick projects by stack — I pick them by impact. I've built everything from critical APIs for the Brazilian Air Force to complete platforms that power entire universities. If it's complex, scalable, and needs to work under pressure, that's the kind of challenge I'm after.",
+    "subtitle": "Software developer and Software Engineering student focused on backend, REST APIs, integrations, and institutional systems. I work with Laravel, Node.js, TypeScript, Java/Spring Boot, and PostgreSQL, plus experience with Python, C#/.NET, Vue.js, and React, on projects for UniEVANGÉLICA, Fábrica de Tecnologias Turing, and the Brazilian Air Force.",
     "bullet1": "I've built systems from scratch for education, government, and research institutions.",
     "bullet2": "I deliver documented, tested code ready to scale — no spreadsheets, no workarounds.",
     "bullet3": "My work comes with native observability, structured logs, and architecture built to last.",
@@ -48,20 +48,20 @@
     "skillsBox": {
       "title": "Skills",
       "skills": [
-        ".NET Core | C#",
-        "Node.js | Express | NestJS",
-        "Python (automation and APIs)",
         "Laravel | PHP 8",
-        "SQL Server • PostgreSQL",
-        "Scrum (PSM-I) • Git • Docker"
+        "Node.js | TypeScript | NestJS",
+        "Java | Spring Boot",
+        "Next.js | React | Vue.js",
+        ".NET Core | C#",
+        "PostgreSQL | MySQL | SQL Server"
       ]
     },
     "toolsBox": {
       "title": "Tools",
       "interface": "Frameworks & Tools",
       "tools": {
-        "frontEnd": "React, Vite, TypeScript, SCSS, MUI",
-        "backEnd": ".NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
+        "frontEnd": "React, Vue.js, Vite, TypeScript, SCSS, MUI",
+        "backEnd": "Spring Boot, .NET 6, NestJS, Laravel 11, Sequelize, Prisma, Docker",
         "design": "Figma, Draw.io, PlantUML"
       }
     }
@@ -69,36 +69,60 @@
 
   "summary": {
     "title": "Professional summary",
-    "paragraph1": "My territory is back-end for systems that can't fail. Laravel, Node.js, Python, .NET, Java — I use whatever makes sense for each scenario. Relational databases are my foundation: MySQL, PostgreSQL, SQL Server, SQLite. But I'm not limited to that. If the project demands NoSQL, message brokers, or distributed architecture, I'm in.",
-    "paragraph2": "I build REST APIs that come with versioned OpenAPI contracts, automated test suites, and documentation any dev can understand. I work with enterprise SSO, message queues, webhooks, and integrations between legacy and modern systems. Security is a baseline requirement: I implement LGPD compliance by default, layered encryption, and auditable logs that survive any external audit. At Fábrica de Tecnologias Turing and FAB projects, I learned that good code is code another dev can maintain three years later without calling me at 2 AM.",
-    "paragraph3": "I collaborate directly with designers, product owners, and even legal when projects require it. I like releases that ship with clear metrics, documented SLAs, and observability from the first commit. My goal isn't just to deliver — it's to deliver something that scales, handles real traffic, and passes compliance without surprises."
+    "paragraph1": "My main focus is backend engineering and building institutional systems. I work with Laravel/PHP, Node.js/TypeScript, and Java/Spring Boot, using PostgreSQL, MySQL, SQL Server, and other technologies depending on each solution's requirements.",
+    "paragraph2": "I build REST APIs, system integrations, authentication, access control, auditing, queues, and asynchronous processing. I also work on frontend applications with Vue.js and React when a project calls for full-stack work.",
+    "paragraph3": "My experience includes academic systems, research platforms, editorial solutions, automations, and institutional applications built for UniEVANGÉLICA, Fábrica de Tecnologias Turing, and the Brazilian Air Force. I have a growing interest in software architecture, cloud, observability, security, and applied AI for business systems."
   },
 
   "featured": {
     "eyebrow": "Institutional projects first-hand",
     "title": "Highlights that prove results",
-    "jac": {
-      "title": "JAC – Academic and Community Journey",
-      "badge": "Institutional / Private — Owner",
-      "impact": "I centralized the university's entire event operation into a single platform. Automatic check-in via geolocation and QR Code, gamification to engage students, and executive dashboards showing real-time participation. Managers now make decisions looking at concrete numbers, not guessing how many people showed up to the event.",
-      "roleShort": "I architected from scratch, modeled event and attendance domains thinking about scalability, implemented the entire data protection layer according to LGPD, and delivered with complete documentation for the maintenance team to take over without depending on me.",
-      "result": "System in production with dashboards used weekly by senior management.",
+    "aila": {
+      "title": "Aila — Smart Peer Reviewer Recommendation",
+      "badge": "Institutional / Editorial Platform",
+      "impact": "Supports the selection of scientific peer reviewers through ranking, editorial history, and recurrence analysis, reducing reliance on manual searches during the review process.",
+      "roleShort": "I built the whole system on my own: a Python/FastAPI backend with local-AI classification, reviewer ranking and invitation history, plus the Nuxt/Vue frontend.",
+      "result": "Structured ranking of reviewers matched to manuscripts, with recurrence and invitation history.",
       "cta": "Case study"
     },
-    "fanstone": {
-      "title": "James Fanstone System",
-      "badge": "Institutional / Private",
-      "impact": "I organized the entire institutional research workflow with end-to-end auditable approvals. Integration with Lyceum cut out that absurd data duplication and manual registration errors that delayed processes for weeks. Now everything is traceable, from initial protocol to final report.",
-      "roleShort": "I modeled the system domain from stakeholder meetings, created robust REST APIs in Laravel with multi-level authentication, and implemented integrations that talk to 15-year-old systems. I validated each workflow with research staff in practical testing sessions.",
-      "result": "System running in production with unanimous approval from the research team.",
+    "maximiza": {
+      "title": "Maximiza Seguros",
+      "badge": "Client / Production — Owner",
+      "impact": "Institutional platform for an insurance brokerage, with a solutions catalog, integrated forms, and corporate content published in production.",
+      "roleShort": "I evolved the interface, integrated forms and institutional pages, and handled performance and technical SEO through to production.",
+      "result": "Site in production supporting Maximiza Seguros' commercial strategy.",
+      "cta": "Case study"
+    },
+    "fronteiras": {
+      "title": "Editorial Automation — Revista Fronteiras",
+      "badge": "Client / Automation",
+      "impact": "Automation that unblocked a real backlog of scientific submissions stuck for over a year in an OJS editorial system.",
+      "roleShort": "I built the entire automation on my own, covering submission lookup, participant assignment, and executive report generation.",
+      "result": "Dozens of real submissions unblocked, evidenced by execution reports and logs.",
       "cta": "Case study"
     },
     "esports": {
-      "title": "Portal 3rd E-Sports UniEVANGÉLICA",
+      "title": "E-Sports UniEVANGÉLICA Portal — 5th edition",
       "badge": "Institutional / Public",
-      "impact": "I created a portal where any student can see the complete tournament schedule and register directly from their phone, without printing anything or sending emails to confirm. That whole bureaucracy that made organizers waste days just managing registrations is gone.",
-      "roleShort": "I developed the entire responsive front-end using modular SCSS, implemented client-side validations that prevent input errors, and structured the code with accessibility in mind from the start. I worked side by side with designers to ensure the visual experience was flawless on any device.",
-      "result": "Portal ran throughout the tournament without a single support ticket.",
+      "impact": "Tournament registration and management system with versioned editions, allowing the 4th edition to be archived and the 5th launched without losing public history.",
+      "roleShort": "Lead author of both backend and frontend, including the versioned-edition system and the backend's security layer.",
+      "result": "5th edition published with a versioned-edition system, preserving the 4th edition's history.",
+      "cta": "Case study"
+    },
+    "jac": {
+      "title": "JAC – Academic and Community Journey",
+      "badge": "Personal / Advanced Project — Owner",
+      "impact": "Academic event management system with QR-code and geolocation check-in, and gamified point rewards. An advanced personal project, with 100+ automated tests.",
+      "roleShort": "I built the entire architecture (backend and frontend), the geospatial and QR-code check-in, and drove documented remediation of security vulnerabilities.",
+      "result": "Backend and frontend with automated tests and deploy pipelines configured across multiple platforms.",
+      "cta": "Case study"
+    },
+    "lionFanstone": {
+      "title": "Lion — James Fanstone System Rewrite",
+      "badge": "Institutional / In Development",
+      "impact": "Backend rewrite of an institutional academic-research platform, migrating from a legacy production system to a new Java/Spring Boot architecture.",
+      "roleShort": "I'm solely leading the backend's architectural rewrite, with real CNPq/Lattes integration. Still in development, not yet published to production.",
+      "result": "Rewrite in progress with full ownership, CI configured, and automated tests.",
       "cta": "Case study"
     }
   },
@@ -484,7 +508,7 @@
     "present": "present",
     "about": {
       "title": "About",
-      "description": "I build back-end for systems that can't fail. Secure APIs, complex integrations, code that scales. At Fábrica de Tecnologias Turing (UniEVANGÉLICA), I deliver auditable systems that have been running for years without critical tickets. For professional proposals: carvalhogabrielgfc1@gmail.com"
+      "description": "Backend for real problems. APIs, integrations, and systems that need to work outside a dev environment."
     },
     "navigation": {
       "title": "Navigation",

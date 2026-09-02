@@ -55,6 +55,15 @@ export const publicProjects: PublicProject[] = [
     url: "https://github.com/GabrielGFC/Desafio-PicPay",
   },
   {
+    id: "farm-xp-dev",
+    title: "Farm Automático de XP Dev",
+    stack: ["Cloudflare Workers", "TypeScript"],
+    description:
+      "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão.",
+    linkLabel: "Abrir portal",
+    url: "https://farma.gabriel-fernandes-f48.workers.dev/",
+  },
+  {
     id: "teste-php-laravel",
     title: "Teste PHP Laravel",
     stack: ["PHP", "Laravel", "MySQL"],
@@ -62,5 +71,37 @@ export const publicProjects: PublicProject[] = [
       "Laboratório público em Laravel com APIs REST, autenticação e suíte de testes. Demonstra conhecimento prático em Laravel e boas práticas de desenvolvimento backend.",
     linkLabel: "Ver repositório",
     url: "https://github.com/GabrielGFC/teste-php-laravel",
+  },
+  {
+    id: "cannasys",
+    title: "CannaSYS — Gestão para Terapia com Cannabis",
+    stack: ["Laravel", "Node.js", "PostgreSQL"],
+    description:
+      "Backend modular para gestão de associações de terapia com cannabis medicinal, integrando prontuário, prescrição, produção e dispensação em um domínio regulado.",
+    linkLabel: "Ver repositório",
+    url: "https://github.com/GabrielGFC/restapi-cannays",
+  },
+  {
+    id: "nuclei-security-lab",
+    title: "Nuclei Security Lab",
+    stack: ["Nuclei", "ProjectDiscovery", "Docker"],
+    description:
+      "Laboratório pessoal de estudo aplicado em automação de varredura de vulnerabilidades web com Nuclei e ferramentas do ecossistema ProjectDiscovery.",
+    linkLabel: "Ver repositório",
+    url: "https://github.com/GabrielGFC/nuclei",
+  },
+  {
+    id: "coneleste-maximiza",
+    title: "Landing Coneleste + Maximiza",
+    stack: ["Vue.js", "TypeScript", "AWS"],
+    description:
+      "Colaborei na finalização de uma landing de campanha (Vue.js) anunciando a parceria entre Coneleste e Maximiza Seguros, com pipeline de deploy automatizado via GitHub Actions para AWS S3/CloudFront.",
+  },
+  {
+    id: "james-fanstone-legado",
+    title: "Sistema James Fanstone (legado, em produção)",
+    stack: ["Laravel", "React", "MySQL"],
+    description:
+      "Contribuí com features reais (relatórios de matrícula e edital) em uma plataforma institucional de pesquisa acadêmica da UniEVANGÉLICA já em produção, mantida por uma equipe.",
   },
 ];
