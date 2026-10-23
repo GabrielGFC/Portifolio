@@ -56,10 +56,10 @@ export const publicProjects: PublicProject[] = [
   },
   {
     id: "cannasys",
-    title: "CannaSYS — Gestão para Terapia com Cannabis",
-    stack: ["Laravel", "Node.js", "PostgreSQL"],
+    title: "CannaSYS — ERP para Associações de Cannabis Medicinal",
+    stack: ["Node.js", "Vue 3", "PostgreSQL"],
     description:
-      "Backend modular para gestão de associações de terapia com cannabis medicinal, integrando prontuário, prescrição, produção e dispensação em um domínio regulado.",
+      "ERP open-source em desenvolvimento para associações de cannabis medicinal, com módulos de produção, dispensação, prescrição e auditoria, 12 migrações e logging com Winston.",
     linkLabel: "Ver repositório",
     url: "https://github.com/GabrielGFC/restapi-cannays",
   },
@@ -75,8 +75,8 @@ export const publicProjects: PublicProject[] = [
   {
     id: "fronteiras-script-automacao",
     title: "Automação Editorial — Revista Fronteiras",
-    stack: ["Python", "Selenium", "Pandas", "OpenPyXL"],
+    stack: ["Python", "Selenium", "OJS 3.3"],
     description:
-      "Automação que desbloqueou um backlog real de submissões científicas paradas há mais de um ano em um sistema editorial OJS, com busca de submissões, designação de participantes e geração de relatórios executivos.",
+      "Automação da revisão de submissões antigas em um sistema editorial OJS 3.3, com execução resumível, novas tentativas automáticas, tolerância a falhas e relatório xlsx de pendências.",
   },
 ];

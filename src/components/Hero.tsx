@@ -45,6 +45,14 @@ const Hero: React.FC = () => {
               {data.hero.ctaLinkedIn}
             </motion.a>
           </div>
+          <dl className={styles.stats} aria-label={data.hero.statsLabel}>
+            {data.hero.stats.map((stat) => (
+              <div key={stat.value + stat.label} className={styles.stat}>
+                <dt className={styles.statValue}>{stat.value}</dt>
+                <dd className={styles.statLabel}>{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
         </motion.div>
       </div>
     </section>

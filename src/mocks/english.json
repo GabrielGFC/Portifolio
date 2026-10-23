@@ -18,19 +18,26 @@
     "badge": "Software Developer · Backend & Full Stack · APIs · Integrations",
     "name": "Gabriel F. de Carvalho",
     "title": "Gabriel F. de Carvalho",
-    "subtitle": "Software developer and Software Engineering student focused on backend, REST APIs, integrations, and institutional systems. I work with Laravel, Node.js, TypeScript, Java/Spring Boot, and PostgreSQL, plus experience with Python, C#/.NET, Vue.js, and React, on projects for UniEVANGÉLICA, Fábrica de Tecnologias Turing, and the Brazilian Air Force.",
-    "bullet1": "I've built systems from scratch for education, government, and research institutions.",
-    "bullet2": "I deliver documented, tested code ready to scale — no spreadsheets, no workarounds.",
-    "bullet3": "My work comes with native observability, structured logs, and architecture built to last.",
+    "subtitle": "Software developer and Software Engineering student focused on backend, REST APIs, integrations, and institutional systems. I work with Laravel, Node.js, TypeScript, Java/Spring Boot, and PostgreSQL, plus Python, Vue.js, and React, on projects for UniEVANGÉLICA, Fábrica de Tecnologias Turing, and the Brazilian Air Force.",
+    "bullet1": "REST APIs in Laravel, Node.js/TypeScript, Java/Spring Boot, and Python/FastAPI on PostgreSQL.",
+    "bullet2": "Authentication, role-based access control (RBAC), security audits, and integrations with academic systems, aligned with LGPD.",
+    "bullet3": "Automated tests and CI on personal and institutional projects, with architecture decisions recorded in ADRs.",
     "ctaDownload": "Download resume",
-    "ctaLinkedIn": "Connect on LinkedIn"
+    "ctaLinkedIn": "Connect on LinkedIn",
+    "statsLabel": "By the numbers",
+    "stats": [
+      { "value": "3+ years", "label": "on UniEVANGÉLICA institutional systems" },
+      { "value": "480", "label": "automated tests in the Java rewrite of James Fanstone" },
+      { "value": "6", "label": "security findings audited on JAC" },
+      { "value": "3", "label": "P0 security fixes on the E-Sports Portal" }
+    ]
   },
 
   "section1": {
     "title": "Gabriel <span>Fernandes&nbsp;de&nbsp;Carvalho</span>",
     "subtitle": "Backend&nbsp;Developer with experience in <span>Laravel, NodeJS, Python, .NET, PHP and Java</span>",
     "intro": "Scroll to discover <span>my skills and projects</span>",
-    "bio": "I've been coding back-end for years using Laravel, Node.js, Python, .NET, and Java — but the stack is just a tool. What matters is solving real problems. At Fábrica de Tecnologias Turing (UniEVANGÉLICA), I coordinate systems serving thousands of users daily. I've collaborated with the Brazilian Air Force on critical projects and maintain academic repositories that became references.",
+    "bio": "I build back-ends with Laravel, Node.js, Python, and Java. At Fábrica de Tecnologias Turing (UniEVANGÉLICA), I work on systems for universities and research centers. I have contributed to Brazilian Air Force projects and keep several academic repositories active on GitHub.",
     "location": "Anápolis-GO, Brazil",
     "contacts": {
       "resumeButton": "Resume | PDF",
@@ -71,7 +78,7 @@
     "title": "Professional summary",
     "paragraph1": "My main focus is backend engineering and building institutional systems. I work with Laravel/PHP, Node.js/TypeScript, and Java/Spring Boot, using PostgreSQL, MySQL, SQL Server, and other technologies depending on each solution's requirements.",
     "paragraph2": "I build REST APIs, system integrations, authentication, access control, auditing, queues, and asynchronous processing. I also work on frontend applications with Vue.js and React when a project calls for full-stack work.",
-    "paragraph2b": "I also have hands-on experience hosting and publishing sites on AWS (including automated deploys with GitHub Actions to Amazon S3 and CloudFront), Docker, remote server access and management via SSH, file transfer over FTP/SFTP, and WordPress.",
+    "paragraph2b": "I also have hands-on experience deploying to Cloudflare, Vercel, and Fly.io, containers with Docker, CI/CD pipelines on GitHub Actions (including deploys to AWS S3 and CloudFront, in collaboration), remote server access via SSH, FTP/SFTP, and WordPress.",
     "paragraph3": "My experience includes academic systems, research platforms, editorial solutions, automations, and institutional applications built for UniEVANGÉLICA, Fábrica de Tecnologias Turing, and the Brazilian Air Force. I have a growing interest in software architecture, cloud, observability, security, and applied AI for business systems."
   },
 
@@ -82,35 +89,35 @@
       "title": "Aila — Smart Peer Reviewer Recommendation",
       "badge": "Institutional / Editorial Platform",
       "problem": "Finding qualified reviewers who match a manuscript's topic is slow, manual work for a journal's editorial team.",
-      "impact": "Supports the selection of scientific peer reviewers through ranking, editorial history, and recurrence analysis, reducing reliance on manual searches during the review process.",
-      "roleShort": "I built the whole system on my own: a Python/FastAPI backend with local-AI classification, reviewer ranking and invitation history, plus the Nuxt/Vue frontend.",
-      "result": "Structured ranking of reviewers matched to manuscripts, with recurrence and invitation history.",
+      "impact": "Supports reviewer selection: classifies the manuscript by CNPq area with local AI and ranks reviewers discovered via OpenAlex and ORCID across four tiers, with a traceable justification. The final decision stays with the editorial team.",
+      "roleShort": "I built (68 of 68 commits) the Python/FastAPI backend, with local AI and a cloud fallback, reviewer ranking, invitation records and RBAC, plus the Vue 3 frontend.",
+      "result": "Explainable reviewer ranking, 6 ADRs, an operations runbook and ≈178 automated tests.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
           { "key": "problema", "title": "Context", "content": "A platform supporting the scientific editorial process, using academic data and review history to help identify reviewers who match a given manuscript." },
-          { "key": "solucao", "title": "Impact", "content": "The system handles thematic classification of manuscripts via local AI, reviewer ranking, invitation history, reviewer recurrence, and editorial rules — cutting reliance on manual searches and improving traceability of the selection process." },
-          { "key": "arquitetura", "title": "Stack", "content": "Python/FastAPI backend on PostgreSQL, with local AI via Ollama (plus a cloud fallback) for thematic classification, semantic embeddings for reviewer ranking, and a Nuxt/Vue frontend. Authentication with Argon2, RBAC, and in-house auditing." },
-          { "key": "papel", "title": "My role", "content": "Full ownership of the system (backend, frontend, and tests): modeling the reviewer domain, ranking, invitation history, local-AI integration, and editorial rules." },
-          { "key": "resultados", "title": "Results", "content": ["Structured ranking of reviewers matched to manuscripts, cutting manual searches in a scientific journal's editorial process."] }
+          { "key": "solucao", "title": "Impact", "content": "Thematic classification of manuscripts by local AI (Ollama, with a cloud fallback), reviewer qualification in four tiers from OpenAlex and ORCID, ranking with a traceable justification, and invitation records per manuscript. Richer invitation history and recurrence analysis are on the roadmap." },
+          { "key": "arquitetura", "title": "Stack", "content": "Python/FastAPI backend on PostgreSQL, with local AI via Ollama (cloud fallback) for thematic classification, semantic embeddings for ranking, and a Vue 3 (Vite) frontend. Argon2 authentication and RBAC, decisions recorded in 6 ADRs, and Docker deployment." },
+          { "key": "papel", "title": "My role", "content": "Author of every commit in the repository (68 of 68): reviewer domain modeling, ranking, local-AI integration, invitation records, authentication, and tests." },
+          { "key": "resultados", "title": "Results", "content": ["Explainable reviewer ranking, 6 ADRs, an operations runbook and ≈178 automated tests."] }
         ]
       }
     },
     "maximiza": {
       "title": "Maximiza Seguros",
       "badge": "Client / Production — Owner",
-      "problem": "An insurance brokerage needed an institutional site to showcase its catalog and capture leads without relying on manual outreach for every first contact.",
-      "impact": "Institutional platform for an insurance brokerage, with a solutions catalog, integrated forms, and corporate content published in production.",
-      "roleShort": "I evolved the interface, integrated forms and institutional pages, and handled performance and technical SEO through to production.",
-      "result": "Site in production supporting Maximiza Seguros' commercial strategy.",
+      "problem": "An insurance brokerage needed an institutional site to showcase its catalog and receive online quote requests, without relying on manual outreach.",
+      "impact": "Institutional site in production, with multi-step quote forms, a partner real-estate directory synced daily, and corporate content.",
+      "roleShort": "I built (207 of 210 commits) the site in Vue 3, TypeScript and Tailwind 4, with a modular architecture, quote forms and CI covering types, lint and tests.",
+      "result": "Site in production, with ≈185 automated tests and a daily partner sync.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
-          { "key": "problema", "title": "Context", "content": "Institutional platform for an insurance brokerage, with a solutions catalog, lead capture, and corporate content." },
-          { "key": "solucao", "title": "Impact", "content": "Interface evolution, form integration, institutional pages, and partner integrations, focused on performance, technical SEO, and lead conversion." },
-          { "key": "arquitetura", "title": "Stack", "content": "Vue.js and TypeScript published on Cloudflare Workers/edge, automated build via Wrangler, and Core Web Vitals optimizations." },
-          { "key": "papel", "title": "My role", "content": "I evolved the interface, integrated forms and institutional pages, set up the deploy pipeline, and optimized performance/SEO." },
-          { "key": "resultados", "title": "Results", "content": ["Site in production supporting Maximiza Seguros' commercial strategy."] }
+          { "key": "problema", "title": "Context", "content": "Institutional site for an insurance brokerage, with a solutions catalog, online quotes, and corporate content." },
+          { "key": "solucao", "title": "Impact", "content": "Multi-step quote forms (Fiança and Moto), a partner real-estate directory synced daily from the brokerage's public API, and institutional pages." },
+          { "key": "arquitetura", "title": "Stack", "content": "Vue 3, TypeScript, Vite, and Tailwind 4 with i18n, published on Cloudflare as static assets. GitHub Actions CI with types, lint, formatting, tests, and build, plus a scheduled workflow for the partner sync." },
+          { "key": "papel", "title": "My role", "content": "Author of most of the code (207 of 210 commits): feature-based modular architecture, quote forms, partner sync, and CI gates." },
+          { "key": "resultados", "title": "Results", "content": ["Site in production, with ≈185 automated tests and a daily sync of partner data."] }
         ]
       }
     },
@@ -136,17 +143,17 @@
       "title": "E-Sports UniEVANGÉLICA Portal — 5th edition",
       "badge": "Institutional / Public",
       "problem": "A recurring institutional e-sports tournament needed per-modality registration and a public history of past editions.",
-      "impact": "Tournament registration and management system with versioned editions, allowing the 4th edition to be archived and the 5th launched without losing public history.",
-      "roleShort": "Lead author of both backend and frontend, including the versioned-edition system and the backend's security layer.",
-      "result": "5th edition published with a versioned-edition system, preserving the 4th edition's history.",
+      "impact": "Per-modality registration and tournament management with separate editions: the 5th edition on the home page and the 4th preserved on a historical route.",
+      "roleShort": "I built, with another developer, the backend (NestJS, Sequelize, PostgreSQL) and the frontend (Nuxt 4): per-modality registration, editions, and API security.",
+      "result": "5th edition published, 4th preserved as history, and three P0 security issues fixed on 12 Aug 2026.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
           { "key": "problema", "title": "Context", "content": "An institutional e-sports tournament with multiple editions over time, requiring per-modality registration, edition-specific rules, and a public history of past editions." },
-          { "key": "solucao", "title": "Impact", "content": "A versioned-edition model (theme, schedule, and rules isolated per edition) that let the 5th edition take over the home page while keeping the 4th accessible as history, with per-modality registration and an admin area." },
-          { "key": "arquitetura", "title": "Stack", "content": "NestJS backend with Sequelize/PostgreSQL, httpOnly cookie session auth, honeypot, and per-route rate limiting. Frontend in Nuxt with Tailwind CSS." },
-          { "key": "papel", "title": "My role", "content": "Lead author on both backend and frontend: modeling the edition system, per-modality registration, versioned rules, and the security layer (session, honeypot, rate limiting, auditing)." },
-          { "key": "resultados", "title": "Results", "content": ["5th edition published with a versioned-edition system, preserving the 4th edition's history."] }
+          { "key": "solucao", "title": "Impact", "content": "Separate editions (theme, schedule, and rules per edition) let the 5th edition take over the home page while keeping the 4th accessible as history, with per-modality registration and an admin area." },
+          { "key": "arquitetura", "title": "Stack", "content": "NestJS 11 backend with Sequelize and PostgreSQL 16, JWT session in an HttpOnly cookie persisted in the database, per-route rate limiting, and helmet. Nuxt 4 frontend with Nuxt UI and Tailwind 4." },
+          { "key": "papel", "title": "My role", "content": "Author of 80% of the backend commits (37 of 46) and 77% of the frontend (65 of 84), with another developer on the rest: editions, per-modality registration, and security fixes." },
+          { "key": "resultados", "title": "Results", "content": ["5th edition published, 4th edition on a historical route, and three P0 fixes: JWT_SECRET required in production, session bound to the JWT user, and wildcard CORS blocked with credentials."] }
         ]
       }
     },
@@ -154,35 +161,35 @@
       "title": "JAC – Academic and Community Journey",
       "badge": "Personal / Advanced Project — Owner",
       "problem": "Tracking attendance at academic events by hand is slow and easy to fake, with no real visibility into who actually showed up.",
-      "impact": "Academic event management system with QR-code and geolocation check-in, and gamified point rewards. An advanced personal project, with 100+ automated tests.",
-      "roleShort": "I built the entire architecture (backend and frontend), the geospatial and QR-code check-in, and drove documented remediation of security vulnerabilities.",
-      "result": "Backend and frontend with automated tests and deploy pipelines configured across multiple platforms.",
+      "impact": "Academic event management system with QR-code and geolocation check-in, attendance points, and a documented security audit. An advanced personal project, with ≈440 automated tests.",
+      "roleShort": "I built the backend and the frontend, the QR-code and geolocation check-in, and the fixes from a security audit with 6 findings.",
+      "result": "Audit with 6 findings (inflated points and the CSRF secret fixed), CI with PostgreSQL concurrency and Playwright, and deploys configured on Fly.io, Cloudflare and Vercel.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
           { "key": "problema", "title": "Context", "content": "A personal project for academic event management, exploring verifiable check-in and participant engagement through gamification." },
-          { "key": "solucao", "title": "Impact", "content": "QR-code and geolocation (geofencing) check-in, a points and rewards system, and an admin panel with dashboards, built with engineering discipline (tests, documented vulnerability remediation)." },
-          { "key": "arquitetura", "title": "Stack", "content": "Node.js/Express backend with Prisma and PostgreSQL, strict TypeScript validated across three distinct build targets (Node, Cloudflare Workers, production). React/Vite/Tailwind frontend with Vitest and Playwright." },
-          { "key": "papel", "title": "My role", "content": "Full ownership of the architecture, backend, and frontend, including geospatial and QR-code check-in and the fix of security vulnerabilities identified and documented throughout development." },
-          { "key": "resultados", "title": "Results", "content": ["100+ automated tests across backend and frontend, with deploy pipelines configured across multiple platforms."] }
+          { "key": "solucao", "title": "Impact", "content": "QR-code and geolocation check-in, a points ledger with a unique index (one reward per registration), CSRF protection, audit and consent logs, and a 6-finding security audit documented in the docs." },
+          { "key": "arquitetura", "title": "Stack", "content": "Node.js/Express backend with Prisma and PostgreSQL, strict TypeScript validated across distinct build targets (Node and Cloudflare Workers). Frontend migrating from React to Vue, with Vitest and Playwright." },
+          { "key": "papel", "title": "My role", "content": "Author of 82% of the backend commits (159 of 194) and 98% of the frontend (205 of 209): check-in, scoring, CSRF, and the audit fixes (SEC-001 with a regression test, and SEC-004)." },
+          { "key": "resultados", "title": "Results", "content": ["≈440 automated tests (backend ≈168, frontend ≈272), CI with a check-in concurrency test on real PostgreSQL and Playwright E2E, plus documented security and dependency audits."] }
         ]
       }
     },
     "lionFanstone": {
       "title": "James Fanstone System Rewrite",
-      "badge": "Institutional / In Development",
+      "badge": "Institutional / In Production",
       "problem": "An institutional academic-research system built in Laravel needed to move to a more sustainable foundation without interrupting the system already in production.",
-      "impact": "Backend rewrite of an institutional academic-research platform, migrating from a legacy production system to a new Java/Spring Boot architecture.",
-      "roleShort": "I'm solely leading the backend's architectural rewrite, with real CNPq/Lattes integration. Still in development, not yet published to production.",
-      "result": "Rewrite in progress with full ownership, CI configured, and automated tests.",
+      "impact": "Backend rewrite of an institutional academic-research platform, migrating from the legacy Laravel system to Java and Spring Boot, now in production.",
+      "roleShort": "I built (83 of 83 commits) the Java 21 and Spring Boot 4 backend: architecture, domain, Flyway migrations, SOAP integration with CNPq/Lattes, and decisions recorded in ADRs.",
+      "result": "In production, with 31 controllers, 26 migrations, 480 automated tests (27 integration files) and CI.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
           { "key": "problema", "title": "Context", "content": "UniEVANGÉLICA's institutional academic-research system (where I contributed specific features, like enrollment and notice reports, on the legacy Laravel system) needed to move to a more sustainable foundation, migrating the research domain to a new architecture." },
-          { "key": "solucao", "title": "Impact", "content": "Incremental backend rewrite in Java/Spring Boot covering researchers, academic output, Qualis/CAPES classification, projects, groups, notices, work plans, and external peer review via secure token, with resume import through real CNPq/Lattes (SOAP) integration." },
-          { "key": "arquitetura", "title": "Stack", "content": "Java 21, Spring Boot 4, PostgreSQL with Flyway (versioned migrations, no automatic schema changes), Spring Security via session/cookie, ArchUnit for architecture rules, CI via GitHub Actions." },
-          { "key": "papel", "title": "My role", "content": "Full ownership of the rewrite: architecture, domain modeling, migrations, SOAP integration with CNPq/Lattes, and decisions documented via ADRs. Work still in development (an intermediate phase of a module-by-module migration plan), not yet published to production." },
-          { "key": "resultados", "title": "Results", "content": ["Rewrite in progress, with CI configured and automated tests (JUnit, Mockito, ArchUnit) covering the domain already migrated."] }
+          { "key": "solucao", "title": "Impact", "content": "Incremental backend rewrite in Java and Spring Boot: users and profiles with multi-profile login, permissions, auditing, academic output (Qualis/CAPES and JCR), projects with drafts, attachments and approval, work plans with scoring, and Lattes resume import through a SOAP integration with CNPq." },
+          { "key": "arquitetura", "title": "Stack", "content": "Java 21, Spring Boot 4, PostgreSQL with Flyway (26 versioned migrations), Spring Security via session and cookie with RBAC, ArchUnit for architecture rules, Swagger, and CI on GitHub Actions. Actuator restricted to health and info after an audit finding." },
+          { "key": "papel", "title": "My role", "content": "Author of every commit in the repository (83 of 83): architecture, domain modeling, migrations, SOAP integration with CNPq/Lattes, and ADRs that guide the incremental migration from the legacy system." },
+          { "key": "resultados", "title": "Results", "content": ["31 controllers, 29 entities, 26 migrations, 480 automated tests (27 integration files using Spring or Testcontainers) and CI, in production."] }
         ]
       }
     },
@@ -209,7 +216,7 @@
       "badge": "Personal Product / Production — Owner",
       "problem": "A traditional PDF resume doesn't communicate a developer's journey and personality very well.",
       "impact": "Gamified portal with a pixel/dark visual identity presenting my dev journey: quests, stack, profile, and contact in a progression flow.",
-      "roleShort": "I conceived, designed, and published the product entirely on my own — from the pixel-art visual identity to the edge infrastructure.",
+      "roleShort": "I conceived, designed, and published the product — from the pixel-art visual identity to the edge infrastructure.",
       "result": "Personal portal published and used as a narrative showcase of my technical profile.",
       "cta": "Case study",
       "caseStudy": {
@@ -217,7 +224,7 @@
           { "key": "problema", "title": "Context", "content": "A personal showcase with a gamer/pixel identity presenting my dev profile as quests and progression, moving away from the traditional resume." },
           { "key": "solucao", "title": "Impact", "content": "A distinctive narrative that communicates skills and personality side by side, with edge-first performance and no dedicated server." },
           { "key": "arquitetura", "title": "Stack", "content": "Cloudflare Workers + TypeScript with edge rendering, a custom visual identity, and lightweight browser state." },
-          { "key": "papel", "title": "My role", "content": "I conceived the visual identity, modeled the content, built the frontend, and published the product on my own." },
+          { "key": "papel", "title": "My role", "content": "I conceived the visual identity, modeled the content, built the frontend, and published the product." },
           { "key": "resultados", "title": "Results", "content": ["Personal portal published and used as a narrative showcase of my technical profile."] }
         ]
       }
@@ -226,17 +233,17 @@
       "title": "James Fanstone System (legacy, in production)",
       "badge": "Institutional / Collaboration — In Production",
       "problem": "An institutional academic-research platform already in production needed new reports without interrupting the team's daily use.",
-      "impact": "I contributed real features (enrollment and notice reports) to an institutional academic-research platform at UniEVANGÉLICA already in production, maintained by a team.",
-      "roleShort": "I contributed specific reporting features to a legacy system maintained by a larger team — I'm not the main author of this system.",
-      "result": "Real system in production at UniEVANGÉLICA, with my reporting contributions in active use by the research team.",
+      "impact": "I contributed the enrollment report (with notice and date filters), e-mail review reminders, advanced search, and external-team validation to an academic-research platform at UniEVANGÉLICA in production, maintained by a team.",
+      "roleShort": "118 of the 764 backend commits and 105 of the 894 frontend commits: team contribution, I'm not the main author of this system.",
+      "result": "System in production at UniEVANGÉLICA, with the enrollment report and other features I built.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
           { "key": "problema", "title": "Context", "content": "An institutional academic-research platform in production at UniEVANGÉLICA, maintained by a team, needing to evolve with new reports." },
-          { "key": "solucao", "title": "Impact", "content": "Enrollment and notice reports added to the system already in production, used daily by the research team." },
-          { "key": "arquitetura", "title": "Stack", "content": "Laravel and React on MySQL, integrated with the Lyceum academic system." },
-          { "key": "papel", "title": "My role", "content": "I contributed specific reporting features (enrollment and notice) to a system maintained by a larger team — I'm not the main author of the system as a whole." },
-          { "key": "resultados", "title": "Results", "content": ["Real system in production, with the reporting features in active use by the research team."] }
+          { "key": "solucao", "title": "Impact", "content": "Enrollment report and export, e-mail review reminders, advanced search, external-team validation, duplicate-schedule fix, faster loading of grades and work plans, lazy-loaded routes, and rich-text editor sanitization." },
+          { "key": "arquitetura", "title": "Stack", "content": "Laravel 11 backend and React frontend with MUI, integrated with the Lyceum academic system; frontend moved to Bun and Docker." },
+          { "key": "papel", "title": "My role", "content": "I contributed 15% of the backend commits and 12% of the frontend, in a team, including the enrollment report and adjustments to the Lyceum membership check. I'm not the main author of the system as a whole." },
+          { "key": "resultados", "title": "Results", "content": ["System in production at UniEVANGÉLICA, with the features I built in use by the research team."] }
         ]
       }
     }
@@ -523,27 +530,27 @@
       "title": "Bachelor's in Software Engineering",
       "institution": "Universidade Evangélica de Goiás (UniEVANGÉLICA)",
       "period": "2023-2027",
-      "description1": "Degree with heavy curriculum in requirements engineering, service-oriented software architecture, and agile methodologies applied in real projects with real stakeholders.",
-      "description2": "I've been working at Fábrica de Tecnologias Turing since the beginning, where I coordinate scalable APIs and systems with complete observability for universities and government agencies."
+      "description1": "Degree focused on requirements engineering, software architecture, and agile methodologies applied to real projects.",
+      "description2": "At Fábrica de Tecnologias Turing, I build REST APIs and institutional systems with automated tests, CI, and audit trails."
     },
     "certifications": [
       {
         "title": "Laravel 11 - Full Stack Framework",
         "issuer": "EspecializaTi",
         "year": "2024",
-        "detail": "REST APIs, asynchronous queues, multi-factor authentication, and automated tests geared toward high-availability corporate environments."
+        "detail": "Building REST APIs, queues, authentication, and automated tests for corporate environments."
       },
       {
         "title": "C# Fundamentals",
         "issuer": "Digital Innovation One",
         "year": "2024",
-        "detail": "Object-oriented programming, generic collections, LINQ, and consolidated best practices in the .NET ecosystem."
+        "detail": "Object-oriented programming, generic collections, and good practices for .NET services."
       },
       {
         "title": "Remote Work Professional",
         "issuer": "Remote Skills Academy",
         "year": "2023",
-        "detail": "Asynchronous communication, managing globally distributed teams, and operational documentation that actually works for real remote teams."
+        "detail": "Asynchronous communication, distributed-team rituals, and operational documentation for remote work."
       }
     ]
   },
@@ -601,7 +608,7 @@
       "maximiza": "maximiza-seguros.workers.dev",
       "aila": "private project",
       "pasteur": "public project",
-      "lion": "in development",
+      "lion": "in production",
       "coneleste": "conelesteseguros.com.br",
       "farmxp": "farma.gabriel-fernandes-f48.workers.dev",
       "fanstoneLegacy": "plataformajf.unievangelica.edu.br"

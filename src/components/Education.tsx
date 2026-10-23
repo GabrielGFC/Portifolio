@@ -1,54 +1,7 @@
 ﻿import { motion, useReducedMotion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import styles from "./Education.module.scss";
-
-type Degree = {
-  course: string;
-  institution: string;
-  period: string;
-  summaries: string[];
-};
-
-type Certification = {
-  title: string;
-  issuer: string;
-  year?: string;
-  detail?: string;
-};
-
-const degree: Degree = {
-  course: "Bacharelado em Engenharia de Software",
-  institution: "Universidade Evangélica de Goiás (UniEVANGÉLICA)",
-  period: "2023-2027",
-  summaries: [
-    "Grade curricular com engenharia de requisitos, arquitetura orientada a serviços e governança de TI aplicada a projetos institucionais.",
-    "Atuo na Fábrica de Tecnologias Turing, desenvolvendo APIs escaláveis e sistemas com observabilidade para educação e governo digital.",
-  ],
-};
-
-const certifications: Certification[] = [
-  {
-    title: "Laravel 11 - Framework Full Stack",
-    issuer: "EspecializaTi",
-    year: "2024",
-    detail:
-      "Construção de APIs REST, filas, autenticação e testes automatizados alinhados ao ambiente corporativo.",
-  },
-  {
-    title: "Fundamentos do C#",
-    issuer: "Digital Innovation One",
-    year: "2024",
-    detail:
-      "Programação orientada a objetos, coleções genéricas e boas práticas para serviços .NET.",
-  },
-  {
-    title: "Remote Work Professional",
-    issuer: "Remote Skills Academy",
-    year: "2023",
-    detail:
-      "Comunicação assíncrona, governança de rituais distribuídos e documentação operacional para trabalho remoto.",
-  },
-];
 
 const MortarboardIcon: React.FC = () => (
   <svg
@@ -107,6 +60,8 @@ const CertificateIcon: React.FC = () => (
 );
 
 const Education: React.FC = () => {
+  const { data } = useContext(LanguageContext);
+  const { degree, certifications } = data.education;
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -119,7 +74,7 @@ const Education: React.FC = () => {
           transition={prefersReducedMotion ? undefined : { duration: 0.45 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Formação e certificações
+          {data.education.title}
         </motion.h2>
 
         <div className={styles.grid}>
@@ -136,11 +91,11 @@ const Education: React.FC = () => {
           >
             <MortarboardIcon />
             <div>
-              <h3 className={styles.itemTitle}>{degree.course}</h3>
+              <h3 className={styles.itemTitle}>{degree.title}</h3>
               <p className={styles.itemDesc}>
                 {degree.institution} - {degree.period}
               </p>
-              {degree.summaries.map((summary) => (
+              {[degree.description1, degree.description2].map((summary) => (
                 <p key={summary} className={styles.itemDesc}>
                   {summary}
                 </p>

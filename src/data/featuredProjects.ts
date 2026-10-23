@@ -75,12 +75,12 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "Encontrar pareceristas qualificados e compatíveis com cada manuscrito é um trabalho manual e lento para a equipe editorial de uma revista científica.",
     impact:
-      "Apoia a seleção de pareceristas científicos por meio de ranking, histórico editorial e análise de recorrência, permitindo decisões mais estruturadas durante o processo de revisão. Reduz a dependência de buscas manuais e melhora a rastreabilidade do processo de seleção.",
-    stack: ["Python", "FastAPI", "Vue.js", "PostgreSQL", "Ollama/IA local"],
+      "Apoia a seleção de pareceristas: classifica o manuscrito por área do CNPq com IA local e ranqueia avaliadores descobertos via OpenAlex e ORCID em quatro níveis, com justificativa rastreável. A decisão final continua com a equipe editorial.",
+    stack: ["Python", "FastAPI", "Vue 3", "PostgreSQL", "Ollama/IA local"],
     roleShort:
-      "Desenvolvi sozinho o sistema completo: backend em FastAPI/Python com classificação temática por IA local (Ollama), ranking de especialistas, histórico de convites e regras editoriais, além do frontend em Nuxt/Vue.",
+      "Desenvolvi (68 de 68 commits) o backend em Python/FastAPI, com IA local e fallback em nuvem, ranking de avaliadores, registro de convites e RBAC, e o frontend em Vue 3.",
     resultsPreview: [
-      "Ranking de pareceristas compatível com manuscritos, com histórico de recorrência e convites, em uso por uma editora científica.",
+      "Ranking explicável de avaliadores, 6 ADRs, runbook de operação e ≈178 testes automatizados.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -94,14 +94,14 @@ export const featuredProjects: FeaturedProject[] = [
     badge: "Cliente / Produção — Owner",
     badgeType: "Institucional/Publico",
     problem:
-      "Uma corretora de seguros precisava de um site institucional capaz de apresentar seu catálogo de produtos e captar leads sem depender de atendimento manual para cada primeiro contato.",
+      "Uma corretora de seguros precisava de um site institucional para apresentar seu catálogo e receber pedidos de cotação online, sem depender de atendimento manual.",
     impact:
-      "Plataforma institucional para uma empresa do setor de seguros, com catálogo de soluções, integrações comerciais, captação de leads e conteúdo corporativo. Evolução de interface, integração de formulários, páginas institucionais e integrações de parceiros, publicada em produção.",
-    stack: ["Vue.js", "TypeScript", "Cloudflare", "SEO"],
+      "Site institucional em produção, com formulários multietapas de cotação, diretório de imobiliárias parceiras sincronizado diariamente e conteúdo corporativo.",
+    stack: ["Vue 3", "TypeScript", "Tailwind 4", "Cloudflare", "GitHub Actions"],
     roleShort:
-      "Concebi a arquitetura serverless/edge, evoluí a interface e integrei formulários e páginas institucionais, cuidando de performance e SEO técnico até a publicação em produção.",
+      "Desenvolvi (207 de 210 commits) o site em Vue 3, TypeScript e Tailwind 4, com arquitetura modular, formulários de cotação e CI com tipos, lint e testes.",
     resultsPreview: [
-      "Site em produção atendendo a estratégia comercial da Maximiza Seguros.",
+      "Site em produção, com ≈185 testes automatizados e sincronização diária de parceiros.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -142,12 +142,12 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "Um torneio institucional de e-sports com múltiplas edições ao longo do tempo precisava de inscrição por modalidade, regulamentos próprios por edição e um histórico público das edições anteriores.",
     impact:
-      "Sistema institucional de inscrição e gestão de torneio de e-sports, com um modelo de edições versionadas (tema, cronograma e regulamento isolados por edição) que permitiu arquivar a 4ª edição e lançar a 5ª sem perda de histórico público.",
-    stack: ["NestJS", "Nuxt.js", "TypeScript", "PostgreSQL"],
+      "Sistema de inscrição por modalidade e gestão do torneio com edições separadas: a 5ª edição na home e a 4ª preservada em rota histórica.",
+    stack: ["NestJS", "Nuxt 4", "TypeScript", "PostgreSQL"],
     roleShort:
-      "Autor principal do backend (NestJS/PostgreSQL) e do frontend (Nuxt), incluindo o sistema de edições versionadas e a camada de segurança do backend (sessão via cookie httpOnly, honeypot, rate limiting, auditoria).",
+      "Desenvolvi, com outro desenvolvedor, o backend (NestJS, Sequelize, PostgreSQL) e o frontend (Nuxt 4): inscrição por modalidade, edições e segurança da API.",
     resultsPreview: [
-      "Sistema de edições versionadas em uso, com a 5ª edição publicada e a 4ª preservada como histórico.",
+      "5ª edição publicada, 4ª preservada como histórico e três falhas P0 de segurança corrigidas em 12/08/2026.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -165,12 +165,12 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "Controlar presença em eventos acadêmicos manualmente é lento e fácil de fraudar, sem visibilidade real de quem participou.",
     impact:
-      "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização (geofencing), e recompensas gamificadas por pontos. Projeto pessoal avançado, com arquitetura em camadas, TypeScript estrito em múltiplos alvos de build e mais de 100 testes automatizados.",
-    stack: ["React", "Node.js", "TypeScript", "PostgreSQL"],
+      "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização, pontos por presença e auditoria de segurança documentada. Projeto pessoal avançado, com ≈440 testes automatizados.",
+    stack: ["Node.js", "TypeScript", "Prisma", "PostgreSQL", "React/Vue"],
     roleShort:
-      "Desenvolvi a arquitetura completa (backend Node/Express/Prisma e frontend React), o check-in geoespacial e por QR code, e conduzi remediação documentada de vulnerabilidades de segurança identificadas ao longo do projeto.",
+      "Desenvolvi o backend e o frontend, o check-in por QR code e geolocalização e a correção de falhas de uma auditoria de segurança com 6 achados.",
     resultsPreview: [
-      "Backend e frontend com testes automatizados (Jest, Vitest, Playwright) e pipelines de deploy configurados (Fly.io, Cloudflare Workers, Vercel).",
+      "Auditoria com 6 achados (pontuação inflada e segredo do CSRF corrigidos), CI com concorrência em PostgreSQL e Playwright, e deploy configurado em Fly.io, Cloudflare e Vercel.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -183,17 +183,17 @@ export const featuredProjects: FeaturedProject[] = [
     id: "lion-fanstone",
     i18nKey: "lionFanstone",
     title: "Reescrita do Sistema James Fanstone",
-    badge: "Institucional / Em Desenvolvimento",
+    badge: "Institucional / Em Produção",
     badgeType: "Institucional/Privado",
     problem:
       "Um sistema institucional de pesquisa acadêmica em Laravel precisava evoluir para uma base mais sustentável, migrando o domínio de pesquisa para uma nova arquitetura sem interromper o sistema em produção.",
     impact:
-      "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica (projetos, grupos, editais, planos de trabalho, avaliação por pareceristas), migrando de um sistema legado em produção para uma nova arquitetura em Java/Spring Boot, com integração real ao CNPq/Lattes via SOAP.",
-    stack: ["Java", "Spring Boot", "PostgreSQL", "Flyway"],
+      "Reescrita do backend de uma plataforma institucional de pesquisa acadêmica, migrando do sistema legado em Laravel para Java e Spring Boot, hoje em produção.",
+    stack: ["Java 21", "Spring Boot 4", "PostgreSQL", "Flyway"],
     roleShort:
-      "Lidero sozinho a reescrita arquitetural do backend: modelagem de domínio, migrations versionadas, integração com CNPq/Lattes e decisões de arquitetura documentadas via ADRs. Projeto ainda em desenvolvimento, não publicado em produção.",
+      "Desenvolvi (83 de 83 commits) o backend em Java 21 e Spring Boot 4: arquitetura, domínio, migrações Flyway, integração SOAP com o CNPq/Lattes e decisões registradas em ADRs.",
     resultsPreview: [
-      "Reescrita em andamento com autoria integral, CI configurado e testes automatizados (JUnit, Mockito, ArchUnit).",
+      "Em produção, com 31 controllers, 26 migrações, 480 testes automatizados (27 arquivos de integração) e CI.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -235,7 +235,7 @@ export const featuredProjects: FeaturedProject[] = [
       "Portal gamificado com identidade visual pixel/dark que apresenta minha trajetória dev: missões, stack, perfil e contato em um fluxo de progressão.",
     stack: ["Cloudflare Workers", "TypeScript"],
     roleShort:
-      "Concebi, desenhei e publiquei sozinho o produto — da identidade visual pixel-art à infraestrutura edge.",
+      "Concebi, desenhei e publiquei o produto — da identidade visual pixel-art à infraestrutura edge.",
     resultsPreview: [
       "Portal pessoal publicado e usado como vitrine narrativa do meu perfil técnico.",
     ],
@@ -255,12 +255,12 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "Uma plataforma institucional de pesquisa acadêmica já em produção precisava evoluir com novos relatórios sem interromper o uso diário da equipe.",
     impact:
-      "Contribuí com features reais (relatórios de matrícula e edital) em uma plataforma institucional de pesquisa acadêmica da UniEVANGÉLICA já em produção, mantida por uma equipe.",
-    stack: ["Laravel", "React", "MySQL"],
+      "Contribuí com o relatório de matrículas (com filtro por edital e data), lembretes de avaliação por e-mail, busca avançada e validação de equipe externa em uma plataforma de pesquisa acadêmica da UniEVANGÉLICA em produção, mantida por uma equipe.",
+    stack: ["Laravel 11", "React", "MUI"],
     roleShort:
-      "Contribuí com funcionalidades específicas de relatórios em um sistema legado mantido por uma equipe maior — não sou autor principal deste sistema.",
+      "118 dos 764 commits do backend e 105 dos 894 do frontend: contribuição em equipe, não sou autor principal do sistema.",
     resultsPreview: [
-      "Sistema em produção real na UniEVANGÉLICA, com minhas contribuições de relatórios em uso pela equipe de pesquisa.",
+      "Sistema em produção na UniEVANGÉLICA, com o relatório de matrículas e outras funcionalidades que desenvolvi.",
     ],
     owner: false,
     hasRealMedia: true,
