@@ -44,7 +44,7 @@
       "socialMedia": {
         "linkedin": "https://www.linkedin.com/in/gabrielgfc1",
         "github": "https://github.com/GabrielGFC",
-        "email": "mailto:carvalhogabrielgfc1@gmail.com",
+        "email": "mailto:carvalhofernandesgfc@proton.me",
         "site": "https://gabrielgfc.github.io/Portifolio/",
         "orcid": "https://orcid.org/0009-0001-0493-6602"
       }
@@ -621,8 +621,8 @@
     "items": {
       "email": {
         "label": "E-mail",
-        "value": "carvalhogabrielgfc1@gmail.com",
-        "href": "mailto:carvalhogabrielgfc1@gmail.com"
+        "value": "carvalhofernandesgfc@proton.me",
+        "href": "mailto:carvalhofernandesgfc@proton.me"
       },
       "linkedin": {
         "label": "LinkedIn",
@@ -668,7 +668,7 @@
           "label": "LinkedIn",
           "href": "https://www.linkedin.com/in/gabrielgfc1"
         },
-        { "label": "E-mail", "href": "mailto:carvalhogabrielgfc1@gmail.com" },
+        { "label": "E-mail", "href": "mailto:carvalhofernandesgfc@proton.me" },
         {
           "label": "Currículo em PDF",
           "href": "/Portifolio/Gabriel_Fernandes_de_Carvalho.pdf"
@@ -695,7 +695,7 @@
       "resume": "Currículo",
       "menu": "Abrir menu",
       "close": "Fechar menu",
-      "language": "Switch to English"
+      "language": "Mudar para inglês"
     },
     "hero": {
       "eyebrow": "Engenharia de software · Backend · APIs",
@@ -719,6 +719,7 @@
       "prev": "Projeto anterior",
       "next": "Próximo projeto",
       "visit": "Ver referência",
+      "live": "Ver em produção",
       "stack": "Stack",
       "notFound": "Projeto não encontrado.",
       "home": "Voltar ao início"
@@ -822,8 +823,13 @@
     "contact": {
       "eyebrow": "Contato",
       "title": "Vamos conversar.",
-      "text": "Para oportunidades, projetos ou uma conversa técnica, o caminho mais rápido é o e-mail.",
-      "email": "carvalhogabrielgfc1@gmail.com"
+      "text": "Para vagas, projetos ou uma conversa técnica, o caminho mais rápido é o e-mail.",
+      "email": "carvalhofernandesgfc@proton.me",
+      "cta": "Enviar e-mail",
+      "copy": "Copiar e-mail",
+      "copied": "E-mail copiado",
+      "subject": "Contato pelo portfólio",
+      "note": "Para vagas, inclua a descrição da posição e o formato de contratação."
     },
     "footer": {
       "rights": "Todos os direitos reservados.",

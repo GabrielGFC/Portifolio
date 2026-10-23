@@ -125,9 +125,9 @@ const Cookies: React.FC = () => {
             Dúvidas sobre cookies ou privacidade? Escreva para{" "}
             <a
               className={styles.link}
-              href="mailto:carvalhogabrielgfc1@gmail.com"
+              href="mailto:carvalhofernandesgfc@proton.me"
             >
-              carvalhogabrielgfc1@gmail.com
+              carvalhofernandesgfc@proton.me
             </a>
             .
           </p>

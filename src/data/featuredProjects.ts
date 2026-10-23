@@ -49,6 +49,8 @@ export type FeaturedProject = {
   owner: boolean;
   /** Whether a real product screenshot exists in src/assets/projects — false renders an honest placeholder instead of a fake preview. */
   hasRealMedia: boolean;
+  /** Sistema acessível em produção: `caseStudy.referenceLink` abre o site no ar e ganha o botão "Ver em produção". */
+  live?: boolean;
   thumbnailKey:
     | "jac"
     | "esports"
@@ -105,6 +107,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     owner: true,
     hasRealMedia: true,
+    live: true,
     thumbnailKey: "maximiza",
     caseStudy: {
       referenceLink: "https://maximiza-seguros.gabriel-fernandes-f48.workers.dev/",
@@ -151,6 +154,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     owner: true,
     hasRealMedia: true,
+    live: true,
     thumbnailKey: "esports",
     caseStudy: {
       referenceLink: "https://esports.unievangelica.edu.br/",
@@ -264,6 +268,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     owner: false,
     hasRealMedia: true,
+    live: true,
     thumbnailKey: "fanstoneLegacy",
     caseStudy: {
       referenceLink: "https://plataformajf.unievangelica.edu.br/",

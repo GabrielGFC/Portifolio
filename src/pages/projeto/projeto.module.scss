@@ -53,6 +53,29 @@
   }
 }
 
+/* Botão de produção, só nos sistemas que estão no ar */
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 8px;
+  padding: 0 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--sunfall-fire);
+  background: var(--sunfall-fire);
+  color: var(--sunfall-void);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur-base) var(--ease-lux), border-color var(--dur-base) var(--ease-lux);
+
+  &:hover {
+    background: var(--sunfall-cream);
+    border-color: var(--sunfall-cream);
+  }
+}
+
 .media {
   min-width: 0;
   margin: 0;

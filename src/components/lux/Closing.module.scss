@@ -35,7 +35,7 @@
   gap: 16px;
   max-width: 100%;
   padding-bottom: 8px;
-  font-size: clamp(20px, 3vw, 34px);
+  font-size: clamp(18px, 2vw, 22px);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--sunfall-ivory);
@@ -56,6 +56,66 @@
       transform: translateX(6px);
     }
   }
+}
+
+/* Ação principal para quem quer contratar: botão de e-mail com assunto pronto e cópia do endereço */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary,
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 26px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--dur-base) var(--ease-lux), border-color var(--dur-base) var(--ease-lux),
+    color var(--dur-base) var(--ease-lux);
+
+  span {
+    transition: transform var(--dur-base) var(--ease-lux);
+  }
+
+  &:hover span {
+    transform: translateX(4px);
+  }
+}
+
+.primary {
+  border: 1px solid var(--sunfall-fire);
+  background: var(--sunfall-fire);
+  color: var(--sunfall-void);
+
+  &:hover {
+    background: var(--sunfall-cream);
+    border-color: var(--sunfall-cream);
+  }
+}
+
+.copy {
+  border: 1px solid rgba(var(--sunfall-ivory-rgb), 0.32);
+  background: transparent;
+  color: var(--sunfall-ivory);
+
+  &:hover {
+    border-color: var(--sunfall-fire);
+    color: var(--sunfall-fire);
+  }
+}
+
+.note {
+  max-width: 48ch;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
 }
 
 /* Canais secundários como botões discretos, com alvo de toque de 44 px */

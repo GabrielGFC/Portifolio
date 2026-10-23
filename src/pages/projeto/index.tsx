@@ -86,6 +86,11 @@ const ProjectPage: React.FC = () => {
                 <li key={tech}>{tech}</li>
               ))}
             </motion.ul>
+            {project.live && project.caseStudy.referenceLink && (
+              <a className={styles.live} href={project.caseStudy.referenceLink} target="_blank" rel="noopener noreferrer">
+                {t.live} <span aria-hidden="true">↗</span>
+              </a>
+            )}
           </div>
         </section>
 
@@ -117,7 +122,7 @@ const ProjectPage: React.FC = () => {
               </Reveal>
             ))}
 
-            {project.caseStudy.referenceLink && (
+            {project.caseStudy.referenceLink && !project.live && (
               <Reveal className={styles.block}>
                 <span />
                 <a className="linkArrow" href={project.caseStudy.referenceLink} target="_blank" rel="noopener noreferrer">

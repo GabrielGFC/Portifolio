@@ -25,8 +25,8 @@ const Privacidade: React.FC = () => {
             <strong>Gabriel Fernandes de Carvalho</strong>, com sede em
             Anápolis-GO, é o controlador dos dados eventualmente coletados por
             este portfólio. Contato pelo e-mail{" "}
-            <a className={styles.link} href="mailto:carvalhogabrielgfc1@gmail.com">
-              carvalhogabrielgfc1@gmail.com
+            <a className={styles.link} href="mailto:carvalhofernandesgfc@proton.me">
+              carvalhofernandesgfc@proton.me
             </a>
             .
           </p>
@@ -81,8 +81,8 @@ const Privacidade: React.FC = () => {
             de tratamento, acesso aos dados, correção, anonimização,
             portabilidade, eliminação, revogação do consentimento e informação
             sobre compartilhamentos. Basta escrever para{" "}
-            <a className={styles.link} href="mailto:carvalhogabrielgfc1@gmail.com">
-              carvalhogabrielgfc1@gmail.com
+            <a className={styles.link} href="mailto:carvalhofernandesgfc@proton.me">
+              carvalhofernandesgfc@proton.me
             </a>
             .
           </p>

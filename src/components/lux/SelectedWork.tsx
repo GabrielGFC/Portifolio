@@ -13,12 +13,13 @@ const byKey = (key: string) => featuredProjects.find((project) => project.i18nKe
 type Item = { key: string; name: string; summary: string; meta: string };
 
 /** Cartão de projeto: o cartão inteiro é um único link para o estudo de caso. */
-const ProjectCard: React.FC<{ item: Item; size: "lead" | "compact"; caseStudy: string; delay: number }> = ({
-  item,
-  size,
-  caseStudy,
-  delay,
-}) => {
+const ProjectCard: React.FC<{
+  item: Item;
+  size: "lead" | "compact";
+  caseStudy: string;
+  liveLabel: string;
+  delay: number;
+}> = ({ item, size, caseStudy, liveLabel, delay }) => {
   const project = byKey(item.key);
   if (!project) return null;
   return (
@@ -42,9 +43,17 @@ const ProjectCard: React.FC<{ item: Item; size: "lead" | "compact"; caseStudy: s
                 <li key={tech}>{tech}</li>
               ))}
             </ul>
-            <span className={styles.cta} aria-hidden="true">
-              {caseStudy} <span>→</span>
-            </span>
+            <div className={styles.footerRow}>
+              <span className={styles.cta} aria-hidden="true">
+                {caseStudy} <span>→</span>
+              </span>
+              {project.live && project.caseStudy.referenceLink && (
+                <a className={styles.live} href={project.caseStudy.referenceLink} target="_blank" rel="noopener noreferrer">
+                  {liveLabel} <span aria-hidden="true">↗</span>
+                  <span className="sr-only"> — {item.name}</span>
+                </a>
+              )}
+            </div>
           </div>
         </article>
       </Reveal>
@@ -75,14 +84,28 @@ const SelectedWork: React.FC = () => {
         <p className={styles.group}>{t.featuredLabel}</p>
         <ul className={styles.leadGrid}>
           {lead.map((item, index) => (
-            <ProjectCard key={item.key} item={item} size="lead" caseStudy={t.caseStudy} delay={index * 0.08} />
+            <ProjectCard
+              key={item.key}
+              item={item}
+              size="lead"
+              caseStudy={t.caseStudy}
+              liveLabel={data.lux.caseStudy.live}
+              delay={index * 0.08}
+            />
           ))}
         </ul>
 
         <p className={styles.group}>{t.moreLabel}</p>
         <ul className={styles.moreGrid}>
           {more.map((item, index) => (
-            <ProjectCard key={item.key} item={item} size="compact" caseStudy={t.caseStudy} delay={index * 0.08} />
+            <ProjectCard
+              key={item.key}
+              item={item}
+              size="compact"
+              caseStudy={t.caseStudy}
+              liveLabel={data.lux.caseStudy.live}
+              delay={index * 0.08}
+            />
           ))}
         </ul>
 
@@ -118,9 +141,21 @@ const SelectedWork: React.FC = () => {
                       <li key={entry.key} className={styles.row}>
                         <span className={styles.rowName}>{featuredText[entry.key]?.title}</span>
                         <span className={styles.rowMeta}>{entry.meta}</span>
-                        <Link to={`/projetos/${project.id}`} className={styles.rowAction}>
-                          {t.caseStudy}
-                        </Link>
+                        <span className={styles.rowActions}>
+                          <Link to={`/projetos/${project.id}`} className={styles.rowAction}>
+                            {t.caseStudy}
+                          </Link>
+                          {project.live && project.caseStudy.referenceLink && (
+                            <a
+                              className={styles.rowAction}
+                              href={project.caseStudy.referenceLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {data.lux.caseStudy.live} <span aria-hidden="true">↗</span>
+                            </a>
+                          )}
+                        </span>
                       </li>
                     );
                   })}

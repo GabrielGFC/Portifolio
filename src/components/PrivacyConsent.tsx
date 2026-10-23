@@ -142,9 +142,9 @@ const PrivacyConsent: React.FC = () => {
                       seus dados a qualquer momento escrevendo para{" "}
                       <a
                         className={styles.mailLink}
-                        href="mailto:carvalhogabrielgfc1@gmail.com"
+                        href="mailto:carvalhofernandesgfc@proton.me"
                       >
-                        carvalhogabrielgfc1@gmail.com
+                        carvalhofernandesgfc@proton.me
                       </a>
                       .
                     </p>

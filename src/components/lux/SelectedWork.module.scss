@@ -202,6 +202,47 @@
   transition: transform 900ms var(--ease-lux);
 }
 
+/* Cartões de sistemas no ar ganham o link de produção, acima do link esticado do cartão */
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  margin-top: 8px;
+
+  .cta {
+    margin-top: 0;
+  }
+}
+
+.live {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-medium);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--sunfall-ivory);
+  text-decoration: none;
+  transition: border-color var(--dur-fast) var(--ease-lux), color var(--dur-fast) var(--ease-lux);
+
+  &:hover {
+    border-color: var(--sunfall-fire);
+    color: var(--sunfall-fire);
+  }
+}
+
+.rowActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
 .archive {
   margin-top: clamp(72px, 9vw, 120px);
   padding-top: 40px;
