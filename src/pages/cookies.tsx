@@ -90,8 +90,8 @@ const Cookies: React.FC = () => {
           <ul>
             <li>
               Clicando no botão{" "}
-              <strong>"Gerenciar privacidade"</strong> no rodapé ou na pílula
-              flutuante "● Privacidade" no canto da tela.
+              <strong>&quot;Gerenciar privacidade&quot;</strong> no rodapé ou na pílula
+              flutuante &quot;● Privacidade&quot; no canto da tela.
             </li>
             <li>
               Pelo botão abaixo (reabre o banner imediatamente):

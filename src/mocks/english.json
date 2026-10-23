@@ -27,7 +27,7 @@
     "statsLabel": "By the numbers",
     "stats": [
       { "value": "3+ years", "label": "on UniEVANGÉLICA institutional systems" },
-      { "value": "480", "label": "automated tests in the Java rewrite of James Fanstone" },
+      { "value": "482", "label": "automated tests in the Java rewrite of James Fanstone" },
       { "value": "6", "label": "security findings audited on JAC" },
       { "value": "3", "label": "P0 security fixes on the E-Sports Portal" }
     ]
@@ -91,7 +91,7 @@
       "problem": "Finding qualified reviewers who match a manuscript's topic is slow, manual work for a journal's editorial team.",
       "impact": "Supports reviewer selection: classifies the manuscript by CNPq area with local AI and ranks reviewers discovered via OpenAlex and ORCID across four tiers, with a traceable justification. The final decision stays with the editorial team.",
       "roleShort": "I built (68 of 68 commits) the Python/FastAPI backend, with local AI and a cloud fallback, reviewer ranking, invitation records and RBAC, plus the Vue 3 frontend.",
-      "result": "Explainable reviewer ranking, 6 ADRs, an operations runbook and ≈178 automated tests.",
+      "result": "Explainable reviewer ranking, 6 ADRs, an operations runbook and 112 automated tests run (plus 70 that require PostgreSQL).",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
@@ -99,17 +99,17 @@
           { "key": "solucao", "title": "Impact", "content": "Thematic classification of manuscripts by local AI (Ollama, with a cloud fallback), reviewer qualification in four tiers from OpenAlex and ORCID, ranking with a traceable justification, and invitation records per manuscript. Richer invitation history and recurrence analysis are on the roadmap." },
           { "key": "arquitetura", "title": "Stack", "content": "Python/FastAPI backend on PostgreSQL, with local AI via Ollama (cloud fallback) for thematic classification, semantic embeddings for ranking, and a Vue 3 (Vite) frontend. Argon2 authentication and RBAC, decisions recorded in 6 ADRs, and Docker deployment." },
           { "key": "papel", "title": "My role", "content": "Author of every commit in the repository (68 of 68): reviewer domain modeling, ranking, local-AI integration, invitation records, authentication, and tests." },
-          { "key": "resultados", "title": "Results", "content": ["Explainable reviewer ranking, 6 ADRs, an operations runbook and ≈178 automated tests."] }
+          { "key": "resultados", "title": "Results", "content": ["Explainable reviewer ranking, 6 ADRs, an operations runbook and 112 automated tests run (plus 70 that require PostgreSQL)."] }
         ]
       }
     },
     "maximiza": {
       "title": "Maximiza Seguros",
-      "badge": "Client / Production — Owner",
+      "badge": "Client / Production",
       "problem": "An insurance brokerage needed an institutional site to showcase its catalog and receive online quote requests, without relying on manual outreach.",
       "impact": "Institutional site in production, with multi-step quote forms, a partner real-estate directory synced daily, and corporate content.",
       "roleShort": "I built (207 of 210 commits) the site in Vue 3, TypeScript and Tailwind 4, with a modular architecture, quote forms and CI covering types, lint and tests.",
-      "result": "Site in production, with ≈185 automated tests and a daily partner sync.",
+      "result": "Site in production, with 239 automated tests and a daily partner sync.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
@@ -117,7 +117,7 @@
           { "key": "solucao", "title": "Impact", "content": "Multi-step quote forms (Fiança and Moto), a partner real-estate directory synced daily from the brokerage's public API, and institutional pages." },
           { "key": "arquitetura", "title": "Stack", "content": "Vue 3, TypeScript, Vite, and Tailwind 4 with i18n, published on Cloudflare as static assets. GitHub Actions CI with types, lint, formatting, tests, and build, plus a scheduled workflow for the partner sync." },
           { "key": "papel", "title": "My role", "content": "Author of most of the code (207 of 210 commits): feature-based modular architecture, quote forms, partner sync, and CI gates." },
-          { "key": "resultados", "title": "Results", "content": ["Site in production, with ≈185 automated tests and a daily sync of partner data."] }
+          { "key": "resultados", "title": "Results", "content": ["Site in production, with 239 automated tests and a daily sync of partner data."] }
         ]
       }
     },
@@ -159,9 +159,9 @@
     },
     "jac": {
       "title": "JAC – Academic and Community Journey",
-      "badge": "Personal / Advanced Project — Owner",
+      "badge": "Personal project / Advanced",
       "problem": "Tracking attendance at academic events by hand is slow and easy to fake, with no real visibility into who actually showed up.",
-      "impact": "Academic event management system with QR-code and geolocation check-in, attendance points, and a documented security audit. An advanced personal project, with ≈440 automated tests.",
+      "impact": "Academic event management system with QR-code and geolocation check-in, attendance points, and a documented security audit. An advanced personal project, with 353 automated unit tests.",
       "roleShort": "I built the backend and the frontend, the QR-code and geolocation check-in, and the fixes from a security audit with 6 findings.",
       "result": "Audit with 6 findings (inflated points and the CSRF secret fixed), CI with PostgreSQL concurrency and Playwright, and deploys configured on Fly.io, Cloudflare and Vercel.",
       "cta": "Case study",
@@ -171,7 +171,7 @@
           { "key": "solucao", "title": "Impact", "content": "QR-code and geolocation check-in, a points ledger with a unique index (one reward per registration), CSRF protection, audit and consent logs, and a 6-finding security audit documented in the docs." },
           { "key": "arquitetura", "title": "Stack", "content": "Node.js/Express backend with Prisma and PostgreSQL, strict TypeScript validated across distinct build targets (Node and Cloudflare Workers). Frontend migrating from React to Vue, with Vitest and Playwright." },
           { "key": "papel", "title": "My role", "content": "Author of 82% of the backend commits (159 of 194) and 98% of the frontend (205 of 209): check-in, scoring, CSRF, and the audit fixes (SEC-001 with a regression test, and SEC-004)." },
-          { "key": "resultados", "title": "Results", "content": ["≈440 automated tests (backend ≈168, frontend ≈272), CI with a check-in concurrency test on real PostgreSQL and Playwright E2E, plus documented security and dependency audits."] }
+          { "key": "resultados", "title": "Results", "content": ["353 automated unit tests (backend 182, frontend 171), CI with a check-in concurrency test on real PostgreSQL and Playwright E2E, plus documented security and dependency audits."] }
         ]
       }
     },
@@ -181,7 +181,7 @@
       "problem": "An institutional academic-research system built in Laravel needed to move to a more sustainable foundation without interrupting the system already in production.",
       "impact": "Backend rewrite of an institutional academic-research platform, migrating from the legacy Laravel system to Java and Spring Boot, now in production.",
       "roleShort": "I built (83 of 83 commits) the Java 21 and Spring Boot 4 backend: architecture, domain, Flyway migrations, SOAP integration with CNPq/Lattes, and decisions recorded in ADRs.",
-      "result": "In production, with 31 controllers, 26 migrations, 480 automated tests (27 integration files) and CI.",
+      "result": "In production, with 31 controllers, 26 migrations, 482 automated tests (27 integration files) and CI.",
       "cta": "Case study",
       "caseStudy": {
         "tabs": [
@@ -189,7 +189,7 @@
           { "key": "solucao", "title": "Impact", "content": "Incremental backend rewrite in Java and Spring Boot: users and profiles with multi-profile login, permissions, auditing, academic output (Qualis/CAPES and JCR), projects with drafts, attachments and approval, work plans with scoring, and Lattes resume import through a SOAP integration with CNPq." },
           { "key": "arquitetura", "title": "Stack", "content": "Java 21, Spring Boot 4, PostgreSQL with Flyway (26 versioned migrations), Spring Security via session and cookie with RBAC, ArchUnit for architecture rules, Swagger, and CI on GitHub Actions. Actuator restricted to health and info after an audit finding." },
           { "key": "papel", "title": "My role", "content": "Author of every commit in the repository (83 of 83): architecture, domain modeling, migrations, SOAP integration with CNPq/Lattes, and ADRs that guide the incremental migration from the legacy system." },
-          { "key": "resultados", "title": "Results", "content": ["31 controllers, 29 entities, 26 migrations, 480 automated tests (27 integration files using Spring or Testcontainers) and CI, in production."] }
+          { "key": "resultados", "title": "Results", "content": ["31 controllers, 29 entities, 26 migrations, 482 automated tests (27 integration files using Spring or Testcontainers) and CI, in production."] }
         ]
       }
     },
@@ -213,7 +213,7 @@
     },
     "farmxp": {
       "title": "Farm Automático de XP Dev",
-      "badge": "Personal Product / Production — Owner",
+      "badge": "Personal product / Production",
       "problem": "A traditional PDF resume doesn't communicate a developer's journey and personality very well.",
       "impact": "Gamified portal with a pixel/dark visual identity presenting my dev journey: quests, stack, profile, and contact in a progression flow.",
       "roleShort": "I conceived, designed, and published the product — from the pixel-art visual identity to the edge infrastructure.",
@@ -698,12 +698,14 @@
       "language": "Trocar para Português"
     },
     "hero": {
-      "eyebrow": "Software developer · Backend & Full Stack",
+      "eyebrow": "Software engineering · Backend · APIs",
       "line1": "Gabriel Fernandes",
       "line2": "de Carvalho",
-      "statement": "I build backends, APIs, and institutional systems that run in production, with tests, security, and recorded architecture decisions.",
-      "primary": "See selected work",
-      "secondary": "Download resume (PDF)",
+      "statement": "I build systems, APIs, and software solutions focused on architecture, quality, and real impact.",
+      "primary": "Explore projects",
+      "secondary": "Get in touch",
+      "markLabel": "GFC monogram",
+      "markCaption": "Software Engineer",
       "scroll": "Scroll to continue",
       "credentialsLabel": "Credentials",
       "credentials": [
@@ -730,11 +732,34 @@
       "archiveTitle": "Archive",
       "archivePublic": "Public repositories",
       "openRepo": "Open repository",
+      "featuredLabel": "Featured",
+      "moreLabel": "Also in the portfolio",
+      "diagrams": {
+        "lion": {
+          "legacy": "Legacy",
+          "rewrite": "rewrite",
+          "controllers": "31 controllers",
+          "migrations": "26 migrations",
+          "soap": "SOAP · optional"
+        },
+        "aila": {
+          "manuscript": "Manuscript",
+          "formats": "PDF, DOCX or TXT",
+          "analysis": "Local AI analysis",
+          "cnpq": "CNPq field",
+          "curation": "Curation",
+          "tiers": "4 tiers",
+          "ranking": "Explainable ranking",
+          "traceable": "With rationale",
+          "decision": "Human decision",
+          "humanSub": "Editorial team"
+        }
+      },
       "items": [
-        { "key": "lionFanstone", "name": "James Fanstone — Java rewrite", "summary": "Backend of an academic-research platform rewritten from Laravel to Java 21 and Spring Boot 4, with 480 automated tests.", "meta": "UniEVANGÉLICA · In production · 2026" },
-        { "key": "jac", "name": "JAC — Academic and Community Journey", "summary": "Academic events with QR-code and geolocation check-in, a documented security audit, and ≈440 automated tests.", "meta": "Personal project · 2025–2026" },
-        { "key": "aila", "name": "Aila", "summary": "Peer-reviewer recommendation with local AI, explainable ranking, and data from OpenAlex and ORCID.", "meta": "Editorial platform · 2026" },
-        { "key": "maximiza", "name": "Maximiza Seguros", "summary": "Institutional site with online quotes and a partner directory synced every day.", "meta": "Client · In production · 2026" }
+        { "key": "lionFanstone", "name": "James Fanstone — Java rewrite", "summary": "Backend rewrite of an institutional research platform, from Laravel to Java and Spring Boot.", "meta": "UniEVANGÉLICA · In production · 2026" },
+        { "key": "jac", "name": "JAC — Academic and Community Journey", "summary": "Academic event management with QR-code and geolocation check-in.", "meta": "Personal project · 2025–2026" },
+        { "key": "aila", "name": "Aila", "summary": "Support for choosing peer reviewers, with local AI and an explainable ranking.", "meta": "Editorial platform · 2026" },
+        { "key": "maximiza", "name": "Maximiza Seguros", "summary": "Institutional site for an insurance broker, with quote forms and a partner directory.", "meta": "Client · In production · 2026" }
       ],
       "archive": [
         { "key": "esports", "meta": "UniEVANGÉLICA · 2026" },
@@ -761,8 +786,8 @@
     "about": {
       "eyebrow": "About",
       "title": "Backend engineering for systems that have to work.",
-      "p1": "I'm a software developer and Software Engineering student at UniEVANGÉLICA. I work with Laravel, Node.js/TypeScript, Java/Spring Boot, and PostgreSQL on APIs, integrations, authentication, and access control.",
-      "p2": "Before code, I spent four years in technical support. Today I work on institutional systems in production and on my own projects, always with tests and documented decisions.",
+      "p1": "Developer and Software Engineering student, focused on APIs, integrations, authentication, and access control.",
+      "p2": "Before code, four years in technical support. Today I work on institutional systems in production and on my own projects, with tests and documented decisions.",
       "factsTitle": "At a glance",
       "facts": [
         { "label": "Based in", "value": "Anápolis, Brazil · remote work" },
@@ -788,7 +813,7 @@
         { "id": "virada", "period": "2023", "year": "2023", "title": "The turn to software", "text": "After a stint in purchasing at Leomed Drogarias, I started Software Engineering at UniEVANGÉLICA in August and joined Fábrica de Tecnologias Turing as a developer in September.", "milestone": "First development role." },
         { "id": "instituicoes", "period": "2024", "year": "2024", "title": "Institutional systems", "text": "I built internal management and automation solutions as a Software Developer at the Brazilian Air Force and, in October, started my internship at UniEVANGÉLICA.", "milestone": "Certifications in Laravel 11 and C# Fundamentals." },
         { "id": "producao", "period": "2025", "year": "2025", "title": "Production and responsibility", "text": "I started contributing to James Fanstone, an academic-research platform in production: the enrollment report, review reminders, and validations. In the second half, I started JAC.", "milestone": "118 commits to the backend of a production system." },
-        { "id": "autoria", "period": "2026", "year": "2026", "title": "Architecture and authorship", "text": "I became Technology Assistant Level I, rewrote the James Fanstone backend in Java and Spring Boot, built Aila and the 5th edition of the E-Sports Portal, and shipped the Maximiza Seguros site.", "milestone": "Java rewrite in production, with 480 automated tests." }
+        { "id": "autoria", "period": "2026", "year": "2026", "title": "Architecture and authorship", "text": "I became Technology Assistant Level I, rewrote the James Fanstone backend in Java and Spring Boot, built Aila and the 5th edition of the E-Sports Portal, and shipped the Maximiza Seguros site.", "milestone": "Java rewrite in production, with 482 automated tests." }
       ],
       "ctaWork": "See selected work",
       "ctaResume": "Download resume (PDF)",

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proposta B, duas colunas com o símbolo GFC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="base.css" />
+<style>
+  .hero { min-height: calc(100vh - 88px); display: grid; align-items: center; gap: 48px; padding-bottom: 72px; grid-template-columns: 1.15fr 0.85fr; }
+  .copy { display: grid; gap: 26px; }
+  h1 { font-size: clamp(40px, 5vw, 72px); max-width: 13ch; }
+  .card { position: relative; justify-self: end; width: min(100%, 400px); aspect-ratio: 1; display: grid; place-items: center; border-radius: 32px; background: linear-gradient(160deg, #182936, #13222d); border: 1px solid rgba(235, 236, 220, .10); }
+  .card svg { width: 54%; height: auto; display: block; }
+  .card .tag { position: absolute; left: 28px; right: 28px; bottom: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: #C3D5C7; }
+  .card .tag .rule i { width: 28px; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 8px; } .card { order: -1; justify-self: start; width: 168px; border-radius: 24px; } .card .tag { display: none; } .links, .lang { display: none; } .nav { justify-content: space-between; } .btn { width: 100%; justify-content: space-between; } }
+</style></head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#" aria-label="GFC, início">
+    <svg viewBox="-20 22 232 252" aria-hidden="true"><path d="M166 61 A106 106 0 1 0 165 235 L166 176 L129 176" stroke="#54BAD2" stroke-width="29" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M107 212 L107 89 Q107 78 119 78 L174 78 M108 142 L157 142" stroke="#B8B095" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M191 112 A55 55 0 1 0 190 197" stroke="#1E7453" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+    GFC
+  </a>
+  <nav class="links" aria-label="Principal"><a class="on" href="#">Projetos</a><a href="#">Trajetória</a><a href="#">Sobre</a><a href="#">Contato</a></nav>
+  <span class="lang">PT / EN</span>
+</header>
+<main class="wrap hero">
+  <div class="copy">
+    <p class="kicker">Engenharia de software · Backend · APIs</p>
+    <h1>Gabriel Fernandes de Carvalho</h1>
+    <p class="lead">Desenvolvo sistemas, APIs e soluções de software com foco em arquitetura, qualidade e impacto real.</p>
+    <div class="cta"><a class="btn primary" href="#">Explorar projetos <span aria-hidden="true">→</span></a><a class="btn ghost" href="#">Entrar em contato <span aria-hidden="true">↗</span></a></div>
+  </div>
+  <figure class="card" aria-label="Monograma GFC">
+    <svg viewBox="-20 22 232 252" role="img" aria-label="Monograma GFC"><path d="M166 61 A106 106 0 1 0 165 235 L166 176 L129 176" stroke="#54BAD2" stroke-width="29" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M107 212 L107 89 Q107 78 119 78 L174 78 M108 142 L157 142" stroke="#B8B095" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M191 112 A55 55 0 1 0 190 197" stroke="#1E7453" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+    <figcaption class="tag"><span>Software Engineer</span><span class="rule" aria-hidden="true"><i></i><i></i></span></figcaption>
+  </figure>
+</main>
+</body></html>

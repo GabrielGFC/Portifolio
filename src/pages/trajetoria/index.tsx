@@ -50,7 +50,6 @@ const Trajetoria: React.FC = () => {
 
       <main id="conteudo" tabIndex={-1}>
         <section className={styles.intro} aria-labelledby="journey-title">
-          <div aria-hidden="true" className={styles.light} />
           <div className="container">
             <motion.p
               className="eyebrow"
@@ -83,7 +82,10 @@ const Trajetoria: React.FC = () => {
                     type="button"
                     className={`${styles.indexLink} ${active === chapter.id ? styles.indexActive : ""}`}
                     aria-current={active === chapter.id ? "step" : undefined}
-                    onClick={() => scrollToSection(`chapter-${chapter.id}`, reduce)}
+                    onClick={() => {
+                      setActive(chapter.id);
+                      scrollToSection(`chapter-${chapter.id}`, reduce);
+                    }}
                   >
                     <span className={styles.indexNum}>{String(i + 1).padStart(2, "0")}</span>
                     <span>{chapter.period}</span>
@@ -101,16 +103,6 @@ const Trajetoria: React.FC = () => {
                 className={styles.chapter}
                 aria-labelledby={`chapter-title-${chapter.id}`}
               >
-                <motion.span
-                  aria-hidden="true"
-                  className={styles.year}
-                  initial={reduce ? false : { opacity: 0, y: 60 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{ duration: duration.cinematic, ease }}
-                >
-                  {chapter.year}
-                </motion.span>
                 <Reveal className={styles.body}>
                   <p className={styles.meta}>
                     <span>

@@ -5,7 +5,7 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 import SiteHeader from "../../components/lux/SiteHeader";
 import SiteFooter from "../../components/lux/SiteFooter";
 import { featuredProjects, type FeaturedText } from "../../data/featuredProjects";
-import { projectMedia } from "../../data/projectMedia";
+import ProjectVisual from "../../components/lux/ProjectVisual";
 import { MaskedTitle, PageTransition, Reveal, duration, ease } from "../../motion/motion";
 import styles from "./projeto.module.scss";
 
@@ -52,7 +52,6 @@ const ProjectPage: React.FC = () => {
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>
         <section className={styles.hero} aria-labelledby="case-title">
-          <div aria-hidden="true" className={styles.light} />
           <div className={`container ${styles.heroInner}`}>
             <Link to="/" state={{ scrollTo: "work" }} className={styles.back}>
               <span aria-hidden="true">←</span> {t.back}
@@ -97,7 +96,7 @@ const ProjectPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: duration.cinematic, ease, delay: 0.4 }}
           >
-            <img src={projectMedia[project.thumbnailKey]} alt={text.title} decoding="async" />
+            <ProjectVisual thumbnailKey={project.thumbnailKey} alt={text.title} />
           </motion.figure>
 
           <div className={styles.body}>

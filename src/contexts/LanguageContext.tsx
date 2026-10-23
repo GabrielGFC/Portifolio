@@ -17,7 +17,7 @@ export const LanguageContext = createContext<LanguageContextType>({
     toggleLanguage: () => {},
 });
 
-export const LanguageProvider: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     const getUserInitialLang = (): LangKey => {
         if (typeof window !== 'undefined') {
             const userLang = navigator.language || navigator.languages[0];

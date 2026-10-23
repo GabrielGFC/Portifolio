@@ -10,7 +10,6 @@ const Closing: React.FC = () => {
 
   return (
     <section id="contact" className={styles.section} aria-labelledby="contact-title">
-      <div aria-hidden="true" className={styles.light} />
       <div className={`container ${styles.inner}`}>
         <p className="eyebrow">{t.eyebrow}</p>
         <MaskedTitle id="contact-title" className={styles.title}>
@@ -25,17 +24,17 @@ const Closing: React.FC = () => {
           <ul className={styles.links}>
             <li>
               <a href="https://www.linkedin.com/in/gabrielgfc1" target="_blank" rel="noopener noreferrer">
-                LinkedIn
+                LinkedIn <span aria-hidden="true">↗</span>
               </a>
             </li>
             <li>
               <a href="https://github.com/GabrielGFC" target="_blank" rel="noopener noreferrer">
-                GitHub
+                GitHub <span aria-hidden="true">↗</span>
               </a>
             </li>
             <li>
               <a href={RESUME_URL} target="_blank" rel="noopener noreferrer">
-                {nav.resume} (PDF)
+                {nav.resume} (PDF) <span aria-hidden="true">↗</span>
               </a>
             </li>
           </ul>

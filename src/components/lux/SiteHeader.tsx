@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import { RESUME_URL, scrollToSection } from "../../motion/motion";
+import Monogram from "./Monogram";
 import styles from "./SiteHeader.module.scss";
 
 const SiteHeader: React.FC = () => {
@@ -101,10 +102,11 @@ const SiteHeader: React.FC = () => {
           <Link
             to="/"
             className={styles.mark}
-            aria-label={t.home}
+            aria-label={`GFC, ${t.home}`}
             onClick={() => onHome && scrollToSection("top", reduce)}
           >
-            GF<span aria-hidden="true">.</span>
+            <Monogram still className={styles.markIcon} />
+            <span className={styles.markText}>GFC</span>
           </Link>
 
           <nav aria-label={t.label} id="site-nav" className={`${styles.nav} ${open ? styles.navOpen : ""}`}>
@@ -130,7 +132,7 @@ const SiteHeader: React.FC = () => {
           </nav>
 
           <div className={styles.actions}>
-            <button type="button" className={styles.lang} onClick={toggleLanguage} aria-label={t.language}>
+            <button type="button" className={styles.lang} onClick={toggleLanguage} aria-label={`PT / EN, ${t.language}`}>
               <span className={langKey === "pt" ? styles.langOn : ""}>PT</span>
               <span aria-hidden="true" className={styles.langSep}>/</span>
               <span className={langKey === "en" ? styles.langOn : ""}>EN</span>

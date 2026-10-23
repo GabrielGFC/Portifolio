@@ -1,0 +1,123 @@
+/* Moldura única para todos os projetos: mesma proporção, borda e raio, captura recortada pelo topo */
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-medium);
+  background: var(--sunfall-night);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 1400ms var(--ease-lux);
+  }
+}
+
+/* Captura real dentro de uma barra de janela mínima: padroniza telas claras, escuras e de proporções diferentes */
+.shot {
+  display: grid;
+  grid-template-rows: 26px 1fr;
+
+  img {
+    min-height: 0;
+  }
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background: var(--sunfall-deep-blue);
+  border-bottom: 1px solid var(--color-border-subtle);
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(var(--sunfall-ivory-rgb), 0.22);
+  }
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(var(--sunfall-ivory-rgb), 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Em telas estreitas o diagrama mantém tamanho legível e rola na horizontal dentro da moldura */
+@media (max-width: 640px) {
+  .diagram {
+    aspect-ratio: auto;
+    overflow-x: auto;
+
+    .svg {
+      width: 600px;
+      height: auto;
+    }
+  }
+}
+
+.node rect,
+.nodeStrong rect {
+  fill: var(--sunfall-void);
+  stroke: var(--color-border-strong);
+  stroke-width: 1;
+}
+
+.nodeStrong rect {
+  stroke: var(--sunfall-fire);
+}
+
+.nodeTitle {
+  font-family: var(--ff-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  fill: var(--sunfall-ivory);
+}
+
+.nodeSub {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  fill: var(--color-text-muted);
+}
+
+.edge {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  fill: var(--sunfall-fire);
+}
+
+.arrow {
+  fill: none;
+  stroke: var(--sunfall-fire);
+  stroke-width: 1.4;
+}
+
+/* Ao passar o mouse ou focar o cartão, as setas passam a "fluir" no sentido do fluxo */
+@media (prefers-reduced-motion: no-preference) {
+  .frame:hover .arrow,
+  .frame:focus-within .arrow {
+    stroke-dasharray: 6 6;
+    animation: flow 1.2s linear infinite;
+  }
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+
+.arrowHead {
+  fill: none;
+  stroke: var(--sunfall-fire);
+  stroke-width: 1.6;
+}

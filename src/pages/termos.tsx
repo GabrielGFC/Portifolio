@@ -87,7 +87,7 @@ const Termos: React.FC = () => {
         <section className={styles.section}>
           <h2>6. Disponibilidade</h2>
           <p>
-            O site é fornecido "como está". Não há garantia de disponibilidade
+            O site é fornecido &quot;como está&quot;. Não há garantia de disponibilidade
             ininterrupta ou ausência de erros. Atualizações podem ocorrer a
             qualquer momento.
           </p>

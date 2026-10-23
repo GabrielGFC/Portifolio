@@ -80,7 +80,7 @@ export const featuredProjects: FeaturedProject[] = [
     roleShort:
       "Desenvolvi (68 de 68 commits) o backend em Python/FastAPI, com IA local e fallback em nuvem, ranking de avaliadores, registro de convites e RBAC, e o frontend em Vue 3.",
     resultsPreview: [
-      "Ranking explicável de avaliadores, 6 ADRs, runbook de operação e ≈178 testes automatizados.",
+      "Ranking explicável de avaliadores, 6 ADRs, runbook de operação e 112 testes automatizados executados (mais 70 que exigem PostgreSQL).",
     ],
     owner: true,
     hasRealMedia: true,
@@ -101,7 +101,7 @@ export const featuredProjects: FeaturedProject[] = [
     roleShort:
       "Desenvolvi (207 de 210 commits) o site em Vue 3, TypeScript e Tailwind 4, com arquitetura modular, formulários de cotação e CI com tipos, lint e testes.",
     resultsPreview: [
-      "Site em produção, com ≈185 testes automatizados e sincronização diária de parceiros.",
+      "Site em produção, com 239 testes automatizados e sincronização diária de parceiros.",
     ],
     owner: true,
     hasRealMedia: true,
@@ -165,7 +165,7 @@ export const featuredProjects: FeaturedProject[] = [
     problem:
       "Controlar presença em eventos acadêmicos manualmente é lento e fácil de fraudar, sem visibilidade real de quem participou.",
     impact:
-      "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização, pontos por presença e auditoria de segurança documentada. Projeto pessoal avançado, com ≈440 testes automatizados.",
+      "Sistema de gestão de eventos acadêmicos com check-in por QR code e geolocalização, pontos por presença e auditoria de segurança documentada. Projeto pessoal avançado, com 353 testes unitários automatizados.",
     stack: ["Node.js", "TypeScript", "Prisma", "PostgreSQL", "React/Vue"],
     roleShort:
       "Desenvolvi o backend e o frontend, o check-in por QR code e geolocalização e a correção de falhas de uma auditoria de segurança com 6 achados.",
@@ -193,7 +193,7 @@ export const featuredProjects: FeaturedProject[] = [
     roleShort:
       "Desenvolvi (83 de 83 commits) o backend em Java 21 e Spring Boot 4: arquitetura, domínio, migrações Flyway, integração SOAP com o CNPq/Lattes e decisões registradas em ADRs.",
     resultsPreview: [
-      "Em produção, com 31 controllers, 26 migrações, 480 testes automatizados (27 arquivos de integração) e CI.",
+      "Em produção, com 31 controllers, 26 migrações, 482 testes automatizados (27 arquivos de integração) e CI.",
     ],
     owner: true,
     hasRealMedia: true,

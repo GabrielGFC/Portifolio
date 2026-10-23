@@ -4,7 +4,9 @@ import { LanguageContext } from "../../contexts/LanguageContext";
 import { MaskedTitle, Reveal, duration, ease } from "../../motion/motion";
 import styles from "./ExperienceList.module.scss";
 
-const order = ["proppe", "estagio", "ftt", "fab", "leomed", "tecpress"] as const;
+// Atuais primeiro; depois, do mais recente para o mais antigo.
+const order = ["proppe", "ftt", "estagio", "fab", "leomed", "tecpress"] as const;
+const current = new Set<string>(["proppe", "ftt"]);
 
 const ExperienceList: React.FC = () => {
   const { data } = useContext(LanguageContext);
@@ -26,20 +28,24 @@ const ExperienceList: React.FC = () => {
           {order.map((key, index) => {
             const job = data.experience[key];
             const isOpen = open === key;
+            const isCurrent = current.has(key);
             const panelId = `job-${key}`;
+            const stack = t.stacks[key];
             return (
-              <li key={key} className={styles.item}>
-                <Reveal delay={reduce ? 0 : index * 0.05} y={16}>
+              <li key={key} className={`${styles.item} ${isCurrent ? styles.now : ""}`}>
+                <Reveal delay={reduce ? 0 : index * 0.04} y={14}>
                   <div className={styles.row}>
                     <span className={styles.period}>{job.period}</span>
                     <div className={styles.what}>
                       <h3 className={styles.role}>{job.role}</h3>
                       <p className={styles.org}>{job.company}</p>
-                      <ul className={styles.tags} aria-label="Stack">
-                        {t.stacks[key].map((tag) => (
-                          <li key={tag}>{tag}</li>
-                        ))}
-                      </ul>
+                      {isCurrent && (
+                        <ul className={styles.tags} aria-label="Stack">
+                          {stack.slice(0, 3).map((tag) => (
+                            <li key={tag}>{tag}</li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                     <button
                       type="button"
@@ -54,7 +60,7 @@ const ExperienceList: React.FC = () => {
                   </div>
                   <AnimatePresence initial={false}>
                     {isOpen && (
-                      <motion.ul
+                      <motion.div
                         id={panelId}
                         className={styles.details}
                         initial={{ height: 0, opacity: 0 }}
@@ -62,10 +68,13 @@ const ExperienceList: React.FC = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: reduce ? 0 : duration.base, ease }}
                       >
-                        {[job.bullet1, job.bullet2, job.bullet3].map((bullet) => (
-                          <li key={bullet}>{bullet}</li>
-                        ))}
-                      </motion.ul>
+                        <ul>
+                          {[job.bullet1, job.bullet2, job.bullet3].map((bullet) => (
+                            <li key={bullet}>{bullet}</li>
+                          ))}
+                        </ul>
+                        {!isCurrent && <p className={styles.stackLine}>{stack.join(" · ")}</p>}
+                      </motion.div>
                     )}
                   </AnimatePresence>
                 </Reveal>

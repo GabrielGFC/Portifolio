@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direções visuais do portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #1b1b1d; font-family: Geist, system-ui, sans-serif; padding: 24px; }
+  h1 { color: #eee; font: 500 14px/1 Geist, sans-serif; margin-bottom: 16px; letter-spacing: .04em; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1392px; margin: 0 auto; }
+  .panel { position: relative; height: 560px; border-radius: 14px; overflow: hidden; padding: 28px 32px; display: flex; flex-direction: column; }
+  .tag { position: absolute; top: 14px; right: 18px; font: 500 11px/1 "Geist Mono", monospace; letter-spacing: .08em; opacity: .7; }
+  .nav { display: flex; gap: 22px; font-size: 12px; margin-bottom: 36px; align-items: center; }
+  .nav b { margin-right: auto; font-weight: 600; }
+  .lead { max-width: 46ch; font-size: 14px; line-height: 1.55; margin-top: 16px; }
+  .card { margin-top: auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; align-items: end; }
+  .shot { height: 130px; border-radius: 10px; background: linear-gradient(135deg, #dfe8ff, #f4f7ff); border: 1px solid rgba(0,0,0,.1); position: relative; }
+  .shot::after { content: ""; position: absolute; inset: 14px 14px auto 14px; height: 10px; border-radius: 6px; background: rgba(30,60,160,.25); box-shadow: 0 22px 0 rgba(30,60,160,.12), 0 44px 0 rgba(30,60,160,.12); }
+
+  /* A: Editorial Engineering */
+  .A { background: #F2EDE3; color: #15130F; }
+  .A .nav { font-family: "Geist Mono", monospace; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+  .A h2 { font: 400 76px/0.95 "Instrument Serif", serif; letter-spacing: -0.02em; }
+  .A h2 em { color: #C8401C; }
+  .A .lead { color: #5E574B; }
+  .A .meta { font: 500 11px/1.4 "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #C8401C; margin-bottom: 14px; }
+  .A hr { border: 0; border-top: 1px solid #CFC7B6; margin: 18px 0 0; }
+  .A .card h3 { font: 400 30px/1.05 "Instrument Serif", serif; }
+  .A .card p { font-size: 12px; color: #5E574B; margin-top: 6px; }
+  .A .shot { border-color: #CFC7B6; }
+
+  /* B: Contemporary Technical */
+  .B { background: #0B0D10; color: #E7ECF2; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 40px 40px; }
+  .B .nav { font-family: "Geist Mono", monospace; font-size: 11px; color: #8A96A3; }
+  .B .nav b { color: #E7ECF2; }
+  .B h2 { font: 500 58px/1 Geist, sans-serif; letter-spacing: -0.035em; }
+  .B h2 span { color: #B6F24A; }
+  .B .lead { color: #8A96A3; }
+  .B .meta { font: 400 11px/1.4 "Geist Mono", monospace; color: #B6F24A; margin-bottom: 14px; }
+  .B .chips { display: flex; gap: 8px; margin-top: 18px; font: 400 11px "Geist Mono", monospace; }
+  .B .chips i { font-style: normal; padding: 5px 10px; border: 1px solid #232A33; border-radius: 6px; background: #12161B; color: #C5CED8; }
+  .B .card { padding: 14px; border: 1px solid #232A33; border-radius: 12px; background: #12161B; }
+  .B .card h3 { font: 500 20px/1.1 Geist; letter-spacing: -0.02em; }
+  .B .card p { font: 400 11px "Geist Mono", monospace; color: #8A96A3; margin-top: 8px; }
+
+  /* C: Premium Minimal (evolução do atual) */
+  .C { background: #000809; color: #FFECD6; background-image: radial-gradient(circle at 85% -10%, rgba(255,149,55,.28), transparent 55%); }
+  .C .nav { color: #A89C8E; font-size: 12px; }
+  .C h2 { font: 300 72px/0.95 "Inter Tight", sans-serif; letter-spacing: -0.045em; }
+  .C h2 b { font-weight: 500; }
+  .C .lead { color: #A89C8E; }
+  .C .meta { font: 500 11px/1.4 "Inter Tight", sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #FF9537; margin-bottom: 14px; }
+  .C .card h3 { font: 400 28px/1.1 "Inter Tight"; letter-spacing: -0.02em; }
+  .C .card p { font-size: 12px; color: #A89C8E; margin-top: 6px; }
+  .C .shot { border: 0; border-radius: 22px; }
+
+  /* Híbrido recomendado: A + B */
+  .H { background: #0E0F11; color: #EFE9DD; }
+  .H .nav { font-family: "Geist Mono", monospace; font-size: 11px; color: #8F8A80; letter-spacing: .04em; }
+  .H .nav b { color: #EFE9DD; font-family: Geist; font-size: 13px; }
+  .H h2 { font: 400 80px/0.93 "Instrument Serif", serif; letter-spacing: -0.02em; }
+  .H h2 em { color: #FF9537; }
+  .H .lead { color: #9A9488; }
+  .H .meta { font: 400 11px/1.4 "Geist Mono", monospace; color: #FF9537; margin-bottom: 14px; letter-spacing: .04em; }
+  .H .stack { margin-top: 18px; display: flex; gap: 14px; font: 400 11px "Geist Mono", monospace; color: #8F8A80; }
+  .H .stack span::before { content: "/ "; color: #FF9537; }
+  .H hr { border: 0; border-top: 1px solid #24262A; margin: 18px 0 0; }
+  .H .card { margin-top: auto; }
+  .H .card h3 { font: 400 30px/1.05 "Instrument Serif", serif; }
+  .H .card p { font: 400 11px "Geist Mono", monospace; color: #8F8A80; margin-top: 8px; }
+  .H .shot { border-color: #24262A; border-radius: 10px; }
+  .H .idx { font: 400 11px "Geist Mono", monospace; color: #FF9537; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<h1>DIREÇÕES VISUAIS · estudo de composição (amostras, não o site final)</h1>
+<div class="grid">
+
+  <section class="panel A">
+    <span class="tag">A · EDITORIAL ENGINEERING</span>
+    <div class="nav"><b>GF.</b><span>Trabalho</span><span>Trajetória</span><span>Sobre</span><span>Contato</span></div>
+    <p class="meta">Backend &amp; Full Stack — Anápolis, GO</p>
+    <h2>Gabriel<br />Fernandes <em>de Carvalho</em></h2>
+    <p class="lead">Construo backends, APIs e sistemas institucionais que rodam em produção, com testes e decisões de arquitetura registradas.</p>
+    <hr />
+    <div class="card"><div><p class="meta" style="margin:0 0 8px">01 — 2026</p><h3>James Fanstone, reescrita em Java</h3><p>UniEVANGÉLICA · Java 21 · Spring Boot 4</p></div><div class="shot"></div></div>
+  </section>
+
+  <section class="panel B">
+    <span class="tag">B · CONTEMPORARY TECHNICAL</span>
+    <div class="nav"><b>gf/</b><span>~/trabalho</span><span>~/trajetoria</span><span>~/sobre</span><span>~/contato</span></div>
+    <p class="meta">$ whoami — backend, apis, sistemas institucionais</p>
+    <h2>Gabriel Fernandes<br />de Carvalho<span>_</span></h2>
+    <p class="lead">Construo backends, APIs e sistemas institucionais que rodam em produção, com testes e decisões de arquitetura registradas.</p>
+    <div class="chips"><i>Laravel</i><i>Node.js/TS</i><i>Spring Boot</i><i>PostgreSQL</i></div>
+    <div class="card"><div><h3>James Fanstone, reescrita em Java</h3><p>01 · UniEVANGÉLICA · em produção · 2026</p></div><div class="shot"></div></div>
+  </section>
+
+  <section class="panel C">
+    <span class="tag">C · PREMIUM MINIMAL (evolução do atual)</span>
+    <div class="nav"><b style="margin-right:auto;color:#FFECD6">GF.</b><span>Trabalho</span><span>Trajetória</span><span>Sobre</span><span>Contato</span></div>
+    <p class="meta">Desenvolvedor de software · Backend &amp; Full Stack</p>
+    <h2><b>Gabriel Fernandes</b><br />de Carvalho</h2>
+    <p class="lead">Construo backends, APIs e sistemas institucionais que rodam em produção, com testes e decisões de arquitetura registradas.</p>
+    <div class="card"><div><h3>James Fanstone, reescrita em Java</h3><p>UniEVANGÉLICA · Em produção · 2026</p></div><div class="shot"></div></div>
+  </section>
+
+  <section class="panel H">
+    <span class="tag">RECOMENDADA · A + B</span>
+    <div class="nav"><b>GF.</b><span>/trabalho</span><span>/trajetoria</span><span>/sobre</span><span>/contato</span></div>
+    <p class="meta">Backend &amp; Full Stack · Anápolis, GO</p>
+    <h2>Gabriel Fernandes<br /><em>de Carvalho</em></h2>
+    <p class="lead">Construo backends, APIs e sistemas institucionais que rodam em produção, com testes e decisões de arquitetura registradas.</p>
+    <div class="stack"><span>Laravel</span><span>Node.js/TS</span><span>Spring Boot</span><span>PostgreSQL</span></div>
+    <hr />
+    <div class="card" style="display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:end;margin-top:auto"><div><p class="idx">01 / 04</p><h3>James Fanstone, reescrita em Java</h3><p>UniEVANGÉLICA · Java 21 · em produção · 2026</p></div><div class="shot"></div></div>
+  </section>
+
+</div>
+</body>
+</html>

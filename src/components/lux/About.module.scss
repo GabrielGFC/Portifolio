@@ -5,33 +5,33 @@
 
 .layout {
   display: grid;
-  gap: clamp(64px, 8vw, 120px);
+  gap: clamp(48px, 7vw, 96px);
 
   @media (min-width: 1024px) {
-    grid-template-columns: 7fr 5fr;
-    align-items: start;
+    grid-template-columns: 6fr 5fr;
+    align-items: center;
   }
 }
 
 .story {
   display: grid;
-  gap: 28px;
+  gap: 24px;
   justify-items: start;
 }
 
 .title {
-  font-size: var(--fs-title);
-  max-width: 16ch;
+  max-width: 18ch;
+  font-size: clamp(30px, 3.6vw, 48px);
 }
 
 .copy {
   display: grid;
-  gap: 22px;
+  gap: 18px;
   justify-items: start;
-  max-width: 56ch;
+  max-width: 48ch;
 
   p {
-    font-size: var(--fs-lead);
+    font-size: 18px;
     line-height: 1.6;
     color: var(--color-text-muted);
   }
@@ -39,25 +39,24 @@
   p:first-child {
     color: var(--sunfall-ivory);
   }
+
+  :global(.linkArrow) {
+    margin-top: 6px;
+  }
 }
 
 .facts {
-  padding-top: 8px;
-
-  @media (min-width: 1024px) {
-    padding-top: 84px;
-  }
-
-  padding: clamp(24px, 3vw, 40px);
+  padding: clamp(24px, 3vw, 36px);
   border-radius: var(--radius-lg);
-  background: rgba(var(--sunfall-ivory-rgb), 0.03);
-  border: 1px solid rgba(var(--sunfall-ivory-rgb), 0.06);
+  background: linear-gradient(160deg, var(--sunfall-deep-blue), var(--sunfall-void));
+  border: 1px solid var(--color-border-card);
 }
 
 .factsTitle {
-  margin-bottom: 20px;
-  font-size: var(--fs-eyebrow);
-  font-weight: 500;
+  margin-bottom: 8px;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-mono);
+  font-weight: 400;
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--sunfall-fire);
@@ -66,26 +65,29 @@
 .fact {
   display: grid;
   gap: 4px;
-  padding: 16px 0;
+  padding: 18px 0;
   background: var(--line-soft) left bottom / 100% 1px no-repeat;
 
   &:last-child {
     background: none;
+    padding-bottom: 0;
   }
 
   @media (min-width: 640px) {
-    grid-template-columns: 140px 1fr;
+    grid-template-columns: 130px 1fr;
     gap: 20px;
   }
 
   dt {
-    font-size: 13px;
+    font-family: var(--ff-mono);
+    font-size: var(--fs-mono);
+    letter-spacing: var(--tracking-mono);
     color: var(--color-text-muted);
   }
 
   dd {
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.5;
     color: var(--sunfall-ivory);
   }
 }

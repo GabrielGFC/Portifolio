@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 920" role="img" aria-label="Monograma GFC">
+  <defs>
+    <linearGradient id="tealTop" gradientUnits="userSpaceOnUse" x1="230" y1="230" x2="740" y2="90">
+      <stop offset="0" stop-color="#B7D3CA"/>
+      <stop offset="0.5" stop-color="#8FBAC3"/>
+      <stop offset="1" stop-color="#3C88A6"/>
+    </linearGradient>
+    <linearGradient id="tealLeft" gradientUnits="userSpaceOnUse" x1="120" y1="300" x2="150" y2="715">
+      <stop offset="0" stop-color="#86B3BE"/>
+      <stop offset="1" stop-color="#4A8EA8"/>
+    </linearGradient>
+    <linearGradient id="tealFade" gradientUnits="userSpaceOnUse" x1="0" y1="250" x2="0" y2="345">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="tealLeftMask" maskUnits="userSpaceOnUse" x="0" y="0" width="880" height="920">
+      <rect x="0" y="250" width="880" height="670" fill="url(#tealFade)"/>
+    </mask>
+    <linearGradient id="cream" gradientUnits="userSpaceOnUse" x1="300" y1="300" x2="340" y2="880">
+      <stop offset="0" stop-color="#F1D8BB"/>
+      <stop offset="0.6" stop-color="#E4C6A4"/>
+      <stop offset="1" stop-color="#D2B592"/>
+    </linearGradient>
+    <linearGradient id="coral" gradientUnits="userSpaceOnUse" x1="470" y1="415" x2="780" y2="295">
+      <stop offset="0" stop-color="#EE8E7A"/>
+      <stop offset="1" stop-color="#DF6C59"/>
+    </linearGradient>
+    <linearGradient id="greenLight" gradientUnits="userSpaceOnUse" x1="490" y1="600" x2="745" y2="495">
+      <stop offset="0" stop-color="#6A9B79"/>
+      <stop offset="1" stop-color="#7FAE88"/>
+    </linearGradient>
+    <linearGradient id="greenDark" gradientUnits="userSpaceOnUse" x1="400" y1="600" x2="640" y2="700">
+      <stop offset="0" stop-color="#1D624A"/>
+      <stop offset="1" stop-color="#2D7B5D"/>
+    </linearGradient>
+    <clipPath id="coralClip"><polygon points="568,270 900,270 900,430 440,430"/></clipPath>
+    <path id="tealShape" d="M738 90 L395 88 C300 88 240 122 190 178 C110 258 50 320 50 450 L50 600 C50 640 120 690 190 715 L190 520 C190 340 300 215 410 215 L592 215 C606 215 618 211 630 199 Z"/>
+    <path id="creamShape" d="M780 295 L470 293 C370 293 285 360 282 470 L281 880 L400 797 L400 500 C400 450 430 415 500 415 L655 415 C668 415 679 410 690 398 Z"/>
+  </defs>
+  <use href="#tealShape" fill="url(#tealTop)"/>
+  <g mask="url(#tealLeftMask)"><use href="#tealShape" fill="url(#tealLeft)"/></g>
+  <path d="M281 880 L400 880 L400 797 Z" fill="#26303A"/>
+  <use href="#creamShape" fill="url(#cream)"/>
+  <g clip-path="url(#coralClip)"><use href="#creamShape" fill="url(#coral)"/></g>
+  <path d="M490 600 L490 528 Q490 500 518 500 L735 495 Q752 495 742 512 L640 636 L560 598 Z" fill="url(#greenLight)"/>
+  <path d="M400 598 L490 598 L560 598 L640 636 L604 686 C580 708 540 718 490 718 C440 718 405 712 400 700 Z" fill="url(#greenDark)"/>
+  <path d="M286 626 L400 500 L400 712 Z" fill="#7F7B62" opacity="0.88"/>
+</svg>

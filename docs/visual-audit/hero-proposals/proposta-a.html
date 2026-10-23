@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Proposta A, tipografia em primeiro plano</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="base.css" />
+<style>
+  .hero { min-height: calc(100vh - 88px); display: flex; flex-direction: column; justify-content: center; gap: 28px; padding-bottom: 72px; }
+  h1 { font-size: clamp(44px, 6.4vw, 92px); max-width: 14ch; }
+  .lead { max-width: 36ch; }
+  .hero .foot { margin-top: 32px; display: flex; align-items: center; gap: 16px; }
+  @media (max-width: 640px) { .links, .lang { display: none; } .nav { justify-content: space-between; } .btn { width: 100%; justify-content: space-between; } }
+</style></head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#" aria-label="GFC, início">
+    <!-- Geometria do kit (gfc_principal.svg), com viewBox ampliado para não cortar o arco do G -->
+    <svg viewBox="-20 22 232 252" aria-hidden="true"><path d="M166 61 A106 106 0 1 0 165 235 L166 176 L129 176" stroke="#54BAD2" stroke-width="29" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M107 212 L107 89 Q107 78 119 78 L174 78 M108 142 L157 142" stroke="#B8B095" stroke-width="22" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M191 112 A55 55 0 1 0 190 197" stroke="#1E7453" stroke-width="22" fill="none" stroke-linecap="round"/></svg>
+    GFC
+  </a>
+  <nav class="links" aria-label="Principal"><a class="on" href="#">Projetos</a><a href="#">Trajetória</a><a href="#">Sobre</a><a href="#">Contato</a></nav>
+  <span class="lang">PT / EN</span>
+</header>
+<main class="wrap hero">
+  <p class="kicker">Engenharia de software · Backend · APIs · Arquitetura</p>
+  <h1>Gabriel Fernandes de Carvalho</h1>
+  <p class="lead">Desenvolvo sistemas, APIs e soluções de software com foco em arquitetura, qualidade e impacto real.</p>
+  <div class="cta"><a class="btn primary" href="#">Explorar projetos <span aria-hidden="true">→</span></a><a class="btn ghost" href="#">Entrar em contato <span aria-hidden="true">↗</span></a></div>
+  <p class="foot"><span class="rule" aria-hidden="true"><i></i><i></i></span> GFC · Engenharia de Software</p>
+</main>
+</body></html>

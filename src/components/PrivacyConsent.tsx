@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./PrivacyConsent.module.scss";
 
@@ -43,6 +43,25 @@ const writeConsent = (status: Exclude<ConsentStatus, null>) => {
 const PrivacyConsent: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  // Publica a altura da barra para o hero reservar espaço, em vez de ficar coberto por ela
+  useEffect(() => {
+    const root = document.documentElement;
+    const bar = barRef.current;
+    if (!visible || !bar) {
+      root.style.removeProperty("--consent-h");
+      return;
+    }
+    const publish = () => root.style.setProperty("--consent-h", `${bar.offsetHeight}px`);
+    publish();
+    const observer = new ResizeObserver(publish);
+    observer.observe(bar);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty("--consent-h");
+    };
+  }, [visible]);
 
   useEffect(() => {
     const record = readConsent();
@@ -72,6 +91,7 @@ const PrivacyConsent: React.FC = () => {
       <AnimatePresence>
         {visible ? (
           <motion.div
+            ref={barRef}
             className={styles.banner}
             role="dialog"
             aria-modal="false"

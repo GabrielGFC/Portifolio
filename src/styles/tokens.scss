@@ -9,26 +9,33 @@
 
 :root {
   /* ---------- PALETA SUNFALL ---------- */
-  --sunfall-void: #000809;
-  --sunfall-night: #021423;
-  --sunfall-deep-blue: #09243b;
-  --sunfall-slate: #2a415a;
-  --sunfall-muted: #586279;
-  --sunfall-ember: #b43b28;
-  --sunfall-burnt-orange: #d45211;
-  --sunfall-fire: #ff9537;
-  --sunfall-cream: #ffd4a3;
-  --sunfall-ivory: #ffecd6;
+  /* Paleta do kit GFC: os nomes "sunfall-*" foram mantidos para não reescrever todos os componentes.
+     void = ink, night = surface, fire = sky (acento principal), cream = sage, ivory = ivory. */
+  --sunfall-void: #101b24;
+  --sunfall-night: #142330;
+  --sunfall-deep-blue: #182936;
+  --sunfall-slate: #284261;
+  --sunfall-muted: #878573;
+  --sunfall-ember: #2485a6;
+  --sunfall-burnt-orange: #2485a6;
+  --sunfall-fire: #54bad2;
+  --sunfall-cream: #c3d5c7;
+  --sunfall-ivory: #ebecdc;
 
-  --sunfall-ivory-rgb: 255, 236, 214;
-  --sunfall-fire-rgb: 255, 149, 55;
-  --sunfall-ember-rgb: 180, 59, 40;
-  --sunfall-burnt-rgb: 212, 82, 17;
-  --sunfall-void-rgb: 0, 8, 9;
-  --sunfall-night-rgb: 2, 20, 35;
+  --sunfall-ivory-rgb: 235, 236, 220;
+  --sunfall-fire-rgb: 84, 186, 210;
+  --sunfall-ember-rgb: 36, 133, 166;
+  --sunfall-burnt-rgb: 36, 133, 166;
+  --sunfall-void-rgb: 16, 27, 36;
+  --sunfall-night-rgb: 20, 35, 48;
 
-  /* Texto secundário: marfim a ~62%, resolvido como cor sólida para manter o contraste AA */
-  --sunfall-text-soft: #a89c8e;
+  /* Cores do monograma GFC (pacote de identidade v1), usadas só na marca */
+  --gfc-sky: #54bad2;
+  --gfc-sand: #b8b095;
+  --gfc-forest: #1e7453;
+
+  /* Texto secundário, cor sólida para manter o contraste AA (≈6:1 sobre o fundo) */
+  --sunfall-text-soft: #a9bbae;
 
   /* ---------- SEMÂNTICAS ---------- */
   --color-bg: var(--sunfall-void);
@@ -94,19 +101,21 @@
   /* ---------- TIPOGRAFIA ---------- */
   --ff: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ff-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --ff-serif: "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --ff-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --fs-eyebrow: 12px;
+  --fs-mono: 12px;
   --fs-body: 17px;
   --fs-lead: clamp(18px, 1.6vw, 22px);
-  --fs-title: clamp(34px, 5.2vw, 68px);
-  --fs-display: clamp(52px, 10vw, 152px);
+  --fs-title: clamp(40px, 5.6vw, 76px);
+  --fs-display: clamp(60px, 9.4vw, 140px);
   --fs-hero-m: 56px;
   --fs-hero-d: 92px;
   --fs-nav: 13px;
 
-  --tracking-eyebrow: 0.24em;
-  --tracking-display: -0.045em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-mono: 0.04em;
+  --tracking-display: -0.035em;
   --tracking-title: -0.03em;
 
   /* ---------- ESPAÇO ---------- */

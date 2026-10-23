@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+
+const root = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   plugins: [
@@ -19,7 +22,7 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(root, 'index.html'),
       },
       output: {
         manualChunks: undefined,
@@ -31,7 +34,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@': resolve(root, './src')
     }
   }
 });

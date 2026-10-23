@@ -3,12 +3,54 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import { featuredProjects, type FeaturedText } from "../../data/featuredProjects";
-import { projectMedia } from "../../data/projectMedia";
 import { publicProjects } from "../../data/publicProjects";
 import { MaskedTitle, Reveal, duration, ease } from "../../motion/motion";
+import ProjectVisual from "./ProjectVisual";
 import styles from "./SelectedWork.module.scss";
 
 const byKey = (key: string) => featuredProjects.find((project) => project.i18nKey === key);
+
+type Item = { key: string; name: string; summary: string; meta: string };
+
+/** Cartão de projeto: o cartão inteiro é um único link para o estudo de caso. */
+const ProjectCard: React.FC<{ item: Item; size: "lead" | "compact"; caseStudy: string; delay: number }> = ({
+  item,
+  size,
+  caseStudy,
+  delay,
+}) => {
+  const project = byKey(item.key);
+  if (!project) return null;
+  return (
+    <li className={styles.cell}>
+      <Reveal delay={delay} y={20} className={styles.reveal}>
+        <article className={`${styles.card} ${size === "lead" ? styles.lead : styles.compact}`}>
+          <div className={styles.media}>
+            <ProjectVisual thumbnailKey={project.thumbnailKey} alt="" variant="shot" />
+          </div>
+          <div className={styles.body}>
+            <p className={styles.meta}>{item.meta}</p>
+            <h3 className={styles.name}>
+              <Link to={`/projetos/${project.id}`} className={styles.link}>
+                {item.name}
+                <span className="sr-only"> — {caseStudy}</span>
+              </Link>
+            </h3>
+            <p className={styles.summary}>{item.summary}</p>
+            <ul className={styles.tags} aria-label="Stack">
+              {project.stack.slice(0, 3).map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
+            <span className={styles.cta} aria-hidden="true">
+              {caseStudy} <span>→</span>
+            </span>
+          </div>
+        </article>
+      </Reveal>
+    </li>
+  );
+};
 
 const SelectedWork: React.FC = () => {
   const { data } = useContext(LanguageContext);
@@ -16,6 +58,9 @@ const SelectedWork: React.FC = () => {
   const reduce = !!useReducedMotion();
   const [archiveOpen, setArchiveOpen] = useState(false);
   const featuredText = data.featured as unknown as Record<string, FeaturedText>;
+
+  const lead = t.items.slice(0, 2);
+  const more = t.items.slice(2);
 
   return (
     <section id="work" className={styles.section} aria-labelledby="work-title">
@@ -27,36 +72,19 @@ const SelectedWork: React.FC = () => {
           </MaskedTitle>
         </header>
 
-        <ol className={styles.list}>
-          {t.items.map((item, index) => {
-            const project = byKey(item.key);
-            if (!project) return null;
-            return (
-              <li key={item.key} className={styles.item}>
-                <Reveal className={styles.text}>
-                  <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span>
-                  <h3 className={styles.name}>{item.name}</h3>
-                  <p className={styles.meta}>{item.meta}</p>
-                  <p className={styles.summary}>{item.summary}</p>
-                  <p className={styles.stack}>{project.stack.slice(0, 4).join(" · ")}</p>
-                  <Link to={`/projetos/${project.id}`} className="linkArrow">
-                    {t.caseStudy}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </Reveal>
-                <motion.figure
-                  className={styles.media}
-                  initial={reduce ? false : { clipPath: "inset(16% 0% 0% 0%)", opacity: 0 }}
-                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: duration.cinematic, ease }}
-                >
-                  <img src={projectMedia[project.thumbnailKey]} alt={item.name} loading="lazy" decoding="async" />
-                </motion.figure>
-              </li>
-            );
-          })}
-        </ol>
+        <p className={styles.group}>{t.featuredLabel}</p>
+        <ul className={styles.leadGrid}>
+          {lead.map((item, index) => (
+            <ProjectCard key={item.key} item={item} size="lead" caseStudy={t.caseStudy} delay={index * 0.08} />
+          ))}
+        </ul>
+
+        <p className={styles.group}>{t.moreLabel}</p>
+        <ul className={styles.moreGrid}>
+          {more.map((item, index) => (
+            <ProjectCard key={item.key} item={item} size="compact" caseStudy={t.caseStudy} delay={index * 0.08} />
+          ))}
+        </ul>
 
         <div className={styles.archive}>
           <button
@@ -122,7 +150,6 @@ const SelectedWork: React.FC = () => {
           </AnimatePresence>
         </div>
       </div>
-
     </section>
   );
 };
