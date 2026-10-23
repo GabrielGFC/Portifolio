@@ -1,0 +1,235 @@
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 2px;
+  background: var(--sunfall-fire);
+  transform-origin: left;
+}
+
+.intro {
+  position: relative;
+  padding: clamp(180px, 24vh, 260px) 0 clamp(96px, 12vw, 160px);
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid transparent;
+  border-image: var(--g-horizon) 1;
+
+  :global(.container) {
+    display: grid;
+    gap: 28px;
+  }
+}
+
+.light {
+  position: absolute;
+  z-index: -1;
+  top: -30%;
+  left: -20%;
+  width: min(1000px, 120vw);
+  aspect-ratio: 1;
+  background: var(--g-warm-light);
+  pointer-events: none;
+}
+
+.title {
+  font-size: var(--fs-display);
+  line-height: 0.95;
+  letter-spacing: var(--tracking-display);
+  max-width: 12ch;
+}
+
+.lead {
+  max-width: 40ch;
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.layout {
+  display: grid;
+  gap: 48px;
+  padding-top: clamp(80px, 10vw, 140px);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 220px 1fr;
+    gap: clamp(48px, 7vw, 120px);
+    align-items: start;
+  }
+}
+
+.index {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    position: sticky;
+    top: 140px;
+  }
+
+  ol {
+    list-style: none;
+    display: grid;
+    gap: 6px;
+    border-left: 1px solid var(--color-border-subtle);
+  }
+}
+
+.indexLink {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  padding: 10px 0 10px 20px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  transition: color var(--dur-fast) var(--ease-lux);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--sunfall-fire);
+    transform: scaleY(0);
+    transition: transform var(--dur-base) var(--ease-lux);
+  }
+
+  &:hover {
+    color: var(--sunfall-ivory);
+  }
+}
+
+.indexActive {
+  color: var(--sunfall-ivory);
+
+  &::before {
+    transform: scaleY(1);
+  }
+}
+
+.indexNum {
+  color: var(--sunfall-fire);
+}
+
+.chapters {
+  list-style: none;
+}
+
+.chapter {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: clamp(64px, 9vw, 120px) 0;
+  background: var(--line-soft) left bottom / 100% 1px no-repeat;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.year {
+  display: block;
+  font-size: clamp(72px, 13vw, 188px);
+  font-weight: 200;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: rgba(var(--sunfall-ivory-rgb), 0.1);
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+.body {
+  display: grid;
+  gap: 18px;
+  max-width: 640px;
+  margin-top: -0.4em;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.period {
+  color: var(--sunfall-fire);
+}
+
+.chapterTitle {
+  font-size: clamp(32px, 4.4vw, 56px);
+  letter-spacing: var(--tracking-title);
+}
+
+.text {
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+.milestone {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 18px 22px;
+  border-radius: var(--radius-md);
+  background: rgba(var(--sunfall-fire-rgb), 0.06);
+  border: 1px solid rgba(var(--sunfall-fire-rgb), 0.18);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--sunfall-ivory);
+
+  span {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: var(--tracking-eyebrow);
+    text-transform: uppercase;
+    color: var(--sunfall-fire);
+  }
+}
+
+.outro {
+  padding: var(--section-y) 0;
+}
+
+.outroInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 40px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  height: 56px;
+  padding: 0 28px;
+  border: 1px solid var(--sunfall-fire);
+  border-radius: var(--radius);
+  background: var(--sunfall-fire);
+  color: var(--sunfall-void);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--dur-base) var(--ease-lux), border-color var(--dur-base) var(--ease-lux);
+
+  &:hover {
+    background: var(--sunfall-cream);
+    border-color: var(--sunfall-cream);
+  }
+}

@@ -681,5 +681,131 @@
       { "label": "Terms of Use", "href": "#/termos" },
       { "label": "Cookies", "href": "#/cookies" }
     ]
+  },
+
+  "lux": {
+    "skip": "Skip to content",
+    "nav": {
+      "label": "Main navigation",
+      "home": "Home",
+      "work": "Work",
+      "journey": "Journey",
+      "about": "About",
+      "contact": "Contact",
+      "resume": "Resume",
+      "menu": "Open menu",
+      "close": "Close menu",
+      "language": "Trocar para Português"
+    },
+    "hero": {
+      "eyebrow": "Software developer · Backend & Full Stack",
+      "line1": "Gabriel Fernandes",
+      "line2": "de Carvalho",
+      "statement": "I build backends, APIs, and institutional systems that run in production, with tests, security, and recorded architecture decisions.",
+      "primary": "See selected work",
+      "secondary": "Download resume (PDF)",
+      "scroll": "Scroll to continue",
+      "credentialsLabel": "Credentials",
+      "credentials": [
+        { "label": "Working at", "items": [{ "text": "UniEVANGÉLICA" }, { "text": "Fábrica de Tecnologias Turing" }] },
+        { "label": "Rewrote", "items": [{ "text": "James Fanstone in Java", "project": "lion-fanstone" }] },
+        { "label": "Built", "items": [{ "text": "Aila", "project": "aila" }, { "text": "JAC", "project": "jac" }, { "text": "Maximiza Seguros", "project": "maximiza" }] }
+      ]
+    },
+    "caseStudy": {
+      "back": "Back to work",
+      "prev": "Previous project",
+      "next": "Next project",
+      "visit": "View reference",
+      "stack": "Stack",
+      "notFound": "Project not found.",
+      "home": "Back to home"
+    },
+    "work": {
+      "eyebrow": "Selected work",
+      "title": "Four projects that show how I work.",
+      "caseStudy": "View case study",
+      "archiveOpen": "See all projects",
+      "archiveClose": "Collapse projects",
+      "archiveTitle": "Archive",
+      "archivePublic": "Public repositories",
+      "openRepo": "Open repository",
+      "items": [
+        { "key": "lionFanstone", "name": "James Fanstone — Java rewrite", "summary": "Backend of an academic-research platform rewritten from Laravel to Java 21 and Spring Boot 4, with 480 automated tests.", "meta": "UniEVANGÉLICA · In production · 2026" },
+        { "key": "jac", "name": "JAC — Academic and Community Journey", "summary": "Academic events with QR-code and geolocation check-in, a documented security audit, and ≈440 automated tests.", "meta": "Personal project · 2025–2026" },
+        { "key": "aila", "name": "Aila", "summary": "Peer-reviewer recommendation with local AI, explainable ranking, and data from OpenAlex and ORCID.", "meta": "Editorial platform · 2026" },
+        { "key": "maximiza", "name": "Maximiza Seguros", "summary": "Institutional site with online quotes and a partner directory synced every day.", "meta": "Client · In production · 2026" }
+      ],
+      "archive": [
+        { "key": "esports", "meta": "UniEVANGÉLICA · 2026" },
+        { "key": "fanstoneLegacy", "meta": "UniEVANGÉLICA · In production · 2025–2026" },
+        { "key": "coneleste", "meta": "Client · Collaboration · 2026" },
+        { "key": "pasteur", "meta": "Public project" },
+        { "key": "farmxp", "meta": "Personal product" }
+      ]
+    },
+    "experience": {
+      "eyebrow": "Experience",
+      "title": "Where this journey was built.",
+      "more": "Details",
+      "less": "Close",
+      "stacks": {
+        "proppe": ["Laravel", "PHP", "REST APIs", "LGPD"],
+        "estagio": ["Laravel", "PHP", "REST APIs"],
+        "ftt": ["Node.js", "TypeScript", "PHP", "Vue.js", "React"],
+        "fab": ["JavaScript", "Python", "REST APIs"],
+        "leomed": ["Purchasing", "Suppliers", "Inventory"],
+        "tecpress": ["Support", "Networks", "Infrastructure"]
+      }
+    },
+    "about": {
+      "eyebrow": "About",
+      "title": "Backend engineering for systems that have to work.",
+      "p1": "I'm a software developer and Software Engineering student at UniEVANGÉLICA. I work with Laravel, Node.js/TypeScript, Java/Spring Boot, and PostgreSQL on APIs, integrations, authentication, and access control.",
+      "p2": "Before code, I spent four years in technical support. Today I work on institutional systems in production and on my own projects, always with tests and documented decisions.",
+      "factsTitle": "At a glance",
+      "facts": [
+        { "label": "Based in", "value": "Anápolis, Brazil · remote work" },
+        { "label": "Working at", "value": "UniEVANGÉLICA and Fábrica de Tecnologias Turing" },
+        { "label": "Focus", "value": "Backend and Full Stack" },
+        { "label": "Core stack", "value": "Laravel · Node.js/TypeScript · Java/Spring Boot · PostgreSQL" },
+        { "label": "Education", "value": "Software Engineering, UniEVANGÉLICA (2023–2027)" },
+        { "label": "Certifications", "value": "Laravel 11 (2024) · C# Fundamentals (2024) · Remote Work (2023)" },
+        { "label": "Languages", "value": "Portuguese · Intermediate English" }
+      ],
+      "journeyLink": "Read the journey"
+    },
+    "journey": {
+      "eyebrow": "Journey",
+      "title": "Engineering. Precision. Evolution.",
+      "intro": "A path built in stages: from technical support to institutional systems in production.",
+      "progressLabel": "Reading progress",
+      "indexLabel": "Chapters",
+      "chapterLabel": "Chapter",
+      "milestoneLabel": "Milestone",
+      "chapters": [
+        { "id": "base", "period": "2019–2022", "year": "2019", "title": "The foundation", "text": "Four years of technical support at Tecpress Tecnologia: user support, incident diagnosis, networks, infrastructure, and training.", "milestone": "Troubleshooting and log analysis as my first engineering school." },
+        { "id": "virada", "period": "2023", "year": "2023", "title": "The turn to software", "text": "After a stint in purchasing at Leomed Drogarias, I started Software Engineering at UniEVANGÉLICA in August and joined Fábrica de Tecnologias Turing as a developer in September.", "milestone": "First development role." },
+        { "id": "instituicoes", "period": "2024", "year": "2024", "title": "Institutional systems", "text": "I built internal management and automation solutions as a Software Developer at the Brazilian Air Force and, in October, started my internship at UniEVANGÉLICA.", "milestone": "Certifications in Laravel 11 and C# Fundamentals." },
+        { "id": "producao", "period": "2025", "year": "2025", "title": "Production and responsibility", "text": "I started contributing to James Fanstone, an academic-research platform in production: the enrollment report, review reminders, and validations. In the second half, I started JAC.", "milestone": "118 commits to the backend of a production system." },
+        { "id": "autoria", "period": "2026", "year": "2026", "title": "Architecture and authorship", "text": "I became Technology Assistant Level I, rewrote the James Fanstone backend in Java and Spring Boot, built Aila and the 5th edition of the E-Sports Portal, and shipped the Maximiza Seguros site.", "milestone": "Java rewrite in production, with 480 automated tests." }
+      ],
+      "ctaWork": "See selected work",
+      "ctaResume": "Download resume (PDF)",
+      "back": "Back to home"
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Let's talk.",
+      "text": "For opportunities, projects, or a technical conversation, e-mail is the fastest way to reach me.",
+      "email": "carvalhogabrielgfc1@gmail.com"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies",
+      "top": "Back to top"
+    }
   }
 }
