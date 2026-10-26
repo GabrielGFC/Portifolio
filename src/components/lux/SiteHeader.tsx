@@ -97,7 +97,7 @@ const SiteHeader: React.FC = () => {
       >
         {data.lux.skip}
       </a>
-      <header className={`${styles.header} ${scrolled || open ? styles.solid : ""}`}>
+      <header className={`${styles.header} ${open ? styles.open : scrolled ? styles.solid : ""}`}>
         <div className={`container ${styles.bar}`}>
           <Link
             to="/"

@@ -14,6 +14,12 @@
   border-bottom-color: var(--color-border-subtle);
 }
 
+/* Menu aberto: sem backdrop-filter, que faria do cabeçalho o bloco de contenção do menu fixo e o encolheria a 80 px */
+.open {
+  background: var(--sunfall-void);
+  border-bottom-color: var(--color-border-subtle);
+}
+
 .bar {
   display: flex;
   align-items: center;
