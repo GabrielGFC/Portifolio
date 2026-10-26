@@ -33,6 +33,11 @@ export const LanguageProvider: React.FC<React.PropsWithChildren> = ({ children }
         return getUserInitialLang() === 'pt' ? Portuguese : English;
     });
 
+    // Mantém o idioma do documento igual ao da interface, para leitores de tela escolherem a voz certa
+    useEffect(() => {
+        document.documentElement.lang = langKey === 'pt' ? 'pt-BR' : 'en';
+    }, [langKey]);
+
     useEffect(() => {
         if (langKey === 'pt') {
             setData(Portuguese);

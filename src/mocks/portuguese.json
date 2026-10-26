@@ -736,6 +736,7 @@
       "featuredLabel": "Em destaque",
       "moreLabel": "Também no portfólio",
       "diagrams": {
+        "scrollable": "diagrama, role na horizontal",
         "lion": {
           "legacy": "Legado",
           "rewrite": "reescrita",

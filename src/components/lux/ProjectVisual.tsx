@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import { projectMedia } from "../../data/projectMedia";
 import type { FeaturedProject } from "../../data/featuredProjects";
@@ -86,14 +86,41 @@ const diagrams: Partial<Record<Props["thumbnailKey"], React.FC<{ label: string }
   aila: AilaDiagram,
 };
 
+/** Em telas estreitas o diagrama rola na horizontal; nesse caso a moldura vira região focável para quem usa teclado. */
+const DiagramFrame: React.FC<{ label: string; children: React.ReactNode }> = ({ label, children }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [scrolls, setScrolls] = useState(false);
+  const hint = useContext(LanguageContext).data.lux.work.diagrams.scrollable;
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const measure = () => setScrolls(el.scrollWidth > el.clientWidth + 1);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`${styles.frame} ${styles.diagram}`}
+      {...(scrolls ? { tabIndex: 0, role: "region", "aria-label": `${label}, ${hint}` } : {})}
+    >
+      {children}
+    </div>
+  );
+};
+
 /** Moldura padrão dos projetos: diagrama quando a captura não mostra o trabalho; senão, captura real recortada na mesma proporção. */
 const ProjectVisual: React.FC<Props> = ({ thumbnailKey, alt, variant = "auto" }) => {
   const Diagram = variant === "auto" ? diagrams[thumbnailKey] : undefined;
   if (Diagram) {
     return (
-      <div className={`${styles.frame} ${styles.diagram}`}>
+      <DiagramFrame label={alt}>
         <Diagram label={alt} />
-      </div>
+      </DiagramFrame>
     );
   }
   return (

@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./legal.module.scss";
 
 const Cookies: React.FC = () => {
+  useEffect(() => {
+    document.title = "Política de Cookies | Gabriel Fernandes de Carvalho";
+  }, []);
+
   const reopenBanner = () => {
     try {
       localStorage.removeItem("gfc-privacy-consent");
     } catch {
       /* noop */
     }
-    window.location.href = "/";
+    // Volta à home do portfólio (a base do site é /Portifolio/, não a raiz do domínio)
+    window.location.href = document.baseURI;
   };
 
   return (
-    <main className={styles.page}>
+    <main className={styles.page} lang="pt-BR">
       <div className={styles.wrap}>
         <Link to="/" className={styles.back}>
           ← Voltar ao portfólio

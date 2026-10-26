@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GFC">
+  <!-- Proposta de favicon para 16 e 32 px: mesma geometria das três fitas do monograma aprovado,
+       em cores chapadas, sem gradientes, sem o triângulo oliva e sem a faixa escura, com a marca ocupando mais do quadrado. -->
+  <defs>
+    <clipPath id="c"><polygon points="568,270 900,270 900,430 440,430"/></clipPath>
+    <path id="t" d="M738 90 L395 88 C300 88 240 122 190 178 C110 258 50 320 50 450 L50 600 C50 640 120 690 190 715 L190 520 C190 340 300 215 410 215 L592 215 C606 215 618 211 630 199 Z"/>
+    <path id="f" d="M780 295 L470 293 C370 293 285 360 282 470 L281 880 L400 797 L400 500 C400 450 430 415 500 415 L655 415 C668 415 679 410 690 398 Z"/>
+  </defs>
+  <rect width="64" height="64" rx="13" fill="#101B24"/>
+  <g transform="translate(2.6 -2.2) scale(0.0707)">
+    <use href="#t" fill="#6FB4C8"/>
+    <use href="#f" fill="#EBD3B5"/>
+    <g clip-path="url(#c)"><use href="#f" fill="#E5705C"/></g>
+    <path d="M490 600 L490 528 Q490 500 518 500 L735 495 Q752 495 742 512 L640 636 L604 686 C580 708 540 718 490 718 C440 718 405 712 400 700 L400 598 Z" fill="#3E9A72"/>
+  </g>
+</svg>

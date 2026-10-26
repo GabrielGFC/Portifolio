@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./legal.module.scss";
 
 const Termos: React.FC = () => {
+  useEffect(() => {
+    document.title = "Termos de Uso | Gabriel Fernandes de Carvalho";
+  }, []);
+
   return (
-    <main className={styles.page}>
+    <main className={styles.page} lang="pt-BR">
       <div className={styles.wrap}>
         <Link to="/" className={styles.back}>
           ← Voltar ao portfólio

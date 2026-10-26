@@ -32,9 +32,12 @@ const ProjectCard: React.FC<{
           <div className={styles.body}>
             <p className={styles.meta}>{item.meta}</p>
             <h3 className={styles.name}>
-              <Link to={`/projetos/${project.id}`} className={styles.link}>
+              <Link
+                to={`/projetos/${project.id}`}
+                className={styles.link}
+                aria-describedby={`${project.id}-cta`}
+              >
                 {item.name}
-                <span className="sr-only"> — {caseStudy}</span>
               </Link>
             </h3>
             <p className={styles.summary}>{item.summary}</p>
@@ -44,7 +47,7 @@ const ProjectCard: React.FC<{
               ))}
             </ul>
             <div className={styles.footerRow}>
-              <span className={styles.cta} aria-hidden="true">
+              <span className={styles.cta} id={`${project.id}-cta`} aria-hidden="true">
                 {caseStudy} <span>→</span>
               </span>
               {project.live && project.caseStudy.referenceLink && (
