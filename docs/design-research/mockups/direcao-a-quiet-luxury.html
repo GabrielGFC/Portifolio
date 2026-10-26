@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direção A, Quiet Luxury (mockup)</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#1a1b1f; --ink:#101b24; --ivory:#ebecdc; --sage:#c3d5c7; --muted:#9aa89f; --line:rgba(235,236,220,.18); --sky:#54bad2; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ivory); font-family: Inter, sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: "Cormorant Garamond", Georgia, serif; }
+  header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 28px clamp(20px,4vw,56px); border-bottom: 1px solid var(--line); margin: 0 clamp(20px,4vw,56px); padding-left: 0; padding-right: 0; }
+  header nav { display: flex; gap: 28px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; }
+  header nav.r { justify-content: flex-end; }
+  header svg { width: 38px; height: auto; display: block; }
+  .hero { min-height: min(92vh, 820px); display: grid; place-items: center; text-align: center; padding: 8vh 24px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 55% at 50% 45%, rgba(84,186,210,.10), transparent 70%); pointer-events: none; }
+  .eyebrow { font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--sage); margin-bottom: 28px; }
+  h1 { font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(40px, 7vw, 104px); letter-spacing: .08em; line-height: 1.02; text-transform: uppercase; }
+  .lead { max-width: 46ch; margin: 30px auto 0; font-size: 16px; line-height: 1.8; color: var(--sage); }
+  .pill { display: inline-block; margin-top: 40px; padding: 15px 38px; border: 1px solid var(--ivory); border-radius: 999px; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--ivory); text-decoration: none; }
+  .scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: .3em; color: var(--muted); text-transform: uppercase; }
+  .scroll::after { content: ""; display: block; width: 1px; height: 38px; background: var(--line); margin: 10px auto 0; }
+  section.work { padding: 14vh clamp(20px,4vw,56px) 6vh; }
+  .sec-head { display: flex; justify-content: space-between; align-items: end; border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 8vh; }
+  .sec-head h2 { font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(30px, 4vw, 56px); letter-spacing: .04em; }
+  .sec-head span { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); }
+  article.p { margin-bottom: 14vh; }
+  .shot { position: relative; background: #000; overflow: hidden; aspect-ratio: 16/9; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: .92; display: block; }
+  .shot::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(235,236,220,.14); }
+  .cap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6vw; padding-top: 28px; align-items: start; }
+  .cap .n { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 20px; color: var(--sage); }
+  .cap h3 { font-family: "Cormorant Garamond", serif; font-weight: 400; font-size: clamp(28px, 3.2vw, 46px); letter-spacing: .02em; margin-top: 6px; }
+  .cap p { font-size: 15px; line-height: 1.8; color: var(--sage); max-width: 52ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 22px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .meta b { color: var(--ivory); font-weight: 400; }
+  .link { display: inline-block; margin-top: 22px; font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--ivory); border-bottom: 1px solid var(--line); padding-bottom: 6px; text-decoration: none; }
+  .quote { text-align: center; padding: 16vh 24px; border-top: 1px solid var(--line); margin: 0 clamp(20px,4vw,56px); }
+  .quote p { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300; font-size: clamp(26px, 3.4vw, 46px); line-height: 1.35; max-width: 30ch; margin: 0 auto; }
+  .quote small { display: block; margin-top: 30px; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+  .contact { text-align: center; padding: 14vh 24px 10vh; border-top: 1px solid var(--line); margin: 0 clamp(20px,4vw,56px); }
+  .contact h2 { font-family: "Cormorant Garamond", serif; font-weight: 300; font-size: clamp(34px, 5vw, 72px); letter-spacing: .06em; text-transform: uppercase; }
+  .contact .mail { display: inline-block; margin-top: 34px; font-family: "Cormorant Garamond", serif; font-size: clamp(22px, 3vw, 40px); border-bottom: 1px solid var(--ivory); padding-bottom: 8px; color: var(--ivory); text-decoration: none; }
+  .contact .row { display: flex; justify-content: center; gap: 12px; margin-top: 38px; flex-wrap: wrap; }
+  .contact .row a { padding: 13px 26px; border: 1px solid var(--line); border-radius: 999px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ivory); text-decoration: none; }
+  footer { display: flex; justify-content: space-between; padding: 28px 0; margin: 0 clamp(20px,4vw,56px); font-size: 11px; letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
+  @media (max-width: 760px) { header nav { display: none; } header { grid-template-columns: 1fr; justify-items: center; } .cap { grid-template-columns: 1fr; gap: 14px; } h1 { letter-spacing: .04em; } .shot { aspect-ratio: 4/3; } footer { flex-direction: column; gap: 8px; } }
+</style></head>
+<body>
+<header>
+  <nav><span>Trabalho</span><span>Trajetória</span></nav>
+  <svg viewBox="40 78 750 812" aria-label="GFC"><image href="../../visual-audit/monograma/gfc-mark.svg" x="0" y="0" width="880" height="920"/></svg>
+  <nav class="r"><span>Sobre</span><span>Contato</span></nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">Engenharia de software · Backend · APIs</p>
+    <h1>Gabriel<br/>Fernandes<br/>de Carvalho</h1>
+    <p class="lead">Desenvolvo sistemas, APIs e soluções de software com foco em arquitetura, qualidade e impacto real.</p>
+    <a class="pill" href="#">Explorar projetos</a>
+  </div>
+  <div class="scroll">Role</div>
+</section>
+
+<section class="work">
+  <div class="sec-head"><h2>Trabalho selecionado</h2><span>03 de 05 projetos</span></div>
+
+  <article class="p">
+    <div class="shot"><img src="../../../src/assets/projects/jac.webp" alt="" /></div>
+    <div class="cap">
+      <div><div class="n">I.</div><h3>JAC — Jornada Acadêmica e Comunitária</h3></div>
+      <div>
+        <p>Gestão de eventos acadêmicos com check-in por QR code e geolocalização, e auditoria de segurança documentada.</p>
+        <div class="meta"><span><b>Node.js</b> · TypeScript · PostgreSQL</span><span><b>353</b> testes unitários</span><span>6 achados de segurança</span></div>
+        <a class="link" href="#">Ver estudo de caso</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="p">
+    <div class="shot"><img src="../../../src/assets/projects/maximiza.webp" alt="" /></div>
+    <div class="cap">
+      <div><div class="n">II.</div><h3>Maximiza Seguros</h3></div>
+      <div>
+        <p>Site institucional de corretora, com formulários de cotação e diretório de parceiros sincronizado diariamente.</p>
+        <div class="meta"><span><b>Vue 3</b> · TypeScript · Cloudflare</span><span><b>239</b> testes</span><span>Em produção</span></div>
+        <a class="link" href="#">Ver estudo de caso</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="p">
+    <div class="shot"><img src="../../../src/assets/projects/esports.webp" alt="" /></div>
+    <div class="cap">
+      <div><div class="n">III.</div><h3>Portal E-Sports UniEVANGÉLICA</h3></div>
+      <div>
+        <p>Portal de inscrição por modalidade da 5ª edição, com três falhas de segurança P0 corrigidas.</p>
+        <div class="meta"><span><b>NestJS</b> · Nuxt 4 · PostgreSQL</span><span>Em produção</span></div>
+        <a class="link" href="#">Ver estudo de caso</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="quote"><p>Engenharia é uma disciplina de precisão.</p><small>Precisão · Confiabilidade · Manutenibilidade</small></section>
+
+<section class="contact">
+  <h2>Vamos conversar</h2>
+  <a class="mail" href="#">carvalhofernandesgfc@proton.me</a>
+  <div class="row"><a href="#">Enviar e-mail</a><a href="#">LinkedIn</a><a href="#">GitHub</a><a href="#">Currículo</a></div>
+</section>
+<footer><span>© 2026 Gabriel Fernandes de Carvalho</span><span>GFC</span></footer>
+</body></html>

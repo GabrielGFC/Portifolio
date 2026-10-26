@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import SiteHeader from "../../components/lux/SiteHeader";
 import Intro from "../../components/lux/Intro";
+import Numbers from "../../components/lux/Numbers";
 import SelectedWork from "../../components/lux/SelectedWork";
 import ExperienceList from "../../components/lux/ExperienceList";
 import About from "../../components/lux/About";
@@ -34,6 +35,7 @@ const Portfolio: React.FC = () => {
       <SiteHeader />
       <main id="conteudo" tabIndex={-1}>
         <Intro />
+        <Numbers />
         <SelectedWork />
         <ExperienceList />
         <About />

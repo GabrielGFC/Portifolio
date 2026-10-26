@@ -706,6 +706,14 @@
       "secondary": "Entrar em contato",
       "markLabel": "Monograma GFC",
       "markCaption": "Software Engineer",
+      "location": "Anápolis, GO · remoto",
+      "numbersLabel": "Em números",
+      "numbers": [
+        { "value": "482", "label": "testes automatizados na reescrita do backend em Java" },
+        { "value": "31", "label": "controllers no mesmo sistema" },
+        { "value": "26", "label": "migrações de banco versionadas" },
+        { "value": "3+", "label": "anos em sistemas institucionais da UniEVANGÉLICA" }
+      ],
       "scroll": "Role para continuar",
       "credentialsLabel": "Credenciais",
       "credentials": [

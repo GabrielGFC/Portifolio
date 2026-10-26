@@ -706,6 +706,14 @@
       "secondary": "Get in touch",
       "markLabel": "GFC monogram",
       "markCaption": "Software Engineer",
+      "location": "Anápolis, Brazil · remote",
+      "numbersLabel": "By the numbers",
+      "numbers": [
+        { "value": "482", "label": "automated tests in the Java backend rewrite" },
+        { "value": "31", "label": "controllers in the same system" },
+        { "value": "26", "label": "versioned database migrations" },
+        { "value": "3+", "label": "years on UniEVANGÉLICA institutional systems" }
+      ],
       "scroll": "Scroll to continue",
       "credentialsLabel": "Credentials",
       "credentials": [

@@ -11,9 +11,11 @@
 
 .title {
   max-width: 14ch;
-  font-size: clamp(40px, 6vw, 80px);
-  letter-spacing: var(--tracking-display);
-  line-height: 1;
+  font-family: var(--ff-serif);
+  font-size: clamp(44px, 7vw, 96px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
 }
 
 .body {
@@ -35,9 +37,10 @@
   gap: 16px;
   max-width: 100%;
   padding-bottom: 8px;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: var(--ff-mono);
+  font-size: clamp(16px, 2.2vw, 24px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--sunfall-ivory);
   text-decoration: none;
   overflow-wrap: anywhere;

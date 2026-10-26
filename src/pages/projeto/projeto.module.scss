@@ -25,9 +25,11 @@
 
 .title {
   max-width: 20ch;
-  font-size: clamp(34px, 4.8vw, 64px);
-  line-height: 1.04;
-  letter-spacing: var(--tracking-display);
+  font-family: var(--ff-serif);
+  font-size: clamp(38px, 5.4vw, 76px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .lead {
@@ -87,9 +89,24 @@
 .body {
   max-width: 1000px;
   margin: clamp(56px, 7vw, 96px) auto 0;
+  counter-reset: bloco;
+}
+
+/* Número do bloco: decorativo (texto alternativo vazio), coral só em corpo grande */
+.blockTitle::before {
+  display: block;
+  margin-bottom: 10px;
+  content: counter(bloco, decimal-leading-zero) / "";
+  font-family: var(--ff-serif);
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--coral);
 }
 
 .block {
+  counter-increment: bloco;
   display: grid;
   gap: 12px;
   padding: clamp(28px, 3.5vw, 40px) 0;
@@ -180,9 +197,10 @@
 }
 
 .pagerTitle {
-  font-size: clamp(18px, 1.8vw, 22px);
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  font-family: var(--ff-serif);
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.01em;
   color: var(--sunfall-ivory);
 }
 

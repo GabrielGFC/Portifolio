@@ -29,6 +29,11 @@
   --sunfall-void-rgb: 16, 27, 36;
   --sunfall-night-rgb: 20, 35, 48;
 
+  /* Direção C: papel da galeria e coral de enumeração (coral só em números de prancha) */
+  --paper: #e7e6d6;
+  --paper-ink: #101b24;
+  --coral: #c65046;
+
   /* Cores do monograma GFC (pacote de identidade v1), usadas só na marca */
   --gfc-sky: #54bad2;
   --gfc-sand: #b8b095;
@@ -101,7 +106,9 @@
   /* ---------- TIPOGRAFIA ---------- */
   --ff: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --ff-display: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --ff-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  /* Serifa de exibição da Direção C: títulos de destaque (herói, números, pranchas) */
+  --ff-serif: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --ff-mono:"Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 
   --fs-eyebrow: 12px;
   --fs-mono: 12px;

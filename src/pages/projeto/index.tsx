@@ -30,7 +30,7 @@ const ProjectPage: React.FC = () => {
       <PageTransition>
         <SiteHeader />
         <main id="conteudo" tabIndex={-1} className={`container ${styles.missing}`}>
-          <p>{t.notFound}</p>
+          <h1>{t.notFound}</h1>
           <Link to="/" className="linkArrow">
             {t.home} <span aria-hidden="true">←</span>
           </Link>
