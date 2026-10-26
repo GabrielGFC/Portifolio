@@ -677,9 +677,9 @@
     },
     "copyright": "Gabriel Fernandes de Carvalho. All rights reserved.",
     "legal": [
-      { "label": "Privacy Policy", "href": "#/privacidade" },
-      { "label": "Terms of Use", "href": "#/termos" },
-      { "label": "Cookies", "href": "#/cookies" }
+      { "label": "Privacy Policy", "href": "/privacidade" },
+      { "label": "Terms of Use", "href": "/termos" },
+      { "label": "Cookies", "href": "/cookies" }
     ]
   },
 
@@ -730,6 +730,7 @@
       "live": "View live",
       "stack": "Stack",
       "notFound": "Project not found.",
+      "pageNotFound": "Page not found.",
       "home": "Back to home"
     },
     "work": {

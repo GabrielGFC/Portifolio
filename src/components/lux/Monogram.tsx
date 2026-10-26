@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import React, { useEffect, useId, useState } from "react";
+import React, { useEffect, useId, useLayoutEffect, useState } from "react";
 import { duration, ease } from "../../motion/motion";
 
 /**
@@ -8,6 +8,9 @@ import { duration, ease } from "../../motion/motion";
  * e verde (C). A entrada acontece uma vez por sessão; depois a marca aparece pronta.
  */
 const STORAGE_KEY = "gfc-mark-played";
+
+// useLayoutEffect avisa durante a renderização no servidor; lá basta useEffect
+const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 const alreadyPlayed = () => {
   try {
@@ -23,7 +26,12 @@ const CREAM = "M780 295 L470 293 C370 293 285 360 282 470 L281 880 L400 797 L400
 const Monogram: React.FC<{ className?: string; still?: boolean }> = ({ className, still = false }) => {
   const reduce = !!useReducedMotion();
   const uid = useId().replace(/:/g, "");
-  const [skip] = useState(() => still || reduce || alreadyPlayed());
+  // Começa igual no servidor e no cliente (hidratação); quem já viu a entrada nesta sessão pula a animação
+  // antes da primeira pintura, e a mudança de `key` remonta o SVG já pronto.
+  const [skip, setSkip] = useState(still || reduce);
+  useIsoLayoutEffect(() => {
+    if (!skip && alreadyPlayed()) setSkip(true);
+  }, [skip]);
   const id = (name: string) => `${name}-${uid}`;
   const ref = (name: string) => `url(#${id(name)})`;
 
@@ -47,7 +55,7 @@ const Monogram: React.FC<{ className?: string; still?: boolean }> = ({ className
   });
 
   return (
-    <svg viewBox="40 78 750 812" className={className} aria-hidden="true" focusable="false">
+    <svg key={String(skip)} viewBox="40 78 750 812" className={className} aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id={id("tealTop")} gradientUnits="userSpaceOnUse" x1="230" y1="230" x2="740" y2="90">
           <stop offset="0" stopColor="#B7D3CA" />

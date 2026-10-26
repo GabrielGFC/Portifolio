@@ -677,9 +677,9 @@
     },
     "copyright": "Gabriel Fernandes de Carvalho. Todos os direitos reservados.",
     "legal": [
-      { "label": "Política de Privacidade", "href": "#/privacidade" },
-      { "label": "Termos de Uso", "href": "#/termos" },
-      { "label": "Cookies", "href": "#/cookies" }
+      { "label": "Política de Privacidade", "href": "/privacidade" },
+      { "label": "Termos de Uso", "href": "/termos" },
+      { "label": "Cookies", "href": "/cookies" }
     ]
   },
 
@@ -730,6 +730,7 @@
       "live": "Ver em produção",
       "stack": "Stack",
       "notFound": "Projeto não encontrado.",
+      "pageNotFound": "Página não encontrada.",
       "home": "Voltar ao início"
     },
     "work": {

@@ -7,7 +7,7 @@
   "homepage": "https://gabrielgfc.github.io/Portifolio/",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "type-check": "tsc --noEmit",
     "lint": "eslint .",
     "preview": "vite preview",
